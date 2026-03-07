@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import brandLogoBlue from "@/assets/brand_logo_blue.png";
+import brandLogoBlack from "@/assets/brand_logo_black.png";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,10 +20,17 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
+      const stored = localStorage.getItem("abcd-theme");
+      if (stored) return stored === "dark";
+      return true; // default dark
     }
-    return false;
+    return true;
   });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("abcd-theme", dark ? "dark" : "light");
+  }, [dark]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -30,11 +39,7 @@ const Navbar = () => {
   }, []);
 
   const toggleTheme = () => {
-    setDark((prev) => {
-      const next = !prev;
-      document.documentElement.classList.toggle("dark", next);
-      return next;
-    });
+    setDark((prev) => !prev);
   };
 
   return (
@@ -47,9 +52,11 @@ const Navbar = () => {
     >
       <div className="container-narrow flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-display font-bold text-sm">AB</span>
-          </div>
+          <img
+            src={dark ? brandLogoBlue : brandLogoBlack}
+            alt="ABCD Logo"
+            className="h-10 w-10 object-contain"
+          />
           <span className="font-display font-bold text-xl text-foreground">ABCD</span>
         </a>
 

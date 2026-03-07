@@ -1,4 +1,5 @@
 import { Youtube, Instagram, Mail, Heart } from "lucide-react";
+import brandLogoBlue from "@/assets/brand_logo_blue.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-sm">AB</span>
-              </div>
+              <img
+                src={brandLogoBlue}
+                alt="ABCD Logo"
+                className="h-10 w-10 object-contain"
+              />
               <span className="font-display font-bold text-xl text-card-foreground">ABCD</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">

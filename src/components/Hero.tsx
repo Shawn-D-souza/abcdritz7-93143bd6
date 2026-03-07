@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Users, Video, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import NodeVisualizer from "@/components/NodeVisualizer";
 
 const Hero = () => {
   return (
@@ -60,20 +61,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[4/3] bg-card">
-              <img
-                src="/placeholder.svg"
-                alt="ABCD Community workshop session"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 glass-card rounded-xl p-4">
-                <p className="text-sm font-medium text-foreground">🔴 Live Workshop</p>
-                <p className="text-xs text-muted-foreground">Building an AI Agent with n8n — 1.2K watching</p>
-              </div>
-            </div>
+            <NodeVisualizer />
           </motion.div>
         </div>
       </div>
