@@ -52,9 +52,11 @@ const Navbar = () => {
     >
       <div className="container-narrow flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-display font-bold text-sm">AB</span>
-          </div>
+          <img
+            src={dark ? brandLogoBlue : brandLogoBlack}
+            alt="ABCD Logo"
+            className="h-10 w-10 object-contain"
+          />
           <span className="font-display font-bold text-xl text-foreground">ABCD</span>
         </a>
 
