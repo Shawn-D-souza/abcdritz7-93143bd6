@@ -6,8 +6,8 @@ import { Input } from "@/components/ui/input";
 
 const ChatWidget = () => {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { role: "bot" as const, text: "Hey there! 👋 I'm the ABCD assistant. Ask me anything about our community, courses, or tools we've covered!" },
+  const [messages, setMessages] = useState<{ role: "bot" | "user"; text: string }[]>([
+    { role: "bot", text: "Hey there! 👋 I'm the ABCD assistant. Ask me anything about our community, courses, or tools we've covered!" },
   ]);
   const [input, setInput] = useState("");
 
