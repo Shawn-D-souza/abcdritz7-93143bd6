@@ -1,4 +1,5 @@
 import { Youtube, Instagram, Mail, Heart } from "lucide-react";
+import brandLogoBlue from "@/assets/brand_logo_blue.png";
 
 const Footer = () => {
   return (

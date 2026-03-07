@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import brandLogoBlue from "@/assets/brand_logo_blue.png";
+import brandLogoBlack from "@/assets/brand_logo_black.png";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
