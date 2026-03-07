@@ -39,11 +39,7 @@ const Navbar = () => {
   }, []);
 
   const toggleTheme = () => {
-    setDark((prev) => {
-      const next = !prev;
-      document.documentElement.classList.toggle("dark", next);
-      return next;
-    });
+    setDark((prev) => !prev);
   };
 
   return (
