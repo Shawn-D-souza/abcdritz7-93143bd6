@@ -1,19 +1,95 @@
-import { motion, useMotionValue, useTransform, useSpring, useMotionTemplate } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useSpring,
+  useMotionTemplate,
+} from "framer-motion";
 import { Star, Zap, Terminal } from "lucide-react";
 import React, { useRef, useState, useCallback } from "react";
 
 const codeLines = [
-  { line: 1, tokens: [{ text: "import", type: "keyword" }, { text: " { ", type: "plain" }, { text: "Community", type: "type" }, { text: " } ", type: "plain" }, { text: "from", type: "keyword" }, { text: " '@ritz7/core'", type: "string" }, { text: ";", type: "plain" }] },
-  { line: 2, tokens: [{ text: "import", type: "keyword" }, { text: " { ", type: "plain" }, { text: "AIAgents", type: "type" }, { text: ", ", type: "plain" }, { text: "NoCode", type: "type" }, { text: " } ", type: "plain" }, { text: "from", type: "keyword" }, { text: " '@ritz7/tools'", type: "string" }, { text: ";", type: "plain" }] },
+  {
+    line: 1,
+    tokens: [
+      { text: "import", type: "keyword" },
+      { text: " { ", type: "plain" },
+      { text: "Community", type: "type" },
+      { text: " } ", type: "plain" },
+      { text: "from", type: "keyword" },
+      { text: " '@ritz7/core'", type: "string" },
+      { text: ";", type: "plain" },
+    ],
+  },
+  {
+    line: 2,
+    tokens: [
+      { text: "import", type: "keyword" },
+      { text: " { ", type: "plain" },
+      { text: "AIAgents", type: "type" },
+      { text: ", ", type: "plain" },
+      { text: "NoCode", type: "type" },
+      { text: " } ", type: "plain" },
+      { text: "from", type: "keyword" },
+      { text: " '@ritz7/tools'", type: "string" },
+      { text: ";", type: "plain" },
+    ],
+  },
   { line: 3, tokens: [] },
-  { line: 4, tokens: [{ text: "const", type: "keyword" }, { text: " builder", type: "variable" }, { text: " = ", type: "plain" }, { text: "new", type: "keyword" }, { text: " Community", type: "type" }, { text: "({", type: "plain" }] },
-  { line: 5, tokens: [{ text: "  name", type: "plain" }, { text: ": ", type: "plain" }, { text: '"Ritz7"', type: "string" }, { text: ",", type: "plain" }] },
-  { line: 6, tokens: [{ text: "  stack", type: "plain" }, { text: ": [", type: "plain" }, { text: "NoCode", type: "type" }, { text: ", ", type: "plain" }, { text: "AIAgents", type: "type" }, { text: "],", type: "plain" }] },
-  { line: 7, tokens: [{ text: "  status", type: "plain" }, { text: ": ", type: "plain" }, { text: '"Live & Growing"', type: "string" }] },
+  {
+    line: 4,
+    tokens: [
+      { text: "const", type: "keyword" },
+      { text: " builder", type: "variable" },
+      { text: " = ", type: "plain" },
+      { text: "new", type: "keyword" },
+      { text: " Community", type: "type" },
+      { text: "({", type: "plain" },
+    ],
+  },
+  {
+    line: 5,
+    tokens: [
+      { text: "  name", type: "plain" },
+      { text: ": ", type: "plain" },
+      { text: '"Ritz7"', type: "string" },
+      { text: ",", type: "plain" },
+    ],
+  },
+  {
+    line: 6,
+    tokens: [
+      { text: "  stack", type: "plain" },
+      { text: ": [", type: "plain" },
+      { text: "NoCode", type: "type" },
+      { text: ", ", type: "plain" },
+      { text: "AIAgents", type: "type" },
+      { text: "],", type: "plain" },
+    ],
+  },
+  {
+    line: 7,
+    tokens: [
+      { text: "  status", type: "plain" },
+      { text: ": ", type: "plain" },
+      { text: '"Live & Growing"', type: "string" },
+    ],
+  },
   { line: 8, tokens: [{ text: "});", type: "plain" }] },
   { line: 9, tokens: [] },
-  { line: 10, tokens: [{ text: "// Transform ideas into systems", type: "comment" }] },
-  { line: 11, tokens: [{ text: "builder", type: "variable" }, { text: ".", type: "plain" }, { text: "deployAutomations", type: "method" }, { text: "();", type: "plain" }] },
+  {
+    line: 10,
+    tokens: [{ text: "// Transform ideas into systems", type: "comment" }],
+  },
+  {
+    line: 11,
+    tokens: [
+      { text: "builder", type: "variable" },
+      { text: ".", type: "plain" },
+      { text: "deployAutomations", type: "method" },
+      { text: "();", type: "plain" },
+    ],
+  },
 ];
 
 const tokenColorsDark: Record<string, string> = {
@@ -39,6 +115,7 @@ const tokenColorsLight: Record<string, string> = {
 export const HeroCodeCard = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [hoveredLine, setHoveredLine] = useState<number | null>(null);
+  const [hoveredCol, setHoveredCol] = useState<number>(1);
 
   // Mouse position for tilt
   const mouseX = useMotionValue(0);
@@ -60,16 +137,24 @@ export const HeroCodeCard = () => {
   // Border glow
   const borderGlow = useMotionTemplate`radial-gradient(400px circle at ${spotlightX}px ${spotlightY}px, hsl(212 92% 36% / 0.5), hsl(212 92% 36% / 0.08) 60%, transparent 80%)`;
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const relX = e.clientX - rect.left;
-    const relY = e.clientY - rect.top;
-    mouseX.set(relX / rect.width - 0.5);
-    mouseY.set(relY / rect.height - 0.5);
-    spotlightX.set(relX);
-    spotlightY.set(relY);
-  }, [mouseX, mouseY, spotlightX, spotlightY]);
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const relX = e.clientX - rect.left;
+      const relY = e.clientY - rect.top;
+      mouseX.set(relX / rect.width - 0.5);
+      mouseY.set(relY / rect.height - 0.5);
+      spotlightX.set(relX);
+      spotlightY.set(relY);
+
+      // Calculate column based on horizontal position
+      const codeAreaWidth = rect.width - 80; // Approximate code area width
+      const col = Math.max(1, Math.floor((relX - 60) / 8) + 1); // ~8px per character
+      setHoveredCol(col);
+    },
+    [mouseX, mouseY, spotlightX, spotlightY],
+  );
 
   const handleMouseLeave = useCallback(() => {
     mouseX.set(0);
@@ -77,10 +162,14 @@ export const HeroCodeCard = () => {
     spotlightX.set(-200);
     spotlightY.set(-200);
     setHoveredLine(null);
+    setHoveredCol(1);
   }, [mouseX, mouseY, spotlightX, spotlightY]);
 
   return (
-    <div className="relative w-full max-w-[600px]" style={{ perspective: "1200px" }}>
+    <div
+      className="relative w-full max-w-[450px]"
+      style={{ perspective: "1200px" }}
+    >
       {/* Ambient glow */}
       <div className="absolute -inset-12 rounded-3xl bg-primary/15 blur-[60px] dark:bg-primary/10" />
 
@@ -121,7 +210,9 @@ export const HeroCodeCard = () => {
             </div>
             <div className="flex items-center gap-2">
               <Terminal className="h-3.5 w-3.5 text-muted-foreground/60" />
-              <span className="text-xs font-medium text-muted-foreground/80">ritz7-community.ts</span>
+              <span className="text-xs font-medium text-muted-foreground/80">
+                ritz7-community.ts
+              </span>
             </div>
             <div className="w-[52px]" />
           </div>
@@ -141,9 +232,13 @@ export const HeroCodeCard = () => {
                       }`}
                       onMouseEnter={() => setHoveredLine(line)}
                     >
-                      <td className={`w-12 select-none border-r border-black/5 px-3 py-[3px] text-right align-top font-mono text-xs transition-colors duration-200 dark:border-white/5 ${
-                        hoveredLine === line ? "text-primary" : "text-muted-foreground/30"
-                      }`}>
+                      <td
+                        className={`w-12 select-none border-r border-black/5 px-3 py-[3px] text-right align-top font-mono text-xs transition-colors duration-200 dark:border-white/5 ${
+                          hoveredLine === line
+                            ? "text-primary"
+                            : "text-muted-foreground/30"
+                        }`}
+                      >
                         {line}
                       </td>
                       <td className="px-4 py-[3px] font-mono text-sm">
@@ -173,11 +268,17 @@ export const HeroCodeCard = () => {
                   <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
                   Ready
                 </span>
-                <span className="text-[10px] text-muted-foreground/40">TypeScript</span>
+                <span className="text-[10px] text-muted-foreground/40">
+                  TypeScript
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[10px] text-muted-foreground/40">Ln {hoveredLine ?? 1}, Col 1</span>
-                <span className="text-[10px] text-muted-foreground/40">UTF-8</span>
+                <span className="text-[10px] text-muted-foreground/40">
+                  Ln {hoveredLine ?? 1}, Col {hoveredCol}
+                </span>
+                <span className="text-[10px] text-muted-foreground/40">
+                  UTF-8
+                </span>
               </div>
             </div>
           </div>
@@ -189,27 +290,35 @@ export const HeroCodeCard = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="absolute -right-4 -top-5 z-20 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-right-12 md:-top-8"
+        className="absolute -right-6 -top-5 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-right-12 md:-top-8"
       >
         <div className="flex items-center gap-2">
           <Star className="h-4 w-4 text-yellow-500" />
-          <span className="text-sm font-semibold text-foreground">Top Network</span>
+          <span className="text-sm font-semibold text-foreground">
+            Top Network
+          </span>
         </div>
-        <span className="mt-0.5 text-[11px] text-muted-foreground">Connect with experts</span>
+        <span className="mt-0.5 text-[11px] text-muted-foreground">
+          Connect with experts
+        </span>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute -bottom-5 -left-4 z-20 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-bottom-8 md:-left-12"
+        className="absolute -bottom-5 -left-6 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-bottom-8 md:-left-12"
         style={{ animationDelay: "1s" }}
       >
         <div className="flex items-center gap-2">
           <Zap className="h-4 w-4 text-primary" />
-          <span className="text-sm font-semibold text-foreground">N8N Series</span>
+          <span className="text-sm font-semibold text-foreground">
+            N8N Series
+          </span>
         </div>
-        <span className="mt-0.5 text-[11px] text-muted-foreground">Build automations</span>
+        <span className="mt-0.5 text-[11px] text-muted-foreground">
+          Build automations
+        </span>
       </motion.div>
     </div>
   );
