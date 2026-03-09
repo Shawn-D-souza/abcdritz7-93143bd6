@@ -101,5 +101,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(hsl(var(--muted-foreground) / 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
