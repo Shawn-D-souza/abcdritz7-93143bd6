@@ -63,7 +63,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-4 flex w-full flex-row gap-3 sm:w-auto sm:gap-4"
         >
-          <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="group relative w-full flex-1 overflow-hidden rounded-full bg-primary px-4 py-3.5 text-center text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-base animate-pulse-glow hover:animate-none">
+          <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="group relative w-full flex-1 overflow-hidden rounded-full bg-primary px-4 py-3.5 text-center text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-base animate-pulse-glow hover:animate-none shine-effect">
             <span className="relative z-10 w-full whitespace-nowrap">Join the community</span>
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%] opacity-0 transition-opacity duration-300 group-hover:animate-sweep group-hover:opacity-100" />
           </a>
