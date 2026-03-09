@@ -16,10 +16,8 @@ export const HeroCodeCard = () => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    x.set(mouseX / rect.width - 0.5);
-    y.set(mouseY / rect.height - 0.5);
+    x.set(e.clientX / rect.width - rect.left / rect.width - 0.5);
+    y.set(e.clientY / rect.height - rect.top / rect.height - 0.5);
   };
 
   const handleMouseLeave = () => {
@@ -38,34 +36,39 @@ export const HeroCodeCard = () => {
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className="relative z-10 w-full rounded-3xl border border-primary/20 bg-white/50 p-4 shadow-[0_0_60px_-12px_hsl(var(--primary)/0.15)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.03] dark:shadow-[0_0_60px_-12px_hsl(var(--primary)/0.25)]"
+        className="relative z-10 w-full overflow-hidden rounded-2xl border border-black/10 bg-white/80 shadow-2xl backdrop-blur-xl dark:border-white/15 dark:bg-[#0c1222]/80 dark:shadow-[0_25px_60px_rgba(0,0,0,0.5)]"
       >
-        {/* Inner code block */}
-        <div className="rounded-2xl border border-black/5 bg-white/90 p-6 shadow-lg dark:border-white/15 dark:bg-black/60 dark:shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
-          <div className="mb-4 flex items-center gap-2">
-            <div className="h-3 w-3 rounded-full bg-red-500" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500" />
-            <div className="h-3 w-3 rounded-full bg-green-500" />
+        {/* Window title bar */}
+        <div className="flex items-center gap-2 border-b border-black/5 bg-white/60 px-5 py-3.5 dark:border-white/10 dark:bg-white/[0.04]">
+          <div className="h-3 w-3 rounded-full bg-red-500" />
+          <div className="h-3 w-3 rounded-full bg-yellow-500" />
+          <div className="h-3 w-3 rounded-full bg-green-500" />
+          <span className="ml-3 text-xs font-medium text-muted-foreground">ritz7-community.ts</span>
+        </div>
+
+        {/* Code block inside with padding/gap */}
+        <div className="p-4 md:p-5">
+          <div className="rounded-xl border border-black/5 bg-muted/50 p-5 dark:border-white/10 dark:bg-black/40">
+            <pre className="text-left text-sm font-mono text-slate-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap">
+              <code className="block">
+                <span className="text-purple-600 dark:text-purple-400">import</span> {"{ "}
+                <span className="text-blue-600 dark:text-blue-400">Community</span>
+                {" }"} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-emerald-600 dark:text-green-400">'@ritz7/core'</span>;<br/>
+                <span className="text-purple-600 dark:text-purple-400">import</span> {"{ "}
+                <span className="text-blue-600 dark:text-blue-400">AIAgents</span>, <span className="text-blue-600 dark:text-blue-400">NoCode</span>
+                {" }"} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-emerald-600 dark:text-green-400">'@ritz7/tools'</span>;
+                <br/><br/>
+                <span className="text-purple-600 dark:text-purple-400">const</span> <span className="text-amber-600 dark:text-yellow-200">builder</span> = <span className="text-purple-600 dark:text-purple-400">new</span> <span className="text-blue-600 dark:text-blue-400">Community</span>({"{ "}<br/>
+                {"  "}name: <span className="text-emerald-600 dark:text-green-400">"Ritz7"</span>,<br/>
+                {"  "}stack: [<span className="text-blue-600 dark:text-blue-400">NoCode</span>, <span className="text-blue-600 dark:text-blue-400">AIAgents</span>],<br/>
+                {"  "}status: <span className="text-emerald-600 dark:text-green-400">"Live & Growing"</span><br/>
+                {"});"}
+                <br/><br/>
+                <span className="text-slate-500 dark:text-gray-500">// Transform raw ideas into intelligent systems</span><br/>
+                <span className="text-amber-600 dark:text-yellow-200">builder</span>.<span className="text-sky-600 dark:text-blue-300">deployAutomations</span>();
+              </code>
+            </pre>
           </div>
-          <pre className="text-left text-sm font-mono text-slate-800 dark:text-gray-300 overflow-x-auto whitespace-pre-wrap">
-            <code className="block">
-              <span className="text-purple-600 dark:text-purple-400">import</span> {"{ "}
-              <span className="text-blue-600 dark:text-blue-400">Community</span>
-              {" }"} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-emerald-600 dark:text-green-400">'@ritz7/core'</span>;<br/>
-              <span className="text-purple-600 dark:text-purple-400">import</span> {"{ "}
-              <span className="text-blue-600 dark:text-blue-400">AIAgents</span>, <span className="text-blue-600 dark:text-blue-400">NoCode</span>
-              {" }"} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-emerald-600 dark:text-green-400">'@ritz7/tools'</span>;
-              <br/><br/>
-              <span className="text-purple-600 dark:text-purple-400">const</span> <span className="text-amber-600 dark:text-yellow-200">builder</span> = <span className="text-purple-600 dark:text-purple-400">new</span> <span className="text-blue-600 dark:text-blue-400">Community</span>({"{ "}<br/>
-              {"  "}name: <span className="text-emerald-600 dark:text-green-400">"Ritz7"</span>,<br/>
-              {"  "}stack: [<span className="text-blue-600 dark:text-blue-400">NoCode</span>, <span className="text-blue-600 dark:text-blue-400">AIAgents</span>],<br/>
-              {"  "}status: <span className="text-emerald-600 dark:text-green-400">"Live & Growing"</span><br/>
-              {"});"}
-              <br/><br/>
-              <span className="text-slate-500 dark:text-gray-500">// Transform raw ideas into intelligent systems</span><br/>
-              <span className="text-amber-600 dark:text-yellow-200">builder</span>.<span className="text-sky-600 dark:text-blue-300">deployAutomations</span>();
-            </code>
-          </pre>
         </div>
       </motion.div>
 
