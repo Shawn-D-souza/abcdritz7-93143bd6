@@ -58,7 +58,7 @@ export const Navbar = () => {
       </div>
 
       {/* Middle: Nav Items with Dropdowns */}
-      <div className="hidden h-full items-center gap-8 lg:flex">
+      <div className="hidden h-full items-center lg:flex lg:gap-4 xl:gap-8">
         {navItems.map((item) => (
           <div key={item.name} className="group relative flex h-full cursor-pointer items-center">
             <div className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 transition-colors group-hover:text-primary">
@@ -92,12 +92,12 @@ export const Navbar = () => {
       </div>
 
       {/* Right: Actions */}
-      <div className="flex items-center gap-4 md:gap-6">
+      <div className="flex items-center gap-3 lg:gap-4 xl:gap-6">
         <ThemeToggle />
-        <a href="#" className="hidden text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
+        <a href="#" className="hidden whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
           Book Consultation
         </a>
-        <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden rounded-full bg-[#0756B1] px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] lg:px-8 lg:block">
+        <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap rounded-full bg-[#0756B1] px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] lg:block xl:px-6 xl:py-2.5">
           Join the Community
         </a>
 
