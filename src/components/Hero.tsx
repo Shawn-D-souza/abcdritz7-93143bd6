@@ -87,7 +87,7 @@ export const Hero = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-20 hidden w-full justify-center md:flex lg:mt-0 lg:w-1/2 lg:justify-end"
+        className="mt-20 hidden w-full justify-center lg:flex lg:mt-0 lg:w-1/2 lg:justify-end"
       >
         <HeroCodeCard />
       </motion.div>

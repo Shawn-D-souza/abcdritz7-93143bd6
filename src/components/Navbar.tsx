@@ -58,7 +58,7 @@ export const Navbar = () => {
       </div>
 
       {/* Middle: Nav Items with Dropdowns */}
-      <div className="hidden h-full items-center gap-8 md:flex">
+      <div className="hidden h-full items-center gap-8 lg:flex">
         {navItems.map((item) => (
           <div key={item.name} className="group relative flex h-full cursor-pointer items-center">
             <div className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 transition-colors group-hover:text-primary">
@@ -94,16 +94,16 @@ export const Navbar = () => {
       {/* Right: Actions */}
       <div className="flex items-center gap-4 md:gap-6">
         <ThemeToggle />
-        <a href="#" className="hidden text-sm font-medium text-foreground/80 transition-colors hover:text-primary md:block">
+        <a href="#" className="hidden text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
           Book Consultation
         </a>
-        <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden rounded-full bg-[#0756B1] px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] md:px-8 md:block">
+        <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden rounded-full bg-[#0756B1] px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] lg:px-8 lg:block">
           Join the Community
         </a>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="ml-1 block p-2 text-foreground/80 transition-colors hover:text-primary md:hidden"
+          className="ml-1 block p-2 text-foreground/80 transition-colors hover:text-primary lg:hidden"
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
@@ -113,7 +113,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 top-full max-h-[calc(100vh-5rem)] w-full overflow-y-auto border-b border-border/40 bg-background/95 p-6 shadow-xl backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/95 md:hidden">
+        <div className="absolute left-0 top-full max-h-[calc(100vh-5rem)] w-full overflow-y-auto border-b border-border/40 bg-background/95 p-6 shadow-xl backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/95 lg:hidden">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <div key={item.name} className="flex flex-col border-b border-border/20 pb-4 dark:border-white/10 last:border-0 hover:border-transparent">
