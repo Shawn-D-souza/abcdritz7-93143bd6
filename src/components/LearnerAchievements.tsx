@@ -51,7 +51,7 @@ const achievements = [
 
 export function LearnerAchievements() {
   return (
-    <section className="pt-8 md:pt-12 pb-8 md:pb-12 px-6 md:px-12 bg-background/50 relative overflow-hidden">
+    <section id="learner-achievements" className="pt-8 md:pt-12 pb-8 md:pb-12 px-6 md:px-12 bg-background/50 relative overflow-hidden">
       {/* Optional background glow */}
       <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       

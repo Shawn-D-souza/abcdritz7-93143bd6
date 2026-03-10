@@ -44,6 +44,25 @@ export const Navbar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const toggleDropdown = (name: string) => setOpenDropdown(openDropdown === name ? null : name);
 
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
+    if (isExternal || !href.startsWith("#")) return;
+    
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const navbarHeight = 80; // h-20 = 5rem = 80px
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-border/40 bg-background/80 px-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-black/20 md:px-12">
       {/* Left: Logo */}
@@ -76,6 +95,7 @@ export const Navbar = () => {
                   <a
                     key={subItem.label}
                     href={subItem.href}
+                    onClick={(e) => handleScrollTo(e, subItem.href, subItem.isExternal)}
                     {...(subItem.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/70 transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
                   >
@@ -134,7 +154,10 @@ export const Navbar = () => {
                         href={subItem.href}
                         {...(subItem.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                         className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-foreground/70 transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => {
+                          handleScrollTo(e, subItem.href, subItem.isExternal);
+                          setIsMobileMenuOpen(false);
+                        }}
                       >
                         {subItem.label}
                         {subItem.isExternal && <ExternalLink className="h-3.5 w-3.5 opacity-60" />}

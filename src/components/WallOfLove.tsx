@@ -52,7 +52,7 @@ const reviews = [
 
 export const WallOfLove = () => {
   return (
-    <section className="pt-4 md:pt-6 pb-20 relative overflow-hidden" id="reviews">
+    <section className="pt-4 md:pt-6 pb-20 relative overflow-hidden" id="wall-of-love">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
