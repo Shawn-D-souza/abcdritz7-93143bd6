@@ -1,7 +1,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { LearnerAchievements } from "@/components/LearnerAchievements";
 import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
+import { WallOfLove } from "@/components/WallOfLove";
 
 const Index = () => {
   return (
@@ -11,6 +13,8 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <LearnerAchievements />
+        <WallOfLove />
       </main>
     </div>
   );
