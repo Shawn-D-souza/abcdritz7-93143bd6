@@ -33,7 +33,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm"
         >
-          New & Growing Community for students & founders
+          Don't get left behind in the AI era
         </motion.div>
 
         <motion.h1 
@@ -42,9 +42,9 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl font-extrabold leading-tight tracking-tight text-foreground sm:text-6xl md:text-7xl"
         >
-          Anybody Can{" "}
+          Your AI Journey{" "}
           <span className="bg-gradient-to-r from-primary via-blue-400 to-[#0756B1] bg-clip-text text-transparent">
-            Design Develop Deploy
+            Starts Here
           </span>
         </motion.h1>
 
@@ -54,7 +54,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg text-foreground/80 md:text-foreground/90 md:text-xl md:leading-relaxed md:rounded-xl md:bg-white/40 md:p-4 md:-mx-4 md:shadow-md md:backdrop-blur-md md:border md:border-black/10 md:dark:bg-black/40 md:dark:border-white/10 md:dark:shadow-none"
         >
-          Whether you're a creator, entrepreneur, or problem-solver, our community helps you transform raw ideas into intelligent systems—powered by no-code tools and AI automation.
+          Learn AI tools, master automation, and build real projects. Focus on step-by-step learning first, backed by our supportive community whenever you get stuck.
         </motion.p>
 
         <motion.div 
