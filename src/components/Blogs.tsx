@@ -14,99 +14,127 @@ export const Blogs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const CORS_PROXIES = [
+      (url: string) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+      (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+      (url: string) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+    ];
+
+    const fetchWithProxy = async (proxyFn: (url: string) => string): Promise<string> => {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
+
       try {
-        const url = encodeURIComponent("https://ritz7.com/blog");
-        const response = await fetch(`https://api.allorigins.win/get?url=${url}`);
-        
-        if (!response.ok) throw new Error("Network response was not ok");
-        
-        const data = await response.json();
-        const html = data.contents;
-        
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
-        
-        const links = Array.from(doc.querySelectorAll("a"));
-        // Filter links that point to a specific blog post
-        const blogLinks = links.filter(a => {
-          const href = a.getAttribute("href") || "";
-          return href.includes("/blog/") && href !== "/blog" && href !== "https://ritz7.com/blog";
+        const response = await fetch(proxyFn("https://ritz7.com/blog"), {
+          signal: controller.signal,
         });
+        clearTimeout(timeoutId);
 
-        const uniqueBlogs: BlogPost[] = [];
-        const seenUrls = new Set<string>();
+        if (!response.ok) throw new Error("Network response was not ok");
 
-        for (const link of blogLinks) {
-          const href = link.getAttribute("href") || "";
-          // Resolve absolute URL
-          const absoluteUrl = href.startsWith("http") 
-            ? href 
-            : `https://ritz7.com${href.startsWith("/") ? "" : "/"}${href}`;
+        const contentType = response.headers.get("content-type") || "";
+        if (contentType.includes("application/json")) {
+          const data = await response.json();
+          return data.contents || data;
+        }
+        return await response.text();
+      } catch (err) {
+        clearTimeout(timeoutId);
+        throw err;
+      }
+    };
 
-          if (seenUrls.has(absoluteUrl)) continue;
-          
-          let title = "";
-          const h3 = link.querySelector("h3");
-          const h2 = link.querySelector("h2");
-          const h1 = link.querySelector("h1");
-          
-          if (h3) title = h3.textContent || "";
-          else if (h2) title = h2.textContent || "";
-          else if (h1) title = h1.textContent || "";
-          else {
-            // Try to find the first significant text node or paragraph
-            const paragraphs = Array.from(link.querySelectorAll("p"));
-            if (paragraphs.length > 0) {
-                title = paragraphs[0].textContent || "";
-            } else {
-                title = link.textContent?.trim() || "";
-            }
+    const parseBlogsFromHtml = (html: string): BlogPost[] => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+
+      const links = Array.from(doc.querySelectorAll("a"));
+      const blogLinks = links.filter((a) => {
+        const href = a.getAttribute("href") || "";
+        return href.includes("/blog/") && href !== "/blog" && href !== "https://ritz7.com/blog";
+      });
+
+      const uniqueBlogs: BlogPost[] = [];
+      const seenUrls = new Set<string>();
+
+      for (const link of blogLinks) {
+        const href = link.getAttribute("href") || "";
+        const absoluteUrl = href.startsWith("http")
+          ? href
+          : `https://ritz7.com${href.startsWith("/") ? "" : "/"}${href}`;
+
+        if (seenUrls.has(absoluteUrl)) continue;
+
+        let title = "";
+        const h3 = link.querySelector("h3");
+        const h2 = link.querySelector("h2");
+        const h1 = link.querySelector("h1");
+
+        if (h3) title = h3.textContent || "";
+        else if (h2) title = h2.textContent || "";
+        else if (h1) title = h1.textContent || "";
+        else {
+          const paragraphs = Array.from(link.querySelectorAll("p"));
+          if (paragraphs.length > 0) {
+            title = paragraphs[0].textContent || "";
+          } else {
+            title = link.textContent?.trim() || "";
           }
-          
-          // Extract image
-          let image = "";
-          const img = link.querySelector("img");
-          if (img) {
-            image = img.getAttribute("src") || "";
-            // Handle relative image URLs if any
-            if (image && !image.startsWith("http")) {
-              if (image.startsWith("//")) image = "https:" + image;
-              else if (image.startsWith("/")) image = "https://ritz7.com" + image;
-            }
-          }
-          
-          // Clean title
-          title = title.replace(/\s+/g, " ").trim();
-          if (title.length > 80) title = title.substring(0, 80) + "...";
-
-          // Extract date with regex (e.g., Mar 3, 2026 or March 3, 2026)
-          const textContent = link.textContent || "";
-          const dateMatch = textContent.match(/[A-Z][a-z]+\s\d{1,2},\s\d{4}/);
-          const date = dateMatch ? dateMatch[0] : "";
-
-          // Only keep valid-looking blog links
-          if (title && title.length > 5) {
-            uniqueBlogs.push({
-              title,
-              link: absoluteUrl,
-              date,
-              image
-            });
-            seenUrls.add(absoluteUrl);
-          }
-
-          if (uniqueBlogs.length >= 3) break;
         }
 
-        setBlogs(uniqueBlogs);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-        setError(true);
-        setLoading(false);
+        // Extract image
+        let image = "";
+        const img = link.querySelector("img");
+        if (img) {
+          image = img.getAttribute("src") || "";
+          if (image && !image.startsWith("http")) {
+            if (image.startsWith("//")) image = "https:" + image;
+            else if (image.startsWith("/")) image = "https://ritz7.com" + image;
+          }
+        }
+
+        // Clean title
+        title = title.replace(/\s+/g, " ").trim();
+        if (title.length > 80) title = title.substring(0, 80) + "...";
+
+        // Extract date
+        const textContent = link.textContent || "";
+        const dateMatch = textContent.match(/[A-Z][a-z]+\s\d{1,2},\s\d{4}/);
+        const date = dateMatch ? dateMatch[0] : "";
+
+        if (title && title.length > 5) {
+          uniqueBlogs.push({ title, link: absoluteUrl, date, image });
+          seenUrls.add(absoluteUrl);
+        }
+
+        if (uniqueBlogs.length >= 3) break;
       }
+
+      return uniqueBlogs;
+    };
+
+    const fetchBlogs = async () => {
+      // Try each CORS proxy in sequence
+      for (const proxyFn of CORS_PROXIES) {
+        try {
+          const html = await fetchWithProxy(proxyFn);
+          const parsed = parseBlogsFromHtml(html);
+          if (parsed.length > 0) {
+            setBlogs(parsed);
+            setLoading(false);
+            return;
+          }
+        } catch (err) {
+          console.warn("Proxy failed, trying next...", err);
+        }
+      }
+
+      // All proxies failed
+      console.warn("All CORS proxies failed.");
+      setError(true);
+      setLoading(false);
     };
 
     fetchBlogs();
@@ -157,9 +185,22 @@ export const Blogs = () => {
             ))}
           </div>
         ) : error || blogs.length === 0 ? (
-          <div className="p-8 rounded-2xl bg-red-500/5 border border-red-500/20 text-center">
-            <p className="text-red-400">Failed to load recent blogs. Please visit the blog directly.</p>
-          </div>
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            href="https://ritz7.com/blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-10 rounded-2xl bg-card/40 backdrop-blur-sm border border-border/50 hover:border-blue-500/50 text-center transition-all cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-transparent to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500 pointer-events-none rounded-2xl" />
+            <p className="text-muted-foreground text-lg mb-4">Check out our latest articles on AI, automation, and no-code tools.</p>
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground bg-white/5 hover:bg-white/10 border border-white/10 rounded-full px-6 py-3 transition-all">
+              Visit the Blog
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-blue-400" />
+            </span>
+          </motion.a>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogs.map((blog, idx) => (
