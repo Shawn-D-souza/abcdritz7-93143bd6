@@ -7,6 +7,7 @@ import { WallOfLove } from "@/components/WallOfLove";
 import { Programs } from "@/components/Programs";
 import { Journey1000Days } from "@/components/Journey1000Days";
 import { BookConsultation } from "@/components/BookConsultation";
+import { Blogs } from "@/components/Blogs";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         <Programs />
         <Journey1000Days />
         <BookConsultation />
+        <Blogs />
       </main>
     </div>
   );
