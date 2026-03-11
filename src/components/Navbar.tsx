@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
     name: "About Us",
     dropdown: [
       { label: "Why We Started", href: "#why-we-started" },
-      { label: "1000 Days Journey & Milestones", href: "#journey-milestones" },
+      { label: "1000 Days Journey & Milestones", href: "#journey" },
       { label: "The Team", href: "#the-team" },
     ],
   },

@@ -5,6 +5,7 @@ import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
 import { WallOfLove } from "@/components/WallOfLove";
 import { Programs } from "@/components/Programs";
+import { Journey1000Days } from "@/components/Journey1000Days";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <LearnerAchievements />
         <WallOfLove />
         <Programs />
+        <Journey1000Days />
       </main>
     </div>
   );
