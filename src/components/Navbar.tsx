@@ -54,7 +54,7 @@ export const Navbar = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      const navbarHeight = 80; // h-20 = 5rem = 80px
+      const navbarHeight = 64; // h-16 = 4rem = 64px
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
       
@@ -66,7 +66,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 items-center justify-between border-b border-border/40 bg-background/80 px-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-black/20 md:px-12">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b border-border/40 bg-background/80 px-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-black/20 md:px-12">
       {/* Left: Logo */}
       <div className="flex h-full items-center">
         <a href="/" className="flex items-center">
@@ -148,7 +148,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 top-full max-h-[calc(100vh-5rem)] w-full overflow-y-auto border-b border-border/40 bg-background/95 p-6 shadow-xl backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/95 lg:hidden">
+        <div className="absolute left-0 top-full max-h-[calc(100vh-4rem)] w-full overflow-y-auto border-b border-border/40 bg-background/95 p-6 shadow-xl backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-black/95 lg:hidden">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <div key={item.name} className="flex flex-col border-b border-border/20 pb-4 dark:border-white/10 last:border-0 hover:border-transparent">
