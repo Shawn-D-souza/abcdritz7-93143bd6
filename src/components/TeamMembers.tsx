@@ -191,13 +191,13 @@ export const TeamMembers = () => {
   const bottomRow = teamMembers.slice(3, 6);
 
   return (
-    <section id="team" className="py-20 md:py-28 relative w-full overflow-hidden">
+    <section id="team" className="py-6 md:py-10 relative w-full overflow-hidden">
       <div className="absolute inset-0 bg-background/50 pointer-events-none" />
       <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-blue-500/8 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container px-4 mx-auto relative z-10 w-full max-w-7xl">
-        <div className="text-center mb-14 md:mb-20">
+        <div className="text-center mb-8 md:mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

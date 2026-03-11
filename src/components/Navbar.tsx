@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     dropdown: [
       { label: "Why We Started", href: "#why-we-started" },
       { label: "1000 Days Journey & Milestones", href: "#journey" },
-      { label: "The Team", href: "#the-team" },
+      { label: "The Team", href: "#team" },
     ],
   },
   {

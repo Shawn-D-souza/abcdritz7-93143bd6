@@ -25,7 +25,7 @@ export const Programs = () => {
   };
 
   return (
-    <section className="relative py-12 w-full overflow-hidden" id="programs">
+    <section className="relative py-6 md:py-10 w-full overflow-hidden" id="programs">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         <motion.div

@@ -25,7 +25,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative mx-auto flex min-h-[65vh] lg:min-h-screen max-w-7xl flex-col items-center justify-start px-6 pt-32 pb-16 md:justify-center md:pt-28 lg:flex-row lg:justify-between lg:px-12 lg:pt-20 lg:pb-0">
+    <section className="relative mx-auto flex lg:min-h-screen max-w-7xl flex-col items-center justify-start px-6 pt-32 pb-12 md:justify-center md:pt-28 lg:flex-row lg:justify-between lg:px-12 lg:pt-20 lg:pb-6">
       <div className="relative z-10 flex w-full max-w-2xl flex-col items-start gap-6 lg:w-1/2">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

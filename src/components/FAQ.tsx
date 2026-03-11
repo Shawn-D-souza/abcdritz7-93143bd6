@@ -38,7 +38,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section id="faqs" className="relative py-24 overflow-hidden">
+    <section id="faqs" className="relative py-6 md:py-10 overflow-hidden">
       {/* Background Gradients */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]" />
       <div className="pointer-events-none absolute right-0 top-0 -z-10 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[100px]" />
@@ -49,7 +49,7 @@ export const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-2xl text-center mb-16"
+          className="mx-auto max-w-2xl text-center mb-8 md:mb-10"
         >
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl mb-6">
             Frequently Asked <span className="text-primary">Questions</span>

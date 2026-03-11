@@ -51,12 +51,12 @@ const achievements = [
 
 export function LearnerAchievements() {
   return (
-    <section id="learner-achievements" className="pt-8 md:pt-12 pb-8 md:pb-12 px-6 md:px-12 bg-background/50 relative overflow-hidden">
+    <section id="learner-achievements" className="py-6 md:py-10 px-6 md:px-12 bg-background/50 relative overflow-hidden">
       {/* Optional background glow */}
       <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-12 md:mb-16 flex flex-col items-center text-center">
+        <div className="mb-8 md:mb-10 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-foreground">
             Learner <span className="bg-gradient-to-r from-primary via-blue-400 to-[#0756B1] bg-clip-text text-transparent">Achievements</span>
           </h2>

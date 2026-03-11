@@ -141,13 +141,13 @@ export const Blogs = () => {
   }, []);
 
   return (
-    <section id="blogs" className="py-24 relative w-full overflow-hidden">
+    <section id="blogs" className="py-6 md:py-10 relative w-full overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2" />
       <div className="absolute top-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-[100px]" />
       
       <div className="container px-4 mx-auto relative z-10 w-full max-w-6xl">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

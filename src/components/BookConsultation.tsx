@@ -3,7 +3,7 @@ import { Calendar, Clock, Video, ArrowRight, Star } from "lucide-react";
 
 export const BookConsultation = () => {
   return (
-    <section id="book-consultation" className="py-24 relative w-full overflow-hidden">
+    <section id="book-consultation" className="py-6 md:py-10 relative w-full overflow-hidden">
       <div className="container px-4 mx-auto relative z-10 w-full max-w-5xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
