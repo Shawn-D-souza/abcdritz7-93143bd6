@@ -8,6 +8,7 @@ import { Programs } from "@/components/Programs";
 import { Journey1000Days } from "@/components/Journey1000Days";
 import { BookConsultation } from "@/components/BookConsultation";
 import { Blogs } from "@/components/Blogs";
+import { FAQ } from "@/components/FAQ";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <Journey1000Days />
         <BookConsultation />
         <Blogs />
+        <FAQ />
       </main>
     </div>
   );
