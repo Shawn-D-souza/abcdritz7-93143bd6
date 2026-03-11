@@ -68,18 +68,40 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.3)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%] opacity-0 transition-opacity duration-300 group-hover:animate-sweep group-hover:opacity-100" />
           </a>
 
-          <button 
-            onClick={handleRipple}
-            className="relative w-full flex-1 overflow-hidden rounded-full border border-primary/20 bg-primary/5 px-4 py-3.5 text-center text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:bg-primary/10 dark:border-primary/30 dark:bg-white/5 dark:hover:bg-white/10 sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-base"
+          <a 
+            href="https://www.youtube.com/@ritz7hq"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              const button = e.currentTarget;
+              const rect = button.getBoundingClientRect();
+              const size = Math.max(rect.width, rect.height);
+              // @ts-ignore - accessing clientX/Y from click event
+              const x = e.clientX - rect.left - size / 2;
+              // @ts-ignore
+              const y = e.clientY - rect.top - size / 2;
+
+              setRippleStyle({
+                width: size,
+                height: size,
+                top: y,
+                left: x,
+              });
+
+              setTimeout(() => {
+                setRippleStyle({});
+              }, 600);
+            }}
+            className="relative w-full flex-1 overflow-hidden rounded-full border border-primary/20 bg-primary/5 px-4 py-3.5 text-center text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:bg-primary/10 dark:border-primary/30 dark:bg-white/5 dark:hover:bg-white/10 sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-base flex items-center justify-center gap-2"
           >
-            <span className="relative z-10 whitespace-nowrap">Explore Programs</span>
+            <span className="relative z-10 whitespace-nowrap">Watch on YouTube</span>
             {Object.keys(rippleStyle).length > 0 && (
               <span
                 className="absolute scale-0 animate-[ripple_0.6s_linear] rounded-full bg-primary/30"
                 style={rippleStyle}
               />
             )}
-          </button>
+          </a>
         </motion.div>
       </div>
 
