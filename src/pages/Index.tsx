@@ -6,6 +6,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { WallOfLove } from "@/components/WallOfLove";
 import { Programs } from "@/components/Programs";
 import { Journey1000Days } from "@/components/Journey1000Days";
+import { BookConsultation } from "@/components/BookConsultation";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <WallOfLove />
         <Programs />
         <Journey1000Days />
+        <BookConsultation />
       </main>
     </div>
   );

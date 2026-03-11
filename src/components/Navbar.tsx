@@ -129,7 +129,7 @@ export const Navbar = () => {
       {/* Right: Actions */}
       <div className="flex items-center gap-3 lg:gap-4 xl:gap-6">
         <ThemeToggle />
-        <a href="#" className="hidden whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
+        <a href="#book-consultation" onClick={(e) => handleScrollTo(e, "#book-consultation")} className="hidden whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
           Book Consultation
         </a>
         <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap rounded-full bg-[#0756B1] px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] lg:block xl:px-6 xl:py-2.5">
@@ -199,7 +199,14 @@ export const Navbar = () => {
               </div>
             ))}
             
-            <a href="#" className="mt-2 text-base font-medium text-foreground/80 transition-colors hover:text-primary">
+            <a 
+              href="#book-consultation" 
+              className="mt-2 text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+              onClick={(e) => {
+                handleScrollTo(e, "#book-consultation");
+                setIsMobileMenuOpen(false);
+              }}
+            >
               Book Consultation
             </a>
             <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="mt-4 w-full rounded-full bg-[#0756B1] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)]">
