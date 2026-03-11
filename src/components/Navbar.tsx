@@ -12,7 +12,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    name: "Student Success",
+    name: "Success Stories",
     href: "#learner-achievements",
   },
   {

@@ -54,7 +54,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg text-foreground/80 md:text-foreground/90 md:text-xl md:leading-relaxed md:rounded-xl md:bg-white/40 md:p-4 md:-mx-4 md:shadow-md md:backdrop-blur-md md:border md:border-black/10 md:dark:bg-black/40 md:dark:border-white/10 md:dark:shadow-none"
         >
-          Learn AI tools, master automation, and build real projects. Focus on step-by-step learning first, backed by our supportive community whenever you get stuck.
+          The world is evolving. Don't just watch the AI hype - start building the AI reality.
         </motion.p>
 
         <motion.div 
