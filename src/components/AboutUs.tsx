@@ -3,7 +3,7 @@ import { Youtube, Users, Video, ExternalLink } from "lucide-react";
 
 export const AboutUs = () => {
   return (
-    <section id="about" className="relative py-6 md:py-10 w-full overflow-hidden">
+    <section id="about-us" className="relative py-6 md:py-10 w-full overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-6 md:mb-8">
