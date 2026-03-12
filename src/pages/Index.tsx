@@ -5,6 +5,7 @@ import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
 import { WallOfLove } from "@/components/WallOfLove";
 import { Programs } from "@/components/Programs";
+import { AboutUs } from "@/components/AboutUs";
 import { Journey1000Days } from "@/components/Journey1000Days";
 import { BookConsultation } from "@/components/BookConsultation";
 import { TeamMembers } from "@/components/TeamMembers";
@@ -23,6 +24,7 @@ const Index = () => {
         <LearnerAchievements />
         <WallOfLove />
         <Programs />
+        <AboutUs />
         <Journey1000Days />
         <BookConsultation />
         <TeamMembers />
