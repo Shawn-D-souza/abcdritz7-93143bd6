@@ -25,7 +25,6 @@ type PhaseRow = {
 };
 
 // Start date corresponding to Day 1
-// If today (March 11, 2026) is day 484, Day 1 was 483 days ago = Nov 13, 2024
 const START_DATE = new Date("2024-11-13T00:00:00Z");
 
 /* ── Skeleton shimmer card shown while loading ── */
