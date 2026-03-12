@@ -2,10 +2,10 @@ import { Youtube, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react
 import { useTheme } from "./ThemeProvider";
 
 const socials = [
-  { icon: Youtube, href: "https://www.youtube.com/@ritz7ai", label: "YouTube" },
-  { icon: Instagram, href: "https://www.instagram.com/abcdbyritz7/", label: "Instagram" },
-  { icon: Linkedin, href: "https://www.linkedin.com/showcase/abcd-by-ritz7/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/abcdbyritz7", label: "Twitter" },
+  { icon: Youtube, href: "https://www.youtube.com/@ritz7ai", label: "YouTube", color: "text-[#FF0000] border-[#FF0000]/20 shadow-[0_0_8px_rgba(255,0,0,0.1)] hover:border-[#FF0000]/50 hover:shadow-[0_0_12px_rgba(255,0,0,0.3)]" },
+  { icon: Instagram, href: "https://www.instagram.com/abcdbyritz7/", label: "Instagram", color: "text-[#E4405F] border-[#E4405F]/20 shadow-[0_0_8px_rgba(228,64,95,0.1)] hover:border-[#E4405F]/50 hover:shadow-[0_0_12px_rgba(228,64,95,0.3)]" },
+  { icon: Linkedin, href: "https://www.linkedin.com/showcase/abcd-by-ritz7/", label: "LinkedIn", color: "text-[#0A66C2] border-[#0A66C2]/20 shadow-[0_0_8px_rgba(10,102,194,0.1)] hover:border-[#0A66C2]/50 hover:shadow-[0_0_12px_rgba(10,102,194,0.3)]" },
+  { icon: Twitter, href: "https://x.com/abcdbyritz7", label: "Twitter", color: "text-[#1DA1F2] border-[#1DA1F2]/20 shadow-[0_0_8px_rgba(29,161,242,0.1)] hover:border-[#1DA1F2]/50 hover:shadow-[0_0_12px_rgba(29,161,242,0.3)]" },
 ];
 
 export const Footer = () => {
@@ -32,14 +32,14 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-sm font-semibold text-foreground">Socials</h4>
             <div className="flex gap-3">
-              {socials.map(({ icon: Icon, href, label }) => (
+              {socials.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-border/50 text-muted-foreground transition-all hover:border-primary/50 hover:text-primary hover:shadow-[0_0_12px_hsl(var(--primary)/0.3)] dark:border-white/10"
+                  className={`flex h-10 w-10 items-center justify-center rounded-full border border-border/50 text-muted-foreground transition-all duration-300 dark:border-white/10 ${color}`}
                 >
                   <Icon className="h-4 w-4" />
                 </a>
