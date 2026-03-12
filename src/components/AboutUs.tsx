@@ -122,7 +122,7 @@ export const AboutUs = () => {
 
                   {/* Subscribe Button */}
                   <a
-                    href="https://www.youtube.com/@ritz7hq"
+                    href="https://www.youtube.com/@ritz7ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group/btn flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-sm font-bold transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 hover:-translate-y-0.5 active:translate-y-0"

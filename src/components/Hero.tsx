@@ -70,7 +70,7 @@ export const Hero = () => {
           </a>
 
           <a 
-            href="https://www.youtube.com/@ritz7hq"
+            href="https://www.youtube.com/@ritz7ai"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => {

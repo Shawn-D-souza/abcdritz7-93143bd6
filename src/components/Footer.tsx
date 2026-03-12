@@ -2,7 +2,7 @@ import { Youtube, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react
 import { useTheme } from "./ThemeProvider";
 
 const socials = [
-  { icon: Youtube, href: "https://www.youtube.com/@ritz7hq", label: "YouTube" },
+  { icon: Youtube, href: "https://www.youtube.com/@ritz7ai", label: "YouTube" },
   { icon: Instagram, href: "https://www.instagram.com/abcdbyritz7/", label: "Instagram" },
   { icon: Linkedin, href: "https://www.linkedin.com/showcase/abcd-by-ritz7/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/abcdbyritz7", label: "Twitter" },

@@ -11,7 +11,7 @@ const achievements = [
   {
     monthYear: "March 2024",
     title: "Global AI Hackathon",
-    youtubeUrl: "https://www.youtube.com/@ritz7hq",
+    youtubeUrl: "https://www.youtube.com/@ritz7ai",
     winners: [
       { name: "Alice Smith", avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d", linkedin: "https://www.linkedin.com/in/" },
       { name: "Bob Johnson", avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d", linkedin: "https://www.linkedin.com/in/" },
@@ -20,7 +20,7 @@ const achievements = [
   {
     monthYear: "February 2024",
     title: "Web3 Innovation Challenge",
-    youtubeUrl: "https://www.youtube.com/@ritz7hq",
+    youtubeUrl: "https://www.youtube.com/@ritz7ai",
     winners: [
       { name: "Charlie Davis", avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d", linkedin: "https://www.linkedin.com/in/" },
     ],
@@ -28,7 +28,7 @@ const achievements = [
   {
     monthYear: "January 2024",
     title: "Open Source Code Sprint",
-    youtubeUrl: "https://www.youtube.com/@ritz7hq",
+    youtubeUrl: "https://www.youtube.com/@ritz7ai",
     winners: [
       { name: "Diana Prince", avatar: "https://i.pravatar.cc/150?u=a048581f4e29026701d", linkedin: "https://www.linkedin.com/in/" },
       { name: "Evan Wright", avatar: "https://i.pravatar.cc/150?u=2042581f4e29026704d", linkedin: "https://www.linkedin.com/in/" },
@@ -38,7 +38,7 @@ const achievements = [
   {
     monthYear: "December 2023",
     title: "Cyber Security CTF",
-    youtubeUrl: "https://www.youtube.com/@ritz7hq",
+    youtubeUrl: "https://www.youtube.com/@ritz7ai",
     winners: [
       { name: "George King", avatar: "https://i.pravatar.cc/150?u=a042581f4e29026700d", linkedin: "https://www.linkedin.com/in/" },
       { name: "Hannah Lee", avatar: "https://i.pravatar.cc/150?u=a042581f4e29026025d", linkedin: "https://www.linkedin.com/in/" },
@@ -47,7 +47,7 @@ const achievements = [
   {
     monthYear: "November 2023",
     title: "FinTech App Showdown",
-    youtubeUrl: "https://www.youtube.com/@ritz7hq",
+    youtubeUrl: "https://www.youtube.com/@ritz7ai",
     winners: [
       { name: "Ivan Drago", avatar: "https://i.pravatar.cc/150?u=a042581f4e29026709d", linkedin: "https://www.linkedin.com/in/" },
     ],
