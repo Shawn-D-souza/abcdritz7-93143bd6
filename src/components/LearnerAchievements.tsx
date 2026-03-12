@@ -67,9 +67,9 @@ export function LearnerAchievements() {
         {/* Heading */}
         <div className="mb-8 md:mb-10 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-foreground">
-            Learner{" "}
+            Hall of{" "}
             <span className="bg-gradient-to-r from-primary via-blue-400 to-[#0756B1] bg-clip-text text-transparent">
-              Achievements
+              Fame
             </span>
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">

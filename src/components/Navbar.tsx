@@ -12,7 +12,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    name: "Success Stories",
+    name: "Hall of Fame",
     href: "#learner-achievements",
   },
   {
@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
     name: "About Us",
     dropdown: [
       { label: "About Us", href: "#about-us" },
-      { label: "1000 Days Journey & Milestones", href: "#journey" },
+      { label: "1000 Days Journey", href: "#journey" },
       { label: "The Team", href: "#team" },
     ],
   },
