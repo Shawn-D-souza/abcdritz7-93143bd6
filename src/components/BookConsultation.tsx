@@ -53,8 +53,8 @@ export const BookConsultation = () => {
                      className="relative w-full h-full rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl z-10 bg-background/50"
                   >
                     <img 
-                      src="/rithesh_hegde.avif" 
-                      alt="Rithesh Hegde, CEO of Ritz7" 
+                      src="/ritesh_hegde.avif" 
+                      alt="Ritesh Hegde, CEO of Ritz7" 
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent mix-blend-overlay" />
@@ -62,7 +62,7 @@ export const BookConsultation = () => {
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-foreground">
-                  Rithesh Hegde
+                  Ritesh Hegde
                 </h3>
                 <p className="text-primary font-medium tracking-wide text-sm md:text-base mb-8 flex items-center justify-center md:justify-start gap-2">
                   <Star className="w-4 h-4 fill-primary text-primary" />

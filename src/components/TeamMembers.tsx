@@ -7,7 +7,7 @@ const teamMembers = [
     name: "Ritesh Hegde",
     role: "CEO & Founder",
     description: "Spearheading innovation in NoCode and AI solutions. The creative force behind Ritz7.",
-    image: "/team/rithesh_hegde.avif",
+    image: "/team/ritesh_hegde.avif",
     linkedin: "https://www.linkedin.com/in/ritztalks/",
     accent: "from-blue-500 to-cyan-400"
   },
