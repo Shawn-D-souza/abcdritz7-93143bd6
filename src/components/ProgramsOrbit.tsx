@@ -10,7 +10,10 @@ const orbitItems = [
   { label: "ElevenLabs", emoji: "🎙️", color: "from-pink-400 to-rose-600" },
 ];
 
+const ORBIT_RADIUS = 170;
+
 export const ProgramsOrbit = () => {
+  const radius = ORBIT_RADIUS;
   return (
     <div className="relative hidden lg:flex flex-col items-center justify-center min-h-[400px] w-full">
 
