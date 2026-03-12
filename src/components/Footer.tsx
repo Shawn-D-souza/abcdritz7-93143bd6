@@ -66,8 +66,8 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-sm font-semibold text-foreground">Legal</h4>
             <div className="flex flex-col gap-2">
-              <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">Privacy Policy</a>
-              <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">Community Guidelines</a>
+              <a href="/privacy-policy" className="text-sm text-muted-foreground transition-colors hover:text-primary">Privacy Policy</a>
+              <a href="/community-guidelines" className="text-sm text-muted-foreground transition-colors hover:text-primary">Community Guidelines</a>
             </div>
           </div>
         </div>
