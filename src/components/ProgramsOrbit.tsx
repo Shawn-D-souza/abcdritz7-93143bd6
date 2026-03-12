@@ -10,7 +10,10 @@ const orbitItems = [
   { label: "ElevenLabs", emoji: "🎙️", color: "from-pink-400 to-rose-600" },
 ];
 
+const ORBIT_RADIUS = 170;
+
 export const ProgramsOrbit = () => {
+  const radius = ORBIT_RADIUS;
   return (
     <div className="relative hidden lg:flex flex-col items-center justify-center min-h-[400px] w-full">
 
@@ -57,45 +60,34 @@ export const ProgramsOrbit = () => {
           </div>
         </motion.div>
 
-        {/* Orbiting Logo Pills */}
-        {orbitItems.map((item, i) => {
-          const angle = (360 / orbitItems.length) * i;
-          const radius = 170; // px from center
-          const duration = 18 + i * 2; // stagger speeds slightly
+        {/* Single rotating container keeps all pills evenly spaced */}
+        <motion.div
+          className="absolute z-20"
+          style={{
+            width: radius * 2,
+            height: radius * 2,
+            top: "50%",
+            left: "50%",
+            marginTop: -radius,
+            marginLeft: -radius,
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        >
+          {orbitItems.map((item, i) => {
+            const angle = (360 / orbitItems.length) * i;
+            const rad = (angle * Math.PI) / 180;
+            const x = radius + Math.cos(rad) * radius - 40;
+            const y = radius + Math.sin(rad) * radius - 14;
 
-          return (
-            <motion.div
-              key={item.label}
-              className="absolute z-20"
-              style={{
-                top: "50%",
-                left: "50%",
-              }}
-              animate={{
-                rotate: [angle, angle + 360],
-              }}
-              transition={{
-                duration,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
+            return (
               <motion.div
+                key={item.label}
                 className="absolute"
-                style={{
-                  // Position pill at radius distance from center
-                  top: -radius,
-                  left: -40, // half pill width approx
-                }}
+                style={{ left: x, top: y }}
                 // Counter-rotate so text stays upright
-                animate={{
-                  rotate: [-(angle), -(angle + 360)],
-                }}
-                transition={{
-                  duration,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
+                animate={{ rotate: -360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
                 <motion.div
                   whileHover={{ scale: 1.2 }}
@@ -107,9 +99,9 @@ export const ProgramsOrbit = () => {
                   </span>
                 </motion.div>
               </motion.div>
-            </motion.div>
-          );
-        })}
+            );
+          })}
+        </motion.div>
 
         {/* Orbit track ring (visual guide) */}
         <div
