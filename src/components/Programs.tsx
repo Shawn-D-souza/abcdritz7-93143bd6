@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Code, Brain, Rocket, Clock } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { ProgramsOrbit } from "./ProgramsOrbit";
 
 export const Programs = () => {
   const [rippleStyle, setRippleStyle] = useState({});
@@ -105,121 +106,8 @@ export const Programs = () => {
               </motion.div>
             </div>
 
-            {/* Right Column: Visually Stunning Interactive Animation */}
-            <div className="relative hidden lg:flex flex-col items-center justify-center min-h-[400px] w-full perspective-1000">
-              
-              {/* Core Glowing Orb System */}
-              <div className="relative w-64 h-64 flex items-center justify-center transform-style-3d">
-                
-                {/* Outer Ambient Glow */}
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-blue-500/30 rounded-full blur-[60px]"
-                />
-
-                {/* 3D Rotating Rings */}
-                <motion.div
-                  animate={{ rotateX: [0, 360], rotateY: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full border-t border-l border-blue-400/40 shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                  style={{ transformStyle: 'preserve-3d' }}
-                />
-                <motion.div
-                  animate={{ rotateX: [360, 0], rotateZ: [0, 360] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 rounded-full border-b border-r border-purple-400/40 border-dashed shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                  style={{ transformStyle: 'preserve-3d' }}
-                />
-                <motion.div
-                  animate={{ rotateY: [360, 0], rotateZ: [360, 0] }}
-                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-8 rounded-full border border-teal-400/30 shadow-[0_0_20px_rgba(45,212,191,0.2)]"
-                  style={{ transformStyle: 'preserve-3d' }}
-                />
-
-                {/* Central Premium Emblem */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10], scale: [0.95, 1.05, 0.95] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative z-10 w-24 h-24 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-500 p-[3px] shadow-[0_0_40px_rgba(99,102,241,0.5)]"
-                >
-                  <div className="absolute inset-0 rounded-full bg-white/20 blur-sm mix-blend-overlay" />
-                  <div className="w-full h-full bg-[#0a192f] rounded-full flex items-center justify-center relative overflow-hidden backdrop-blur-2xl">
-                    <motion.div 
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(255,255,255,0.8)_360deg)]" 
-                    />
-                    <div className="absolute inset-[2px] bg-[#0f2347] rounded-full flex items-center justify-center">
-                      <Brain className="w-10 h-10 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Interactive Floating Cards */}
-                <motion.div
-                  initial={{ opacity: 0, x: 40, y: -40 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
-                  whileHover={{ scale: 1.1, y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)" }}
-                  className="absolute top-[-10%] -right-[25%] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl flex items-center gap-3 cursor-pointer group"
-                >
-                  <div className="bg-gradient-to-br from-emerald-400 to-emerald-600 p-2 rounded-xl shadow-inner group-hover:rotate-12 transition-transform">
-                    <Clock className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                     <p className="text-white font-bold text-sm tracking-wide">Flexible Pacing</p>
-                    <div className="flex items-center gap-1 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <p className="text-emerald-100/70 text-xs text-left">Learn at your speed</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: -50, y: 40 }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 100, delay: 0.5 }}
-                  whileHover={{ scale: 1.1, y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)" }}
-                  className="absolute bottom-[-10%] -left-[35%] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl flex items-center gap-3 cursor-pointer group"
-                >
-                  <div className="bg-gradient-to-br from-purple-400 to-purple-600 p-2 rounded-xl shadow-inner group-hover:-rotate-12 transition-transform">
-                    <Rocket className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-sm tracking-wide">Real-world Projs</p>
-                     <div className="flex items-center gap-1 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                      <p className="text-purple-100/70 text-xs text-left">Deploy immediately</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 100, delay: 0.7 }}
-                  whileHover={{ scale: 1.1, y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)" }}
-                  className="absolute -bottom-[25%] right-[0%] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-2xl flex items-center gap-3 cursor-pointer group"
-                >
-                  <div className="bg-gradient-to-br from-blue-400 to-blue-600 p-2 rounded-xl shadow-inner group-hover:rotate-180 transition-transform duration-500">
-                    <Code className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                     <p className="text-white font-bold text-sm tracking-wide">Modern Stack</p>
-                     <div className="flex items-center gap-1 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                      <p className="text-blue-100/70 text-xs text-left">No-code & AI</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-              </div>
-            </div>
+            {/* Right Column: Orbit Animation */}
+            <ProgramsOrbit />
           </div>
         </motion.div>
       </div>
