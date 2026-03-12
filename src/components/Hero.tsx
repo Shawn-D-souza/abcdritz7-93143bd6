@@ -1,6 +1,7 @@
 import { HeroCodeCard } from "./HeroCodeCard";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Youtube } from "lucide-react";
 
 export const Hero = () => {
   const [rippleStyle, setRippleStyle] = useState({});
@@ -94,6 +95,7 @@ export const Hero = () => {
             }}
             className="relative w-full flex-1 overflow-hidden rounded-full border border-primary/20 bg-primary/5 px-4 py-3.5 text-center text-sm font-semibold text-foreground backdrop-blur-md transition-all hover:bg-primary/10 dark:border-primary/30 dark:bg-white/5 dark:hover:bg-white/10 sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-base flex items-center justify-center gap-2"
           >
+            <Youtube className="relative z-10 size-5 text-red-600" />
             <span className="relative z-10 whitespace-nowrap">Watch on YouTube</span>
             {Object.keys(rippleStyle).length > 0 && (
               <span
