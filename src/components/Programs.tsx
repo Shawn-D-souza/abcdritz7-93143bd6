@@ -85,14 +85,12 @@ export const Programs = () => {
                 className="pt-1"
               >
                 <a 
-                  href="https://abcd-master.vercel.app/courses" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="#programs" 
                   onClick={handleRipple}
-                  className="group relative inline-flex overflow-hidden rounded-xl bg-white px-6 py-3 text-center font-bold text-primary shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-white/20 sm:text-base items-center gap-2"
+                  className="group relative inline-flex overflow-hidden rounded-xl bg-white px-10 py-3 text-center font-bold text-primary shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-white/20 sm:text-base items-center justify-center min-w-[200px]"
                 >
                   <span className="relative z-10">Explore the Programs</span>
-                  <ArrowRight className="w-4 h-4 relative z-10 transform transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="absolute right-4 w-4 h-4 transform transition-transform group-hover:translate-x-1" />
                   
                   {Object.keys(rippleStyle).length > 0 && (
                     <span
