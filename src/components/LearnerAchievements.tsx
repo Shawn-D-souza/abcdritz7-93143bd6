@@ -239,11 +239,21 @@ export function LearnerAchievements() {
       >
         <div className="max-w-7xl mx-auto relative z-10">
           {sectionHeader}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {[3, 1, 2].map((count, i) => (
-              <SkeletonCard key={i} avatarCount={count} />
-            ))}
-          </div>
+          <Carousel
+            opts={{ align: "start", dragFree: true }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4 md:-ml-6">
+              {[3, 1, 2].map((count, i) => (
+                <CarouselItem
+                  key={i}
+                  className="pl-4 md:pl-6 basis-[85%] sm:basis-[70%] md:basis-1/2 lg:basis-1/3 select-none"
+                >
+                  <SkeletonCard avatarCount={count} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     );
