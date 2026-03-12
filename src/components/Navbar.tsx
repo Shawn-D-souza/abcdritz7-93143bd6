@@ -66,7 +66,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b border-border/40 bg-background/80 px-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-black/20 md:px-12">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b-2 border-primary/40 bg-white px-6 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 dark:border-white/30 dark:bg-black/60 dark:shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)] md:px-12">
       {/* Left: Logo */}
       <div className="flex h-full items-center">
         <a href="/" className="flex items-center">
