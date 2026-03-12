@@ -10,6 +10,7 @@ import { BookConsultation } from "@/components/BookConsultation";
 import { TeamMembers } from "@/components/TeamMembers";
 import { Blogs } from "@/components/Blogs";
 import { FAQ } from "@/components/FAQ";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <Blogs />
         <FAQ />
       </main>
+      <Footer />
     </div>
   );
 };
