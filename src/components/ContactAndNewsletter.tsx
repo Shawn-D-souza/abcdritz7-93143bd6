@@ -68,7 +68,7 @@ export const ContactAndNewsletter = () => {
             </div>
           </div>
 
-          <div className="relative z-10 mt-8">
+          <div className="relative z-10 mt-5 pl-16">
             <a href="mailto:support@ritz7.com">
               <Button size="lg" className="group/btn gap-2 rounded-xl px-6 text-base">
                 <Mail className="h-5 w-5" />
