@@ -41,7 +41,7 @@ export const ContactAndNewsletter = () => {
   };
 
   return (
-    <section className="relative py-20 px-6 md:px-12">
+    <section className="relative py-10 px-6 md:px-12">
       <div className="mx-auto max-w-7xl grid gap-6 md:grid-cols-2">
         {/* Contact Box */}
         <motion.div
