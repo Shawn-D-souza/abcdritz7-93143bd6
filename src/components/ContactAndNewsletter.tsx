@@ -12,9 +12,16 @@ export const ContactAndNewsletter = () => {
   const [subscribed, setSubscribed] = useState(false);
   const { toast } = useToast();
 
+  const isValidEmail = (value: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+  };
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !isValidEmail(email.trim())) {
+      toast({ title: "Invalid email", description: "Please enter a valid email address (e.g. you@example.com).", variant: "destructive" });
+      return;
+    }
 
     setLoading(true);
     try {
