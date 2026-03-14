@@ -49,23 +49,23 @@ export const ContactAndNewsletter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between dark:border-white/10"
+          className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-6 md:p-8 flex flex-col justify-between dark:border-white/10"
         >
           {/* Decorative gradient blob */}
           <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition-all duration-500 group-hover:bg-primary/20" />
-          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-accent/10 blur-2xl" />
 
-          <div className="relative z-10">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20">
-              <MessageCircle className="h-7 w-7 text-primary" />
+          <div className="relative z-10 flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20">
+              <MessageCircle className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground md:text-3xl">
-              Let's Build Something{" "}
-              <span className="text-primary">Together</span>
-            </h3>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              Got a question, idea, or just want to say hello? We're always excited to hear from passionate builders. Drop us a line and let's start a conversation.
-            </p>
+            <div>
+              <h3 className="text-xl font-bold text-foreground md:text-2xl">
+                Let's Build Something <span className="text-primary">Together</span>
+              </h3>
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                Got a question, idea, or just want to say hello? Drop us a line and let's start a conversation.
+              </p>
+            </div>
           </div>
 
           <div className="relative z-10 mt-8">
