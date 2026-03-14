@@ -85,26 +85,26 @@ export const ContactAndNewsletter = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between dark:border-white/10"
+          className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 backdrop-blur-sm p-6 md:p-8 flex flex-col justify-between dark:border-white/10"
         >
           {/* Decorative gradient blob */}
           <div className="absolute -top-16 -left-16 h-40 w-40 rounded-full bg-primary/8 blur-3xl transition-all duration-500 group-hover:bg-primary/15" />
-          <div className="absolute -bottom-12 -right-12 h-36 w-36 rounded-full bg-accent/10 blur-2xl" />
 
-          <div className="relative z-10">
-            <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20">
-              <Sparkles className="h-7 w-7 text-primary" />
+          <div className="relative z-10 flex items-start gap-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20">
+              <Sparkles className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground md:text-3xl">
-              Stay in the{" "}
-              <span className="text-primary">Loop</span>
-            </h3>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
-              Join 5,000+ no-code enthusiasts getting weekly tips, tool drops, and early access to workshops. No spam — just pure builder fuel.
-            </p>
+            <div>
+              <h3 className="text-xl font-bold text-foreground md:text-2xl">
+                Stay in the <span className="text-primary">Loop</span>
+              </h3>
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                Join 5,000+ no-code enthusiasts getting weekly tips, tool drops, and early access to workshops.
+              </p>
+            </div>
           </div>
 
-          <div className="relative z-10 mt-8">
+          <div className="relative z-10 mt-5 pl-16">
             {subscribed ? (
               <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
                 <CheckCircle2 className="h-6 w-6 text-primary" />
