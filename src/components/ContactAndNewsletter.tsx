@@ -12,9 +12,16 @@ export const ContactAndNewsletter = () => {
   const [subscribed, setSubscribed] = useState(false);
   const { toast } = useToast();
 
+  const isValidEmail = (value: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+  };
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !isValidEmail(email.trim())) {
+      toast({ title: "Invalid email", description: "Please enter a valid email address (e.g. you@example.com).", variant: "destructive" });
+      return;
+    }
 
     setLoading(true);
     try {
@@ -108,7 +115,7 @@ export const ContactAndNewsletter = () => {
             {subscribed ? (
               <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
                 <CheckCircle2 className="h-6 w-6 text-primary" />
-                <span className="font-medium text-foreground">You're in! Check your inbox 🚀</span>
+                <span className="font-medium text-foreground">You're on the list! Welcome to the community 🚀</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex gap-3">
