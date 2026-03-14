@@ -11,6 +11,7 @@ import { BookConsultation } from "@/components/BookConsultation";
 import { TeamMembers } from "@/components/TeamMembers";
 import { Blogs } from "@/components/Blogs";
 import { FAQ } from "@/components/FAQ";
+import { ContactAndNewsletter } from "@/components/ContactAndNewsletter";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
