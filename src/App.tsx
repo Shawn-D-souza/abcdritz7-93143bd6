@@ -21,6 +21,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/programs" element={<Programs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/community-guidelines" element={<CommunityGuidelines />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
