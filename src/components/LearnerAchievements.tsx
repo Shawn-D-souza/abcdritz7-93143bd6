@@ -212,9 +212,6 @@ export function LearnerAchievements() {
   /* ── Section wrapper & heading (shared by loading / loaded states) ── */
   const sectionHeader = (
     <>
-      {/* Ambient bg glow */}
-      <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
-
       <div className="mb-8 md:mb-10 flex flex-col items-center text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-foreground">
           Hall of{" "}
@@ -235,7 +232,7 @@ export function LearnerAchievements() {
     return (
       <section
         id="learner-achievements"
-        className="py-6 md:py-10 px-6 md:px-12 bg-background/50 relative overflow-hidden"
+        className="py-6 md:py-10 px-6 md:px-12 relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto relative z-10">
           {sectionHeader}
@@ -268,7 +265,7 @@ export function LearnerAchievements() {
     return (
       <section
         id="learner-achievements"
-        className="py-6 md:py-10 px-6 md:px-12 bg-background/50 relative overflow-hidden"
+        className="py-6 md:py-10 px-6 md:px-12 relative overflow-hidden"
       >
         <div className="max-w-7xl mx-auto relative z-10">
           {sectionHeader}
@@ -291,7 +288,7 @@ export function LearnerAchievements() {
   return (
     <section
       id="learner-achievements"
-      className="py-6 md:py-10 px-6 md:px-12 bg-background/50 relative overflow-hidden"
+      className="py-6 md:py-10 px-6 md:px-12 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {sectionHeader}

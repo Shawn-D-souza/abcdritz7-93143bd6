@@ -67,10 +67,10 @@ export const ContactAndNewsletter = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground md:text-2xl">
-                Let's Build Something <span className="text-primary">Together</span>
+                Let's <span className="text-primary">Collab</span>
               </h3>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
-                Got a question, idea, or just want to say hello? Drop us a line and let's start a conversation.
+                Have an idea, a project, or just want to explore what we could create together? Let's talk — great things are built through collaboration.
               </p>
             </div>
           </div>
@@ -79,7 +79,7 @@ export const ContactAndNewsletter = () => {
             <a href="mailto:support@ritz7.com">
               <Button size="lg" className="group/btn gap-2 rounded-xl px-6 text-base">
                 <Mail className="h-5 w-5" />
-                Say Hello
+                Let's Collab
                 <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
               </Button>
             </a>
@@ -103,10 +103,10 @@ export const ContactAndNewsletter = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground md:text-2xl">
-                Stay in the <span className="text-primary">Loop</span>
+                Get Insights That <span className="text-primary">Actually Matter</span>
               </h3>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
-                Join 5,000+ no-code enthusiasts getting weekly tips, tool drops, and early access to workshops.
+                Join 5,000+ no-code builders and get curated insights, tool picks, and exclusive workshop access — delivered when it's worth your time.
               </p>
             </div>
           </div>

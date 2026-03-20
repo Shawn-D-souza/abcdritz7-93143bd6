@@ -52,7 +52,9 @@ const reviews = [
 
 export const WallOfLove = () => {
   return (
-    <section className="py-6 md:py-10 relative overflow-hidden" id="wall-of-love">
+    <section className="py-6 md:py-10 bg-background/50 relative overflow-hidden" id="wall-of-love">
+      {/* Ambient bg glow */}
+      <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-8 md:mb-10">
           <motion.h2 
