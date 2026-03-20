@@ -25,7 +25,7 @@ type PhaseRow = {
 };
 
 // Start date corresponding to Day 1
-const START_DATE = new Date("2024-11-13T00:00:00Z");
+const START_DATE = new Date("2024-11-30T00:00:00Z");
 
 /* ── Skeleton shimmer card shown while loading ── */
 function SkeletonPhaseCard() {
@@ -59,8 +59,8 @@ export const Journey1000Days = () => {
 
   useEffect(() => {
     const today = new Date();
-    const diffTime = Math.abs(today.getTime() - START_DATE.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffTime = today.getTime() - START_DATE.getTime();
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
     setCurrentDay(diffDays);
   }, []);
 
