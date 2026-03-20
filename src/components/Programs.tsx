@@ -44,7 +44,7 @@ export const Programs = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-6 md:p-8 lg:p-10">
             
             {/* Left Column: Content */}
-            <div className="flex flex-col items-start text-left space-y-5">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-5">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
