@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Clock, Users, Star, ArrowRight, Sparkles,
   BookOpen, Brain, Code, Rocket, Zap, GraduationCap,
-  TrendingUp, X, Menu, User, Mail, Phone,
+  TrendingUp, X, User, Mail, Phone,
   SlidersHorizontal, ArrowUpDown, Check, ChevronDown, Briefcase, Laptop
 } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
@@ -158,7 +158,7 @@ const Programs = () => {
   const [activeCategory, setActiveCategory] = useState<CourseCategory>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("popular");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [showRegistration, setShowRegistration] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const [showSortMenu, setShowSortMenu] = useState(false);
@@ -243,42 +243,40 @@ const Programs = () => {
 
         <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />
-          <button onClick={() => setShowRegistration(true)} className="hidden md:block rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30">
-            Get Started
-          </button>
-          <button className="p-2 md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <button onClick={() => setShowRegistration(true)} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30 md:px-5 flex items-center gap-1.5">
+            <User className="w-4 h-4 md:hidden" />
+            <span className="hidden md:inline">Get Started</span>
+            <span className="md:hidden">Get Started</span>
           </button>
         </div>
       </nav>
 
-      {/* ───── Mobile menu ───── */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="fixed inset-x-0 top-16 z-40 border-b border-border/50 bg-background/95 p-4 backdrop-blur-xl md:hidden">
-            <div className="flex flex-col gap-2">
-              <div className="relative mb-2">
-                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <input type="text" placeholder="Search programs..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="w-full rounded-xl border border-border/60 bg-muted/40 py-3 pl-10 pr-10 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" />
-                {searchQuery && <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-full text-muted-foreground"><X className="w-3.5 h-3.5" /></button>}
-              </div>
-              {categoryList.map((cat) => (
-                <button key={cat.value} onClick={() => { setActiveCategory(cat.value); setMobileMenuOpen(false); }} className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${activeCategory === cat.value ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"}`}>
-                  {categoryIcons[cat.value]}
-                  {cat.label}
-                </button>
-              ))}
-              <button onClick={() => { setShowRegistration(true); setMobileMenuOpen(false); }} className="mt-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">Get Started</button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* ───── Main ───── */}
       <main className="pt-16">
         {/* Sticky filter bar */}
         <section className="sticky top-16 z-30 border-b border-border/30 bg-background/90 backdrop-blur-xl">
           <div className="container mx-auto px-4">
+            {/* Mobile search bar */}
+            <div className="flex md:hidden pt-3 pb-1">
+              <div className="relative w-full">
+                <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Search programs, topics, or skills..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-xl border border-border/60 bg-muted/40 py-2.5 pl-10 pr-10 text-sm transition-all focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-background placeholder:text-muted-foreground"
+                />
+                {searchQuery && (
+                  <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted">
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+            </div>
+
             <div className="flex items-center gap-3 py-3">
               {/* Scrollable category pills */}
               <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide flex-1 min-w-0">
