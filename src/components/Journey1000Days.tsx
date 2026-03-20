@@ -240,23 +240,29 @@ export const Journey1000Days = () => {
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={"auto"}
-              initialSlide={0} // Latest phase by default
+              initialSlide={phases.length - 1}
               keyboard={{ enabled: true }}
               navigation={{
                 nextEl: '.custom-next',
                 prevEl: '.custom-prev',
               }}
               coverflowEffect={{
-                rotate: 40, // Stronger angle for cylinder look
+                rotate: 40,
                 stretch: 0,
-                depth: 300, // Deeper z-index depth
+                depth: 300,
                 modifier: 1.2,
-                slideShadows: false, // Disabling shadows because we use custom CSS borders
+                slideShadows: false,
+              }}
+              breakpoints={{
+                768: {
+                  slidesOffsetBefore: 500,
+                  slidesOffsetAfter: 120,
+                },
               }}
               modules={[EffectCoverflow, Keyboard, Navigation]}
-              className="w-full py-4 px-4 md:px-0"
+              className="phase-swiper w-full py-4 px-4 md:px-0"
             >
-              {[...phases].reverse().map((phase, idx) => (
+              {phases.map((phase, idx) => (
                 <SwiperSlide key={phase.id ?? idx} className="!w-[280px] sm:!w-[340px] md:!w-[420px]">
                   <PhaseCard phase={phase} />
                 </SwiperSlide>
