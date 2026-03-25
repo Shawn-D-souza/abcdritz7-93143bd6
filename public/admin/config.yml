@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: Shawn-D-souza/abcdritz7-93143bd6
+  branch: main
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "Example: my-awesome-post (No spaces!)" }
+      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Last Updated", name: "updated_date", widget: "datetime", required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
