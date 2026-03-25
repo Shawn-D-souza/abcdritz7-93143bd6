@@ -51,20 +51,19 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     <p className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6" {...props} />
   ),
   blockquote: ({ node, ...props }) => (
-    <div className="relative my-8 overflow-hidden rounded-xl border-l-[6px] border-primary bg-muted/40 px-6 py-6 shadow-sm transition-all hover:shadow-md hover:bg-muted/60">
+    <div className="relative my-8 overflow-hidden rounded-xl border-l-[6px] border-primary bg-muted/40 px-6 py-5 shadow-sm transition-all hover:shadow-md hover:bg-muted/60">
       <Quote className="absolute right-4 top-4 h-12 w-12 text-primary/10 -z-10" />
-      <blockquote className="text-xl font-medium italic leading-relaxed text-foreground" {...props} />
+      <blockquote className="text-xl font-medium italic leading-relaxed text-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0" {...props} />
     </div>
   ),
   a: ({ node, ...props }) => (
     <a
-      className="font-medium text-primary underline underline-offset-4 decoration-primary/30 transition-all hover:decoration-primary hover:text-primary/80 inline-flex items-center gap-1"
+      className="font-medium text-primary underline underline-offset-4 decoration-primary/30 transition-all hover:decoration-primary hover:text-primary/80"
       target="_blank"
       rel="noopener noreferrer"
       {...props}
     >
       {props.children}
-      <LinkIcon className="h-3 w-3 inline-block opacity-70" />
     </a>
   ),
   ul: ({ node, ...props }) => (
@@ -74,6 +73,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     <ol className="my-6 ml-6 list-decimal space-y-2 text-muted-foreground text-lg leading-7" {...props} />
   ),
   li: ({ node, ...props }) => <li className="pl-2" {...props} />,
+  strong: ({ node, ...props }) => <strong className="font-bold text-foreground" {...props} />,
   code: ({ node, inline, className, children, ...props }: any) => {
     const match = /language-(\w+)/.exec(className || "");
     const [copied, setCopied] = React.useState(false);
@@ -134,25 +134,38 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
   ),
   table: ({ node, ...props }) => (
     <div className="my-8 w-full overflow-y-auto rounded-xl border bg-card shadow-sm">
-      <Table {...props} />
+      <Table className="border-collapse" {...props} />
     </div>
   ),
   tr: ({ node, ...props }) => <TableRow className="hover:bg-muted/50 transition-colors" {...props} />,
   th: ({ node, ...props }) => (
-    <TableHead className="font-semibold text-foreground bg-muted/30 py-4 px-4 text-left whitespace-nowrap" {...props} />
+    <TableCell className="py-4 px-4 leading-relaxed border border-border font-normal text-muted-foreground align-middle" {...props} />
   ),
-  td: ({ node, ...props }) => <TableCell className="py-4 px-4 leading-relaxed" {...props} />,
+  td: ({ node, ...props }) => (
+    <TableCell className="py-4 px-4 leading-relaxed border border-border text-muted-foreground align-middle" {...props} />
+  ),
 
   // Custom Components
   youtube: ({ node, children, ...props }) => {
-    // extract youtube ID
-    const text = String(children);
+    // extract youtube ID from children which might be a string, array, or React node
+    const extractText = (child: any): string => {
+      if (typeof child === 'string') return child;
+      if (Array.isArray(child)) return child.map(extractText).join('');
+      if (child && typeof child === 'object') {
+        if (child.props) {
+          return child.props.href || extractText(child.props.children);
+        }
+      }
+      return '';
+    };
+    
+    const text = extractText(children).trim();
     let videoId = "";
     const match = text.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
     if (match && match[1]) {
       videoId = match[1];
     } else { // Maybe they just put the id
-      videoId = text.trim();
+      videoId = text;
     }
 
     if (!videoId) return null;
@@ -222,32 +235,33 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
   customtable: ({ node, children, ...props }) => {
     const text = String(children).trim();
     const lines = text.split('\n').filter(l => l.trim() !== '');
-    if (lines.length < 2) return null;
+    if (lines.length === 0) return null;
 
-    const headers = lines[0].split('|').map(h => h.trim());
-    const rows = lines.slice(1).map(row => row.split('|').map(c => c.trim()));
+    const allRows = lines.map(line => line.split('|').map(c => c.trim()));
 
     // user requested: if table cell has **bold**, make it bold. 
     // we'll parse the cell string as markdown!
     const renderCellContent = (content: string) => {
-      return <ReactMarkdown components={{ p: React.Fragment }}>{content}</ReactMarkdown>;
+      return (
+        <ReactMarkdown 
+          components={{ 
+            p: React.Fragment,
+            strong: ({ node, ...props }) => <strong className="font-bold text-foreground" {...props} /> 
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      );
     };
 
     return (
       <div className="my-8 w-full overflow-hidden rounded-xl border bg-card/60 backdrop-blur shadow-sm">
-        <Table>
-          <TableHeader>
-            <TableRow className="bg-muted/40 hover:bg-muted/40">
-              {headers.map((h, i) => (
-                <TableHead key={i} className="font-semibold text-foreground py-4 px-5">{h}</TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
+        <Table className="border-collapse">
           <TableBody>
-            {rows.map((row, i) => (
+            {allRows.map((row, i) => (
               <TableRow key={i} className="hover:bg-muted/30 transition-colors">
                 {row.map((cell, j) => (
-                  <TableCell key={j} className="py-4 px-5 leading-relaxed text-muted-foreground font-medium">
+                  <TableCell key={j} className="py-4 px-5 leading-relaxed text-muted-foreground border border-border align-middle">
                     {renderCellContent(cell)}
                   </TableCell>
                 ))}
