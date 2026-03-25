@@ -21,5 +21,6 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Last Updated", name: "updated_date", widget: "datetime", required: false }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
-      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Thumbnail Alt Text", name: "thumbnail_alt", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown", editor_components: ["youtube", "custom-table", "faq", "image", "code-block"] }
