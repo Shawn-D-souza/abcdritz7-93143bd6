@@ -9,5 +9,127 @@
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+
+    <script>
+      // ── 1. YouTube Embed Button ──
+      CMS.registerEditorComponent({
+        id: "youtube",
+        label: "YouTube",
+        fields: [
+          {
+            name: "url",
+            label: "YouTube Video URL",
+            widget: "string",
+          },
+        ],
+        pattern: /^<youtube>(\S+)<\/youtube>$/ms,
+        fromBlock: function (match) {
+          return { url: match[1] };
+        },
+        toBlock: function (obj) {
+          return "<youtube>" + (obj.url || "") + "</youtube>";
+        },
+        toPreview: function (obj) {
+          var url = obj.url || "";
+          var videoId = "";
+          var m = url.match(
+            /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([a-zA-Z0-9_-]{11})/
+          );
+          if (m) videoId = m[1];
+          if (!videoId) return "<p>Invalid YouTube URL</p>";
+          return (
+            '<iframe width="560" height="315" src="https://www.youtube.com/embed/' +
+            videoId +
+            '" frameborder="0" allowfullscreen></iframe>'
+          );
+        },
+      });
+
+      // ── 2. Custom Table Button ──
+      CMS.registerEditorComponent({
+        id: "custom-table",
+        label: "Table",
+        fields: [
+          {
+            name: "content",
+            label: "Table Content (rows separated by newlines, cells by | )",
+            widget: "text",
+            hint: "Example:\nHeader1 | Header2\nCell1 | Cell2",
+          },
+        ],
+        pattern: /^<customtable>([\s\S]*?)<\/customtable>$/ms,
+        fromBlock: function (match) {
+          return {
+            content: match[1].trim(),
+          };
+        },
+        toBlock: function (obj) {
+          var content = obj.content || "";
+          return "<customtable>\n" + content + "\n</customtable>";
+        },
+        toPreview: function (obj) {
+          var content = obj.content || "";
+          var lines = content.split("\n").filter(function (l) {
+            return l.trim() !== "";
+          });
+          var html = "<table><tbody>";
+          for (var i = 0; i < lines.length; i++) {
+            var cells = lines[i].split("|");
+            html += "<tr>";
+            for (var j = 0; j < cells.length; j++) {
+              html += "<td>" + cells[j].trim() + "</td>";
+            }
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+          return html;
+        },
+      });
+
+
+
+      // ── 3. FAQ Box Button ──
+      CMS.registerEditorComponent({
+        id: "faq",
+        label: "FAQ",
+        fields: [
+          {
+            name: "content",
+            label: "FAQ Content (Q: for question, A: for answer, separated by newlines)",
+            widget: "text",
+            hint: "Example:\nQ: What is this?\nA: This is an example.\nQ: How does it work?\nA: It works like this.",
+          },
+        ],
+        pattern: /^<faq>([\s\S]*?)<\/faq>$/ms,
+        fromBlock: function (match) {
+          return {
+            content: match[1].trim(),
+          };
+        },
+        toBlock: function (obj) {
+          var content = obj.content || "";
+          return "<faq>\n" + content + "\n</faq>";
+        },
+        toPreview: function (obj) {
+          var content = obj.content || "";
+          var lines = content.split("\n").filter(function (l) {
+            return l.trim() !== "";
+          });
+          var html = "<div>";
+          for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (line.indexOf("Q:") === 0) {
+              html += "<p><strong>" + line + "</strong></p>";
+            } else if (line.indexOf("A:") === 0) {
+              html += "<p>" + line + "</p>";
+            } else {
+              html += "<p>" + line + "</p>";
+            }
+          }
+          html += "</div>";
+          return html;
+        },
+      });
+    </script>
   </body>
 </html>

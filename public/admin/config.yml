@@ -6,6 +6,8 @@ backend:
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
 
+publish_mode: editorial_workflow
+
 collections:
   - name: "blog"
     label: "Blog"
@@ -20,4 +22,4 @@ collections:
       - { label: "Last Updated", name: "updated_date", widget: "datetime", required: false }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }
       - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", editor_components: ["youtube", "custom-table", "faq", "image", "code-block"] }
