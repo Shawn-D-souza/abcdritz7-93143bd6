@@ -214,20 +214,27 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     if (faqs.length === 0) return null;
 
     return (
-      <div className="my-10 p-8 rounded-2xl border bg-card/40 backdrop-blur shadow-sm">
-        <h3 className="mb-6 text-2xl font-bold tracking-tight text-foreground">Frequently Asked Questions</h3>
-        <Accordion type="single" collapsible className="w-full">
+      <div className="my-12 rounded-2xl border border-border/60 bg-card/20 shadow-sm overflow-hidden backdrop-blur-sm">
+        <div className="px-5 py-6 md:px-8 md:py-8 border-b border-border/60 bg-muted/20">
+          <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2">
+            Frequently Asked Questions
+          </h3>
+          <p className="text-muted-foreground text-base">
+            Everything you need to know about this topic.
+          </p>
+        </div>
+        <div className="divide-y divide-border/60">
           {faqs.map((faq, i) => (
-            <AccordionItem value={`faq-${i}`} key={i} className="border-b border-border/50">
-              <AccordionTrigger className="text-left text-lg font-medium hover:text-primary transition-colors py-4">
+            <div key={i} className="px-5 py-6 md:px-8 md:py-6 hover:bg-card/40 transition-colors duration-300">
+              <h4 className="text-lg md:text-xl font-semibold text-foreground mb-3 leading-tight">
                 {faq.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-7 text-base pb-4">
+              </h4>
+              <div className="text-muted-foreground text-base leading-relaxed">
                 {faq.a}
-              </AccordionContent>
-            </AccordionItem>
+              </div>
+            </div>
           ))}
-        </Accordion>
+        </div>
       </div>
     );
   },
