@@ -1,6 +1,6 @@
 import { getAllBlogs } from "@/lib/blog";
 import { Link } from "react-router-dom";
-import { CalendarIcon, User, ArrowRight } from "lucide-react";
+import { CalendarIcon, User, ArrowRight, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 
@@ -41,30 +41,31 @@ export const Blogs = () => {
                 ) : (
                   <span className="text-muted-foreground text-sm font-medium">No Image</span>
                 )}
-                {/* Permanent gradient for text legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                
-                {/* Meta Information directly on Thumbnail */}
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] font-medium text-white/90 drop-shadow-sm z-10">
-                  <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                    <CalendarIcon className="w-3 h-3" />
+              </div>
+              
+              <div className="p-5 flex flex-col flex-grow">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-muted-foreground mb-3">
+                  <div className="flex items-center gap-1.5">
+                    <CalendarIcon className="w-3.5 h-3.5" />
                     <time dateTime={blog.date}>
                       {format(new Date(blog.date), "MMM d, yyyy")}
                     </time>
                   </div>
-                  <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10">
-                    <User className="w-3 h-3" />
+                  <div className="flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{blog.readingTime}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5" />
                     <span>{blog.author}</span>
                   </div>
                 </div>
-              </div>
-              
-              <div className="p-4 pt-3 flex flex-col flex-grow">
-                <h3 className="text-lg font-bold tracking-tight text-foreground mb-1.5 group-hover:text-primary transition-colors leading-snug">
+
+                <h3 className="text-xl font-bold tracking-tight text-foreground mb-2 group-hover:text-primary transition-colors leading-snug line-clamp-2">
                   {blog.title}
                 </h3>
                 
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {blog.description}
                 </p>
               </div>

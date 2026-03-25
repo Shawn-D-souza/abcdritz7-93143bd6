@@ -8,13 +8,32 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { format } from "date-fns";
-import { CalendarIcon, User, ArrowLeft } from "lucide-react";
+import { CalendarIcon, User, ArrowLeft, Clock, Share2, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function BlogPost() {
   const { id } = useParams();
   const post = id ? getBlogBySlug(id) : undefined;
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: post?.title,
+          text: post?.description,
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.log('Error sharing:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    }
+  };
 
   useEffect(() => {
     if (post) {
@@ -92,6 +111,18 @@ export default function BlogPost() {
                   {format(new Date(post.date), "MMMM d, yyyy")}
                 </time>
               </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-primary" />
+                <span className="text-base">{post.readingTime}</span>
+              </div>
+              <button 
+                onClick={handleShare}
+                className="flex items-center gap-2 text-primary-foreground hover:bg-primary/90 transition-all bg-primary px-5 py-2 rounded-full lg:ml-auto shadow-sm hover:shadow-md"
+                aria-label="Share article"
+              >
+                {isCopied ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
+                <span className="text-sm font-semibold">{isCopied ? "Copied Link" : "Share Article"}</span>
+              </button>
             </div>
           </header>
         </div>

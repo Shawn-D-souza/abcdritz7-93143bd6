@@ -10,10 +10,18 @@ export interface BlogPost {
   thumbnail_alt?: string;
   description: string;
   content: string; // the markdown body
+  readingTime: string;
 }
 
 // Vite feature: import all markdown files as raw strings
 const markdownFiles = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true });
+
+function calculateReadingTime(text: string): string {
+  const wordsPerMinute = 200;
+  const words = text.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+}
 
 function parseFrontmatter(fileContent: string) {
   const match = fileContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -46,6 +54,7 @@ export function getAllBlogs(): BlogPost[] {
       thumbnail_alt: data.thumbnail_alt || data.title,
       description: data.description || "",
       content,
+      readingTime: calculateReadingTime(content),
     };
   });
 
