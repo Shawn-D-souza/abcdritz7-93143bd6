@@ -70,9 +70,13 @@ export function useSEO({
     setLink('canonical', currentUrl); 
 
     if (image) {
+      // Use production URL directly to ensure prerenderer captures the right domain
+      const siteUrl = 'https://ritz7ai.netlify.app'; 
+      
       const absoluteImageUrl = image.startsWith('http') 
         ? image 
-        : `${window.location.origin}${image}`;
+        : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
+        
       setMeta('property', 'og:image', absoluteImageUrl);
       setMeta('name', 'twitter:image', absoluteImageUrl);
     }
