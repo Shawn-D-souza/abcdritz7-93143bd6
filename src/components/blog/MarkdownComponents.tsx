@@ -151,8 +151,8 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     </figure>
   ),
   table: ({ node, ...props }) => (
-    <div className="my-8 w-full overflow-y-auto rounded-xl border bg-card shadow-sm">
-      <Table className="border-collapse" {...props} />
+    <div className="my-8 w-full overflow-x-auto rounded-xl border bg-card shadow-sm">
+      <Table className="border-collapse min-w-full" {...props} />
     </div>
   ),
   tr: ({ node, ...props }) => <TableRow className="hover:bg-muted/50 transition-colors" {...props} />,
@@ -280,8 +280,8 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     };
 
     return (
-      <div className="my-8 w-full overflow-hidden rounded-xl border bg-card/60 backdrop-blur shadow-sm">
-        <Table className="border-collapse">
+      <div className="my-8 w-full overflow-x-auto rounded-xl border bg-card/60 backdrop-blur shadow-sm">
+        <Table className="border-collapse min-w-[600px] md:min-w-full">
           <TableBody>
             {allRows.map((row, i) => (
               <TableRow key={i} className="hover:bg-muted/30 transition-colors">
