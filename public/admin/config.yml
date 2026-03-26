@@ -17,6 +17,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "Example: my-awesome-post (No spaces!)" }
+      - { label: "Category", name: "category", widget: "string", default: "Technology" }
       - { label: "Author", name: "author", widget: "string", default: "Admin" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Last Updated", name: "updated_date", widget: "datetime", required: true }

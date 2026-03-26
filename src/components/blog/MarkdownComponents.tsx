@@ -177,7 +177,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
           src={`https://www.youtube.com/embed/${videoId}`}
           title="YouTube video player"
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; compute-pressure"
           allowFullScreen
           className="absolute inset-0 w-full h-full"
         ></iframe>

@@ -4,46 +4,17 @@ import { getAllBlogs } from "@/lib/blog";
 import { Link, useLocation } from "react-router-dom";
 import { CalendarIcon, User, Clock, Edit3 } from "lucide-react";
 import { format } from "date-fns";
-import { useEffect } from "react";
+import { useSEO } from "@/hooks/useSEO"; // Import the hook
 
 export default function BlogList() {
   const blogs = getAllBlogs();
   const location = useLocation();
 
-  useEffect(() => {
-    const metaTags: HTMLMetaElement[] = [];
-
-    const setMetaTag = (attributeName: string, attributeValue: string, content: string) => {
-      let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`) as HTMLMetaElement;
-      if (element) {
-        element.setAttribute('content', content);
-      } else {
-        element = document.createElement('meta');
-        element.setAttribute(attributeName, attributeValue);
-        element.setAttribute('content', content);
-        document.head.appendChild(element);
-        metaTags.push(element);
-      }
-    };
-
-    const originalTitle = document.title;
-    document.title = "Our Blogs | Ritz7";
-    
-    setMetaTag('name', 'description', "Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.");
-    setMetaTag('property', 'og:title', "Our Blogs | Ritz7");
-    setMetaTag('property', 'og:description', "Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.");
-    setMetaTag('property', 'og:type', 'website');
-    setMetaTag('property', 'og:url', window.location.href);
-
-    return () => {
-      metaTags.forEach(tag => {
-        if (tag.parentNode) {
-          tag.parentNode.removeChild(tag);
-        }
-      });
-      document.title = originalTitle;
-    };
-  }, []);
+  useSEO({
+    title: "Our Blogs | Ritz7",
+    description: "Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.",
+    type: "website",
+  });
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-12 overflow-hidden relative font-sans">
@@ -83,6 +54,11 @@ export default function BlogList() {
                 ) : (
                   <span className="text-muted-foreground text-sm font-medium">No Image</span>
                 )}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary shadow-sm">
+                    {blog.category}
+                  </span>
+                </div>
               </div>
               
               <div className="p-5 flex flex-col flex-grow">

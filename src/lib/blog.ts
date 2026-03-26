@@ -3,6 +3,7 @@ import { parse } from 'yaml';
 export interface BlogPost {
   id: string; // The slug
   title: string;
+  category: string;
   author: string;
   date: string;
   updated_date?: string;
@@ -47,6 +48,7 @@ export function getAllBlogs(): BlogPost[] {
     return {
       id: data.slug || path.split('/').pop()?.replace('.md', '') || "",
       title: data.title || "Untitled",
+      category: data.category || "General", // Fallback if category is missing
       author: data.author || "Admin",
       date: data.date || new Date().toISOString(),
       updated_date: data.updated_date,

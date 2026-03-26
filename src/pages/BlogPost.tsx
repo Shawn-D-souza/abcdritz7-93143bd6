@@ -8,8 +8,9 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { format } from "date-fns";
-import { CalendarIcon, User, ArrowLeft, Clock, Share2, Check } from "lucide-react";
-import { useEffect, useState } from "react";
+import { CalendarIcon, User, ArrowLeft, Clock, Share2, Check, Tag } from "lucide-react";
+import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO"; // Import the new hook
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -17,6 +18,18 @@ export default function BlogPost() {
   const location = useLocation();
   const post = id ? getBlogBySlug(id) : undefined;
   const [isCopied, setIsCopied] = useState(false);
+
+  // Use the custom SEO hook
+  useSEO({
+    title: post ? `${post.title} | Ritz7` : "Post Not Found | Ritz7",
+    description: post?.description || "",
+    image: post?.thumbnail,
+    type: "article",
+    author: post?.author,
+    publishedTime: post?.date,
+    modifiedTime: post?.updated_date,
+    category: post?.category,
+  });
 
   const handleBackToArticles = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -44,61 +57,6 @@ export default function BlogPost() {
       setTimeout(() => setIsCopied(false), 2000);
     }
   };
-
-  useEffect(() => {
-    if (!post) return;
-
-    const metaTags: HTMLMetaElement[] = [];
-
-    const setMetaTag = (attributeName: string, attributeValue: string, content: string) => {
-      let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`) as HTMLMetaElement;
-      if (element) {
-        element.setAttribute('content', content);
-      } else {
-        element = document.createElement('meta');
-        element.setAttribute(attributeName, attributeValue);
-        element.setAttribute('content', content);
-        document.head.appendChild(element);
-        metaTags.push(element);
-      }
-    };
-
-    const originalTitle = document.title;
-    document.title = `${post.title} | Ritz7`;
-    
-    setMetaTag('name', 'description', post.description || "");
-    setMetaTag('name', 'author', post.author);
-    setMetaTag('property', 'og:title', post.title);
-    setMetaTag('property', 'og:description', post.description || "");
-    setMetaTag('property', 'og:type', 'article');
-    setMetaTag('property', 'og:url', window.location.href);
-    
-    if (post.thumbnail) {
-      const imageUrl = post.thumbnail.startsWith('http') 
-        ? post.thumbnail 
-        : `${window.location.origin}${post.thumbnail}`;
-      setMetaTag('property', 'og:image', imageUrl);
-      setMetaTag('name', 'twitter:image', imageUrl);
-    }
-    
-    setMetaTag('property', 'article:published_time', post.date);
-    if (post.updated_date) {
-      setMetaTag('property', 'article:modified_time', post.updated_date);
-    }
-    
-    setMetaTag('name', 'twitter:card', 'summary_large_image');
-    setMetaTag('name', 'twitter:title', post.title);
-    setMetaTag('name', 'twitter:description', post.description || "");
-
-    return () => {
-      metaTags.forEach(tag => {
-        if (tag.parentNode) {
-          tag.parentNode.removeChild(tag);
-        }
-      });
-      document.title = originalTitle;
-    };
-  }, [post]);
 
   if (!post) {
     return (
@@ -140,6 +98,14 @@ export default function BlogPost() {
           )}
 
           <header className={post.thumbnail ? "lg:col-span-5 lg:order-2 order-2" : "lg:col-span-12 order-2"}>
+            {post.category && (
+              <div className="mb-4">
+                <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
+                  {post.category}
+                </span>
+              </div>
+            )}
+            
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-4 leading-[1.12]">
               {post.title}
             </h1>
@@ -153,6 +119,13 @@ export default function BlogPost() {
                 <User className="w-5 h-5 text-primary" />
                 <span className="text-base">{post.author}</span>
               </div>
+              
+              {/* Added category icon next to details */}
+              <div className="flex items-center gap-2">
+                <Tag className="w-5 h-5 text-primary" />
+                <span className="text-base">{post.category}</span>
+              </div>
+
               <div className="flex items-center gap-2">
                 <CalendarIcon className="w-5 h-5 text-primary" />
                 <div className="flex flex-col">

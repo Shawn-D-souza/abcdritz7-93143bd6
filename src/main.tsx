@@ -1,5 +1,24 @@
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
+import React from 'react';
+import { hydrateRoot, createRoot } from 'react-dom/client';
+import App from './App.tsx';
+import './index.css';
 
-createRoot(document.getElementById("root")!).render(<App />);
+const rootElement = document.getElementById('root') as HTMLElement;
+
+// Check if the HTML is already pre-rendered by react-snap
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  // Fallback for normal SPA behavior during local development
+  const root = createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
