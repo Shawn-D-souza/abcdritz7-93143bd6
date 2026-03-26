@@ -10,7 +10,7 @@ import rehypeRaw from "rehype-raw";
 import { format } from "date-fns";
 import { CalendarIcon, User, ArrowLeft, Clock, Share2, Check, Tag } from "lucide-react";
 import { useState } from "react";
-import { useSEO } from "@/hooks/useSEO"; // Import the new hook
+import { useSEO } from "@/hooks/useSEO";
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -19,7 +19,6 @@ export default function BlogPost() {
   const post = id ? getBlogBySlug(id) : undefined;
   const [isCopied, setIsCopied] = useState(false);
 
-  // Use the custom SEO hook
   useSEO({
     title: post ? `${post.title} | Ritz7` : "Post Not Found | Ritz7",
     description: post?.description || "",
@@ -84,7 +83,6 @@ export default function BlogPost() {
           </a>
         </div>
 
-        {/* Top Split Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16">
           
           {post.thumbnail && (
@@ -98,14 +96,6 @@ export default function BlogPost() {
           )}
 
           <header className={post.thumbnail ? "lg:col-span-5 lg:order-2 order-2" : "lg:col-span-12 order-2"}>
-            {post.category && (
-              <div className="mb-4">
-                <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
-                  {post.category}
-                </span>
-              </div>
-            )}
-            
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-4 leading-[1.12]">
               {post.title}
             </h1>
@@ -114,13 +104,12 @@ export default function BlogPost() {
               {post.description}
             </p>
             
-            <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2">
                 <User className="w-5 h-5 text-primary" />
                 <span className="text-base">{post.author}</span>
               </div>
               
-              {/* Added category icon next to details */}
               <div className="flex items-center gap-2">
                 <Tag className="w-5 h-5 text-primary" />
                 <span className="text-base">{post.category}</span>
@@ -128,24 +117,26 @@ export default function BlogPost() {
 
               <div className="flex items-center gap-2">
                 <CalendarIcon className="w-5 h-5 text-primary" />
-                <div className="flex flex-col">
-                  <time className="text-base leading-none mt-1" dateTime={post.date}>
+                <div className="flex flex-col justify-center">
+                  <time className="text-base leading-none" dateTime={post.date}>
                     {format(new Date(post.date), "MMMM d, yyyy")}
                   </time>
                   {post.updated_date && format(new Date(post.date), "yyyy-MM-dd") !== format(new Date(post.updated_date), "yyyy-MM-dd") && (
-                    <time className="text-xs text-muted-foreground/80 mt-1 mb-1" dateTime={post.updated_date}>
+                    <time className="text-xs text-muted-foreground/80 mt-1" dateTime={post.updated_date}>
                       Updated: {format(new Date(post.updated_date), "MMM d, yyyy")}
                     </time>
                   )}
                 </div>
               </div>
+
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />
                 <span className="text-base">{post.readingTime}</span>
               </div>
+              
               <button 
                 onClick={handleShare}
-                className="flex items-center gap-2 text-primary-foreground hover:bg-primary/90 transition-all bg-primary px-5 py-2 rounded-full lg:ml-auto shadow-sm hover:shadow-md"
+                className="flex items-center gap-2 text-primary-foreground hover:bg-primary/90 transition-all bg-primary px-5 py-2 rounded-full shadow-sm hover:shadow-md sm:ml-auto"
                 aria-label="Share article"
               >
                 {isCopied ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
@@ -157,10 +148,8 @@ export default function BlogPost() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Main Content */}
           <article className="lg:col-span-8 lg:col-start-1">
             
-            {/* Mobile TOC */}
             <div className="block lg:hidden mb-10 bg-muted/20 p-6 rounded-2xl border">
               <TableOfContents content={post.content} />
             </div>
@@ -176,7 +165,6 @@ export default function BlogPost() {
             </div>
           </article>
 
-          {/* Sidebar */}
           <aside className="lg:col-span-4 hidden lg:block sticky top-28 pt-2 px-2 max-h-[85vh] overflow-y-auto w-full">
             <TableOfContents content={post.content} />
           </aside>
