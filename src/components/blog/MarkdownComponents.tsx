@@ -47,9 +47,26 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
       />
     );
   },
-  p: ({ node, ...props }) => (
-    <p className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6" {...props} />
-  ),
+  p: ({ node, children, ...props }: any) => {
+    const hasBlockElement = node?.children?.some((child: any) => 
+      child.type === 'element' && 
+      ['img', 'youtube', 'figure', 'div', 'video', 'customtable', 'faq'].includes(child.tagName)
+    );
+
+    if (hasBlockElement) {
+      return (
+        <div className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6 mb-6 w-full" {...props}>
+          {children}
+        </div>
+      );
+    }
+
+    return (
+      <p className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6 mb-6" {...props}>
+        {children}
+      </p>
+    );
+  },
   blockquote: ({ node, ...props }) => (
     <div className="relative my-8 overflow-hidden rounded-xl border-l-[6px] border-primary bg-muted/40 px-6 py-5 shadow-sm transition-all hover:shadow-md hover:bg-muted/60">
       <Quote className="absolute right-4 top-4 h-12 w-12 text-primary/10 -z-10" />

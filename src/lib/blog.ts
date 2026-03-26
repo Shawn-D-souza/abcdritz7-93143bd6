@@ -15,7 +15,7 @@ export interface BlogPost {
 }
 
 // Vite feature: import all markdown files as raw strings
-const markdownFiles = import.meta.glob('/src/content/blog/*.md', { as: 'raw', eager: true });
+const markdownFiles = import.meta.glob('/src/content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
 function calculateReadingTime(text: string): string {
   const wordsPerMinute = 200;
