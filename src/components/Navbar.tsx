@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { ChevronDown, ExternalLink, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { Link } from "react-router-dom";
 
 type NavItem = {
   name: string;
@@ -69,14 +70,15 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b-2 border-primary/40 bg-white px-6 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-300 dark:border-white/30 dark:bg-black/60 dark:shadow-[0_4px_20px_-5px_rgba(0,0,0,0.3)] md:px-12">
       {/* Left: Logo */}
       <div className="flex h-full items-center">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={isDark ? "/assets/Ritz7_logo_dark.png" : "/assets/Ritz7_logo_light.png"}
             alt="Ritz7 Logo"
             className="h-10 object-contain transition-all duration-300 hover:scale-105"
           />
-        </a>
+        </Link>
       </div>
+
 
       {/* Middle: Nav Items */}
       <div className="hidden h-full items-center lg:flex lg:gap-4 xl:gap-8">

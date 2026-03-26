@@ -1,11 +1,12 @@
 import { getAllBlogs } from "@/lib/blog";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CalendarIcon, User, ArrowRight, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 
 export const Blogs = () => {
   const recentBlogs = getAllBlogs().slice(0, 3);
+  const location = useLocation();
 
   return (
     <section id="blogs" className="py-10 relative w-full overflow-hidden">
@@ -28,6 +29,7 @@ export const Blogs = () => {
           {recentBlogs.map((blog) => (
             <Link 
               to={`/blog/${blog.id}`} 
+              state={{ from: location.pathname }}
               key={blog.id}
               className="group flex flex-col h-full rounded-2xl overflow-hidden border bg-card/40 backdrop-blur shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-primary/30"
             >

@@ -122,6 +122,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
           alt={alt}
           className="w-full h-auto object-cover max-h-[600px] transition-transform duration-500 hover:scale-[1.02]"
           loading="lazy"
+          decoding="async"
           {...props}
         />
       </div>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { BlogHeader } from "@/components/BlogHeader";
 import { Footer } from "@/components/Footer";
 import { getBlogBySlug } from "@/lib/blog";
@@ -9,13 +9,23 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { format } from "date-fns";
 import { CalendarIcon, User, ArrowLeft, Clock, Share2, Check } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function BlogPost() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const post = id ? getBlogBySlug(id) : undefined;
   const [isCopied, setIsCopied] = useState(false);
+
+  const handleBackToArticles = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.state?.from === '/blogs') {
+      navigate(-1);
+    } else {
+      navigate("/blogs");
+    }
+  };
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -36,20 +46,58 @@ export default function BlogPost() {
   };
 
   useEffect(() => {
-    if (post) {
-      // Update SEO tags dynamically
-      document.title = `${post.title} | Ritz7`;
-      
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', post.description || "");
+    if (!post) return;
+
+    const metaTags: HTMLMetaElement[] = [];
+
+    const setMetaTag = (attributeName: string, attributeValue: string, content: string) => {
+      let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`) as HTMLMetaElement;
+      if (element) {
+        element.setAttribute('content', content);
       } else {
-        const meta = document.createElement('meta');
-        meta.name = "description";
-        meta.content = post.description || "";
-        document.head.appendChild(meta);
+        element = document.createElement('meta');
+        element.setAttribute(attributeName, attributeValue);
+        element.setAttribute('content', content);
+        document.head.appendChild(element);
+        metaTags.push(element);
       }
+    };
+
+    const originalTitle = document.title;
+    document.title = `${post.title} | Ritz7`;
+    
+    setMetaTag('name', 'description', post.description || "");
+    setMetaTag('name', 'author', post.author);
+    setMetaTag('property', 'og:title', post.title);
+    setMetaTag('property', 'og:description', post.description || "");
+    setMetaTag('property', 'og:type', 'article');
+    setMetaTag('property', 'og:url', window.location.href);
+    
+    if (post.thumbnail) {
+      const imageUrl = post.thumbnail.startsWith('http') 
+        ? post.thumbnail 
+        : `${window.location.origin}${post.thumbnail}`;
+      setMetaTag('property', 'og:image', imageUrl);
+      setMetaTag('name', 'twitter:image', imageUrl);
     }
+    
+    setMetaTag('property', 'article:published_time', post.date);
+    if (post.updated_date) {
+      setMetaTag('property', 'article:modified_time', post.updated_date);
+    }
+    
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
+    setMetaTag('name', 'twitter:title', post.title);
+    setMetaTag('name', 'twitter:description', post.description || "");
+
+    return () => {
+      metaTags.forEach(tag => {
+        if (tag.parentNode) {
+          tag.parentNode.removeChild(tag);
+        }
+      });
+      document.title = originalTitle;
+    };
   }, [post]);
 
   if (!post) {
@@ -73,9 +121,9 @@ export default function BlogPost() {
 
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-6 lg:pl-0 pl-1">
-          <Link to="/blogs" className="text-sm font-medium text-muted-foreground hover:text-foreground inline-flex items-center gap-2 transition-colors">
+          <a href="/blogs" onClick={handleBackToArticles} className="text-sm font-medium text-muted-foreground hover:text-foreground inline-flex items-center gap-2 transition-colors cursor-pointer">
             <ArrowLeft className="w-4 h-4" /> Back to articles
-          </Link>
+          </a>
         </div>
 
         {/* Top Split Header */}
@@ -107,9 +155,16 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center gap-2">
                 <CalendarIcon className="w-5 h-5 text-primary" />
-                <time className="text-base" dateTime={post.date}>
-                  {format(new Date(post.date), "MMMM d, yyyy")}
-                </time>
+                <div className="flex flex-col">
+                  <time className="text-base leading-none mt-1" dateTime={post.date}>
+                    {format(new Date(post.date), "MMMM d, yyyy")}
+                  </time>
+                  {post.updated_date && format(new Date(post.date), "yyyy-MM-dd") !== format(new Date(post.updated_date), "yyyy-MM-dd") && (
+                    <time className="text-xs text-muted-foreground/80 mt-1 mb-1" dateTime={post.updated_date}>
+                      Updated: {format(new Date(post.updated_date), "MMM d, yyyy")}
+                    </time>
+                  )}
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-primary" />

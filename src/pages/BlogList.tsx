@@ -1,12 +1,49 @@
 import { BlogHeader } from "@/components/BlogHeader";
 import { Footer } from "@/components/Footer";
 import { getAllBlogs } from "@/lib/blog";
-import { Link } from "react-router-dom";
-import { CalendarIcon, User, Clock } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { CalendarIcon, User, Clock, Edit3 } from "lucide-react";
 import { format } from "date-fns";
+import { useEffect } from "react";
 
 export default function BlogList() {
   const blogs = getAllBlogs();
+  const location = useLocation();
+
+  useEffect(() => {
+    const metaTags: HTMLMetaElement[] = [];
+
+    const setMetaTag = (attributeName: string, attributeValue: string, content: string) => {
+      let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`) as HTMLMetaElement;
+      if (element) {
+        element.setAttribute('content', content);
+      } else {
+        element = document.createElement('meta');
+        element.setAttribute(attributeName, attributeValue);
+        element.setAttribute('content', content);
+        document.head.appendChild(element);
+        metaTags.push(element);
+      }
+    };
+
+    const originalTitle = document.title;
+    document.title = "Our Blogs | Ritz7";
+    
+    setMetaTag('name', 'description', "Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.");
+    setMetaTag('property', 'og:title', "Our Blogs | Ritz7");
+    setMetaTag('property', 'og:description', "Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.");
+    setMetaTag('property', 'og:type', 'website');
+    setMetaTag('property', 'og:url', window.location.href);
+
+    return () => {
+      metaTags.forEach(tag => {
+        if (tag.parentNode) {
+          tag.parentNode.removeChild(tag);
+        }
+      });
+      document.title = originalTitle;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background pt-24 pb-12 overflow-hidden relative font-sans">
@@ -30,6 +67,7 @@ export default function BlogList() {
           {blogs.map((blog) => (
             <Link 
               to={`/blog/${blog.id}`} 
+              state={{ from: location.pathname }}
               key={blog.id}
               className="group flex flex-col h-full rounded-2xl overflow-hidden border bg-card/40 backdrop-blur shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-primary/30"
             >
@@ -39,6 +77,8 @@ export default function BlogList() {
                     src={blog.thumbnail} 
                     alt={blog.thumbnail_alt} 
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <span className="text-muted-foreground text-sm font-medium">No Image</span>
@@ -47,11 +87,21 @@ export default function BlogList() {
               
               <div className="p-5 flex flex-col flex-grow">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-muted-foreground mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <CalendarIcon className="w-3.5 h-3.5" />
-                    <time dateTime={blog.date}>
-                      {format(new Date(blog.date), "MMM d, yyyy")}
-                    </time>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-1.5">
+                      <CalendarIcon className="w-3.5 h-3.5" />
+                      <time dateTime={blog.date}>
+                        {format(new Date(blog.date), "MMM d, yyyy")}
+                      </time>
+                    </div>
+                    {blog.updated_date && format(new Date(blog.date), "yyyy-MM-dd") !== format(new Date(blog.updated_date), "yyyy-MM-dd") && (
+                      <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground/70 pl-5">
+                        <Edit3 className="w-3 h-3" />
+                        <time dateTime={blog.updated_date}>
+                          Updated: {format(new Date(blog.updated_date), "MMM d, yyyy")}
+                        </time>
+                      </div>
+                    )}
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5" />
