@@ -86,7 +86,7 @@ export default function BlogPost() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16">
           
           {post.thumbnail && (
-            <div className="lg:col-span-7 lg:order-1 order-1 flex justify-center lg:justify-start">
+            <div className="lg:col-span-7 lg:order-1 order-2 flex justify-center lg:justify-start">
               <img 
                 src={post.thumbnail} 
                 alt={post.thumbnail_alt} 
@@ -95,7 +95,7 @@ export default function BlogPost() {
             </div>
           )}
 
-          <header className={post.thumbnail ? "lg:col-span-5 lg:order-2 order-2" : "lg:col-span-12 order-2"}>
+          <header className={post.thumbnail ? "lg:col-span-5 lg:order-2 order-1" : "lg:col-span-12 order-1"}>
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-4 leading-[1.12]">
               {post.title}
             </h1>
