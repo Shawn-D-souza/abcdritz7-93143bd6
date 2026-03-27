@@ -14,15 +14,23 @@ export function TableOfContents({ content }: { content: string }) {
   const visibleHeadings = useRef(new Set<string>());
 
   useEffect(() => {
-    // extract ONLY h2 (starts with exactly "## ")
-    const regex = /^##\s+(.*)$/gm;
+    // This regex matches "## Heading" OR "<faq>" at the start of a line
+    const regex = /^(?:##\s+(.*)|<faq>\s*)$/gm;
     const items: TocItem[] = [];
     let match;
     
     while ((match = regex.exec(content)) !== null) {
-      const text = match[1].trim();
-      const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-      items.push({ id, text });
+      if (match[0].startsWith('##')) {
+        const text = match[1].trim();
+        const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        items.push({ id, text });
+      } else if (match[0].startsWith('<faq>')) {
+        // When <faq> is found, manually add this single entry
+        items.push({ 
+          id: 'frequently-asked-questions', 
+          text: 'Frequently Asked Questions' 
+        });
+      }
     }
     setHeadings(items);
   }, [content]);

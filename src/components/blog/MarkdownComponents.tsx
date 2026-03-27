@@ -232,7 +232,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     if (faqs.length === 0) return null;
 
     return (
-      <div className="my-12 rounded-2xl border border-border/60 bg-card/20 shadow-sm overflow-hidden backdrop-blur-sm">
+      <div id="frequently-asked-questions" className="my-12 rounded-2xl border border-border/60 bg-card/20 shadow-sm overflow-hidden backdrop-blur-sm">
         <div className="px-5 py-6 md:px-8 md:py-8 border-b border-border/60 bg-muted/20">
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-2">
             Frequently Asked Questions
