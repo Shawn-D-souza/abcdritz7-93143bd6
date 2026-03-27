@@ -2,7 +2,7 @@ import { BlogHeader } from "@/components/BlogHeader";
 import { Footer } from "@/components/Footer";
 import { getAllBlogs } from "@/lib/blog";
 import { Link, useLocation } from "react-router-dom";
-import { CalendarIcon, User, Clock, Edit3 } from "lucide-react";
+import { CalendarIcon, User, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { useSEO } from "@/hooks/useSEO"; // Import the hook
 
@@ -63,21 +63,12 @@ export default function BlogList() {
               
               <div className="p-5 flex flex-col flex-grow">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-muted-foreground mb-3">
-                  <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-1.5">
-                      <CalendarIcon className="w-3.5 h-3.5" />
-                      <time dateTime={blog.date}>
-                        {format(new Date(blog.date), "MMM d, yyyy")}
-                      </time>
-                    </div>
-                    {blog.updated_date && format(new Date(blog.date), "yyyy-MM-dd") !== format(new Date(blog.updated_date), "yyyy-MM-dd") && (
-                      <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground/70 pl-5">
-                        <Edit3 className="w-3 h-3" />
-                        <time dateTime={blog.updated_date}>
-                          Updated: {format(new Date(blog.updated_date), "MMM d, yyyy")}
-                        </time>
-                      </div>
-                    )}
+                  {/* Replaced the two dates with this single block */}
+                  <div className="flex items-center gap-1.5">
+                    <CalendarIcon className="w-3.5 h-3.5" />
+                    <time dateTime={blog.updated_date || blog.date}>
+                      {format(new Date(blog.updated_date || blog.date), "MMM d, yyyy")}
+                    </time>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5" />

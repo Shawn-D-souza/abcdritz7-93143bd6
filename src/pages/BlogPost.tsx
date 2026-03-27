@@ -117,16 +117,9 @@ export default function BlogPost() {
 
               <div className="flex items-center gap-2">
                 <CalendarIcon className="w-5 h-5 text-primary" />
-                <div className="flex flex-col justify-center">
-                  <time className="text-base leading-none" dateTime={post.date}>
-                    {format(new Date(post.date), "MMMM d, yyyy")}
-                  </time>
-                  {post.updated_date && format(new Date(post.date), "yyyy-MM-dd") !== format(new Date(post.updated_date), "yyyy-MM-dd") && (
-                    <time className="text-xs text-muted-foreground/80 mt-1" dateTime={post.updated_date}>
-                      Updated: {format(new Date(post.updated_date), "MMM d, yyyy")}
-                    </time>
-                  )}
-                </div>
+                <time className="text-base leading-none" dateTime={post.updated_date || post.date}>
+                  {format(new Date(post.updated_date || post.date), "MMMM d, yyyy")}
+                </time>
               </div>
 
               <div className="flex items-center gap-2">

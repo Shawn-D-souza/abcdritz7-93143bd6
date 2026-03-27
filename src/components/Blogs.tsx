@@ -49,8 +49,8 @@ export const Blogs = () => {
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-muted-foreground mb-3">
                   <div className="flex items-center gap-1.5">
                     <CalendarIcon className="w-3.5 h-3.5" />
-                    <time dateTime={blog.date}>
-                      {format(new Date(blog.date), "MMM d, yyyy")}
+                    <time dateTime={blog.updated_date || blog.date}>
+                      {format(new Date(blog.updated_date || blog.date), "MMM d, yyyy")}
                     </time>
                   </div>
                   <div className="flex items-center gap-1.5">

@@ -60,8 +60,12 @@ export function getAllBlogs(): BlogPost[] {
     };
   });
 
-  // Sort by date descending
-  return blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  // Sort by updated_date (if it exists) or date descending
+  return blogs.sort((a, b) => {
+    const dateA = new Date(a.updated_date || a.date).getTime();
+    const dateB = new Date(b.updated_date || b.date).getTime();
+    return dateB - dateA;
+  });
 }
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
