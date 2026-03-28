@@ -55,14 +55,14 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
 
     if (hasBlockElement) {
       return (
-        <div className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6 mb-6 w-full" {...props}>
+        <div className="leading-8 text-lg text-foreground [&:not(:first-child)]:mt-6 mb-6 w-full" {...props}>
           {children}
         </div>
       );
     }
 
     return (
-      <p className="leading-8 text-lg text-muted-foreground [&:not(:first-child)]:mt-6 mb-6" {...props}>
+      <p className="leading-8 text-lg text-foreground [&:not(:first-child)]:mt-6 mb-6" {...props}>
         {children}
       </p>
     );
@@ -84,10 +84,10 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     </a>
   ),
   ul: ({ node, ...props }) => (
-    <ul className="my-6 ml-6 list-disc space-y-2 text-muted-foreground text-lg leading-7" {...props} />
+    <ul className="my-6 ml-6 list-disc space-y-2 text-foreground text-lg leading-7" {...props} />
   ),
   ol: ({ node, ...props }) => (
-    <ol className="my-6 ml-6 list-decimal space-y-2 text-muted-foreground text-lg leading-7" {...props} />
+    <ol className="my-6 ml-6 list-decimal space-y-2 text-foreground text-lg leading-7" {...props} />
   ),
   li: ({ node, ...props }) => <li className="pl-2" {...props} />,
   strong: ({ node, ...props }) => <strong className="font-bold text-foreground" {...props} />,
@@ -157,10 +157,10 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
   ),
   tr: ({ node, ...props }) => <TableRow className="hover:bg-muted/50 transition-colors" {...props} />,
   th: ({ node, ...props }) => (
-    <TableCell className="py-4 px-4 leading-relaxed border border-border font-normal text-muted-foreground align-middle" {...props} />
+    <TableCell className="py-4 px-4 leading-relaxed border border-border font-normal text-foreground align-middle" {...props} />
   ),
   td: ({ node, ...props }) => (
-    <TableCell className="py-4 px-4 leading-relaxed border border-border text-muted-foreground align-middle" {...props} />
+    <TableCell className="py-4 px-4 leading-relaxed border border-border text-foreground align-middle" {...props} />
   ),
 
   // Custom Components
@@ -247,7 +247,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
               <h4 className="text-lg md:text-xl font-semibold text-foreground mb-3 leading-tight">
                 {faq.q}
               </h4>
-              <div className="text-muted-foreground text-base leading-relaxed">
+              <div className="text-foreground text-base leading-relaxed">
                 {faq.a}
               </div>
             </div>
@@ -286,7 +286,7 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
             {allRows.map((row, i) => (
               <TableRow key={i} className="hover:bg-muted/30 transition-colors">
                 {row.map((cell, j) => (
-                  <TableCell key={j} className="py-4 px-5 leading-relaxed text-muted-foreground border border-border align-middle">
+                  <TableCell key={j} className="py-4 px-5 leading-relaxed text-foreground border border-border align-middle">
                     {renderCellContent(cell)}
                   </TableCell>
                 ))}

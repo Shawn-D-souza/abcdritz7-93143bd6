@@ -89,13 +89,13 @@ export const Navbar = () => {
                 href={item.href}
                 onClick={(e) => handleScrollTo(e, item.href!, item.isExternal)}
                 {...(item.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                className="flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
                 {item.name}
               </a>
             ) : (
               <>
-                <div className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 transition-colors group-hover:text-primary">
+                <div className="flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors group-hover:text-primary">
                   {item.name}
                   <ChevronDown className="h-4 w-4 opacity-70 transition-transform duration-300 group-hover:rotate-180 group-hover:opacity-100" />
                 </div>
@@ -112,7 +112,7 @@ export const Navbar = () => {
                         href={subItem.href}
                         onClick={(e) => handleScrollTo(e, subItem.href, subItem.isExternal)}
                         {...(subItem.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-foreground/70 transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
+                        className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
                       >
                         {subItem.label}
                         {subItem.isExternal && (
@@ -131,7 +131,7 @@ export const Navbar = () => {
       {/* Right: Actions */}
       <div className="flex items-center gap-3 lg:gap-4 xl:gap-6">
         <ThemeToggle />
-        <a href="#book-consultation" onClick={(e) => handleScrollTo(e, "#book-consultation")} className="hidden whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-primary lg:block">
+        <a href="#book-consultation" onClick={(e) => handleScrollTo(e, "#book-consultation")} className="hidden whitespace-nowrap text-sm font-medium text-foreground transition-colors hover:text-primary lg:block">
           Book Consultation
         </a>
         <a href="https://wa.me/message/RVQXUI35RJO4J1" target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap rounded-full bg-[#0756B1] px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#064a97] hover:shadow-[0_0_20px_rgba(7,86,177,0.4)] lg:block xl:px-6 xl:py-2.5">
@@ -140,7 +140,7 @@ export const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="ml-1 block p-2 text-foreground/80 transition-colors hover:text-primary lg:hidden"
+          className="ml-1 block p-2 text-foreground transition-colors hover:text-primary lg:hidden"
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
@@ -158,7 +158,7 @@ export const Navbar = () => {
                   <a
                     href={item.href}
                     {...(item.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="flex items-center justify-between text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+                    className="flex items-center justify-between text-base font-medium text-foreground transition-colors hover:text-primary"
                     onClick={(e) => {
                       handleScrollTo(e, item.href!, item.isExternal);
                       setIsMobileMenuOpen(false);
@@ -169,7 +169,7 @@ export const Navbar = () => {
                 ) : (
                   <>
                     <button
-                      className="flex items-center justify-between text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+                      className="flex items-center justify-between text-base font-medium text-foreground transition-colors hover:text-primary"
                       onClick={() => toggleDropdown(item.name)}
                     >
                       {item.name}
@@ -184,7 +184,7 @@ export const Navbar = () => {
                             key={subItem.label}
                             href={subItem.href}
                             {...(subItem.isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                            className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-foreground/70 transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
+                            className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20"
                             onClick={(e) => {
                               handleScrollTo(e, subItem.href, subItem.isExternal);
                               setIsMobileMenuOpen(false);
@@ -203,7 +203,7 @@ export const Navbar = () => {
             
             <a 
               href="#book-consultation" 
-              className="mt-2 text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+              className="mt-2 text-base font-medium text-foreground transition-colors hover:text-primary"
               onClick={(e) => {
                 handleScrollTo(e, "#book-consultation");
                 setIsMobileMenuOpen(false);

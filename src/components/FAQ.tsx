@@ -54,7 +54,7 @@ export const FAQ = () => {
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl mb-6">
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg text-muted-foreground">
             Everything you need to know about our community, tools, and how to get started on your building journey.
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export const FAQ = () => {
                   >
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className={`text-base text-foreground/70 leading-relaxed ${index === faqs.length - 1 ? "pb-0" : "pb-6"}`}>
+                  <AccordionContent className={`text-base text-muted-foreground leading-relaxed ${index === faqs.length - 1 ? "pb-0" : "pb-6"}`}>
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

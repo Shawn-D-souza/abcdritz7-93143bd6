@@ -152,7 +152,7 @@ function AchievementCardContent({ achievement }: { achievement: AchievementCard 
                 <div className="absolute inset-0 rounded-full blur-md bg-primary/40 -z-10 opacity-0 group-hover:opacity-70 transition-opacity duration-500 scale-110" />
               </div>
               {/* Name — single line */}
-              <span className="text-xs font-bold text-foreground/90 text-center whitespace-nowrap group-hover/avatar:text-[#0A66C2] transition-colors duration-300">
+              <span className="text-xs font-bold text-foreground text-center whitespace-nowrap group-hover/avatar:text-[#0A66C2] transition-colors duration-300">
                 {winner.name}
               </span>
             </a>

@@ -53,7 +53,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg text-foreground/80 md:text-foreground/90 md:text-xl md:leading-relaxed md:rounded-xl md:bg-white/40 md:p-4 md:-mx-4 md:shadow-md md:backdrop-blur-md md:border md:border-black/10 md:dark:bg-black/40 md:dark:border-white/10 md:dark:shadow-none"
+          className="text-lg text-foreground md:text-xl md:leading-relaxed md:rounded-xl md:bg-white/40 md:p-4 md:-mx-4 md:shadow-md md:backdrop-blur-md md:border md:border-black/10 md:dark:bg-black/40 md:dark:border-white/10 md:dark:shadow-none"
         >
           The world is evolving. Don't just watch the AI hype - start building the AI reality.
         </motion.p>

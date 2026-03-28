@@ -15,7 +15,7 @@ export const Blogs = () => {
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl mb-6">
             Latest <span className="text-primary">Blogs</span>
           </h2>
-          <p className="text-lg text-foreground/70 mb-8">
+          <p className="text-lg text-muted-foreground mb-8">
             Discover our most recent thoughts, news, and perspectives on technology and design.
           </p>
           <Link to="/blogs">

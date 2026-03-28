@@ -117,7 +117,7 @@ export const BookConsultation = () => {
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                          </svg>
                        </div>
-                       <span className="text-sm font-medium text-foreground/80">{item}</span>
+                       <span className="text-sm font-medium text-foreground">{item}</span>
                     </div>
                   ))}
                </div>
