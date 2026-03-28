@@ -147,6 +147,14 @@ const Scene = () => {
 };
 
 export const Background3D = () => {
+  // Check if react-snap is running the page
+  const isSnap = typeof window !== 'undefined' && window.navigator.userAgent.includes('ReactSnap');
+
+  // Render a static background without the Three.js Canvas during build
+  if (isSnap) {
+    return <div className="fixed inset-0 -z-10 bg-background transition-colors duration-500" />;
+  }
+
   return (
     <div className="fixed inset-0 -z-10 bg-background transition-colors duration-500">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} gl={{ alpha: true, antialias: true }}>
