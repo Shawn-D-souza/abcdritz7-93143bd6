@@ -83,10 +83,19 @@ export default function BlogPost() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16">
+        {/* Blog post header: Mobile = title → image → details | Desktop = split-screen */}
+        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center mb-16 gap-6">
           
+          {/* Title — always first on mobile, part of the right column on desktop */}
+          <div className={post.thumbnail ? "lg:col-span-5 lg:order-2" : "lg:col-span-12"}>
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-foreground leading-[1.12]">
+              {post.title}
+            </h1>
+          </div>
+
+          {/* Thumbnail — second on mobile, left column on desktop */}
           {post.thumbnail && (
-            <div className="lg:col-span-7 lg:order-1 order-2 flex justify-center lg:justify-start">
+            <div className="lg:col-span-7 lg:order-1 lg:row-span-2 flex justify-center lg:justify-start">
               <img 
                 src={post.thumbnail} 
                 alt={post.thumbnail_alt} 
@@ -95,11 +104,8 @@ export default function BlogPost() {
             </div>
           )}
 
-          <header className={post.thumbnail ? "lg:col-span-5 lg:order-2 order-1" : "lg:col-span-12 order-1"}>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-foreground mb-4 leading-[1.12]">
-              {post.title}
-            </h1>
-            
+          {/* Description, meta, and actions — third on mobile, below title on desktop right column */}
+          <div className={post.thumbnail ? "lg:col-span-5 lg:order-2" : "lg:col-span-12"}>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-medium">
               {post.description}
             </p>
@@ -136,7 +142,7 @@ export default function BlogPost() {
                 <span className="text-sm font-semibold">{isCopied ? "Copied Link" : "Share Article"}</span>
               </button>
             </div>
-          </header>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
