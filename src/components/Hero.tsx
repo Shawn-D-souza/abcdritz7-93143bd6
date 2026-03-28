@@ -1,4 +1,4 @@
-import { HeroCodeCard } from "./HeroCodeCard";
+import { HeroShowcase } from "./HeroShowcase";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -108,9 +108,9 @@ export const Hero = () => {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-20 hidden w-full justify-center lg:flex lg:mt-0 lg:w-1/2 lg:justify-end"
+        className="mt-12 flex w-full justify-center lg:mt-0 lg:w-1/2 lg:justify-end"
       >
-        <HeroCodeCard />
+        <HeroShowcase />
       </motion.div>
     </section>
   );
