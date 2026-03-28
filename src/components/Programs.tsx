@@ -36,8 +36,7 @@ export const Programs = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative w-full max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-primary/90 to-[#0a2540] dark:from-primary/80 dark:to-background border border-primary/20 shadow-2xl overflow-hidden"
         >
-          {/* Subtle noise and glowing background textures */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+          {/* Glowing background textures */}
           <div className="absolute -top-1/2 -right-1/4 w-[80%] h-[150%] bg-blue-500/20 blur-[100px] rounded-full pointer-events-none" />
           <div className="absolute -bottom-1/2 -left-1/4 w-[60%] h-[150%] bg-purple-500/20 blur-[120px] rounded-full pointer-events-none" />
 
