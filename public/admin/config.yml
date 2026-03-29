@@ -25,3 +25,6 @@ collections:
       - { label: "Thumbnail Alt Text", name: "thumbnail_alt", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown", editor_components: ["youtube", "custom-table", "faq", "image", "code-block"] }
+
+editor:
+  preview: false
