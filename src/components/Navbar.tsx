@@ -50,13 +50,13 @@ export const Navbar = () => {
     if (isExternal || !href.startsWith("#")) return;
     
     e.preventDefault();
+    const targetId = href.substring(1);
 
     if (location.pathname !== "/") {
-      navigate("/" + href);
+      navigate("/", { state: { scrollTo: targetId } });
       return;
     }
 
-    const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     
     if (element) {

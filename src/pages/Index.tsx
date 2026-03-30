@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Background3D } from "@/components/Background3D";
@@ -17,12 +17,14 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (location.hash) {
+    const scrollToId = location.state?.scrollTo || (location.hash ? location.hash.substring(1) : null);
+
+    if (scrollToId) {
       setTimeout(() => {
-        const targetId = location.hash.substring(1);
-        const element = document.getElementById(targetId);
+        const element = document.getElementById(scrollToId);
         if (element) {
           const navbarHeight = 64;
           const elementPosition = element.getBoundingClientRect().top;
@@ -33,9 +35,13 @@ const Index = () => {
             behavior: "smooth"
           });
         }
+        // Clean up hash or state from URL so it doesn't get stuck
+        if (location.hash || location.state?.scrollTo) {
+          navigate(location.pathname + location.search, { replace: true, state: {} });
+        }
       }, 100);
     }
-  }, [location]);
+  }, [location, navigate]);
 
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground overflow-hidden">
