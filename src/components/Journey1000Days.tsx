@@ -22,6 +22,7 @@ type PhaseRow = {
   description: string;
   tag: string | null;
   sort_order: number;
+  playlist_link?: string | null;
 };
 
 // Start date corresponding to Day 1
@@ -59,9 +60,11 @@ export const Journey1000Days = () => {
 
   useEffect(() => {
     const today = new Date();
-    const diffTime = today.getTime() - START_DATE.getTime();
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    setCurrentDay(diffDays);
+    // Offset by 18 hours so the day increments at 6:00 PM local time instead of 12:00 AM
+    const shiftedTime = today.getTime() - 18 * 60 * 60 * 1000;
+    const diffTime = shiftedTime - START_DATE.getTime();
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    setCurrentDay(Math.max(0, diffDays));
   }, []);
 
   useEffect(() => {
@@ -278,9 +281,9 @@ export const Journey1000Days = () => {
   );
 };
 
-const PhaseCard = ({ phase }: { phase: { phase: string; icon: string; topic: string; description: string; tag?: string | null } }) => {
+const PhaseCard = ({ phase }: { phase: PhaseRow }) => {
   return (
-    <div className="h-full w-full group relative p-[1px] rounded-2xl bg-gradient-to-b from-border/80 to-transparent">
+    <div className="h-full w-full group relative p-[1px] rounded-2xl bg-gradient-to-b from-border/80 to-transparent flex flex-col">
       <div className="h-full w-full bg-card/90 backdrop-blur-3xl p-6 md:p-8 rounded-[15px] border border-border flex flex-col gap-4 shadow-lg transition-all duration-500 group-hover:shadow-[0_8px_30px_rgba(99,102,241,0.2)] group-hover:bg-card">
         
         <div className="flex items-center justify-between mt-2 mb-2">
@@ -299,10 +302,23 @@ const PhaseCard = ({ phase }: { phase: { phase: string; icon: string; topic: str
           </div>
         </div>
         
-        <div className="mt-4">
-          <h3 className="text-xl md:text-2xl font-extrabold mb-3 text-foreground tracking-tight">
-            {phase.topic}
-          </h3>
+        <div className="mt-4 flex-1">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h3 className="text-xl md:text-2xl font-extrabold text-foreground tracking-tight">
+              {phase.topic}
+            </h3>
+            {phase.playlist_link && (
+              <a 
+                href={phase.playlist_link} 
+                target="_blank" 
+                rel="noreferrer"
+                className="shrink-0 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-[0_4px_15px_rgba(79,70,229,0.4)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(79,70,229,0.6)] transition-all duration-300 group/play"
+                title="Watch Playlist"
+              >
+                <Play className="w-4 h-4 md:w-5 md:h-5 ml-1 fill-white" />
+              </a>
+            )}
+          </div>
           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             {phase.description}
           </p>
