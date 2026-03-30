@@ -1,11 +1,11 @@
-import { Youtube, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const socials = [
   { icon: Youtube, href: "https://www.youtube.com/@ritz7ai", label: "YouTube", color: "text-[#FF0000] border-[#FF0000]/20 shadow-[0_0_8px_rgba(255,0,0,0.1)] hover:border-[#FF0000]/50 hover:shadow-[0_0_12px_rgba(255,0,0,0.3)]" },
   { icon: Instagram, href: "https://www.instagram.com/abcdbyritz7/", label: "Instagram", color: "text-[#E4405F] border-[#E4405F]/20 shadow-[0_0_8px_rgba(228,64,95,0.1)] hover:border-[#E4405F]/50 hover:shadow-[0_0_12px_rgba(228,64,95,0.3)]" },
   { icon: Linkedin, href: "https://www.linkedin.com/showcase/abcd-by-ritz7/", label: "LinkedIn", color: "text-[#0A66C2] border-[#0A66C2]/20 shadow-[0_0_8px_rgba(10,102,194,0.1)] hover:border-[#0A66C2]/50 hover:shadow-[0_0_12px_rgba(10,102,194,0.3)]" },
-  { icon: Twitter, href: "https://x.com/abcdbyritz7", label: "Twitter", color: "text-[#1DA1F2] border-[#1DA1F2]/20 shadow-[0_0_8px_rgba(29,161,242,0.1)] hover:border-[#1DA1F2]/50 hover:shadow-[0_0_12px_rgba(29,161,242,0.3)]" },
+  { icon: () => <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>, href: "https://x.com/abcdbyritz7", label: "X", color: "text-foreground border-border/50 shadow-[0_0_8px_rgba(0,0,0,0.1)] hover:border-foreground/50 hover:shadow-[0_0_12px_rgba(0,0,0,0.3)]" },
 ];
 
 export const Footer = () => {
@@ -41,7 +41,7 @@ export const Footer = () => {
                   aria-label={label}
                   className={`flex h-10 w-10 items-center justify-center rounded-full border border-border/50 transition-all duration-300 dark:border-white/10 ${color}`}
                 >
-                  <Icon className="h-4 w-4" />
+                  {typeof Icon === 'function' && Icon.length === 0 ? <Icon /> : <Icon className="h-4 w-4" />}
                 </a>
               ))}
             </div>
