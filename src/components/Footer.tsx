@@ -1,4 +1,4 @@
-import { Youtube, Instagram, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { Youtube, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const socials = [
