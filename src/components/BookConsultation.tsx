@@ -54,7 +54,7 @@ export const BookConsultation = () => {
                   >
                     <img 
                       src="/ritesh_hegde.avif" 
-                      alt="Ritesh Hegde, CEO of Ritz7" 
+                      alt="Ritesh Hegde, CEO of Ritz7ai" 
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent mix-blend-overlay" />
@@ -66,7 +66,7 @@ export const BookConsultation = () => {
                 </h3>
                 <p className="text-primary font-medium tracking-wide text-sm md:text-base mb-8 flex items-center justify-center md:justify-start gap-2">
                   <Star className="w-4 h-4 fill-primary text-primary" />
-                  CEO & AI Expert, Ritz7
+                  CEO & AI Expert, Ritz7ai
                 </p>
                 
                 <div className="w-full grid grid-cols-2 gap-2 text-left mt-auto">
@@ -124,7 +124,7 @@ export const BookConsultation = () => {
 
                <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                  <motion.a 
-                   href="https://wa.me/message/RVQXUI35RJO4J1" 
+                   href="https://bookings.ritz7.ai/#/ritesh" 
                    target="_blank" 
                    rel="noopener noreferrer"
                    whileHover={{ scale: 1.02 }}
