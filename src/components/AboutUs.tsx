@@ -144,40 +144,24 @@ export const AboutUs = () => {
               className="space-y-4 text-base md:text-[1.05rem]"
             >
               <p className="text-muted-foreground leading-relaxed">
-                We saw something that bothered us — really smart, creative students were just sitting on the side, 
-                using technology but never building it. For years, people were told that coding is only for those 
-                with a computer science degree or a technical background. That idea kept lakhs of talented people from 
-                even trying.
+                Ritz7 didn't start with a grand mission to democratize software. It began simply: as a freelance hustle by Ritesh, an electrical engineer, that eventually grew into a small, fully remote agency. We were just a tight-knit team of five or six people, solving real-world business problems with technology.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">
-                  We started Ritz7 to change that completely.
-                </span>{" "}
-                With AI and No-Code tools now available to everyone, you no longer need to learn complex code just to 
-                build something. The real skills that matter now are{" "}
-                <span className="text-foreground font-medium">
-                  thinking clearly, solving problems, and being creative
-                </span>{" "}
-                — and those are skills anyone can develop.
+                But there was a catch—<span className="font-semibold text-foreground">most of us didn't have Computer Science degrees.</span> We were a non-technical team building powerful software and complex automations using AI and No-Code tools. It hit us: if we could build these solutions without traditional coding backgrounds, anyone could. The only thing holding people back was that they simply didn't know these tools existed.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Ritz7 was built to be a{" "}
+                We kept seeing brilliant, creative students sitting on the sidelines because they believed building software wasn't for them. That realization sparked our true mission and the start of the{" "}
+                <span className="font-semibold text-foreground">'1000 Days Challenge'</span> — a 
+                public commitment to show that anyone, from anywhere, can build real products. Today, Ritz7 is a{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 font-semibold">
                   launchpad for the world
                 </span>
-                . It started with the{" "}
-                <span className="font-semibold text-foreground">'1000 Days Challenge'</span> — a 
-                public commitment to show that anyone, from anywhere, can build real products. 
-                What started small quickly grew into a{" "}
-                <span className="font-semibold text-foreground">global movement</span>. Today, 
-                Ritz7 exists because we truly believe the next great builders will come from 
-                wherever there is ambition — not just from elite colleges.
+                , proving that the only skills that truly matter are clear thinking, problem-solving, and the courage to build.
               </p>
             </motion.div>
 
-            {/* Clear float */}
             <div className="clear-both" />
           </div>
         </motion.div>
