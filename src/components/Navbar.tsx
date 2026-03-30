@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { ChevronDown, ExternalLink, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 type NavItem = {
   name: string;
@@ -12,10 +12,6 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  {
-    name: "Hall of Fame",
-    href: "#learner-achievements",
-  },
   {
     name: "Programs",
     href: "#programs",
@@ -44,6 +40,9 @@ export const Navbar = () => {
 
   const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const toggleDropdown = (name: string) => setOpenDropdown(openDropdown === name ? null : name);
 
@@ -51,6 +50,12 @@ export const Navbar = () => {
     if (isExternal || !href.startsWith("#")) return;
     
     e.preventDefault();
+
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
+
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     

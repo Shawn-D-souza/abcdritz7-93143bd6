@@ -64,7 +64,12 @@ export const Footer = () => {
 
           {/* Links */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-sm font-semibold text-foreground">Legal</h4>
+            <h4 className="text-sm font-semibold text-foreground">Community & Links</h4>
+            <div className="flex flex-col gap-2">
+              <a href="/hall-of-fame" className="text-sm text-muted-foreground transition-colors hover:text-primary">Hall of Fame</a>
+            </div>
+
+            <h4 className="text-sm font-semibold text-foreground mt-2">Legal</h4>
             <div className="flex flex-col gap-2">
               <a href="/privacy-policy" className="text-sm text-muted-foreground transition-colors hover:text-primary">Privacy Policy</a>
               <a href="/community-guidelines" className="text-sm text-muted-foreground transition-colors hover:text-primary">Community Guidelines</a>

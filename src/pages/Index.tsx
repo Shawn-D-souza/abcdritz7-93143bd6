@@ -1,6 +1,7 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { LearnerAchievements } from "@/components/LearnerAchievements";
 import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
 import { WallOfLove } from "@/components/WallOfLove";
@@ -15,6 +16,27 @@ import { ContactAndNewsletter } from "@/components/ContactAndNewsletter";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const targetId = location.hash.substring(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          const navbarHeight = 64;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground overflow-hidden">
       <CustomCursor />
@@ -23,7 +45,6 @@ const Index = () => {
       <main>
         <Hero />
         <WallOfLove />
-        <LearnerAchievements />
         <Programs />
         <AboutUs />
         <Journey1000Days />

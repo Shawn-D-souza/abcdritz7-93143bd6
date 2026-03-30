@@ -10,6 +10,7 @@ import CommunityGuidelines from "./pages/CommunityGuidelines";
 import NotFound from "./pages/NotFound";
 import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
+import HallOfFame from "./pages/HallOfFame";
 import { ThemeProvider } from "./components/ThemeProvider";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/programs" element={<Programs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/community-guidelines" element={<CommunityGuidelines />} />
+            <Route path="/hall-of-fame" element={<HallOfFame />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="/blogs" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogPost />} />
