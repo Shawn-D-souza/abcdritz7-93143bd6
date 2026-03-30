@@ -50,10 +50,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <WallOfLove />
         <Programs />
         <AboutUs />
         <Journey1000Days />
+        <WallOfLove />
         <BookConsultation />
         <TeamMembers />
         <Blogs />
