@@ -53,8 +53,8 @@ const teamMembers = [
   }
 ];
 
-// Pointy-top hexagon clip path
-const hexClip = "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)";
+// CORRECTED: Mathematically perfect point-to-point hexagon clip path
+const hexClip = "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)";
 
 const HexCard = ({ member, index, activeIndex, onActivate }: {
   member: typeof teamMembers[0];
@@ -80,8 +80,8 @@ const HexCard = ({ member, index, activeIndex, onActivate }: {
       onTouchStart={() => onActivate(isActive ? null : index)}
       onClick={(e) => e.preventDefault()}
     >
-      {/* Hexagon container — bigger on desktop to fill width */}
-      <div className="relative w-[150px] h-[173px] sm:w-[170px] sm:h-[196px] md:w-[240px] md:h-[276px] lg:w-[280px] lg:h-[322px] cursor-pointer">
+      {/* CORRECTED: Smaller size and mathematically perfect aspect ratio */}
+      <div className="relative w-[130px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-[0.866] cursor-pointer">
         {/* Glowing border hex */}
         <motion.div
           animate={isActive ? { scale: 1.04 } : { scale: 1 }}
