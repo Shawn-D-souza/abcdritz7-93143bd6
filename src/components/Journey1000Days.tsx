@@ -231,11 +231,11 @@ export const Journey1000Days = () => {
             <div className="absolute top-0 bottom-0 right-0 w-8 md:w-32 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none rounded-r-3xl" />
             
             {/* Custom Navigation Arrows positioned on the sides of the Swiper */}
-            <button className="custom-prev absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card/80 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
-              <ChevronLeft className="w-6 h-6 text-foreground group-hover:-translate-x-0.5 transition-transform" />
+            <button className="custom-prev absolute left-0 sm:left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-border bg-card/90 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground group-hover:-translate-x-0.5 transition-transform" />
             </button>
-            <button className="custom-next absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card/80 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
-              <ChevronRight className="w-6 h-6 text-foreground group-hover:translate-x-0.5 transition-transform" />
+            <button className="custom-next absolute right-0 sm:right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-border bg-card/90 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground group-hover:translate-x-0.5 transition-transform" />
             </button>
 
             <Swiper
