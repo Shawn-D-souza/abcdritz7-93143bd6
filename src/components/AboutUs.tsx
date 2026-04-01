@@ -53,7 +53,7 @@ export const AboutUs = () => {
               className="mb-5"
             >
               <div className="relative pl-4 border-l-[3px] border-blue-500/60">
-                <p className="text-base md:text-lg italic text-foreground leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+                <p className="text-sm sm:text-base md:text-lg italic text-foreground leading-relaxed">
                   "You don't need a CS degree to build software."
                 </p>
               </div>

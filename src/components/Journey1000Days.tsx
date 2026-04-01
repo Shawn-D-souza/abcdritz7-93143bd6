@@ -126,7 +126,7 @@ export const Journey1000Days = () => {
             <div className="flex flex-col">
               <span className="text-sm md:text-base font-bold text-foreground tracking-wider mb-2">Journey Progress</span>
             </div>
-            <span className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
               Day {currentDay} <span className="text-lg font-normal text-muted-foreground">/ 1000</span>
             </span>
           </div>
