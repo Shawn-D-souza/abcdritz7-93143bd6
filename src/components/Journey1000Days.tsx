@@ -119,7 +119,7 @@ export const Journey1000Days = () => {
 
   /* ── Progress dashboard (shared between loading & loaded states) ── */
   const progressDashboard = (
-    <div className="relative z-10 flex flex-col xl:flex-row gap-8 items-center justify-between border-t border-border/50 pt-6 px-4 md:px-8 pb-2">
+    <div className="relative z-10 flex flex-col xl:flex-row gap-6 sm:gap-8 items-center justify-between border-t border-border/50 pt-4 sm:pt-6 px-3 sm:px-4 md:px-8 pb-2">
       <div className="flex-1 w-full space-y-4">
         <div>
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-4 gap-4">
