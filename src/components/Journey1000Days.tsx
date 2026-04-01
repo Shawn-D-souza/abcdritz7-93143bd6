@@ -119,14 +119,14 @@ export const Journey1000Days = () => {
 
   /* ── Progress dashboard (shared between loading & loaded states) ── */
   const progressDashboard = (
-    <div className="relative z-10 flex flex-col xl:flex-row gap-8 items-center justify-between border-t border-border/50 pt-6 px-4 md:px-8 pb-2">
+    <div className="relative z-10 flex flex-col xl:flex-row gap-6 sm:gap-8 items-center justify-between border-t border-border/50 pt-4 sm:pt-6 px-3 sm:px-4 md:px-8 pb-2">
       <div className="flex-1 w-full space-y-4">
         <div>
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-4 gap-4">
             <div className="flex flex-col">
               <span className="text-sm md:text-base font-bold text-foreground tracking-wider mb-2">Journey Progress</span>
             </div>
-            <span className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
               Day {currentDay} <span className="text-lg font-normal text-muted-foreground">/ 1000</span>
             </span>
           </div>
@@ -192,7 +192,7 @@ export const Journey1000Days = () => {
             <div className="relative w-full mx-auto mb-2 md:mb-6">
               <div className="flex gap-4 justify-center py-4 px-4 md:px-0 overflow-hidden">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-[280px] sm:w-[340px] md:w-[420px] shrink-0">
+                  <div key={i} className="w-[240px] sm:w-[300px] md:w-[380px] lg:w-[420px] shrink-0">
                     <SkeletonPhaseCard />
                   </div>
                 ))}
@@ -231,11 +231,11 @@ export const Journey1000Days = () => {
             <div className="absolute top-0 bottom-0 right-0 w-8 md:w-32 bg-gradient-to-l from-background/80 to-transparent z-10 pointer-events-none rounded-r-3xl" />
             
             {/* Custom Navigation Arrows positioned on the sides of the Swiper */}
-            <button className="custom-prev absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card/80 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
-              <ChevronLeft className="w-6 h-6 text-foreground group-hover:-translate-x-0.5 transition-transform" />
+            <button className="custom-prev absolute left-0 sm:left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-border bg-card/90 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground group-hover:-translate-x-0.5 transition-transform" />
             </button>
-            <button className="custom-next absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-border bg-card/80 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
-              <ChevronRight className="w-6 h-6 text-foreground group-hover:translate-x-0.5 transition-transform" />
+            <button className="custom-next absolute right-0 sm:right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border border-border bg-card/90 backdrop-blur-md hover:bg-secondary transition-all hover:scale-105 active:scale-95 cursor-pointer shadow-lg group">
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-foreground group-hover:translate-x-0.5 transition-transform" />
             </button>
 
             <Swiper
@@ -258,15 +258,19 @@ export const Journey1000Days = () => {
               }}
               breakpoints={{
                 768: {
-                  slidesOffsetBefore: 500,
-                  slidesOffsetAfter: 120,
+                  slidesOffsetBefore: 200,
+                  slidesOffsetAfter: 200,
+                },
+                1280: {
+                  slidesOffsetBefore: 300,
+                  slidesOffsetAfter: 300,
                 },
               }}
               modules={[EffectCoverflow, Keyboard, Navigation]}
               className="phase-swiper w-full py-4 px-4 md:px-0"
             >
               {phases.map((phase, idx) => (
-                <SwiperSlide key={phase.id ?? idx} className="!w-[280px] sm:!w-[340px] md:!w-[420px]">
+                <SwiperSlide key={phase.id ?? idx} className="!w-[240px] sm:!w-[300px] md:!w-[380px] lg:!w-[420px]">
                   <PhaseCard phase={phase} />
                 </SwiperSlide>
               ))}
