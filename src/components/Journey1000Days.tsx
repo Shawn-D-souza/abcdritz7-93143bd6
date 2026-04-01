@@ -192,7 +192,7 @@ export const Journey1000Days = () => {
             <div className="relative w-full mx-auto mb-2 md:mb-6">
               <div className="flex gap-4 justify-center py-4 px-4 md:px-0 overflow-hidden">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-[280px] sm:w-[340px] md:w-[420px] shrink-0">
+                  <div key={i} className="w-[240px] sm:w-[300px] md:w-[380px] lg:w-[420px] shrink-0">
                     <SkeletonPhaseCard />
                   </div>
                 ))}
