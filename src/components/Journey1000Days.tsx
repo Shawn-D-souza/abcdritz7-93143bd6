@@ -252,19 +252,9 @@ export const Journey1000Days = () => {
               coverflowEffect={{
                 rotate: 40,
                 stretch: 0,
-                depth: 300,
+                depth: 250,
                 modifier: 1.2,
                 slideShadows: false,
-              }}
-              breakpoints={{
-                768: {
-                  slidesOffsetBefore: 200,
-                  slidesOffsetAfter: 200,
-                },
-                1280: {
-                  slidesOffsetBefore: 300,
-                  slidesOffsetAfter: 300,
-                },
               }}
               modules={[EffectCoverflow, Keyboard, Navigation]}
               className="phase-swiper w-full py-4 px-4 md:px-0"
