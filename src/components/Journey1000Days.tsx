@@ -258,8 +258,12 @@ export const Journey1000Days = () => {
               }}
               breakpoints={{
                 768: {
-                  slidesOffsetBefore: 500,
-                  slidesOffsetAfter: 120,
+                  slidesOffsetBefore: 200,
+                  slidesOffsetAfter: 200,
+                },
+                1280: {
+                  slidesOffsetBefore: 300,
+                  slidesOffsetAfter: 300,
                 },
               }}
               modules={[EffectCoverflow, Keyboard, Navigation]}
