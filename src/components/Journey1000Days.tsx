@@ -270,7 +270,7 @@ export const Journey1000Days = () => {
               className="phase-swiper w-full py-4 px-4 md:px-0"
             >
               {phases.map((phase, idx) => (
-                <SwiperSlide key={phase.id ?? idx} className="!w-[280px] sm:!w-[340px] md:!w-[420px]">
+                <SwiperSlide key={phase.id ?? idx} className="!w-[240px] sm:!w-[300px] md:!w-[380px] lg:!w-[420px]">
                   <PhaseCard phase={phase} />
                 </SwiperSlide>
               ))}
