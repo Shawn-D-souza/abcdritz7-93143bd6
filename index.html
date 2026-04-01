@@ -25,6 +25,25 @@
     <meta property="og:image" content="https://ritz7ai.netlify.app/assets/preview_logo.png" />
     <meta http-equiv="Permissions-Policy" content="compute-pressure=*" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("vite-ui-theme");
+          if (!theme) {
+            theme = "system";
+          }
+          if (
+            theme === "dark" ||
+            (theme === "system" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.add("light");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
 
   <body>
