@@ -2,7 +2,7 @@
 title: "Sophia The Robot Is Not What You Think: 5 Shocking Truths"
 slug: sophia-robot-facts
 category: AI Controversy
-author: Admin
+author: Sangya Keswani
 date: 2026-03-24T10:12:00.000+05:30
 updated_date: 2026-03-24T10:12:00.000+05:30
 thumbnail: /assets/uploads/sophia-the-robot.png
