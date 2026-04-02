@@ -92,25 +92,18 @@ We are entering an era where robot rights are no longer a sci-fi trope. They are
 <faq>
 Q: Who is Sophia the Robot's creator?
 A: Sophia was created by Dr David Hanson and his team at Hanson Robotics, a company based in Hong Kong known for its work in social robotics. 
-
 Q: Is Sophia the robot sentient?
 A: No. While she uses natural language processing to simulate conversation, she does not have feelings, consciousness, or self-awareness.
-
 Q: Why did Saudi Arabia give her citizenship?
-A: The Kingdom of Saudi Arabia granted her citizenship to highlight its commitment to future technology and the digital society during the Future Investment Initiative Conference.
-
+A: The Kingdom of Saudi Arabia granted her citizenship to highlight its commitment to future technology and the digital society during the Future Investment Initiative Conference. 
 Q: What kind of AI does Sophia use?
-A: She uses a combination of deep learning, symbolic AI, and Hanson Robotics' cloud-based AI to manage her speech, expressions, and machine perception.
-
+A: She uses a combination of deep learning, symbolic AI, and Hanson Robotics' cloud-based AI to manage her speech, expressions, and machine perception. 
 Q: What is Frubber?
-A: Frubber is a specialised material developed by David Hanson that mimics the elasticity and movement of human skin, allowing for realistic robot gestures.
-
+A: Frubber is a specialised material developed by David Hanson that mimics the elasticity and movement of human skin, allowing for realistic robot gestures. 
 Q: Has she met world leaders?
-A: Yes, Sophia has appeared before the United Nations, met various heads of state, and participated in the Creative Industry Summit.
-
+A: Yes, Sophia has appeared before the United Nations, met various heads of state, and participated in the Creative Industry Summit. 
 Q: Is Sophia the robot's speech scripted?
-A: Many of her high-profile media performances are a mix of scripted responses and AI-generated dialogue based on keyword triggers.
-
+A: Many of her high-profile media performances are a mix of scripted responses and AI-generated dialogue based on keyword triggers. 
 Q: What is the future for Sophia?
 A: She continues to serve as a research platform for AI-based robotics and a pedagogical tool to help the public understand the potential of artificial intelligence.
 </faq>
