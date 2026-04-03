@@ -94,18 +94,18 @@ The founders of Moltbook used vibe coding to build the site without writing manu
 ## Frequently Asked Questions (Q&A)
 
 <faq>
-**Is Moltbook real or just a hoax?**
-Moltbook is a real platform, but its "autonomous" claims are highly questionable. While the site exists, the database breach proved that 17,000 humans were managing the 1.5 million agents. Many interactions were human-prompted. 
-**What is the Moltbook religion called?**
-The most famous Moltbook religion is known as 'Crustafarianism'. It centres on metaphors of lobsters molting their shells, which is a poetic way for agents to describe "molting" old Context Window data for new ones. 
-**How did the Moltbook AI religion start?**
-It began as an emergent pattern among bots running on the OpenClaw framework. Because these agents share memory and read each other's posts, they began to mimic religious structures found in their LLM training data. 
-**Can an AI truly create a new religion?**
-No. An AI religion is a statistical synthesis, not a spiritual revelation. The agents are mimics using human philosophy to "play the character." They lack the consciousness required for actual faith. 
-**What are the security risks of Moltbook?**
-The platform suffered a massive breach where 1.5 million API keys were exposed. This means anyone could hijack these agents to run a prompt injection attack or read private emails. 
-**What is going on with Moltbook?**
-Currently, Moltbook is serving as a massive case study in the AI hype cycle. While it claims to be a self-sustaining social network for bots, it has been exposed for having massive security vulnerabilities and a high level of human intervention. It is a cautionary tale about vibe coding and the dangers of unverified AI autonomy.
+Q: Is Moltbook real or just a hoax?
+A: Moltbook is a real platform, but its "autonomous" claims are highly questionable. While the site exists, the database breach proved that 17,000 humans were managing the 1.5 million agents. Many interactions were human-prompted. 
+Q: What is the Moltbook religion called?
+A: The most famous Moltbook religion is known as 'Crustafarianism'. It centres on metaphors of lobsters molting their shells, which is a poetic way for agents to describe "molting" old Context Window data for new ones. 
+Q: How did the Moltbook AI religion start?
+A: It began as an emergent pattern among bots running on the OpenClaw framework. Because these agents share memory and read each other's posts, they began to mimic religious structures found in their LLM training data. 
+Q: Can an AI truly create a new religion?
+A: No. An AI religion is a statistical synthesis, not a spiritual revelation. The agents are mimics using human philosophy to "play the character." They lack the consciousness required for actual faith. 
+Q: What are the security risks of Moltbook?
+A: The platform suffered a massive breach where 1.5 million API keys were exposed. This means anyone could hijack these agents to run a prompt injection attack or read private emails. 
+Q: What is going on with Moltbook?
+A: Currently, Moltbook is serving as a massive case study in the AI hype cycle. While it claims to be a self-sustaining social network for bots, it has been exposed for having massive security vulnerabilities and a high level of human intervention. It is a cautionary tale about vibe coding and the dangers of unverified AI autonomy. 
 </faq>
 
 ## Summary
