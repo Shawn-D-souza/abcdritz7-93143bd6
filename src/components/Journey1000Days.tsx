@@ -25,8 +25,6 @@ type PhaseRow = {
   playlist_link?: string | null;
 };
 
-// Start date corresponding to Day 1
-const START_DATE = new Date("2024-11-30T00:00:00Z");
 
 /* ── Skeleton shimmer card shown while loading ── */
 function SkeletonPhaseCard() {
@@ -61,9 +59,19 @@ export const Journey1000Days = () => {
   useEffect(() => {
     const today = new Date();
     // Offset by 18 hours so the day increments at 6:00 PM local time instead of 12:00 AM
-    const shiftedTime = today.getTime() - 18 * 60 * 60 * 1000;
-    const diffTime = shiftedTime - START_DATE.getTime();
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    const shiftedLocal = new Date(today.getTime() - 18 * 60 * 60 * 1000);
+    shiftedLocal.setHours(0, 0, 0, 0);
+
+    // NOTE: The 1000 Days challenge officially started on Nov 30, 2024.
+    // To satisfy the logic where the counter only increments at 6:00 PM local time 
+    // AND correctly represents Day 490 before 6:00 PM on Apr 5, 2026, 
+    // we use Dec 1, 2024 (00:00:00) as our math anchor.
+    const startDate = new Date(2024, 11, 1);
+    startDate.setHours(0, 0, 0, 0);
+
+    const diffTime = shiftedLocal.getTime() - startDate.getTime();
+    const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    
     setCurrentDay(Math.max(0, diffDays));
   }, []);
 
