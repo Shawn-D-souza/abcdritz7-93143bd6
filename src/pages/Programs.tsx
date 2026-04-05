@@ -75,6 +75,9 @@ const Programs = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+
   
   const [searchFocused, setSearchFocused] = useState(false);
   const [showSortMenu, setShowSortMenu] = useState(false);
@@ -167,28 +170,53 @@ const Programs = () => {
     
     try {
       if (authMode === "register") {
-        const { error } = await supabase.auth.signUp({
+        // Validation for phone number
+        const cleanNumber = phoneNumber.replace(/\s+/g, '');
+        if (!/^\d{7,15}$/.test(cleanNumber)) {
+          throw new Error("Please enter a valid phone number (7-15 digits)");
+        }
+        
+        const fullPhoneNumber = `${countryCode} ${cleanNumber}`;
+        const { data, error } = await supabase.auth.signUp({
           email, password, options: { 
-            data: { full_name: fullName, role: selectedRole },
-            emailRedirectTo: `${window.location.origin}/programs`
+            data: { 
+              full_name: fullName, 
+              phone_number: fullPhoneNumber, 
+              role: selectedRole,
+              country_code: countryCode
+            },
           }
         });
+
         if (error) throw error;
-        setAuthSuccess(true);
-        toast.success("Verification email sent!");
+        
+        // Commenting out email confirmation flow
+        // setAuthSuccess(true);
+        // toast.success("Verification email sent!");
+        
+        // Directly log in the user
+        const { error: loginError } = await supabase.auth.signInWithPassword({ email, password });
+        if (!loginError) {
+          toast.success("Account created and logged in successfully!");
+          setShowRegistration(false);
+        } else {
+          // Fallback if login fails or confirmation is somehow still required
+          toast.success("Account created successfully!");
+          setAuthMode("login");
+        }
       } else if (authMode === "login") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         toast.success("Logged in successfully!");
         setShowRegistration(false);
-      } else if (authMode === "forgot-password") {
+      } /* else if (authMode === "forgot-password") {
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
           redirectTo: `${window.location.origin}/reset-password`,
         });
         if (error) throw error;
         setAuthSuccess(true);
         toast.success("Password reset email sent!");
-      }
+      } */
     } catch (err: any) {
       toast.error(err.message || "Authentication failed");
     } finally {
@@ -205,6 +233,7 @@ const Programs = () => {
   const handleCheckout = async (course: Course) => {
     if (!session) {
       toast.info("Please login to enroll in this course.");
+      setAuthMode("register");
       setShowRegistration(true);
       return;
     }
@@ -313,18 +342,29 @@ const Programs = () => {
         <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />
           {session ? (
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-medium hidden sm:inline-block">{session.user.user_metadata?.full_name || session.user.email}</span>
-              <button onClick={logout} className="rounded-full bg-muted px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition-all hover:bg-destructive/10 hover:text-destructive flex items-center gap-1.5">
-                <LogOut className="w-4 h-4" />
-                <span className="hidden md:inline">Log out</span>
+            <div className="flex items-center gap-3 sm:gap-4 pl-3 sm:pl-5 sm:border-l border-border/50">
+              <div className="hidden sm:flex flex-col items-start min-w-[80px]">
+                <span className="text-[13px] font-semibold text-foreground leading-none mb-1">
+                  {session.user.user_metadata?.full_name || "Student"}
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-none truncate max-w-[140px]">
+                  {session.user.email}
+                </span>
+              </div>
+              <button 
+                onClick={logout} 
+                className="group flex items-center gap-2 rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-destructive/10 hover:text-destructive hover:shadow-sm"
+                title="Log out"
+              >
+                <LogOut className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
+                <span className="hidden md:inline text-[11px] font-bold uppercase tracking-wider">Log out</span>
               </button>
             </div>
           ) : (
-            <button onClick={() => { setAuthMode("login"); setShowRegistration(true); }} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30 md:px-5 flex items-center gap-1.5">
+            <button onClick={() => { setAuthMode("register"); setShowRegistration(true); }} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30 md:px-5 flex items-center gap-1.5">
               <User className="w-4 h-4 md:hidden" />
-              <span className="hidden md:inline">Login / Enroll</span>
-              <span className="md:hidden">Login</span>
+              <span className="hidden md:inline">Enroll / Login</span>
+              <span className="md:hidden">Enroll/Login</span>
             </button>
           )}
         </div>
@@ -564,13 +604,13 @@ const Programs = () => {
       {/* ───── Auth Modal ───── */}
       <AnimatePresence>
         {showRegistration && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] flex items-start sm:items-center justify-center bg-black/60 backdrop-blur-sm overflow-y-auto" onClick={() => setShowRegistration(false)}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] flex items-center sm:items-start justify-center bg-black/60 backdrop-blur-sm overflow-y-auto" onClick={() => setShowRegistration(false)}>
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative w-full max-w-md rounded-2xl sm:rounded-3xl border border-border/50 bg-background p-5 sm:p-7 shadow-2xl my-4 mx-4 sm:my-8"
+              className="relative w-full max-w-md rounded-2xl border border-border/50 bg-background p-3.5 sm:p-5 shadow-2xl my-6 sm:my-8 mx-4"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
@@ -581,20 +621,15 @@ const Programs = () => {
               </button>
 
               {!authSuccess && (
-                <div className="mb-4 sm:mb-5 text-center">
-                  <div className="mx-auto mb-2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-primary/10">
-                    {authMode === "register" ? <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /> : 
-                     authMode === "forgot-password" ? <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-primary" /> :
-                     <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                <div className="mb-2 text-center pt-1">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground">
                     {authMode === "register" ? "Create an Account" : 
                      authMode === "forgot-password" ? "Reset Password" :
                      "Welcome Back"}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-0.5 px-2">
+                  <p className="text-[10px] sm:text-xs text-muted-foreground mt-0 px-2 line-clamp-1">
                     {authMode === "register" ? "Join us to access exclusive programs" : 
-                     authMode === "forgot-password" ? "Enter your email to receive a reset link" :
+                     authMode === "forgot-password" ? "Enter your email for a reset link" :
                      "Sign in to access your programs"}
                   </p>
                 </div>
@@ -637,51 +672,82 @@ const Programs = () => {
                 <>
                   {/* Tab Switcher */}
                   {authMode !== "forgot-password" && (
-                    <div className="flex bg-muted p-1 rounded-xl mb-4">
+                    <div className="flex bg-muted p-1.5 rounded-xl mb-4">
                       <button
                         onClick={() => setAuthMode("register")}
-                        className={`flex-1 py-1.5 text-xs font-medium rounded-lg transition-all ${authMode === "register" ? "bg-background shadow text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                        className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${authMode === "register" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
                       >
                         Register
                       </button>
                       <button
                         onClick={() => setAuthMode("login")}
-                        className={`flex-1 py-1.5 text-xs font-medium rounded-lg transition-all ${authMode === "login" ? "bg-background shadow text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                        className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-all ${authMode === "login" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
                       >
                         Login
                       </button>
                     </div>
                   )}
 
-                  <form className="space-y-3" onSubmit={handleAuth}>
+                  <form className="space-y-3.5" onSubmit={handleAuth}>
                     {authMode === "register" && (
-                      <div>
-                        <label className="mb-1 block text-xs font-medium text-foreground">Full Name</label>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                          <input 
-                            type="text" 
-                            required 
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            placeholder="John Doe" 
-                            className="w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-4 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
-                          />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <div>
+                          <label className="mb-1 block text-xs font-medium text-foreground">Full Name</label>
+                          <div className="relative">
+                            <input 
+                              type="text" 
+                              required 
+                              value={fullName}
+                              onChange={(e) => setFullName(e.target.value)}
+                              placeholder="Full Name" 
+                              className="w-full rounded-xl border border-border bg-background py-2.5 px-3.5 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="mb-1 block text-xs font-medium text-foreground">Phone Number</label>
+                          <div className="flex gap-2">
+                            <div className="relative w-[52px] shrink-0">
+                              <input 
+                                type="text" 
+                                required 
+                                value={countryCode}
+                                onChange={(e) => {
+                                  let val = e.target.value;
+                                  if (!val.startsWith('+')) val = '+' + val.replace(/\D/g, '');
+                                  setCountryCode(val.slice(0, 5));
+                                }}
+                                placeholder="+91" 
+                                className="w-full text-center rounded-xl border border-border bg-background py-2.5 px-0 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground font-medium" 
+                              />
+                            </div>
+                            <div className="relative flex-1">
+                              <input 
+                                type="tel" 
+                                required 
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
+                                placeholder="Phone Number" 
+                                className="w-full rounded-xl border border-border bg-background py-2.5 px-3.5 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     )}
 
+
                     <div>
                       <label className="mb-1 block text-xs font-medium text-foreground">Email</label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                         <input 
                           type="email" 
                           required 
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="john@example.com" 
-                          className="w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-4 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
+                          placeholder="Email Address" 
+                          className="w-full rounded-xl border border-border bg-background py-2.5 px-3.5 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
                         />
                       </div>
                     </div>
@@ -690,7 +756,7 @@ const Programs = () => {
                       <div>
                         <div className="flex items-center justify-between mb-1">
                           <label className="text-xs font-medium text-foreground">Password</label>
-                          {authMode === "login" && (
+                          {/* authMode === "login" && (
                             <button 
                               type="button"
                               onClick={() => setAuthMode("forgot-password")}
@@ -698,17 +764,16 @@ const Programs = () => {
                             >
                               Forgot Password?
                             </button>
-                          )}
+                          ) */}
                         </div>
                         <div className="relative">
-                          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                           <input 
                             type="password" 
                             required 
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="••••••••" 
-                            className="w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-4 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
+                            placeholder="Password" 
+                            className="w-full rounded-xl border border-border bg-background py-2.5 px-3.5 text-sm focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground" 
                           />
                         </div>
                       </div>
@@ -720,25 +785,17 @@ const Programs = () => {
                         <button
                           type="button"
                           onClick={() => setIsRoleDropdownOpen(!isRoleDropdownOpen)}
-                          className={`flex items-center justify-between w-full h-11 rounded-xl border bg-background px-4 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                          className={`flex items-center justify-between w-full py-2.5 rounded-xl border bg-background px-3.5 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/20 ${
                             isRoleDropdownOpen ? "border-primary/40 ring-2 ring-primary/20 shadow-sm" : "border-border hover:border-primary/20"
                           }`}
                         >
                           <div className="flex items-center gap-2.5 overflow-hidden">
                             {selectedRole ? (
-                              <div className="flex items-center gap-2.5">
-                                <div className="p-1.5 rounded-lg bg-primary/10 text-primary shrink-0">
-                                  {roles.find((r) => r.value === selectedRole)?.icon}
-                                </div>
-                                <span className="text-foreground truncate font-medium">
-                                  {roles.find((r) => r.value === selectedRole)?.label}
-                                </span>
-                              </div>
+                              <span className="text-foreground truncate font-medium">
+                                {roles.find((r) => r.value === selectedRole)?.label}
+                              </span>
                             ) : (
-                              <div className="flex items-center gap-2.5 text-muted-foreground">
-                                <User className="w-4 h-4 shrink-0" />
-                                <span>Select your role</span>
-                              </div>
+                              <span className="text-muted-foreground">Select your role</span>
                             )}
                           </div>
                           <ChevronDown className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-300 ${isRoleDropdownOpen ? "rotate-180" : ""}`} />
@@ -761,22 +818,15 @@ const Programs = () => {
                                     setSelectedRole(role.value);
                                     setIsRoleDropdownOpen(false);
                                   }}
-                                  className={`flex items-center gap-3 w-full rounded-xl px-3 py-2.5 text-sm transition-all ${
+                                  className={`flex items-center gap-3 w-full rounded-xl px-3 py-2 text-sm transition-all ${
                                     selectedRole === role.value
                                       ? "bg-primary/10 text-primary font-semibold"
                                       : "text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                                   }`}
                                 >
-                                  <div className={`p-1.5 rounded-lg transition-colors flex items-center justify-center ${
-                                    selectedRole === role.value ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground"
-                                  }`}>
-                                    {role.icon}
-                                  </div>
                                   <span className="flex-1 text-left">{role.label}</span>
                                   {selectedRole === role.value && (
-                                    <div className="w-5 h-5 flex items-center justify-center rounded-full bg-primary/20">
-                                      <Check className="w-3 h-3 text-primary" />
-                                    </div>
+                                    <Check className="w-3.5 h-3.5 text-primary" />
                                   )}
                                 </button>
                               ))}
@@ -788,7 +838,7 @@ const Programs = () => {
                     <button 
                       disabled={isAuthLoading} 
                       type="submit" 
-                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/85 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-all hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-75 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary/85 py-2.5 text-sm font-bold text-primary-foreground shadow-lg transition-all hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-75 disabled:hover:scale-100 disabled:cursor-not-allowed"
                     >
                       {isAuthLoading ? (
                         <>
