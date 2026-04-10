@@ -84,7 +84,9 @@ export const Programs = () => {
                 className="pt-1"
               >
                 <a 
-                  href="/programs" 
+                  href="https://ritz7.edrona.ai/programs" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={handleRipple}
                   className="group relative inline-flex overflow-hidden rounded-xl bg-white px-10 py-3 text-center font-bold text-primary shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-white/20 sm:text-base items-center justify-center min-w-[200px]"
                 >
