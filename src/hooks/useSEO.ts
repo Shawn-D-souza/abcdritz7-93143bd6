@@ -71,7 +71,7 @@ export function useSEO({
 
     if (image) {
       // Use production URL directly to ensure prerenderer captures the right domain
-      const siteUrl = 'https://ritz7ai.netlify.app'; 
+      const siteUrl = 'https://ritz7.ai'; 
       
       const absoluteImageUrl = image.startsWith('http') 
         ? image 
