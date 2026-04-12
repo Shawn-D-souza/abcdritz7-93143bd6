@@ -77,9 +77,12 @@ export const Navbar = () => {
       <div className="flex h-full items-center">
         <Link to="/" className="flex items-center">
           <img
-            src={isDark ? "/assets/Ritz7_logo_dark.png" : "/assets/Ritz7_logo_light.png"}
+            src={isDark ? "/assets/Ritz7_logo_dark.webp" : "/assets/Ritz7_logo_light.webp"}
             alt="Ritz7 Logo"
-            className="h-10 object-contain transition-all duration-300 hover:scale-105"
+            width="120"
+            height="40"
+            fetchPriority="high"
+            className="h-10 w-auto object-contain transition-all duration-300 hover:scale-105"
           />
         </Link>
       </div>

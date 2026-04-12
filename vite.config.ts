@@ -19,5 +19,14 @@ export default defineConfig({
   },
   build: {
     target: "es2019",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Splits large libraries into a separate cached chunk
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@tanstack/react-query', 'lucide-react']
+        }
+      }
+    }
   },
 });
