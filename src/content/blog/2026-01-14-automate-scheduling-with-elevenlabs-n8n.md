@@ -4,8 +4,8 @@ title: "How to Automate Scheduling with ElevenLabs & n8n | Ritz7"
 slug: automate-scheduling-with-elevenlabs-n8n
 category: Technology
 author: Sangya Keswani
-date: 2026-01-14T00:00:00.000Z
-updated_date: 2026-01-15T00:00:00.000Z
+date: "2026-01-14T00:00:00.000Z"
+updated_date: "2026-01-15T00:00:00.000Z"
 thumbnail: /assets/uploads/sev1mVTDcwEChyZNzjvp3VEdA.png
 thumbnail_alt: "description: \"Automate appointment scheduling with voice! A complete guide to connecting ElevenLabs Voice Agent to n8n for Google Calendar booking automation.\""
 ---

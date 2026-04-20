@@ -4,8 +4,8 @@ title: "Automate Email Replies from Form Submission in n8n"
 slug: automate-email-replies-form-submission-in-n8n
 category: Technology
 author: Sangya Keswani
-date: 2025-11-08T00:00:00.000Z
-updated_date: 2025-11-08T00:00:00.000Z
+date: "2025-11-08T00:00:00.000Z"
+updated_date: "2025-11-08T00:00:00.000Z"
 thumbnail: /assets/uploads/xnaujQjTRaC5FXfnPk5etqaaFyA.png
 thumbnail_alt: "auto reply | form submission | n8n"
 description: "Automate email responses in n8n with Outlook—capture form data, send instant replies, and simplify your communication workflow effortlessly."

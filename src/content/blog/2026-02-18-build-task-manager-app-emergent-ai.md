@@ -4,8 +4,8 @@ title: "Build Your Task Manager App in 1 Prompt with Emergent AI"
 slug: build-task-manager-app-emergent-ai
 category: Technology
 author: Sangya Keswani
-date: 2026-02-18T00:00:00.000Z
-updated_date: 2026-02-18T00:00:00.000Z
+date: "2026-02-18T00:00:00.000Z"
+updated_date: "2026-02-18T00:00:00.000Z"
 thumbnail: /assets/uploads/DbwRU2DMykypfI1fqLQkeuy3Xw.png
 thumbnail_alt: "emergent ai - build apps usig ai"
 description: "Build a Notion-style Task Manager in 1 prompt using Emergent AI. Learn prompt engineering, automated testing, and workflow automation to launch apps fast."

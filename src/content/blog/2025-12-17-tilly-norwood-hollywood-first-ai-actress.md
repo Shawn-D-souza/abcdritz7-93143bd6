@@ -4,8 +4,8 @@ title: "Tilly Norwood: Hollywood’s First AI Actress"
 slug: tilly-norwood-hollywood-first-ai-actress
 category: Technology
 author: Sangya Keswani
-date: 2025-12-17T00:00:00.000Z
-updated_date: 2025-12-16T00:00:00.000Z
+date: "2025-12-17T00:00:00.000Z"
+updated_date: "2025-12-16T00:00:00.000Z"
 thumbnail: /assets/uploads/5YhXNEIghekExur7eNcJsNFNlsM.png
 thumbnail_alt: "hollywood first AI actress"
 description: "AI-generated actress Tilly Norwood appears in Hollywood, highlighting the rise of digital performers and the debate over AI in cinema."

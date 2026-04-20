@@ -4,8 +4,8 @@ title: "Consulting Firm Automation: Industry Benchmark Report "
 slug: automation-for-consulting-benchmark-report
 category: Technology
 author: Sangya Keswani
-date: 2024-09-30T00:00:00.000Z
-updated_date: 2026-01-13T00:00:00.000Z
+date: "2024-09-30T00:00:00.000Z"
+updated_date: "2026-01-13T00:00:00.000Z"
 thumbnail: /assets/uploads/40TL1FU0cY9QSQvzpZ8ezig5xgg.png
 thumbnail_alt: "Consulting Firm Automation"
 description: "2024 Consulting Firm Automation: Key Metrics, Trends, and Best Practices for efficiency, cost savings, and growth. Optimize your consulting business."

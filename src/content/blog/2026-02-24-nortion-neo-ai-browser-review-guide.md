@@ -4,8 +4,8 @@ title: "Chrome is Dead: Why Everyone is Switching to Neo AI Browser"
 slug: nortion-neo-ai-browser-review-guide
 category: Technology
 author: Sangya Keswani
-date: 2026-02-24T00:00:00.000Z
-updated_date: 2026-02-24T00:00:00.000Z
+date: "2026-02-24T00:00:00.000Z"
+updated_date: "2026-02-24T00:00:00.000Z"
 thumbnail: /assets/uploads/R6s9Pa0p46L6tEQtTbEnIjWfs.png
 thumbnail_alt: "neo browser ai"
 description: "90% of users are still browsing like it's 2010. Neo AI Browser just changed the rules with a 'Magic Box' Chrome doesn't want you to know about this secret."

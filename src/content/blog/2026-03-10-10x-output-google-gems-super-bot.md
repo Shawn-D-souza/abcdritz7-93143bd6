@@ -4,8 +4,8 @@ title: "10x Your Output: 5 Steps To Build Your Google Gems Super-Bot"
 slug: 10x-output-google-gems-super-bot
 category: Technology
 author: Sangya Keswani
-date: 2026-03-10T00:00:00.000Z
-updated_date: 2026-03-10T00:00:00.000Z
+date: "2026-03-10T00:00:00.000Z"
+updated_date: "2026-03-10T00:00:00.000Z"
 thumbnail: /assets/uploads/zCh1s3gJccyB4QabdS1lFS2WVqo.png
 thumbnail_alt: "google gemini gems"
 description: "See how Google Gems handle boring chores automatically. Build your own AI assistants, use custom Gems to write content, and get much more done in less time."

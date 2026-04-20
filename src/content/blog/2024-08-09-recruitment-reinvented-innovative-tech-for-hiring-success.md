@@ -4,8 +4,8 @@ title: "Recruitment Reinvented: Innovative Tech for Hiring Success"
 slug: recruitment-reinvented-innovative-tech-for-hiring-success
 category: Technology
 author: Sangya Keswani
-date: 2024-08-09T00:00:00.000Z
-updated_date: 2024-08-09T00:00:00.000Z
+date: "2024-08-09T00:00:00.000Z"
+updated_date: "2024-08-09T00:00:00.000Z"
 thumbnail: /assets/uploads/mcZ4Pa3CHcAjgmhhv4BGnhfREs.png
 thumbnail_alt: "recruitment-reinvented-innovative-tech-for-hiring-success"
 description: "Struggling to hire top talent? Discover how innovative technology can streamline your recruitment process, from interview scheduling to team management.   "

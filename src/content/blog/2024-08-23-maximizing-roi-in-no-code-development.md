@@ -4,8 +4,8 @@ title: "Maximizing ROI in No-Code Development: Guide to Manage Cost"
 slug: maximizing-roi-in-no-code-development
 category: Technology
 author: Sangya Keswani
-date: 2024-08-23T00:00:00.000Z
-updated_date: 2024-08-23T00:00:00.000Z
+date: "2024-08-23T00:00:00.000Z"
+updated_date: "2024-08-23T00:00:00.000Z"
 thumbnail: /assets/uploads/HzUGrHNVkxxwvwialqgTkMv6Nmk.png
 thumbnail_alt: "Maximizing ROI in No-Code Development"
 description: "No-code: Accelerate innovation, reduce costs, boost productivity. Build custom tools, automate workflows, and drive business growth. "

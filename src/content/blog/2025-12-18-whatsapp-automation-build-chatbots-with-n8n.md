@@ -4,8 +4,8 @@ title: "Build a WhatsApp AI Agent with n8n: 2026 Step-by-Step Guide"
 slug: whatsapp-automation-build-chatbots-with-n8n
 category: Technology
 author: Sangya Keswani
-date: 2025-12-18T00:00:00.000Z
-updated_date: 2025-12-18T00:00:00.000Z
+date: "2025-12-18T00:00:00.000Z"
+updated_date: "2025-12-18T00:00:00.000Z"
 thumbnail: /assets/uploads/5P2z4vSIAO4tKR67mH8VBmK9ghE.png
 thumbnail_alt: "whatsapp bot"
 description: "Automate your customer support 24/7. Learn to build a multimodal WhatsApp AI bot with n8n and OpenAI that understands voice and text. No-code guide included!"

@@ -4,8 +4,8 @@ title: "Automation for Small Businesses: Zapier Simplifies Workflow"
 slug: small-business-automation-with-zapier
 category: Technology
 author: Sangya Keswani
-date: 2024-10-28T00:00:00.000Z
-updated_date: 2024-10-29T00:00:00.000Z
+date: "2024-10-28T00:00:00.000Z"
+updated_date: "2024-10-29T00:00:00.000Z"
 thumbnail: /assets/uploads/Ic2JNbsgZVfwoy7THfCHqX9yOUU.png
 thumbnail_alt: "Automation for small businesses"
 description: "Discover the benefits of automation in small business. Automate repetitive tasks and streamline workflows efficiently with Zapier | Automation Consultant."

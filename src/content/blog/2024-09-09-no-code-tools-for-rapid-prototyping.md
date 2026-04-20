@@ -4,8 +4,8 @@ title: "5 Leading Platforms for No-Code Prototyping in 2026"
 slug: no-code-tools-for-rapid-prototyping
 category: Technology
 author: Sangya Keswani
-date: 2024-09-09T00:00:00.000Z
-updated_date: 2026-01-19T00:00:00.000Z
+date: "2024-09-09T00:00:00.000Z"
+updated_date: "2026-01-19T00:00:00.000Z"
 thumbnail: /assets/uploads/vP9a8vF0W3ulylAI4TzP1DXPzQ8.png
 thumbnail_alt: "5 No-Code Tools for Rapid Prototyping"
 description: "Stop waiting for developers! Use the most valuable system for managing fast iterative prototyping workflows. Compare leading platforms & build your app today."

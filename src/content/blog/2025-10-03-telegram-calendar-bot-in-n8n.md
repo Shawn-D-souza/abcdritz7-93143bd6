@@ -4,8 +4,8 @@ title: "Step-by-Step Guide: Create a Telegram-Calendar Bot in n8n"
 slug: telegram-calendar-bot-in-n8n
 category: Technology
 author: Sangya Keswani
-date: 2025-10-03T00:00:00.000Z
-updated_date: 2025-10-09T00:00:00.000Z
+date: "2025-10-03T00:00:00.000Z"
+updated_date: "2025-10-09T00:00:00.000Z"
 thumbnail: /assets/uploads/DU38oDGwtUkath5NW1I8KNfZJ4.jpeg
 thumbnail_alt: "Telegram bot with google calendar in n8n"
 description: "Turn your Telegram bot into an AI calendar assistant! Automate scheduling with Google Calendar, Email, and voice or text commands using n8n."

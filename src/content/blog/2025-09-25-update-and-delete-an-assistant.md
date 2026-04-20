@@ -4,8 +4,8 @@ title: "How to Update or Delete an Assistant (AI bot) in n8n"
 slug: update-and-delete-an-assistant
 category: Technology
 author: Sangya Keswani
-date: 2025-09-25T00:00:00.000Z
-updated_date: 2025-09-25T00:00:00.000Z
+date: "2025-09-25T00:00:00.000Z"
+updated_date: "2025-09-25T00:00:00.000Z"
 thumbnail: /assets/uploads/sd1sSON2zQ6IdeyvqWz9c11nfo.jpeg
 thumbnail_alt: "description: \"Manage your AI bot in n8n AI agent workflows. Update names, edit instructions, or delete setups with instant sync on platform.openai.com.\""
 ---

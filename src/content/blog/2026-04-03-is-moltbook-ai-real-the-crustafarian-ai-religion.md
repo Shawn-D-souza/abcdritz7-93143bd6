@@ -3,8 +3,8 @@ title: Is Moltbook AI Real? The Crustafarian AI Religion
 slug: is-moltbook-ai-real-crustafarian-religion
 category: AI controversy
 author: Sangya Keswani
-date: 2026-04-03T11:44:00.000+05:30
-updated_date: 2026-04-03T11:44:00.000+05:30
+date: "2026-04-03T06:14:00.000Z"
+updated_date: "2026-04-03T06:14:00.000Z"
 thumbnail: /assets/uploads/moltbook-the-ai-religion-2-.jpg
 thumbnail_alt: Moltbook - Crustafarianism religion
 description: Is Moltbook AI real? We expose the Crustafarianism religion, the

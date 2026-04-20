@@ -4,8 +4,8 @@ title: "How to Build an AI Quiz Generator with OpenAI Agent"
 slug: build-an-ai-quiz-generator
 category: Technology
 author: Sangya Keswani
-date: 2026-01-12T00:00:00.000Z
-updated_date: 2026-01-12T00:00:00.000Z
+date: "2026-01-12T00:00:00.000Z"
+updated_date: "2026-01-12T00:00:00.000Z"
 thumbnail: /assets/uploads/E4BgjKxubjBw6diENydPdsJpMao.png
 thumbnail_alt: "quiz bot"
 description: "I built a Quiz Bot with OpenAI, and here is how it works. A step-by-step guide to going from a blank canvas to a fully functional AI agent workflow. "

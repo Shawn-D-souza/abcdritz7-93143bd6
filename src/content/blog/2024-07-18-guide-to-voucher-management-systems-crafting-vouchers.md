@@ -4,8 +4,8 @@ title: "A Guide to Voucher Management Systems: Crafting Vouchers"
 slug: guide-to-voucher-management-systems-crafting-vouchers
 category: Technology
 author: Sangya Keswani
-date: 2024-07-18T00:00:00.000Z
-updated_date: 2024-07-18T00:00:00.000Z
+date: "2024-07-18T00:00:00.000Z"
+updated_date: "2024-07-18T00:00:00.000Z"
 thumbnail: /assets/uploads/vcFHaoA7nMp1g4zuSJKs2QviXI.png
 thumbnail_alt: "A Guide to Voucher Management Systems: Crafting Vouchers"
 description: "Ritz7 System | Revolutionize Your Promotions with Voucher Management Systems (VMS). Streamline Efficiency, Boost Sales, and Gain Valuable Customer Insights."

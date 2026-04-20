@@ -4,8 +4,8 @@ title: "Automate App Management: Use Fload’s AI Agent"
 slug: automate-app-management-use-fload-ai-agent
 category: Technology
 author: Sangya Keswani
-date: 2025-12-29T00:00:00.000Z
-updated_date: 2025-12-31T00:00:00.000Z
+date: "2025-12-29T00:00:00.000Z"
+updated_date: "2025-12-31T00:00:00.000Z"
 thumbnail: /assets/uploads/YaQvxS1KVJgM2jZ6PeUg65yONB8.png
 thumbnail_alt: "fload.com review"
 description: "AI mobile app monitoring by Fload.com: real-time analytics, ML revenue forecasting, and no-code setup. Improve app performance and scale growth effortlessly."

@@ -4,8 +4,8 @@ title: "WhatsApp Automation (Part 1): Set Up Meta Business API"
 slug: whatsapp-automation-set-up-meta-business-api
 category: Technology
 author: Sangya Keswani
-date: 2025-12-05T00:00:00.000Z
-updated_date: 2025-12-05T00:00:00.000Z
+date: "2025-12-05T00:00:00.000Z"
+updated_date: "2025-12-05T00:00:00.000Z"
 thumbnail: /assets/uploads/VysqCXBZK7blYNL50KWhhe6Eot4.png
 thumbnail_alt: "Whatsapp automation"
 description: "Master WhatsApp automation with n8n! Set up Meta Business API, generate Client ID, Access Token, and Phone Number ID for powerful, real-time workflows."

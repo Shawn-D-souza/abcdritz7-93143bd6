@@ -4,8 +4,8 @@ title: "Build An AI Resume Analysis Bot In n8n"
 slug: ai-resume-analysis-bot
 category: Technology
 author: Sangya Keswani
-date: 2025-10-25T00:00:00.000Z
-updated_date: 2025-10-25T00:00:00.000Z
+date: "2025-10-25T00:00:00.000Z"
+updated_date: "2025-10-25T00:00:00.000Z"
 thumbnail: /assets/uploads/MS7Docd29SaPwCGUrXAwUQmtyo0.jpeg
 thumbnail_alt: "automate resume scoring"
 description: "Build an AI-powered Resume Analysis Bot using n8n. Automate resume screening, generate ATS scores, and send automatic HR reports, all without coding."

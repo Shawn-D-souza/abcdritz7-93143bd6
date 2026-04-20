@@ -4,8 +4,8 @@ title: "How To Create Stunning AI Video Ads Using ElevenLabs"
 slug: cinematic-ai-video-ads-using-elevenlabs
 category: Technology
 author: Sangya Keswani
-date: 2026-03-19T00:00:00.000Z
-updated_date: 2026-03-19T00:00:00.000Z
+date: "2026-03-19T00:00:00.000Z"
+updated_date: "2026-03-19T00:00:00.000Z"
 thumbnail: /assets/uploads/eXULVsqDbVIcXm8206d1WSurFs.png
 thumbnail_alt: "AI VIDEO ADS"
 description: "Master ElevenLabs and Google Gemini to create stunning AI video ads. Learn the workflow for cinematic storytelling, voice generation, and high-end visuals."

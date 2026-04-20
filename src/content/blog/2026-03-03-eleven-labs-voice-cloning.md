@@ -4,8 +4,8 @@ title: "Eleven Labs Voice Cloning: Clone Any Voice Instantly | Ritz7"
 slug: eleven-labs-voice-cloning
 category: Technology
 author: Sangya Keswani
-date: 2026-03-03T00:00:00.000Z
-updated_date: 2026-03-03T00:00:00.000Z
+date: "2026-03-03T00:00:00.000Z"
+updated_date: "2026-03-03T00:00:00.000Z"
 thumbnail: /assets/uploads/is4VN34SFy1gsYSasdWajINEE.png
 thumbnail_alt: "Elevan Labs Voice Clone"
 description: "Master Eleven Labs AI voice cloning! Use our secret #1 pro guide to pick the best audio samples and settings for a life-like voice model with real emotion."

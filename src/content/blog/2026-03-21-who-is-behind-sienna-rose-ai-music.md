@@ -4,8 +4,8 @@ title: "Who Is Behind Sienna Rose? The Truth About AI Music"
 slug: who-is-behind-sienna-rose-ai-music
 category: Technology
 author: Sangya Keswani
-date: 2026-03-21T00:00:00.000Z
-updated_date: 2026-03-21T00:00:00.000Z
+date: "2026-03-21T00:00:00.000Z"
+updated_date: "2026-03-21T00:00:00.000Z"
 thumbnail: /assets/uploads/maPMPdzfe6EPjfeSo2HBhSfElvo.png
 thumbnail_alt: "sienna rose ai singer"
 description: "Who is behind Sienna Rose? Learn how she hit the Viral 50 on Spotify and why AI music is changing streaming platforms forever. Discover the mystery now!\n"

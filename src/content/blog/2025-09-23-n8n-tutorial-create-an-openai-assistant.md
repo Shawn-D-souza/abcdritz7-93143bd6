@@ -4,8 +4,8 @@ title: "n8n Tutorial: How to Create an OpenAI Assistant (easy guide)"
 slug: n8n-tutorial-create-an-openai-assistant
 category: Technology
 author: Sangya Keswani
-date: 2025-09-23T00:00:00.000Z
-updated_date: 2025-09-23T00:00:00.000Z
+date: "2025-09-23T00:00:00.000Z"
+updated_date: "2025-09-23T00:00:00.000Z"
 thumbnail: /assets/uploads/dEWUHZ5hx4ufNR1lEcvYmSSDbU.jpeg
 thumbnail_alt: "n8n Tutorial: Create an OpenAI Assistant (easy guide)"
 description: "To create an AI Assistant in n8n, add the OpenAI node, choose Create an Assistant, then use Message an Assistant to send prompts and keep the chat going."

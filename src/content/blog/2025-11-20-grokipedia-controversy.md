@@ -4,8 +4,8 @@ title: "Is Grokipedia Accurate? The Truth About Musk’s Wiki (2026)"
 slug: grokipedia-controversy
 category: Technology
 author: Sangya Keswani
-date: 2025-11-20T00:00:00.000Z
-updated_date: 2026-02-20T00:00:00.000Z
+date: "2025-11-20T00:00:00.000Z"
+updated_date: "2026-02-20T00:00:00.000Z"
 thumbnail: /assets/uploads/DHFv03LFm3dcrl27sseX43Egp8A.png
 thumbnail_alt: "Grokipedia vs Wikipedia Comparison 2026"
 description: "Grokipedia claims to be neutral, but is it? We review Elon Musk's xAI encyclopedia, covering plagiarism concerns, AI hallucinations, and the debate."

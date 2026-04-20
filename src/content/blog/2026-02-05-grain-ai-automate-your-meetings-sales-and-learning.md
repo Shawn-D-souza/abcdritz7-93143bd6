@@ -4,8 +4,8 @@ title: "Grain AI: Automate Your Meetings, Sales, and Learning"
 slug: grain-ai-automate-your-meetings-sales-and-learning
 category: Technology
 author: Sangya Keswani
-date: 2026-02-05T00:00:00.000Z
-updated_date: 2026-02-05T00:00:00.000Z
+date: "2026-02-05T00:00:00.000Z"
+updated_date: "2026-02-05T00:00:00.000Z"
 thumbnail: /assets/uploads/qdLqCDAyIiY6cYDhj7UbPxxHnWQ.png
 thumbnail_alt: "Grain ai review"
 description: "Automate meeting notes, sales insights, and lessons. Grain AI helps sales teams, teachers, and leaders capture 100% of data and sync it to their favorite tools."

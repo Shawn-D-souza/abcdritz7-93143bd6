@@ -4,8 +4,8 @@ title: "India’s Smart City AI Townships: Kerala & Karnataka"
 slug: indias-smart-city-ai-townships
 category: Technology
 author: Sangya Keswani
-date: 2025-12-16T00:00:00.000Z
-updated_date: 2025-12-16T00:00:00.000Z
+date: "2025-12-16T00:00:00.000Z"
+updated_date: "2025-12-16T00:00:00.000Z"
 thumbnail: /assets/uploads/I2faoLlTQykqjbbx5a7pVpxGXA.png
 thumbnail_alt: "India's smart city"
 description: "Kerala and Karnataka are building AI-powered smart townships. Here’s how Artificial Intelligence is reshaping India’s cities and daily life."

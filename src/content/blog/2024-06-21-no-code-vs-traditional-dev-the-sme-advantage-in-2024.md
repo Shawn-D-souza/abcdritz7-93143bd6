@@ -4,8 +4,8 @@ title: "No-Code Development Platform vs. Traditional Devlopment"
 slug: no-code-vs-traditional-dev-the-sme-advantage-in-2024
 category: Technology
 author: Sangya Keswani
-date: 2024-06-21T00:00:00.000Z
-updated_date: 2024-06-21T00:00:00.000Z
+date: "2024-06-21T00:00:00.000Z"
+updated_date: "2024-06-21T00:00:00.000Z"
 thumbnail: /assets/uploads/ASV2Zv5UXsvY1eHuv1T3h5oFlSI.jpg
 thumbnail_alt: "SMEs:Power of no-code"
 description: "No-code and low-code platforms offer significant advantages over traditional software development for small and medium-sized enterprises (SMEs)."

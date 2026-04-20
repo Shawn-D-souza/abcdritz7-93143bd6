@@ -4,8 +4,8 @@ title: "5 Workflow Automation Tools for Your Startup in 2026"
 slug: no-code-automation-platforms
 category: Technology
 author: Sangya Keswani
-date: 2024-10-11T00:00:00.000Z
-updated_date: 2026-01-13T00:00:00.000Z
+date: "2024-10-11T00:00:00.000Z"
+updated_date: "2026-01-13T00:00:00.000Z"
 thumbnail: /assets/uploads/84I8acH4IYC4ts2HeVV1T2BVE.png
 thumbnail_alt: "Workflow Automation Tools for Your Startup"
 description: "Best free workflow automation software | Zapier, Webflow, Bubble, Airtable, & Notion | Boost small business operations with powerful workflow automation tools."

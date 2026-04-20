@@ -4,8 +4,8 @@ title: "How To Use Emergent AI Playbooks and Save Code to GitHub"
 slug: emergent-ai-playbooks-and-save-code-to-github
 category: Technology
 author: Sangya Keswani
-date: 2026-02-19T00:00:00.000Z
-updated_date: 2026-02-19T00:00:00.000Z
+date: "2026-02-19T00:00:00.000Z"
+updated_date: "2026-02-19T00:00:00.000Z"
 thumbnail: /assets/uploads/7KkvSujWWd209fUM0cQIE33gtfU.png
 thumbnail_alt: "emergent AI playbooks"
 description: " Learn how to use Google Emergent AI Playbooks to make apps. We cover Google Sign-In, GitHub, and fixing errors like a pro. Click to start!"

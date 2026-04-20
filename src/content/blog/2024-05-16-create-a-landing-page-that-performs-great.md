@@ -4,8 +4,8 @@ title: "Landing Page Mastery: Attract Visitors, Drive Conversions"
 slug: create-a-landing-page-that-performs-great
 category: Technology
 author: Sangya Keswani
-date: 2024-05-16T00:00:00.000Z
-updated_date: 2024-05-16T00:00:00.000Z
+date: "2024-05-16T00:00:00.000Z"
+updated_date: "2024-05-16T00:00:00.000Z"
 thumbnail: /assets/uploads/5SG9Dzco90ensH2d6xUr62X3NeU.png
 thumbnail_alt: "high performning landing page"
 description: "Craft high-converting landing pages that attract organic traffic by optimizing for both visitors & search engines."

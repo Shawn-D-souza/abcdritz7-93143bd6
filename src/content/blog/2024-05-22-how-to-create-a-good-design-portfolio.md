@@ -4,8 +4,8 @@ title: "How do you create a good design portfolio in 2024?"
 slug: how-to-create-a-good-design-portfolio
 category: Technology
 author: Sangya Keswani
-date: 2024-05-22T00:00:00.000Z
-updated_date: 2024-05-22T00:00:00.000Z
+date: "2024-05-22T00:00:00.000Z"
+updated_date: "2024-05-22T00:00:00.000Z"
 thumbnail: /assets/uploads/gVZtECe1zsjgTgrYi9ysi02yFXo.png
 thumbnail_alt: "right format for portfolio"
 description: "Craft a Killer Portfolio & Land Your Dream Job: Build, Tailor, & Optimize."

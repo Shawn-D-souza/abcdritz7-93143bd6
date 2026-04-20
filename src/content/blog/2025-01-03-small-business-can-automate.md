@@ -4,8 +4,8 @@ title: "10 Things Every Small Business Should Automate in 2026"
 slug: small-business-can-automate
 category: Technology
 author: Sangya Keswani
-date: 2025-01-03T00:00:00.000Z
-updated_date: 2026-01-13T00:00:00.000Z
+date: "2025-01-03T00:00:00.000Z"
+updated_date: "2026-01-13T00:00:00.000Z"
 thumbnail: /assets/uploads/wtmTzwvLz8f27oRYE4HCtGeFF8.png
 thumbnail_alt: "things small businesses can automate"
 description: "Learn the top 10 things small businesses can automate to save time, cut costs, and improve efficiency, from CRM to email marketing and scheduling."

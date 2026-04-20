@@ -4,8 +4,8 @@ title: "AI Automation Trends in 2026: Turning Ideas into Reality"
 slug: ai-automation-trends-in-2025
 category: Technology
 author: Sangya Keswani
-date: 2025-01-07T00:00:00.000Z
-updated_date: 2026-01-13T00:00:00.000Z
+date: "2025-01-07T00:00:00.000Z"
+updated_date: "2026-01-13T00:00:00.000Z"
 thumbnail: /assets/uploads/VMEts0vzIRyc7Tp3mRFvivwcbA.png
 thumbnail_alt: "AI automation trend "
 description: "2025 AI trends: Learn how AI is simplifying workflows, enhancing efficiency, & empowering businesses and individuals to innovate without coding expertise."

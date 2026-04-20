@@ -4,8 +4,8 @@ title: "Business Process Automation Hack: How Hubble Saved $70k"
 slug: business-process-automation-hubble-saved-70k
 category: Technology
 author: Sangya Keswani
-date: 2024-06-06T00:00:00.000Z
-updated_date: 2024-06-06T00:00:00.000Z
+date: "2024-06-06T00:00:00.000Z"
+updated_date: "2024-06-06T00:00:00.000Z"
 thumbnail: /assets/uploads/inftdb1KRQUQAjyuqIxaWZwwA0.webp
 thumbnail_alt: "Business process automation hack - ritz7"
 description: "Hubble HQ's success in utilizing business process automation software to drive over $70,000 in annual savings highlights the immense potential for SMEs."

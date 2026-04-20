@@ -4,8 +4,8 @@ title: "How to Use OpenAI Agent Builder: Beginner’s Guide"
 slug: how-to-use-openai-agent-builder
 category: Technology
 author: Sangya Keswani
-date: 2025-11-24T00:00:00.000Z
-updated_date: 2025-11-24T00:00:00.000Z
+date: "2025-11-24T00:00:00.000Z"
+updated_date: "2025-11-24T00:00:00.000Z"
 thumbnail: /assets/uploads/UB4j8ZM3vSi2bj73XttA0G6abI.png
 thumbnail_alt: "Open ai agent"
 description: "A complete beginner’s guide to OpenAI Agent Builder. Learn workflow setup, tools, logic, guardrails, MCP integrations, testing, and publishing AI agents. "

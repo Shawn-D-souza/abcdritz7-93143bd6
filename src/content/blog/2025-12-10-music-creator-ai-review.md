@@ -4,8 +4,8 @@ title: "Music Creator AI Review: All-in-One AI Music Generation Tool"
 slug: music-creator-ai-review
 category: Technology
 author: Sangya Keswani
-date: 2025-12-10T00:00:00.000Z
-updated_date: 2025-12-10T00:00:00.000Z
+date: "2025-12-10T00:00:00.000Z"
+updated_date: "2025-12-10T00:00:00.000Z"
 thumbnail: /assets/uploads/wQdoWokUUkL60tJijlTJmTrgnU8.png
 thumbnail_alt: "ai music"
 description: "Music Creator AI helps you generate songs, remove vocals, master audio, and create custom AI voices—perfect for musicians, creators, and podcasters."

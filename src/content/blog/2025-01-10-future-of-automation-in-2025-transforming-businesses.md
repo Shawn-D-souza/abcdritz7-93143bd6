@@ -4,8 +4,8 @@ title: "Future of Automation in 2026: Innovating with AI and No-Code"
 slug: future-of-automation-in-2025-transforming-businesses
 category: Technology
 author: Sangya Keswani
-date: 2025-01-10T00:00:00.000Z
-updated_date: 2025-01-13T00:00:00.000Z
+date: "2025-01-10T00:00:00.000Z"
+updated_date: "2025-01-13T00:00:00.000Z"
 thumbnail: /assets/uploads/cPlklyupp1BAKJhicwBx78A1B8.png
 thumbnail_alt: "Future of Automation"
 description: "AI and no-code platforms like Bubble, Airtable, and Make are revolutionizing automation, enhancing workflows, & empowering businesses to innovate effortlessly."

@@ -4,8 +4,8 @@ title: "Trupeer AI: Turn Raw Screen Recordings into Pro Videos"
 slug: turn-screen-recordings-into-pro-videos
 category: Technology
 author: Sangya Keswani
-date: 2025-10-14T00:00:00.000Z
-updated_date: 2025-10-14T00:00:00.000Z
+date: "2025-10-14T00:00:00.000Z"
+updated_date: "2025-10-14T00:00:00.000Z"
 thumbnail: /assets/uploads/SBN9Gdx1erMFdyjNtTdUmi6vlVU.jpeg
 thumbnail_alt: "description: \"Create studio-quality videos from screen recordings with Trupeer AI—add voice-overs, templates, and backgrounds for pro results in minutes.\""
 ---

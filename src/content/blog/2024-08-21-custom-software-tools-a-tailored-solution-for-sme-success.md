@@ -4,8 +4,8 @@ title: "Custom Software|Tools: A Tailored Solution for SME Success"
 slug: custom-software-tools-a-tailored-solution-for-sme-success
 category: Technology
 author: Sangya Keswani
-date: 2024-08-21T00:00:00.000Z
-updated_date: 2024-08-21T00:00:00.000Z
+date: "2024-08-21T00:00:00.000Z"
+updated_date: "2024-08-21T00:00:00.000Z"
 thumbnail: /assets/uploads/bYpIIUKQ9SPXv5tV9DxfqXzeLZk.png
 thumbnail_alt: "Custom  Software | Tools"
 description: "Custom Software: Tailor-Made Tools for SME Success. Discover the benefits, process, and challenges. See case studies of SMEs. | SMEs + custom tools = success"

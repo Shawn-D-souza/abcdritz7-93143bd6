@@ -4,8 +4,8 @@ title: "Boost ROI through Automated consulting Process | Ritz7"
 slug: automation-for-consulting-firms
 category: Technology
 author: Sangya Keswani
-date: 2024-09-20T00:00:00.000Z
-updated_date: 2024-09-20T00:00:00.000Z
+date: "2024-09-20T00:00:00.000Z"
+updated_date: "2024-09-20T00:00:00.000Z"
 thumbnail: /assets/uploads/ZmaGLkCIPEnPmYmZRvosktr2o8w.png
 thumbnail_alt: "Boost ROI through  Automated Consulting Process "
 description: "Automate your consulting processes and boost ROI. Automation solutions streamline lead management, scheduling, proposals, invoicing, and so on."

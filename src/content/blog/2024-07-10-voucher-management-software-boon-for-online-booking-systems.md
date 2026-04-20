@@ -4,8 +4,8 @@ title: "Discount Voucher: Boon for Online Booking Systems | Ritz7"
 slug: voucher-management-software-boon-for-online-booking-systems
 category: Technology
 author: Sangya Keswani
-date: 2024-07-10T00:00:00.000Z
-updated_date: 2024-07-10T00:00:00.000Z
+date: "2024-07-10T00:00:00.000Z"
+updated_date: "2024-07-10T00:00:00.000Z"
 thumbnail: /assets/uploads/IgltYefqAmBN9YCjARwfPFGIu5k.png
 thumbnail_alt: "Voucher management software: Online booking software"
 description: "Discount Voucher Hack with Automation! Empty online booking calendar?  This discount voucher trick + workflow automation software could be your secret weapon!"

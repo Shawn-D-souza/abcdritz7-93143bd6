@@ -4,8 +4,8 @@ title: "12 Benefits of Custom Management Tools: Boost Your Business"
 slug: 12-benefits-of-custom-management-tools-boost-your-business
 category: Technology
 author: Sangya Keswani
-date: 2024-08-16T00:00:00.000Z
-updated_date: 2024-08-16T00:00:00.000Z
+date: "2024-08-16T00:00:00.000Z"
+updated_date: "2024-08-16T00:00:00.000Z"
 thumbnail: /assets/uploads/BKYIzeqNn9vjfEm9st9wL942nE.png
 thumbnail_alt: "Custom Management Tools -Ritz7"
 description: "Boost your business with custom management tools. Streamline operations, increase efficiency, and gain a competitive edge. Tailor-made for your unique needs. "

@@ -4,8 +4,8 @@ title: "AI Misidentifies Chip Bag as Gun at Kenwood High School"
 slug: ai-misidentifies-chip-bag-as-gun
 category: Technology
 author: Sangya Keswani
-date: 2025-11-19T00:00:00.000Z
-updated_date: 2025-11-19T00:00:00.000Z
+date: "2025-11-19T00:00:00.000Z"
+updated_date: "2025-11-19T00:00:00.000Z"
 thumbnail: /assets/uploads/QUjPpkAR2yq6UUlnz8FYUdNnhCE.png
 thumbnail_alt: "AI Misidentifies Chip Bag as Gun at Kenwood High"
 description: "A school AI misread a chip bag as a gun, sparking a police response and highlighting urgent concerns about accuracy, safety, and oversight in AI systems."

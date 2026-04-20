@@ -4,8 +4,8 @@ title: "How to Build a YouTube Video Summarizer in n8n"
 slug: build-a-youtube-video-summarizer
 category: Technology
 author: Sangya Keswani
-date: 2026-01-20T00:00:00.000Z
-updated_date: 2026-01-16T00:00:00.000Z
+date: "2026-01-20T00:00:00.000Z"
+updated_date: "2026-01-16T00:00:00.000Z"
 thumbnail: /assets/uploads/rUgIBlv8zReQ4n4gfPArw.png
 thumbnail_alt: "instant yt summaries using ai"
 description: "Turn videos into visual cards! Build an automated YouTube Summarizer with OpenAI & n8n. Get summaries & stats instantly—in minutes."

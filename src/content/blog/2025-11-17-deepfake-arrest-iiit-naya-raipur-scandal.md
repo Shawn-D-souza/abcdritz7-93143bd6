@@ -4,8 +4,8 @@ title: "Deepfake Arrest: IIIT Raipur Scandal Sparks AI Law Debate"
 slug: deepfake-arrest-iiit-naya-raipur-scandal
 category: Technology
 author: Sangya Keswani
-date: 2025-11-17T00:00:00.000Z
-updated_date: 2025-11-17T00:00:00.000Z
+date: "2025-11-17T00:00:00.000Z"
+updated_date: "2025-11-17T00:00:00.000Z"
 thumbnail: /assets/uploads/19x8FEtxyQZURIapgSkm1o3Viro.png
 thumbnail_alt: "IIIT NAYA RAIPUR CASE"
 description: "The IIIT Naya Raipur deepfake case highlights rising AI-driven harassment in India and the urgent need for stronger digital safety and AI laws."

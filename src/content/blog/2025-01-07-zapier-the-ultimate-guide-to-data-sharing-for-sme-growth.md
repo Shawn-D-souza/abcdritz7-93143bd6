@@ -4,8 +4,8 @@ title: "Zapier: Guide to Data Sharing for SME Growth in 2025"
 slug: zapier-the-ultimate-guide-to-data-sharing-for-sme-growth
 category: Technology
 author: Sangya Keswani
-date: 2025-01-07T00:00:00.000Z
-updated_date: 2025-01-07T00:00:00.000Z
+date: "2025-01-07T00:00:00.000Z"
+updated_date: "2025-01-07T00:00:00.000Z"
 thumbnail: /assets/uploads/oh5eualvfS6UGpdMJTh4OhUmgbE.webp
 thumbnail_alt: "Guide to Data Sharing for SME Growth"
 description: "Zapier automates data sharing between apps, streamlining workflows for businesses. Learn what data can be shared and how to leverage Zapier for automation."

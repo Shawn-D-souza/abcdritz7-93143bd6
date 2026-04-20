@@ -4,8 +4,8 @@ title: "How to Send Bulk WhatsApp Messages in n8n"
 slug: send-bulk-whatsapp-messages-in-n8n
 category: Technology
 author: Sangya Keswani
-date: 2026-01-05T00:00:00.000Z
-updated_date: 2026-01-05T00:00:00.000Z
+date: "2026-01-05T00:00:00.000Z"
+updated_date: "2026-01-05T00:00:00.000Z"
 thumbnail: /assets/uploads/TwNpW5vsycL5oYgdsXymPBKSoE.png
 thumbnail_alt: "Automate whatsapp bulk messages"
 description: "Automate bulk WhatsApp messages in n8n using the WhatsApp Business Cloud API. Send templates, track delivery status, and integrate Google Sheets."

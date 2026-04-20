@@ -4,8 +4,8 @@ title: "Stop Deploying Broken Agents: The Production Guide | Ritz7"
 slug: stop-deploying-broken-agents-the-production-guide
 category: Technology
 author: Sangya Keswani
-date: 2026-01-27T00:00:00.000Z
-updated_date: 2026-01-27T00:00:00.000Z
+date: "2026-01-27T00:00:00.000Z"
+updated_date: "2026-01-27T00:00:00.000Z"
 thumbnail: /assets/uploads/BAiuRZoWe10SzJ020UxSVR89qOY.png
 thumbnail_alt: "add ai agent in website"
 description: "Is your AI online? No? Then it’s worthless. Sandbox testing is fake progress. Use OpenAI ChatKit and Vercel to get your agent on a real website today."

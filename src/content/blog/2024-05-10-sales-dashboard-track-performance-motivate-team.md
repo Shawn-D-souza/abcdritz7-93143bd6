@@ -4,8 +4,8 @@ title: "Sales motivation Dashboard: Track Performance & Commissions"
 slug: sales-dashboard-track-performance-motivate-team
 category: Technology
 author: Sangya Keswani
-date: 2024-05-10T00:00:00.000Z
-updated_date: 2024-05-10T00:00:00.000Z
+date: "2024-05-10T00:00:00.000Z"
+updated_date: "2024-05-10T00:00:00.000Z"
 thumbnail: /assets/uploads/sozhX40rMID6HWojD7YclLQZ9bQ.png
 thumbnail_alt: "sales dashboard: track sales & commissions"
 description: "Sales Growth with Powerful Dashboards | Boost motivation, track performance in real-time, and master key sales metrics with dynamic sales dashboards."

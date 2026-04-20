@@ -4,8 +4,8 @@ title: "The Rise of Deepfake: How Grok AI Fueled the Scandal"
 slug: rise-of-deepfake
 category: Technology
 author: Sangya Keswani
-date: 2025-09-16T00:00:00.000Z
-updated_date: 2025-09-16T00:00:00.000Z
+date: "2025-09-16T00:00:00.000Z"
+updated_date: "2025-09-16T00:00:00.000Z"
 thumbnail: /assets/uploads/yAPcILKt1ud13fcaei0B5McXJE.jpeg
 thumbnail_alt: "grok ai deepfake"
 description: "From Taylor Swift deepfakes to Grok AI misuse, new AI regulations are needed to stop harmful content and protect people from the risks of fake media."

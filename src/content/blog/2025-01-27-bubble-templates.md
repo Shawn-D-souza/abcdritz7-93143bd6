@@ -4,8 +4,8 @@ title: "Bubble Templates: When, Why and How to Use Them"
 slug: bubble-templates
 category: Technology
 author: Sangya Keswani
-date: 2025-01-27T00:00:00.000Z
-updated_date: 2025-10-27T00:00:00.000Z
+date: "2025-01-27T00:00:00.000Z"
+updated_date: "2025-10-27T00:00:00.000Z"
 thumbnail: /assets/uploads/KJ4qSnKmkC6D9oqmOeN1Xkw2rgs.png
 thumbnail_alt: "When, why and how to use bubble templates"
 description: "Learn to use Bubble templates for faster app development. Build MVPs, online marketplaces, dashboards, and more with user-centric, responsive designs."

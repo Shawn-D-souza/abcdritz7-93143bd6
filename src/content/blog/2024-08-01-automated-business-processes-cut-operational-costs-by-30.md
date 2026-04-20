@@ -4,8 +4,8 @@ title: "Automated Business Processes: Cut Operational Costs by 30%"
 slug: automated-business-processes-cut-operational-costs-by-30
 category: Technology
 author: Sangya Keswani
-date: 2024-08-01T08:28:54.782Z
-updated_date: 2024-08-01T08:28:54.782Z
+date: "2024-08-01T08:28:54.782Z"
+updated_date: "2024-08-01T08:28:54.782Z"
 thumbnail: /assets/uploads/SGAJZjuHblYPZ5L1ssUWMkbBT0g.png
 thumbnail_alt: "Automated Business Processes: Cut Operational Costs by 30%"
 description: "Our step-by-step guide reveals how to identify cost drivers, choose the right automation tools, and implement a strategy for long-term savings and growth."

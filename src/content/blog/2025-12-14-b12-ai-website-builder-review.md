@@ -4,8 +4,8 @@ title: "B12 AI Website Builder Review: Build Website In One-Click"
 slug: b12-ai-website-builder-review
 category: Technology
 author: Sangya Keswani
-date: 2025-12-14T00:00:00.000Z
-updated_date: 2025-12-14T00:00:00.000Z
+date: "2025-12-14T00:00:00.000Z"
+updated_date: "2025-12-14T00:00:00.000Z"
 thumbnail: /assets/uploads/HO9rCKo1sNf65yQ0JhxzWPLk.png
 thumbnail_alt: "b12 - build ai website in 1 click"
 description: "Build an AI website in one click with B12. Create, customize, and launch a professional no-code website with built-in business tools."

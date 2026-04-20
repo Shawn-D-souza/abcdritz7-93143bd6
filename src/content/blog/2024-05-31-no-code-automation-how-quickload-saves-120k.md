@@ -4,8 +4,8 @@ title: "No-code automation: How Quickload Saves $120k | Ritz7 "
 slug: no-code-automation-how-quickload-saves-120k
 category: Technology
 author: Aakanksha Umath
-date: 2024-05-31T00:00:00.000Z
-updated_date: 2024-05-31T00:00:00.000Z
+date: "2024-05-31T00:00:00.000Z"
+updated_date: "2024-05-31T00:00:00.000Z"
 thumbnail: /assets/uploads/6bp01Yo8sUFES0EI0Sdi8fif7Ik.webp
 thumbnail_alt: "saves from automation"
 description: "Work Smarter, Not Harder: Discover the Efficiency & Cost Savings with the Power of No-Code Automation."
