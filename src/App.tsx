@@ -15,6 +15,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const BlogList = lazy(() => import("./pages/BlogList"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const HallOfFame = lazy(() => import("./pages/HallOfFame"));
+const ApiTestPrograms = lazy(() => import("./pages/ApiTestPrograms"));
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,8 @@ const App = () => (
               <Route path="/hall-of-fame" element={<HallOfFame />} />
               <Route path="/blogs" element={<BlogList />} />
               <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/test-programs" element={<Programs />} />
+              <Route path="/api-test-programs" element={<ApiTestPrograms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
