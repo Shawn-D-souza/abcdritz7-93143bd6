@@ -1,5 +1,5 @@
 // Supabase Edge Function: courses
-// This proxies course list requests to the edrona API from the server side,
+// This proxies course list requests to the Courses API from the server side,
 
 // EDRONA_BASE_URL is stored as a Supabase Secret
 const EDRONA_BASE_URL = Deno.env.get("EDRONA_BASE_URL");
