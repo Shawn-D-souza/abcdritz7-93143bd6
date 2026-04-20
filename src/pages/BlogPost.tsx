@@ -28,6 +28,7 @@ export default function BlogPost() {
     publishedTime: post?.date,
     modifiedTime: post?.updated_date,
     category: post?.category,
+    customHead: post?.custom_head,
   });
 
   const handleBackToArticles = (e: React.MouseEvent) => {

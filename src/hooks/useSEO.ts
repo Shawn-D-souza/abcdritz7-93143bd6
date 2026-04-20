@@ -10,6 +10,7 @@ interface SEOProps {
   publishedTime?: string;
   modifiedTime?: string;
   category?: string;
+  customHead?: string;
 }
 
 export function useSEO({
@@ -22,6 +23,7 @@ export function useSEO({
   publishedTime,
   modifiedTime,
   category,
+  customHead,
 }: SEOProps) {
   useEffect(() => {
     const originalTitle = document.title;
@@ -89,6 +91,23 @@ export function useSEO({
     setMeta('name', 'twitter:title', title);
     setMeta('name', 'twitter:description', description);
 
+    if (customHead) {
+      const container = document.createElement('div');
+      container.innerHTML = customHead;
+      Array.from(container.childNodes).forEach(node => {
+        if (node.nodeName.toLowerCase() === 'script') {
+          const script = document.createElement('script');
+          Array.from((node as HTMLScriptElement).attributes).forEach(attr => script.setAttribute(attr.name, attr.value));
+          script.text = node.textContent || '';
+          document.head.appendChild(script);
+          addedTags.push(script);
+        } else {
+          document.head.appendChild(node);
+          addedTags.push(node as Element);
+        }
+      });
+    }
+
     return () => {
       document.title = originalTitle;
       addedTags.forEach(tag => tag.remove());
@@ -100,5 +119,5 @@ export function useSEO({
         }
       });
     };
-  }, [title, description, image, url, type, author, publishedTime, modifiedTime, category]);
+  }, [title, description, image, url, type, author, publishedTime, modifiedTime, category, customHead]);
 }

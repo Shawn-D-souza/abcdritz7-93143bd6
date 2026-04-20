@@ -12,6 +12,7 @@ export interface BlogPost {
   description: string;
   content: string; // the markdown body
   readingTime: string;
+  custom_head?: string;
 }
 
 // Vite feature: import all markdown files as raw strings
@@ -57,6 +58,7 @@ export function getAllBlogs(): BlogPost[] {
       description: data.description || "",
       content,
       readingTime: calculateReadingTime(content),
+      custom_head: data.custom_head,
     };
   });
 
