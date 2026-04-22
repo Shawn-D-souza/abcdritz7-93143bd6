@@ -1,11 +1,14 @@
-https://ritz7.com/contact-us https://bookings.ritz7.ai/#/ritesh 301!
-https://ritz7.com/blog https://ritz7.ai/blogs/ 301!
-https://ritz7.com/terms-and-conditions https://ritz7.ai/privacy-policy/ 301!
+/contact-us           https://bookings.ritz7.ai/#/ritesh                  301!
+/blog                 https://ritz7.ai/blogs/                             301!
+/terms-and-conditions https://ritz7.ai/privacy-policy/                    301!
+/communityguidelines  https://ritz7.ai/community-guidelines/              301!
 
 https://abcd.ritz7.com/communityguidelines https://ritz7.ai/community-guidelines/ 301!
+https://abcd.ritz7.com/*                   https://ritz7.ai/:splat                301!
 
-https://abcd.ritz7.com/* https://ritz7.ai/:splat 301!
-/blog/* https://ritz7.ai/blogs/:splat 301!
-https://ritz7.com/* https://ritz7.ai/:splat 301!
-https://www.ritz7.com/* https://ritz7.ai/:splat 301!
-/* /index.html 200
+/blog/*                  https://ritz7.ai/blogs/:splat   301!
+https://ritz7.com/*      https://ritz7.ai/:splat         301!
+https://www.ritz7.com/*  https://ritz7.ai/:splat         301!
+
+# SPA Fallback (Crucial for React/Vite router, DO NOT REMOVE)
+/*  /index.html  200
