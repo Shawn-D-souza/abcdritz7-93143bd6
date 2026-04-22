@@ -1,4 +1,4 @@
-# Ritz7 — No-Code & AI Community for Students
+# Ritz7 | Learn AI & No-Code Automation: n8n, Bubble, Emergent & More
 
 The official website for **Ritz7** — a student community that makes AI and no-code accessible, helping you build real projects without writing complex code.
 

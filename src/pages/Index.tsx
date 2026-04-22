@@ -14,10 +14,17 @@ import { Blogs } from "@/components/Blogs";
 import { FAQ } from "@/components/FAQ";
 import { ContactAndNewsletter } from "@/components/ContactAndNewsletter";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  
+  useSEO({
+    title: "Ritz7 | Learn AI & No-Code Automation: n8n, Bubble, Emergent & More",
+    description: "Ritz7 is a student community that makes AI and no-code accessible — learn to build real projects without writing complex code.",
+    type: "website",
+  });
 
   useEffect(() => {
     const scrollToId = location.state?.scrollTo || (location.hash ? location.hash.substring(1) : null);
