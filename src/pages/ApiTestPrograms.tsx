@@ -39,12 +39,12 @@ const roles = [
 ];
 
 const CourseSkeleton = () => (
-  <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card flex flex-col animate-pulse">
+  <div className="relative overflow-hidden rounded-2xl border border-border/80 dark:border-border/40 bg-card flex flex-col animate-pulse shadow-sm">
     <div className="relative aspect-[2.2/1] bg-muted/60 w-full"></div>
     <div className="p-4 pb-4 flex flex-col flex-1 gap-3">
       <div className="h-5 bg-muted/60 rounded-md w-3/4 mb-1"></div>
       <div className="h-4 bg-muted/60 rounded-md w-1/2 mb-4"></div>
-      <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/40">
+      <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/80 dark:border-border/40">
         <div className="h-6 bg-muted/60 rounded-md w-1/3"></div>
         <div className="h-8 bg-muted/60 rounded-xl w-24"></div>
       </div>
@@ -291,7 +291,7 @@ const ApiTestPrograms = () => {
     const offerNum = offer ? Number(offer) : 0;
 
     if (!feeNum && !offerNum) {
-      return <span className="text-emerald-500 font-bold">Free</span>;
+      return <span className="text-emerald-600 dark:text-emerald-500 font-bold">Free</span>;
     }
     if (feeNum && !offerNum) {
       return <span className="text-card-foreground font-bold">₹{fee}</span>;
@@ -440,7 +440,7 @@ const ApiTestPrograms = () => {
                          initial={{ opacity: 0, y: 12 }}
                          animate={{ opacity: 1, y: 0 }}
                          transition={{ duration: 0.25, delay: i * 0.05 }}
-                         className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 flex flex-col"
+                         className="group relative overflow-hidden rounded-2xl border border-border/80 dark:border-border/40 bg-card shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 flex flex-col"
                        >
                          <div className="relative aspect-[2.2/1] overflow-hidden bg-muted flex items-center justify-center shrink-0">
                            {course.thumbnail_url ? (
@@ -456,7 +456,7 @@ const ApiTestPrograms = () => {
                              {course.name}
                            </h3>
    
-                           <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/40">
+                           <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/80 dark:border-border/40">
                              <div className="text-lg">
                                {renderPrice(course.course_fee, course.offer_price)}
                              </div>
@@ -594,8 +594,8 @@ const ApiTestPrograms = () => {
               {authSuccess ? (
                 <div className="space-y-6 pt-2 pb-1 animate-in fade-in zoom-in duration-500">
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center shadow-inner">
-                      <Mail className="w-8 h-8 text-green-500" />
+                    <div className="w-16 h-16 rounded-full bg-green-600/10 dark:bg-green-500/10 flex items-center justify-center shadow-inner">
+                      <Mail className="w-8 h-8 text-green-600 dark:text-green-500" />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold text-foreground tracking-tight">Check your inbox</h3>

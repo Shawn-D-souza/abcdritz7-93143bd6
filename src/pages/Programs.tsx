@@ -521,7 +521,7 @@ const Programs = () => {
                        initial={{ opacity: 0, y: 12 }}
                        animate={{ opacity: 1, y: 0 }}
                        transition={{ duration: 0.25, delay: i * 0.05 }}
-                       className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5"
+                       className="group relative overflow-hidden rounded-2xl border border-border/80 dark:border-border/40 bg-card shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5"
                      >
                        <div className="relative aspect-[2.2/1] overflow-hidden">
                          <img src={course.image} alt={course.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -564,7 +564,7 @@ const Programs = () => {
                            </div>
                          </div>
  
-                         <div className="flex items-center justify-between mt-3 pt-3 border-t border-border/40">
+                         <div className="flex items-center justify-between mt-3 pt-3 border-t border-border/80 dark:border-border/40">
                            <span className="text-base font-bold text-card-foreground">{course.price}</span>
                            <button
                              onClick={() => handleCheckout(course)}
@@ -645,8 +645,8 @@ const Programs = () => {
               {authSuccess ? (
                 <div className="space-y-6 pt-2 pb-1 animate-in fade-in zoom-in duration-500">
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center shadow-inner">
-                      <Mail className="w-8 h-8 text-green-500" />
+                    <div className="w-16 h-16 rounded-full bg-green-600/10 dark:bg-green-500/10 flex items-center justify-center shadow-inner">
+                      <Mail className="w-8 h-8 text-green-600 dark:text-green-500" />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold text-foreground tracking-tight">Check your inbox</h3>
