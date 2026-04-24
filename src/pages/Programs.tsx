@@ -72,6 +72,7 @@ const Programs = () => {
   const [authMode, setAuthMode] = useState<"login" | "register" | "forgot-password">("register");
   const [authSuccess, setAuthSuccess] = useState<boolean>(false);
   const [isAuthLoading, setIsAuthLoading] = useState(false);
+  const [intendedCourseId, setIntendedCourseId] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
@@ -183,7 +184,8 @@ const Programs = () => {
               full_name: fullName, 
               phone_number: fullPhoneNumber, 
               role: selectedRole,
-              country_code: countryCode
+              country_code: countryCode,
+              intended_course_id: intendedCourseId
             },
           }
         });
@@ -233,6 +235,7 @@ const Programs = () => {
   const handleCheckout = async (course: Course) => {
     if (!session) {
       toast.info("Please login to enroll in this course.");
+      setIntendedCourseId(course.id);
       setAuthMode("register");
       setShowRegistration(true);
       return;
@@ -361,7 +364,7 @@ const Programs = () => {
               </button>
             </div>
           ) : (
-            <button onClick={() => { setAuthMode("register"); setShowRegistration(true); }} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30 md:px-5 flex items-center gap-1.5">
+            <button onClick={() => { setIntendedCourseId(null); setAuthMode("register"); setShowRegistration(true); }} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:shadow-primary/30 md:px-5 flex items-center gap-1.5">
               <User className="w-4 h-4 md:hidden" />
               <span className="hidden md:inline">Enroll / Login</span>
               <span className="md:hidden">Enroll/Login</span>
