@@ -12,7 +12,7 @@ https://abcd.ritz7.com/*                   https://ritz7.ai/:splat              
 
 # --- 3. EXISTING REDIRECTS (The Catch-All) ---
 # If a link doesn't match the specific ones above, these will handle it
-/blog/*                  https://ritz7.ai/blogs/:splat   301!
+
 https://ritz7.com/*      https://ritz7.ai/:splat         301!
 https://www.ritz7.com/*  https://ritz7.ai/:splat         301!
 
