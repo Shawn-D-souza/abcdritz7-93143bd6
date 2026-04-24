@@ -1,14 +1,21 @@
+# --- 1. PRIORITY PATH FIXES ---
+# These fix the 404s and specific naming differences
 /contact-us           https://bookings.ritz7.ai/#/ritesh                  301!
 /blog                 https://ritz7.ai/blogs/                             301!
 /terms-and-conditions https://ritz7.ai/privacy-policy/                    301!
 /communityguidelines  https://ritz7.ai/community-guidelines/              301!
 
+# --- 2. SUBDOMAIN SPECIFIC REDIRECTS ---
+# This ensures explicit subdomain traffic is captured and routed correctly
 https://abcd.ritz7.com/communityguidelines https://ritz7.ai/community-guidelines/ 301!
 https://abcd.ritz7.com/*                   https://ritz7.ai/:splat                301!
 
+# --- 3. EXISTING REDIRECTS (The Catch-All) ---
+# If a link doesn't match the specific ones above, these will handle it
 /blog/*                  https://ritz7.ai/blogs/:splat   301!
 https://ritz7.com/*      https://ritz7.ai/:splat         301!
 https://www.ritz7.com/*  https://ritz7.ai/:splat         301!
 
-# SPA Fallback (Crucial for React/Vite router, DO NOT REMOVE)
+# --- 4. SPA FALLBACK ---
+# This ensures React router works on ritz7.ai (Do not remove)
 /*  /index.html  200
