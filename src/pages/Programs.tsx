@@ -220,7 +220,11 @@ const Programs = () => {
         toast.success("Password reset email sent!");
       } */
     } catch (err: any) {
-      toast.error(err.message || "Authentication failed");
+      if (!navigator.onLine || err.message === "Failed to fetch") {
+        toast.error("No internet connection. Please check your network and try again.");
+      } else {
+        toast.error(err.message || "Authentication failed. Please try again.");
+      }
     } finally {
       setTimeout(() => setIsAuthLoading(false), 1000);
     }
