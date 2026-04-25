@@ -265,6 +265,7 @@ const Programs = () => {
       handler: async function (response: any) {
         toast.success(`Payment Authorised! Verifying...`);
         
+        try {
           // SECURE BACKEND VERIFICATION FLOW
           const { data, error } = await supabase.functions.invoke('verify-payment', {
             body: {
