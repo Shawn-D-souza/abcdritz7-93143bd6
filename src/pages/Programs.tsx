@@ -265,26 +265,17 @@ const Programs = () => {
       handler: async function (response: any) {
         toast.success(`Payment Authorised! Verifying...`);
         
-        try {
-          // SECURE BACKEND VERIFICATION FLOW:
-          // 1. You send 'response.razorpay_payment_id' to your backend.
-          // 2. Your backend does: "razorpay.payments.fetch(payment_id)" using the SECRET key
-          // 3. The backend then makes the secure request to the LMS API for creating an enrollment
-          
-          /*
-          const res = await fetch('YOUR_SUPABASE_EDGE_FUNCTION/verify-payment', {
-            method: 'POST',
-            body: JSON.stringify({
-              payment_id: response.razorpay_payment_id,
-              course_id: lmsData.id,
-              user_email: session.user.email,
-            })
+          // SECURE BACKEND VERIFICATION FLOW
+          const { data, error } = await supabase.functions.invoke('verify-payment', {
+            body: {
+              razorpay_payment_id: response.razorpay_payment_id,
+              batch_id: lmsData.id,
+              course_name: lmsData.title
+            }
           });
-          const result = await res.json()
-          */
 
-          // Since we are mocking right now:
-          await new Promise(r => setTimeout(r, 1000));
+          if (error) throw error;
+          
           toast.success("Payment verified and enrolled successfully!");
           window.location.href = `/dashboard?course_id=${lmsData.id}`;
         } catch (err) {

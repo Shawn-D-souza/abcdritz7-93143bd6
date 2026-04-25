@@ -64,7 +64,7 @@ Deno.serve(async (req: Request) => {
     const verified_email = user.email;
 
     const body = await req.json();
-    const { razorpay_payment_id, batch_id } = body;
+    const { razorpay_payment_id, batch_id, course_name } = body;
 
     if (!razorpay_payment_id || !batch_id) {
       return new Response(
@@ -134,6 +134,30 @@ Deno.serve(async (req: Request) => {
     }
 
     // Step 3: Payment is verified ✅
+    // Call the N8N payment webhook securely
+    const N8N_PAYMENT_WEBHOOK_URL = Deno.env.get("N8N_PAYMENT_WEBHOOK_URL");
+    if (N8N_PAYMENT_WEBHOOK_URL) {
+      try {
+        await fetch(N8N_PAYMENT_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event: "payment_success",
+            user_email: verified_email,
+            user_name: user.user_metadata?.full_name,
+            phone_number: user.user_metadata?.phone_number,
+            payment_id: razorpay_payment_id,
+            course_id: batch_id, // Currently batch_id represents the course/batch
+            course_name: course_name || "Unknown Course",
+            amount: payment.amount / 100, // Convert from paise
+            currency: payment.currency
+          })
+        });
+      } catch (err) {
+        console.error("Failed to trigger payment webhook:", err);
+      }
+    }
+    
     // TODO: Here you can call the edrona API to create the enrollment
     // e.g. POST to /api/ritz7ai/enrollments with { batch_id, user_email }
     
