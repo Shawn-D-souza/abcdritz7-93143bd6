@@ -20,7 +20,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "Example: my-awesome-post (No spaces!)" }
       - { label: "Category", name: "category", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", display_fields: ["title"], default: "Technology" }
-      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - { label: "Author", name: "author", widget: "string", default: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)", hint: "Use markdown format for links: [Name](URL)" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Last Updated", name: "updated_date", widget: "datetime", required: true }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", required: false }

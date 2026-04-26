@@ -13,6 +13,7 @@ export interface BlogPost {
   content: string; // the markdown body
   readingTime: string;
   custom_head?: string;
+  authorUrl?: string;
 }
 
 // Vite feature: import all markdown files as raw strings
@@ -46,11 +47,25 @@ export function getAllBlogs(): BlogPost[] {
   const blogs: BlogPost[] = Object.entries(markdownFiles).map(([path, fileContent]) => {
     const { data, content } = parseFrontmatter(fileContent as string);
 
+    let authorName = data.author || "Sangya Keswani";
+    let authorLink = undefined;
+
+    const authorMatch = typeof data.author === 'string' ? data.author.match(/^\[(.*?)\]\((.*?)\)$/) : null;
+    if (authorMatch) {
+      authorName = authorMatch[1];
+      authorLink = authorMatch[2];
+    } else if (data.author === "Sangya Keswani" || data.author === "Admin" || !data.author) {
+      authorName = "Sangya Keswani";
+      authorLink = "http://linkedin.com/in/sangya-seo/";
+    } else if (data.author_link) {
+      authorLink = data.author_link;
+    }
+
     return {
       id: data.slug || path.split('/').pop()?.replace('.md', '') || "",
       title: data.title || "Untitled",
       category: data.category || "General", // Fallback if category is missing
-      author: data.author || "Admin",
+      author: authorName,
       date: data.date || new Date().toISOString(),
       updated_date: data.updated_date,
       thumbnail: data.thumbnail,
@@ -59,6 +74,7 @@ export function getAllBlogs(): BlogPost[] {
       content,
       readingTime: calculateReadingTime(content),
       custom_head: data.custom_head,
+      authorUrl: authorLink,
     };
   });
 

@@ -114,7 +114,13 @@ export default function BlogPost() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-sm font-medium text-muted-foreground">
               <div className="flex items-center gap-2">
                 <User className="w-5 h-5 text-primary" />
-                <span className="text-base">{post.author}</span>
+                {post.authorUrl ? (
+                  <a href={post.authorUrl} target="_blank" rel="noopener noreferrer" className="text-base hover:text-primary transition-colors hover:underline">
+                    {post.author}
+                  </a>
+                ) : (
+                  <span className="text-base">{post.author}</span>
+                )}
               </div>
               
               <div className="flex items-center gap-2">
