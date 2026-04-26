@@ -290,7 +290,7 @@ export const HeroCodeCard = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="absolute -right-6 -top-5 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-top-8 lg:-right-2 xl:-right-12"
+        className="absolute -right-2 -top-4 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-3 py-2 sm:px-4 sm:py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 sm:-right-6 sm:-top-5 md:-top-8 lg:-right-2 xl:-right-12"
       >
         <div className="flex items-center gap-2">
           <Star className="h-4 w-4 text-yellow-500" />
@@ -307,7 +307,7 @@ export const HeroCodeCard = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute -bottom-5 -left-6 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 md:-bottom-8 lg:-left-2 xl:-left-12"
+        className="absolute -bottom-4 -left-2 z-50 flex animate-bob flex-col rounded-xl border border-black/5 bg-white/95 px-3 py-2 sm:px-4 sm:py-3 shadow-xl backdrop-blur-md dark:border-white/15 dark:bg-[#161b22]/90 sm:-bottom-5 sm:-left-6 md:-bottom-8 lg:-left-2 xl:-left-12"
         style={{ animationDelay: "1s" }}
       >
         <div className="flex items-center gap-2">

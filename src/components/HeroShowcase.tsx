@@ -24,10 +24,10 @@ import { useTheme } from "./ThemeProvider";
 
 /* ── Floating Tool Badges ── */
 const floatingTools = [
-  { emoji: "🫧", label: "Bubble", x: 5, y: 10 },
-  { emoji: "⚡", label: "n8n", x: 80, y: 2 },
-  { emoji: "🤖", label: "AI Agents", x: 85, y: 60 },
-  { emoji: "✨", label: "Copilot", x: 5, y: 70 },
+  { emoji: "🫧", label: "Bubble", align: "left", y: 25 },
+  { emoji: "⚡", label: "n8n", align: "right", y: 25 },
+  { emoji: "✨", label: "Copilot", align: "left", y: 75 },
+  { emoji: "🤖", label: "AI Agents", align: "right", y: 75 },
 ];
 
 /* ── Neural Pathway Particle ── */
@@ -184,6 +184,14 @@ export const HeroShowcase = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Mouse position for tilt
   const mouseX = useMotionValue(0);
@@ -417,9 +425,9 @@ export const HeroShowcase = () => {
                   transition={{ delay: 1 + i * 0.15, type: "spring" }}
                   className="absolute"
                   style={{
-                    left: `${tool.x}%`,
+                    [tool.align]: isMobile ? '12px' : '40px',
                     top: `${tool.y}%`,
-                    transform: "translate(-50%, -50%)",
+                    transform: "translateY(-50%)",
                   }}
                 >
                   <motion.div
