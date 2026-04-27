@@ -1,14 +1,18 @@
 ---
-summary: "Master how to automate Gmail emails using Google Workspace Studio and Gemini AI. Learn AI labelling, saving attachments to Drive, and data extraction to Sheets."
+summary: Master how to automate Gmail emails using Google Workspace Studio and
+  Gemini AI. Learn AI labelling, saving attachments to Drive, and data
+  extraction to Sheets.
 title: "How To Automate Gmail Emails Using Google Workspace Studio "
 slug: automate-gmail-google-workspace-studio-gemini-ai
-category: Technology
+category: How To Guide
 author: Sangya Keswani
-date: "2026-03-16T00:00:00.000Z"
-updated_date: "2026-03-16T00:00:00.000Z"
+date: 2026-03-16T00:00:00.000Z
+updated_date: 2026-03-16T00:00:00.000Z
 thumbnail: /assets/uploads/jKpb8nZt1MKFHdTSDudYoyZ9AeQ.png
-thumbnail_alt: "Automate Gmail Emails"
-description: "Master how to automate Gmail emails using Google Workspace Studio and Gemini AI. Learn AI labelling, saving attachments to Drive, and data extraction to Sheets."
+thumbnail_alt: Automate Gmail Emails
+description: Master how to automate Gmail emails using Google Workspace Studio
+  and Gemini AI. Learn AI labelling, saving attachments to Drive, and data
+  extraction to Sheets.
 ---
 
 Master how to automate Gmail emails using Google Workspace Studio and Gemini AI. Learn AI labelling, saving attachments to Drive, and data extraction to Sheets.
