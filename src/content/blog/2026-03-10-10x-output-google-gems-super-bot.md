@@ -14,24 +14,15 @@ description: See how Google Gems handle boring chores automatically. Build your
   own AI assistants, use custom Gems to write content, and get much more done in
   less time.
 ---
-
 Build your own Google Gems AI super-robot in 5 steps. These powerful AI agents automate repetitive tasks and supercharge your productivity instantly.
 
-  
-
 > ### **5 Secret Ways To Become Invincible At Work With Google Gems:**
-> 
-> *   Discover how to build your own Super-Robot assistant using a Google Gem to handle boring chores while you sleep.
->     
-> *   Learn why the world’s most successful people use X-ray vision tools to find information in seconds.
->     
-> *   See how you can become invincible at work by automating every single task that used to make you frustrated.
->     
-> *   Discover how to unlock a secret weapon inside your computer that writes emails and plans projects for you.
->     
-> *   Learn why having a Google Gem as an AI co-pilot is the only way to stay ahead in a world moving faster than ever.
-
-  
+>
+> * Discover how to build your own Super-Robot assistant using a Google Gem to handle boring chores while you sleep.
+> * Learn why the world’s most successful people use X-ray vision tools to find information in seconds.
+> * See how you can become invincible at work by automating every single task that used to make you frustrated.
+> * Discover how to unlock a secret weapon inside your computer that writes emails and plans projects for you.
+> * Learn why having a Google Gem as an AI co-pilot is the only way to stay ahead in a world moving faster than ever.
 
 Stop wasting your life on tasks that a machine can do better. Most people are busy working but not creating real value.
 
@@ -40,10 +31,6 @@ They stick themselves in a loop of emails, data entry, and messy meeting notes. 
 If you want to lead your industry, stop acting like a manual worker. Start acting like a conductor.
 
 Google Gems are not just another tech feature; they help you move from being a worker to a system architect. This is your wake-up call to stop grinding and start scaling with the most powerful AI tools available today.
-
-  
-
-  
 
 ## Why Google Gems Are Gemini's Best-Kept Secret
 
@@ -57,8 +44,6 @@ They help you see through the clutter. If you are not using Google Gemini Gems t
 
 You may also be getting fewer results. This is about AI assistance that actually understands your business context and your specific goals.
 
-  
-
 ## Video Tutorial on Google Gemini Gems
 
 <youtube>https://www.youtube.com/watch?v=EhqylY3d8E0</youtube>
@@ -67,21 +52,15 @@ This video tutorial is a deep dive into the practical application of Google Gems
 
 It also demonstrates the video generation capabilities of Veo 3 and the high-speed processing of Nano Banana Pro. Whether you need a Task Manager, a brainstorm partner, or a Content Refiner, this video shows each step. It helps you avoid common beginner mistakes.
 
-  
-
 ## What Are Google Gems And How Do They Work?
 
 ![Google Gemini Gem](/assets/uploads/vCssgYTXsMnQUIlc7PcXKzLow.png)
-
-  
 
 A Google Gem is a custom-made version of the Google Gemini model. It uses a specific Brand Persona and prompt instructions. Instead of typing the same context over and over again, you bake that information directly into the Gem.
 
 This creates a virtual assistant that knows your company's history, your preferred formatting, and your specific expert knowledge. It is the difference between hiring a stranger each day and having a loyal partner who knows how you like things done.
 
 The core mechanics involve three main pillars: your prompt instructions, your context and resources, and your enabled tools. You can attach files directly from Google Drive or Google Cloud to give the Gem a deep understanding of your projects. You can also enable a suite of prebuilt Gems for common tasks, such as a career coach or a writing assistant. The Gemini app lets these AI agents use natural language processing to turn messy ideas into polished content fast.
-
-  
 
 <customtable>
 **Feature** | **Function** | **Benefit**
@@ -92,8 +71,6 @@ The core mechanics involve three main pillars: your prompt instructions, your co
 </customtable>
 
 Also Read: [The secret 2027 browser everyone is starting to use](/blog/nortion-neo-ai-browser-review-guide)
-
-  
 
 ## Google Gems For No-Code Builders
 
@@ -106,8 +83,6 @@ These AI tools use natural language to interpret your needs and generate logic, 
 ❌ **Bad Habit:** Giving vague instructions like "be helpful." This is a waste of time and leads to "AI errors" where the AI makes things up.
 
 > **The Why:** Precise instructions ensure your virtual assistant stays on track and doesn't waste your time with irrelevant suggestions.
-
-  
 
 ## How Can You Improve Your Content Creation With Google Gems?
 
@@ -122,8 +97,6 @@ As per [research](https://www.ox.ac.uk/news/2023-02-22-40-time-spent-mundane-cho
 By using Google Gems, you are tapping into this automation power right now to eliminate the repetitive tasks that slow down your content creation.
 
 Also Read: [Turn your rough sketches into 3D blueprints using AI](/blog/getleo-ai-convert-text-into-3d-cad-models)
-
-  
 
 ## How Can Google Gems Help Your Team Work Faster?
 
@@ -141,52 +114,33 @@ This is how you build an Invincible team that gets results without you watching 
 
 > **The Why:** Automating chores ensures no important job is forgotten and lets you stop being a babysitter so you can be a leader.
 
-  
-
 ## Step-By-Step: Creating Your First Google Gem
 
 Building your first Gem is the most important step in your automation journey. Don't overthink it; just follow this simple roadmap to get your first AI agent up and running.
-
-  
 
 ### Step 1: Open the Gemini App and Select Gems.
 
 Navigate to the Gemini app (gemini.google.com) and look for the "Gems" manager in the side panel. This is your command centre for all your AI tools and custom agents.
 
-*   **How to do:** Click on the "Gem Manager" icon to see your list of current bots.
-    
-*   **What to do:** Select "Create a Gem" to start your new project.
-    
-*   **The Why:** You need a dedicated space to manage your agents so they don't get mixed up with general chats.
-    
-
-  
+* **How to do:** Click on the "Gem Manager" icon to see your list of current bots.
+* **What to do:** Select "Create a Gem" to start your new project.
+* **The Why:** You need a dedicated space to manage your agents so they don't get mixed up with general chats.
 
 ### Step 2: Define the Persona and Instructions.
 
 Click "New Gem" and give it a name like "Marketing Copywriter" or "Sales Lead Specialist." In the prompt instructions box, describe exactly who this Gem is and what its goal is.
 
-*   **How to do:** Type your description into the "Instructions" text area.
-    
-*   **What prompt to use:** Use a system prompt like: "You are an expert Marketing Copywriter with 20 years of experience. Always use a professional tone and style."
-    
-*   **The Why:** Setting a persona gives the AI a framework for how to speak and act.
-    
-
-  
+* **How to do:** Type your description into the "Instructions" text area.
+* **What prompt to use:** Use a system prompt like: "You are an expert Marketing Copywriter with 20 years of experience. Always use a professional tone and style."
+* **The Why:** Setting a persona gives the AI a framework for how to speak and act.
 
 ### Step 3: Attach Context and Resources
 
 Click the plus icon to upload files from **Google Drive** or your computer. This provides the **expert knowledge** the Gem needs to be useful for your specific business.
 
-*   **How to do:** Use the "Upload" or "Add from Drive" button inside the Gem builder.
-    
-*   **What to do:** If you are building a Proposal Builder, upload your last five winning proposals as examples.
-    
-*   **The Why:** AI is only as smart as the data you give it; real examples prevent AI errors.
-    
-
-  
+* **How to do:** Use the "Upload" or "Add from Drive" button inside the Gem builder.
+* **What to do:** If you are building a Proposal Builder, upload your last five winning proposals as examples.
+* **The Why:** AI is only as smart as the data you give it; real examples prevent AI errors.
 
 ### Step 4: Enable Tools and Capabilities
 
@@ -194,31 +148,21 @@ Toggle on features like video generation, Smart Fill with AI, or Deep Research. 
 
 ![](/assets/uploads/OXGxSdK6bMuxgaxPyNrGdDgzssk.png)
 
-*   **How to do:** Check the boxes for the specific tools you want the Gem to use.
-    
-*   **What to do:** Enable "Google Search" if the Gem needs to find live information.
-    
-*   **The Why:** Tools turn your Gem from a simple talker into a high-powered doer.
-    
-
-  
+* **How to do:** Check the boxes for the specific tools you want the Gem to use.
+* **What to do:** Enable "Google Search" if the Gem needs to find live information.
+* **The Why:** Tools turn your Gem from a simple talker into a high-powered doer.
 
 ### Step 5: Test, Refine, and Save
 
 Enter a test prompt in the preview window to see how your Super-Robot performs. If the output is too long or messy, add a new instruction to fix it.
 
-*   **How to do:** Type a request in the "Test" box and hit enter.
-    
-*   **What to do:** If the answer is too long, add: "Keep all responses under 200 words and use bullet points."
-    
-*   **The Why:** Testing reveals the "bugs" in your instructions before you start using the Gem for real work.
-    
+* **How to do:** Type a request in the "Test" box and hit enter.
+* **What to do:** If the answer is too long, add: "Keep all responses under 200 words and use bullet points."
+* **The Why:** Testing reveals the "bugs" in your instructions before you start using the Gem for real work.
 
 > **Warning:** Do not skip the testing phase. If you save a Gem with poor instructions, you will get poor results every time you use it, which defeats the purpose of automation.
 
 Also Read: [Build your meeting 'Second Brain' for 2027](/blog/grain-ai-automate-your-meetings-sales-and-learning)
-
-  
 
 ## Conclusion And Summary
 
@@ -232,34 +176,15 @@ By adding AI tools to your daily Workspace apps, you work smarter every day.
 
 Stop making excuses about not having enough time. Use Google AI Pro for Education or Gemini Enterprise to build your Invincible team of virtual assistants today. The technology is here; the only question is whether you are smart enough to use it.
 
-  
-
-### What exactly is a Google Gem?
-
-A Google Gemini Gem is a tailor-made version of Gemini AI. You can set it up with specific instructions, a personality, and knowledge. It works as a permanent virtual assistant in the Gemini app.
-
-It lets you automate repeat tasks, like drafting marketing campaigns or summarising meeting notes. You do not need to repeat your instructions each time.
-
-  
-
-### How do I use Google Gems in Google Docs?
-
-You can access your custom Gems through the side panel in Google Docs. This allows you to get writing help or use a Content Refiner directly on your active document. It is a seamless way to bring AI assistance into your existing Workspace applications workflow.
-
-  
-
-### Is my data safe when using Google Gems with Google Drive?
-
-Yes, Google Gemini and Google Gems use strict, enterprise-grade security controls. This is most true for Gemini Enterprise and Google Cloud users. Your Gem uses your Google Drive data as context and resources. Public AI models do not use it for training. This helps keep your expert knowledge private.
-
-  
-
-### Can Google Gems create videos or images?
-
-Yes. Enable tools like video generation (Veo 3) and image generation (Nano Banana). Your Gems can then create high-quality visual content. This is perfect for creating training videos or social media assets as part of your content creation strategy.
-
-  
-
-### Do I need to know how to code to build a Gem?
-
-Not at all. You build custom agents entirely through natural language. You just talk to the Gem creator like a no-nonsense business mentor. Tell it exactly what you need it to do. It is a true no-code solution for AI experts and beginners alike.
+<faq>
+Q: What exactly is a Google Gem?
+A: A Google Gemini Gem is a tailor-made version of Gemini AI. You can set it up with specific instructions, a personality, and knowledge. It works as a permanent virtual assistant in the Gemini app. It lets you automate repeat tasks, like drafting marketing campaigns or summarising meeting notes. You do not need to repeat your instructions each time.
+Q: How do I use Google Gems in Google Docs?
+A: You can access your custom Gems through the side panel in Google Docs. This allows you to get writing help or use a content refiner directly on your active document. It is a seamless way to bring AI assistance into your existing Workspace applications' workflow.
+Q: Is my data safe when using Google Gems with Google Drive?
+A: Yes, Google Gemini and Google Gems use strict, enterprise-grade security controls. This is most true for Gemini Enterprise and Google Cloud users. Your Gem uses your Google Drive data as context and resources. Public AI models do not use it for training. This helps keep your expert knowledge private.
+Q: Can Google Gems create videos or images?
+A: Yes. Enable tools like video generation (Veo 3) and image generation (Nano Banana). Your Gems can then create high-quality visual content. This is perfect for creating training videos or social media assets as part of your content creation strategy.
+Q: Do I need to know how to code to build a Gem?
+A: Not at all. You build custom agents entirely through natural language. You just talk to the Gem creator like a no-nonsense business mentor. Tell it exactly what you need it to do. It is a true no-code solution for AI experts and beginners alike.
+</faq>
