@@ -25,6 +25,7 @@ export default function BlogPost() {
     image: post?.thumbnail,
     type: "article",
     author: post?.author,
+    authorUrl: post?.authorUrl,
     publishedTime: post?.date,
     modifiedTime: post?.updated_date,
     category: post?.category,

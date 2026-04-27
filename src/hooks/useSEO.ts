@@ -9,6 +9,7 @@ interface SEOProps {
   url?: string;
   type?: string;
   author?: string;
+  authorUrl?: string;  // e.g. LinkedIn profile URL
   publishedTime?: string;
   modifiedTime?: string;
   category?: string;
@@ -40,6 +41,7 @@ function buildArticleSchema(props: SEOProps): object {
     author: {
       '@type': 'Person',
       name: props.author || 'Ritz7',
+      ...(props.authorUrl && { url: props.authorUrl }),
     },
     publisher: {
       '@type': 'Organization',
@@ -108,29 +110,34 @@ function buildFAQSchema(content: string): object | null {
 }
 
 /**
- * Finds the first <youtube> URL in content and returns a VideoObject schema,
- * or null if no video is found.
+ * Finds ALL <youtube> URLs in content and returns one VideoObject schema per video.
+ * Returns an empty array if no videos are found.
  *
  * Expected format: <youtube>https://www.youtube.com/watch?v=VIDEO_ID</youtube>
  */
-function buildVideoSchema(content: string, props: SEOProps): object | null {
-  const youtubeTagMatch = content.match(/<youtube>(https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+))<\/youtube>/i);
-  if (!youtubeTagMatch) return null;
+function buildVideoSchemas(content: string, props: SEOProps): object[] {
+  const youtubeTagRegex = /<youtube>(https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+))<\/youtube>/gi;
+  const schemas: object[] = [];
 
-  const videoUrl = youtubeTagMatch[1];
-  const videoId = youtubeTagMatch[2];
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  let match: RegExpExecArray | null;
+  while ((match = youtubeTagRegex.exec(content)) !== null) {
+    const videoUrl = match[1];
+    const videoId = match[2];
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'VideoObject',
-    name: props.title,
-    description: props.description,
-    thumbnailUrl,
-    embedUrl: `https://www.youtube.com/embed/${videoId}`,
-    url: videoUrl,
-    ...(props.publishedTime && { uploadDate: props.publishedTime }),
-  };
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: props.title,
+      description: props.description,
+      thumbnailUrl,
+      embedUrl: `https://www.youtube.com/embed/${videoId}`,
+      url: videoUrl,
+      ...(props.publishedTime && { uploadDate: props.publishedTime }),
+    });
+  }
+
+  return schemas;
 }
 
 // ---------------------------------------------------------------------------
@@ -144,6 +151,7 @@ export function useSEO({
   url,
   type = 'website',
   author,
+  authorUrl,
   publishedTime,
   modifiedTime,
   category,
@@ -230,7 +238,7 @@ export function useSEO({
     if (type === 'article') {
       // 1. Always inject BlogPosting schema for articles
       injectJsonLd(
-        buildArticleSchema({ title, description, image, url: currentUrl, author, publishedTime, modifiedTime, category }),
+        buildArticleSchema({ title, description, image, url: currentUrl, author, authorUrl, publishedTime, modifiedTime, category }),
         'schema-article'
       );
 
@@ -241,11 +249,11 @@ export function useSEO({
           injectJsonLd(faqSchema, 'schema-faq');
         }
 
-        // 3. Auto-inject VideoObject schema if a <youtube> embed exists
-        const videoSchema = buildVideoSchema(content, { title, description, publishedTime });
-        if (videoSchema) {
-          injectJsonLd(videoSchema, 'schema-video');
-        }
+        // 3. Auto-inject one VideoObject schema per <youtube> embed found
+        const videoSchemas = buildVideoSchemas(content, { title, description, publishedTime });
+        videoSchemas.forEach((videoSchema, i) => {
+          injectJsonLd(videoSchema, `schema-video-${i}`);
+        });
       }
     }
 
