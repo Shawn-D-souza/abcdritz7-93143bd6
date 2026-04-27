@@ -65,7 +65,7 @@ This avoids complex Apps Script that breaks as soon as you touch it. It uses Goo
 * **Use Reasoning, Not Rules:** Traditional filters are "if-this-then-that." Gemini AI uses reasoning to understand why an email matters.
 * **Scale Your Success:** Once you build a flow, it runs 24/7 and handles repeatable tasks while you sleep.
 
-> ***The Why:** We use Studio because manual work is a slow death for your productivity. It allows you to build business workflows that are Invincible against human error and forgetfulness.*
+> **\*The Why:** We use Studio because manual work is a slow death for your productivity. It allows you to build business workflows that are Invincible against human error and forgetfulness.*
 
 ### How To Integrate Gemini AI With Gmail?
 
@@ -76,7 +76,7 @@ Most people think Gemini AI is just a chatbot you talk to when you're bored. The
 * **Connect the Apps:** Use Google Workspace Studio to bridge your Gmail to other AI-powered tools.
 * **Use Natural Language:** Start typing in the side panel to ask questions about your inbox content.
 
-> ***The Why:** We integrate this way to make the AI assistant an active part of your business workflows.*
+> **\*The Why:** We integrate this way to make the AI assistant an active part of your business workflows.*
 
 Also Read: [How To Create Automated Apps Using Emergent AI Tools](/blog/emergent-ai-turns-text-into-apps-instantly)
 
@@ -92,7 +92,7 @@ Before Gemini AI can do its job, you have to give it a clear path. People call t
 2. **What to do:** Click the block to edit. Set conditions so the flow doesn't run on every spam message.
 3. **Filters to use:** Under conditions, filter by "Subject" or "Body". For instance, to track “password reset not working” issues, create a filter for that exact phrase. This will **automate** G**mail emails** related to support.
 
-> ***The Why:** We do this to prevent the system from getting overwhelmed and to ensure only relevant **Customer data** reaches your Sheets.*
+> **\*The Why:** We do this to prevent the system from getting overwhelmed and to ensure only relevant **Customer data** reaches your Sheets.*
 
 1. ### Using Gemini AI for Secret Weapon Labelling (AI-Powered Labels)
 
@@ -179,25 +179,7 @@ Once you have mastered the basics, you are ready to automate complex work that g
 * **Enterprise Security:** Using [Gemini Enterprise](https://workspace.google.com/solutions/ai/) gives you a privacy hub and DLP controls to keep your data safe.
 * **Next-Gen Content:** Use the Gemini app to play with Nano Banana and Nano Banana Pro models for video generation and other multimodal breakthroughs.
 
-### 1. How do I start to automate Gmail emails with Gemini AI?
 
-Start by identifying one task, like saving invoices. Create a Gmail filter for those emails and then use Google Workspace Studio and Gemini AI to send those specific attachments to a Drive folder.
-
-### 2. Can Gemini AI access my Gmail?
-
-Yes, Gemini AI can access your emails to provide AI assistance. However, Go**ogle’s security and privacy controls ensure your Customer data is not used to train public AI models. You maintain control via the privacy hub.**
-
-### 3. Is Gemini AI included with Google Workspace?
-
-Yes, Gemini AI is now integrated into most Google Workspace plans, including Enterprise and [Education Plus](https://edu.google.com/workspace-for-education/editions/education-plus/). Institutions may also access these tools through a **Google AI Pro for Education license**.
-
-### 4. Can Gemini AI read my email attachments?
-
-Yes, it can. This is a massive [multimodal breakthrough](https://en.wikipedia.org/wiki/Multimodal_learning). You can ask Gemini AI to provide **email summaries** of a PDF attachment and put that data into your Google Sheets.
-
-### 5. What happens if Gemini AI makes a mistake?
-
-The Gemini AI is your co-pilot, not the captain. You should always set up a "Review" label. If the learning model output is unclear, the system moves the email to a folder for manual check. To **automate Gmail emails** effectively, you must stop making excuses and start building. Use Gemini AI, trust your co-pilot, and take back your time today.
 
 <faq>
 Q: How do I start to automate Gmail emails with Gemini AI?
