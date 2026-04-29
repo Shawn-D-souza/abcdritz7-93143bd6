@@ -1,14 +1,18 @@
 ---
-summary: "Create 2-Minute AI Videos for Free! Learn the \"Auto\" Duration Hack and Master Movie Flow AI to Ship Cinematic Videos in Seconds. Stop Planning, Start Scaling!"
+summary: Create 2-Minute AI Videos for Free! Learn the "Auto" Duration Hack and
+  Master Movie Flow AI to Ship Cinematic Videos in Seconds. Stop Planning, Start
+  Scaling!
 title: "Movie Flow AI: Create 2-Minute Cinematic Videos For Free"
 slug: movieflow-ai-create-cinematic-videos
-category: Technology
+category: AI Tools
 author: Sangya Keswani
-date: "2026-02-04T00:00:00.000Z"
-updated_date: "2026-02-04T00:00:00.000Z"
+date: 2026-02-04T00:00:00.000Z
+updated_date: 2026-02-04T00:00:00.000Z
 thumbnail: /assets/uploads/RbzVQoMbOskkHfEWeT2fPbqKi9s.png
-thumbnail_alt: "movieflow ai review"
-description: "Create 2-Minute AI Videos for Free! Learn the \"Auto\" Duration Hack and Master Movie Flow AI to Ship Cinematic Videos in Seconds. Stop Planning, Start Scaling!"
+thumbnail_alt: movieflow ai review
+description: Create 2-Minute AI Videos for Free! Learn the "Auto" Duration Hack
+  and Master Movie Flow AI to Ship Cinematic Videos in Seconds. Stop Planning,
+  Start Scaling!
 ---
 
 Stop making excuses about "not being a director". With Movie Flow AI, you can create full-length, cinematic videos for free just by typing. Here is how to turn your ideas into movies before your next coffee break.
