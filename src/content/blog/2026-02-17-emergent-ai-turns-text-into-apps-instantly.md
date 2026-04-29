@@ -1,14 +1,19 @@
 ---
-summary: "Build fully functional mobile apps with AI. No coding required. Learn how Emergent's AI turns your ideas into production-ready apps instantly.\n\n"
+summary: >+
+  Build fully functional mobile apps with AI. No coding required. Learn how
+  Emergent's AI turns your ideas into production-ready apps instantly.
+
 title: "From Text to App: The Magic of Emergent AI Tools"
 slug: emergent-ai-turns-text-into-apps-instantly
-category: Technology
+category: AI Tools
 author: Sangya Keswani
-date: "2026-02-17T00:00:00.000Z"
-updated_date: "2026-02-17T00:00:00.000Z"
+date: 2026-02-17T00:00:00.000Z
+updated_date: 2026-02-17T00:00:00.000Z
 thumbnail: /assets/uploads/sgzMqKbKBndHzvflovvvfkcaGTM.png
-thumbnail_alt: "Emergent ai"
-description: "Build fully functional mobile apps with AI. No coding required. Learn how Emergent's AI turns your ideas into production-ready apps instantly.\n\n"
+thumbnail_alt: Emergent ai
+description: >+
+  Build fully functional mobile apps with AI. No coding required. Learn how
+  Emergent's AI turns your ideas into production-ready apps instantly.
 ---
 
 > ## 5 Secrets to Building Apps Using Emergent AI:
