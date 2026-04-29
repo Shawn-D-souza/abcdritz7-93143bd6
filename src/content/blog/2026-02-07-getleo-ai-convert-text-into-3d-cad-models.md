@@ -1,14 +1,18 @@
 ---
-summary: "Learn how to use Leo AI to turn text or a sketch into a 3D model. Our guide covers prompting, 9-point engineering summaries, and building real CAD blueprints."
+summary: Learn how to use Leo AI to turn text or a sketch into a 3D model. Our
+  guide covers prompting, 9-point engineering summaries, and building real CAD
+  blueprints.
 title: "GetLeo AI: Convert Text Into 3D CAD Models"
 slug: getleo-ai-convert-text-into-3d-cad-models
-category: Technology
+category: AI Tools
 author: Sangya Keswani
-date: "2026-02-07T00:00:00.000Z"
-updated_date: "2026-02-07T00:00:00.000Z"
+date: 2026-02-07T00:00:00.000Z
+updated_date: 2026-02-07T00:00:00.000Z
 thumbnail: /assets/uploads/flxCmJ519oDRXeTVcJcLqnuD5ZM.png
-thumbnail_alt: "getleo ai"
-description: "Learn how to use Leo AI to turn text or a sketch into a 3D model. Our guide covers prompting, 9-point engineering summaries, and building real CAD blueprints."
+thumbnail_alt: getleo ai
+description: Learn how to use Leo AI to turn text or a sketch into a 3D model.
+  Our guide covers prompting, 9-point engineering summaries, and building real
+  CAD blueprints.
 ---
 
 > ## 5 Secrets to Building Products with Leo AI:
