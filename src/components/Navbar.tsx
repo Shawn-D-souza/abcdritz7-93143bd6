@@ -12,10 +12,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  {
-    name: "Programs",
-    href: "#programs",
-  },
+
   {
     name: "About Us",
     dropdown: [

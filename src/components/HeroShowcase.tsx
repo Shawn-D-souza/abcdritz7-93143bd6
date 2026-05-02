@@ -236,7 +236,7 @@ export const HeroShowcase = () => {
   const statusTexts = [
     "Ideas → Reality",
     "No-code builders",
-    "500+ learners strong",
+    "20000+ learners strong",
     "Community powered",
   ];
   const [statusIdx, setStatusIdx] = useState(0);
@@ -361,7 +361,7 @@ export const HeroShowcase = () => {
             {/* Top stats row */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { label: "Learners", value: 500, suffix: "+", icon: Globe, gradient: "from-blue-500 to-cyan-400" },
+                { label: "Learners", value: 20000, suffix: "+", icon: Globe, gradient: "from-blue-500 to-cyan-400" },
                 { label: "Automations", value: 1200, suffix: "+", icon: Zap, gradient: "from-violet-500 to-purple-400" },
                 { label: "Hours Saved", value: 10000, suffix: "+", icon: TrendingUp, gradient: "from-emerald-500 to-green-400" },
               ].map((stat, i) => (
