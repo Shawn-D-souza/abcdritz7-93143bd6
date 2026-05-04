@@ -27,11 +27,9 @@ interface SEOProps {
  */
 function buildArticleSchema(props: SEOProps): object {
   const pageUrl = props.url || `${SITE_URL}/blog/`;
-  const absoluteImage = props.image
-    ? props.image.startsWith('http')
-      ? props.image
-      : `${SITE_URL}${props.image.startsWith('/') ? '' : '/'}${props.image}`
-    : undefined;
+
+  // Build a rich image array: thumbnail first, then all inline images from content
+  const imageObjects = buildImageObjects(props.content || '', props.image, SITE_URL);
 
   return {
     '@context': 'https://schema.org',
@@ -56,9 +54,12 @@ function buildArticleSchema(props: SEOProps): object {
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
     ...(props.publishedTime && { datePublished: props.publishedTime }),
     ...(props.modifiedTime && { dateModified: props.modifiedTime }),
-    ...(absoluteImage && {
-      image: { '@type': 'ImageObject', url: absoluteImage },
-    }),
+    // Use array of ImageObjects when multiple images exist, single object otherwise
+    ...(imageObjects.length === 1
+      ? { image: imageObjects[0] }
+      : imageObjects.length > 1
+      ? { image: imageObjects }
+      : {}),
     ...(props.category && { articleSection: props.category }),
   };
 }
@@ -113,16 +114,23 @@ function buildFAQSchema(content: string): object | null {
  * Finds ALL <youtube> URLs in content and returns one VideoObject schema per video.
  * Returns an empty array if no videos are found.
  *
- * Expected format: <youtube>https://www.youtube.com/watch?v=VIDEO_ID</youtube>
+ * Supported formats inside <youtube>...</youtube>:
+ *   - https://www.youtube.com/watch?v=VIDEO_ID
+ *   - https://www.youtube.com/watch?v=VIDEO_ID&t=123s   (extra params)
+ *   - https://youtu.be/VIDEO_ID                          (short URL)
  */
 function buildVideoSchemas(content: string, props: SEOProps): object[] {
-  const youtubeTagRegex = /<youtube>(https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([\w-]+))<\/youtube>/gi;
+  // Capture everything between <youtube> and </youtube>, then extract the video ID.
+  const youtubeTagRegex = /<youtube>\s*(https?:\/\/[^<]+?)\s*<\/youtube>/gi;
+  const videoIdRegex = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]+)/;
   const schemas: object[] = [];
 
   let match: RegExpExecArray | null;
   while ((match = youtubeTagRegex.exec(content)) !== null) {
-    const videoUrl = match[1];
-    const videoId = match[2];
+    const videoUrl = match[1].trim();
+    const idMatch = videoIdRegex.exec(videoUrl);
+    if (!idMatch) continue;
+    const videoId = idMatch[1];
     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
     schemas.push({
@@ -138,6 +146,42 @@ function buildVideoSchemas(content: string, props: SEOProps): object[] {
   }
 
   return schemas;
+}
+
+/**
+ * Extracts all markdown inline images (![alt](url)) from content and
+ * returns them as an array of absolute ImageObject schemas.
+ * The thumbnail image passed in `thumbnailUrl` is always included first.
+ */
+function buildImageObjects(content: string, thumbnailUrl: string | undefined, siteUrl: string): object[] {
+  const toAbsolute = (url: string) =>
+    url.startsWith('http') ? url : `${siteUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+
+  const imageObjects: object[] = [];
+  const seen = new Set<string>();
+
+  const addImage = (url: string, alt?: string) => {
+    const abs = toAbsolute(url);
+    if (seen.has(abs)) return;
+    seen.add(abs);
+    imageObjects.push({
+      '@type': 'ImageObject',
+      url: abs,
+      ...(alt && { description: alt }),
+    });
+  };
+
+  // Always include the thumbnail first
+  if (thumbnailUrl) addImage(thumbnailUrl);
+
+  // Extract inline markdown images: ![alt](url)
+  const mdImgRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  let m: RegExpExecArray | null;
+  while ((m = mdImgRegex.exec(content)) !== null) {
+    addImage(m[2].trim(), m[1].trim() || undefined);
+  }
+
+  return imageObjects;
 }
 
 // ---------------------------------------------------------------------------
@@ -236,9 +280,9 @@ export function useSEO({
 
     // --- Auto JSON-LD schema injection ---
     if (type === 'article') {
-      // 1. Always inject BlogPosting schema for articles
+      // 1. Always inject BlogPosting schema for articles (includes image array)
       injectJsonLd(
-        buildArticleSchema({ title, description, image, url: currentUrl, author, authorUrl, publishedTime, modifiedTime, category }),
+        buildArticleSchema({ title, description, image, url: currentUrl, author, authorUrl, publishedTime, modifiedTime, category, content }),
         'schema-article'
       );
 
