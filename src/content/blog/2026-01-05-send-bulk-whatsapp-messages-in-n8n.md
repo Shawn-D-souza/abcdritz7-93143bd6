@@ -411,9 +411,12 @@ This approach helps with customer support, lead nurturing, event coordination, a
 
 
 <faq>
-Q: Can I use n8n to send attachments other than images via WhatsApp?Yes, the WhatsApp Business API, and by extension n8n, supports sending various media attachments beyond images, including documents (PDFs), audio files, and videos. When configuring your WhatsApp 'Send Template' or 'Send Message' node in n8n, you'll find options to specify the type of media and provide the corresponding public URL.
-Q: Is there a limit to how many bulk WhatsApp messages I can send with n8n?The limits for sending bulk WhatsApp messages are primarily governed by your WhatsApp Business API tier and your messaging quality rating. WhatsApp enforces messaging limits to prevent spam and ensure a high-quality user experience. As your quality rating improves and you send more messages, your tier limits may increase. n8n itself does not impose a limit, but it facilitates sending within WhatsApp's guidelines.
-Q: How much does the WhatsApp Business API cost?The cost of using the WhatsApp Business API is primarily based on a conversation-based pricing model, not on n8n's usage. WhatsApp charges per conversation, which can be either business-initiated (marketing, utility, authentication) or user-initiated (service conversations). The first 1,000 service conversations each month are typically free. Pricing varies by region and conversation category. For detailed pricing, refer to the official WhatsApp Business Platform documentation.
+Q: Can I use n8n to send attachments other than images via WhatsApp?
+A: Yes, the WhatsApp Business API, and by extension n8n, supports sending various media attachments beyond images, including documents (PDFs), audio files, and videos. When configuring your WhatsApp 'Send Template' or 'Send Message' node in n8n, you'll find options to specify the type of media and provide the corresponding public URL.
+Q: Is there a limit to how many bulk WhatsApp messages I can send with n8n?
+A: The limits for sending bulk WhatsApp messages are primarily governed by your WhatsApp Business API tier and your messaging quality rating. WhatsApp enforces messaging limits to prevent spam and ensure a high-quality user experience. As your quality rating improves and you send more messages, your tier limits may increase. n8n itself does not impose a limit, but it facilitates sending within WhatsApp's guidelines.
+Q: How much does the WhatsApp Business API cost?
+A: The cost of using the WhatsApp Business API is primarily based on a conversation-based pricing model, not on n8n's usage. WhatsApp charges per conversation, which can be either business-initiated (marketing, utility, authentication) or user-initiated (service conversations). The first 1,000 service conversations each month are typically free. Pricing varies by region and conversation category. For detailed pricing, refer to the official WhatsApp Business Platform documentation.
 </faq>
 
 

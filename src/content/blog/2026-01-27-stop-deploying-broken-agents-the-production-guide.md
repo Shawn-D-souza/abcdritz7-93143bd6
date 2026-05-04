@@ -230,19 +230,13 @@ Now, stop reading, go to your terminal (or Emojent), and ship the code.
 
 <faq>
 Q: How to integrate an AI agent into a website?
-A: The most efficient way to integrate an AI agent is to use a pre-built frontend framework like OpenAI’s ChatKit. Instead of writing complex WebSocket code from scratch, you fork the ChatKit repository, connect it to your agent using your Workflow ID, and embed the resulting application onto your site using an iframe or a direct link. For non-coders, tools like Emojent can automatically generate the HTML embedding snippet for you.
+A: The most efficient way is to use a pre-built framework like OpenAI’s ChatKit. Fork the ChatKit repository, connect it to your agent using your Workflow ID, and embed the application onto your site via an iframe or direct link. For a no-code approach, tools like Emojent can automatically generate the necessary HTML embedding snippet.
 Q: How do I integrate OpenAI into my website?
-A: To integrate OpenAI securely, never expose your API key in frontend code. Instead, use a backend middleware (like Next.js running on Node.js) to handle requests.
-Q: Publish your agent in the OpenAI Builder to get a Workflow ID.
-Q: Store your OPENAI_API_KEY in secure environment variables.
-Q: Whitelist your website’s domain in the OpenAI Security dashboard to allow the connection.
+A: To integrate OpenAI securely, use a backend middleware (like Next.js on Node.js) so your API key is never exposed in the frontend. First, publish your agent in the OpenAI Builder to get a Workflow ID. Then, store your API key in secure environment variables and whitelist your domain in the OpenAI Security dashboard.
 Q: Where can I deploy AI agents?
-A: You can deploy AI agents on any cloud platform that supports Node.js, but Vercel is the industry standard for 'Next.js' based AI applications due to its global edge network and ease of use. Other viable options include Netlify, AWS Amplify, or containerized deployments on DigitalOcean or Azure App Service.
+A: Vercel is the industry standard for Next.js-based AI applications because of its global network and ease of use. Other options include Netlify, AWS Amplify, DigitalOcean, or Azure App Service.
 Q: How to deploy a chatbot on a website?
-A: Follow the "Builder-Kit-Cloud" pipeline:
-Q: Builder: Create and publish your logic in the OpenAI Agent Builder.
-Q: Kit: Clone a frontend template (like ChatKit) to handle the user interface.
-Q: Cloud: Push the code to a hosting platform like Vercel. Once deployed, simply copy the generated URL (e.g., https://my-bot.vercel.app) and link to it, or embed it inside your existing website using an <iframe> tag.
+A: Follow the "Builder-Kit-Cloud" pipeline: 1. Create and publish your logic in the OpenAI Agent Builder. 2. Clone a frontend template like ChatKit. 3. Push the code to a hosting platform like Vercel and embed the generated URL on your website using an <iframe> tag.
 </faq>
 
 

@@ -413,31 +413,13 @@ With further customisation, you can expand it by adding fields like a designated
 
 <faq>
 Q: How to automate email response?
-A: You automate an email response by building a workflow in a platform like n8n. The process involves three main steps, as detailed in the article:
-Q: Add a Trigger: Start the workflow with an "On Form Submission" node, which instantly captures user data when they complete a form.
-Q: Add an Action: Connect the trigger to an email service node, such as Microsoft Outlook – Send a Message.
-Q: Configure: Map the submitted data (like the user's Email) from the form to the To field of the Outlook node and write the automated message content.
-Q: Activate: Save and activate the workflow to ensure it runs every time a new form is submitted.
-A: This establishes a fast, reliable, and no-code system for sending instant, personalized responses.
+A: You automate an email response by building a workflow in n8n. First, add a trigger like "On Form Submission" to capture user data. Next, connect an action node such as "Microsoft Outlook – Send a Message." Map the submitted email to the "To" field, write your message, and activate the workflow to ensure it runs every time a form is submitted.
 Q: Can you automate email responses in Gmail?
-A: Yes, you can absolutely automate email responses using Gmail within n8n. While the provided article focuses on Microsoft Outlook, n8n has a dedicated Gmail node that functions identically to the Outlook node.
-A: You would replace the "Microsoft Outlook – Send a Message" node with the "Gmail" node and configure it to use the "Send an Email" action. This allows you to connect your Google account and send emails automatically, ensuring that the same principle of fast, automated communication is achieved.
+A: Yes, n8n has a dedicated Gmail node that functions similarly to the Outlook node. You can replace the Outlook node with a Gmail node, select the "Send an Email" action, and connect your Google account to achieve the same fast, automated communication.
 Q: Can AI answer emails automatically?
-A: Yes, AI can be used to answer emails automatically, particularly through platforms like n8n.
-A: n8n integrates with various AI services (like Gemini or OpenAI). This allows you to build advanced workflows where:
-Q: A trigger (like the Gmail Trigger or Outlook Trigger) is set up to monitor incoming emails.
-Q: The email content is passed to an AI node for classification (e.g., is it a support request or a sales inquiry?) or to generate a coherent draft reply.
-Q: The workflow then uses the Gmail or Outlook node to either send the AI-generated reply instantly or save it as a draft for human review.
-A: This system accelerates email management and ensures quick responses, especially for high-volume inquiries.
+A: Yes, by integrating AI services like Gemini or OpenAI into n8n. You can build workflows that monitor incoming emails, use AI to classify the request or generate a response, and then use the Gmail or Outlook node to send the reply or save it as a draft.
 Q: How to automate automatic replies in Outlook?
-A: The article explicitly details how to automate automatic replies in Outlook using n8n:
-Q: Select the Node: Add the "Microsoft Outlook – Send a message" node to your workflow canvas.
-Q: Connect Account: Create a credential by clicking Connect My Account and logging in with your Microsoft credentials to authorise n8n to send messages.
-Q: Map Recipient: Use an expression to map the Email field from your form submission to the Outlook node's To field.
-Q: Compose Message: Enter your subject and write the content of the automatic reply in the Message (HTML format) field.
-Q: Activate: Toggle the workflow switch to 'Active'.
-A: This setup ensures that Outlook sends a professional, automated message the moment your workflow is triggered by an event like a form submission.
-A: Other Article: Step-by-Step Guide: Create a Telegram-Calendar Bot in n8n
+A: Add the "Microsoft Outlook – Send a message" node to your n8n workflow and connect your Microsoft account. Map the recipient's email field from your form, compose your subject and message in HTML format, and then toggle the workflow to "Active" to start sending automated replies.
 </faq>
 
 

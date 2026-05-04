@@ -170,15 +170,15 @@ Building an app is no longer about who can memorise the most code. It is about w
 
 <faq>
 Q: Can Emergent create mobile apps?
-Q: Yes. By using AI app builders, you can generate mobile-first business solutions. While it builds as a web app, it is designed to be responsive, meaning it works perfectly on phones. As per the source, mobile-responsive design is critical for workflow automation success.
+A: Yes. By using AI app builders, you can generate mobile-first business solutions. While it builds as a web app, it is designed to be responsive, meaning it works perfectly on phones. Mobile-responsive design is critical for workflow automation success.
 Q: What is the best way to get started using AI to make my own apps?
-Q: Start with a clear digital product vision. Use visual no-code interfaces like Emergent or Rovo AI to describe your needs. Don't worry about complex server settings yet; just focus on building a tool that solves one specific problem for your business.
+A: Start with a clear digital product vision. Use visual no-code interfaces like Emergent or Rovo AI to describe your needs. Don't worry about complex server settings yet; just focus on building a tool that solves one specific problem for your business.
 Q: How can I create a task manager application using Emergent AI development tools?
-Q: Navigate to the platform, enter a prompt describing your project plans, and specify the need for Google Calendar and Google Sheets integration. The AI will handle the schema markup and backend automatically based on your descriptive prompt.
+A: Navigate to the platform, enter a prompt describing your project plans, and specify the need for Google Calendar and Google Sheets integration. The AI will handle the schema markup and backend automatically based on your descriptive prompt.
 Q: What steps are involved in building a task manager AI app with Emergent?
-Q: The process involves: 1. Defining user flows through prompting, 2. Setting up data synchronisation workflows, 3. Connecting Google Cloud Pub/Sub for messaging if needed, 4. Running the automated support team agent to find bugs, and 5. Final deployment.
+A: The process involves: 1. Defining user flows through prompting, 2. Setting up data synchronisation workflows, 3. Connecting Google Cloud Pub/Sub for messaging if needed, 4. Running the automated support team agent to find bugs, and 5. Final deployment.
 Q: Can I use advanced Microsoft features?
-Q: Absolutely. You can integrate Microsoft Graph API, utilise Microsoft OAuth for secure logins, and even have the AI write VBA macros or Excel formulas for your data exports into Microsoft Excel.
+A: Absolutely. You can integrate Microsoft Graph API, utilise Microsoft OAuth for secure logins, and even have the AI write VBA macros or Excel formulas for your data exports into Microsoft Excel.
 </faq>
 
 
