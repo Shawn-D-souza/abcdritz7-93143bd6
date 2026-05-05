@@ -57,7 +57,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="mb-3 text-xl font-semibold text-foreground">Contact Us</h2>
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:support@ritz7.com" className="text-primary hover:underline">support@ritz7.com</a>.
+              <a href="mailto:abcd@ritz7.ai" className="text-primary hover:underline">abcd@ritz7.ai</a>.
             </p>
           </section>
         </div>

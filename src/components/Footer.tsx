@@ -51,9 +51,9 @@ export const Footer = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-sm font-semibold text-foreground">Contact Us</h4>
             <div className="flex flex-col gap-2">
-              <a href="mailto:abcd@ritz7.com" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
+              <a href="mailto:abcd@ritz7.ai" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
                 <Mail className="h-4 w-4" />
-                abcd@ritz7.com
+                abcd@ritz7.ai
               </a>
               <a href="tel:+917019986530" className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary">
                 <Phone className="h-4 w-4" />
