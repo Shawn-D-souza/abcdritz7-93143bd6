@@ -1,14 +1,18 @@
 ---
-summary: "Master OpenAI Agent Builder workflows using MCP servers. Connect Gmail, Stripe, & N8N to build secure, autonomous AI agents in this comprehensive guide."
-title: "Mastering MCP on OpenAI Agent Builder| Ritz7 Automations"
+summary: Master OpenAI Agent Builder workflows using MCP servers. Connect Gmail,
+  Stripe, & N8N to build secure, autonomous AI agents in this comprehensive
+  guide.
+title: Mastering MCP on OpenAI Agent Builder| Ritz7 Automations
 slug: mastering-mcp-on-openai-agent-builder
-category: Technology
+category: Open AI Agent
 author: Sangya Keswani
-date: "2026-01-13T00:00:00.000Z"
-updated_date: "2026-01-13T00:00:00.000Z"
+date: 2026-01-13T00:00:00.000Z
+updated_date: 2026-01-13T00:00:00.000Z
 thumbnail: /assets/uploads/Z8WPt0810opwNajnvr1W65C9cvc.png
-thumbnail_alt: "mcp servers"
-description: "Master OpenAI Agent Builder workflows using MCP servers. Connect Gmail, Stripe, & N8N to build secure, autonomous AI agents in this comprehensive guide."
+thumbnail_alt: mcp servers
+description: Master OpenAI Agent Builder workflows using MCP servers. Connect
+  Gmail, Stripe, & N8N to build secure, autonomous AI agents in this
+  comprehensive guide.
 ---
 
 **Key Pointers:**
