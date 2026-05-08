@@ -1,13 +1,18 @@
 ---
-summary: "Build a fully automated AI newsletter generator using OpenAI Agent Builder. Create agents to research, write, and proofread content automatically."
-title: "Create an Automated AI Newsletter Using OpenAI Agent Builder"
+summary: Build a fully automated AI newsletter generator using OpenAI Agent
+  Builder. Create agents to research, write, and proofread content
+  automatically.
+title: Create an Automated AI Newsletter Using OpenAI Agent Builder
 slug: automated-ai-newsletter
-category: Technology
+category: Open AI Agent
 author: Sangya Keswani
-date: "2026-01-23T00:00:00.000Z"
-updated_date: "2026-01-23T00:00:00.000Z"
+date: 2026-01-23T00:00:00.000Z
+updated_date: 2026-01-23T00:00:00.000Z
 thumbnail: /assets/uploads/5FOmZGdL9JnN069NiZ7LNm9ZQzk.png
-thumbnail_alt: "description: \"Build a fully automated AI newsletter generator using OpenAI Agent Builder. Create agents to research, write, and proofread content automatically.\""
+thumbnail_alt: AI newsletter
+description: Build a fully automated AI newsletter generator using OpenAI Agent
+  Builder. Create agents to research, write, and proofread content
+  automatically.
 ---
 
 **Key Pointers:**
