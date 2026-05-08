@@ -4,7 +4,7 @@ summary: Create 2-Minute AI Videos for Free! Learn the "Auto" Duration Hack and
   Scaling!
 title: "Movie Flow AI: Create 2-Minute Cinematic Videos For Free"
 slug: movieflow-ai-create-cinematic-videos
-category: AI Tools
+category: AI Video
 author: Sangya Keswani
 date: 2026-02-04T00:00:00.000Z
 updated_date: 2026-02-04T00:00:00.000Z
