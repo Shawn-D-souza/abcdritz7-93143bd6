@@ -105,9 +105,11 @@
   },
   "reactSnap": {
     "source": "dist",
+    "concurrency": 2,
     "puppeteerArgs": [
       "--no-sandbox",
-      "--disable-setuid-sandbox"
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
     ],
     "include": [
       "/",
