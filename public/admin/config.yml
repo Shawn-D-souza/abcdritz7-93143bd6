@@ -3,6 +3,7 @@ backend:
   repo: Shawn-D-souza/abcdritz7-93143bd6
   branch: main
 
+# local_backend: true
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
@@ -15,7 +16,10 @@ collections:
     folder: "src/content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    sortable_fields: ["title", "date", "author", "description", "updated_date"]
+    sortable_fields: ["title", "date", "author", "description", "updated_date", "category"]
+    view_groups:
+      - label: "Category"
+        field: "category"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "URL Slug", name: "slug", widget: "string", hint: "Example: my-awesome-post (No spaces!)" }
