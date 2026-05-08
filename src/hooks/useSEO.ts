@@ -188,6 +188,28 @@ function buildImageObjects(content: string, thumbnailUrl: string | undefined, si
 // Hook
 // ---------------------------------------------------------------------------
 
+// Helper to deep merge objects
+function isObject(item: any) {
+  return (item && typeof item === 'object' && !Array.isArray(item));
+}
+
+function deepMerge(target: any, ...sources: any[]): any {
+  if (!sources.length) return target;
+  const source = sources.shift();
+
+  if (isObject(target) && isObject(source)) {
+    for (const key in source) {
+      if (isObject(source[key])) {
+        if (!target[key]) Object.assign(target, { [key]: {} });
+        deepMerge(target[key], source[key]);
+      } else {
+        Object.assign(target, { [key]: source[key] });
+      }
+    }
+  }
+  return deepMerge(target, ...sources);
+}
+
 export function useSEO({
   title,
   description,
@@ -238,7 +260,6 @@ export function useSEO({
     };
 
     const injectJsonLd = (schema: object, id: string) => {
-      // Remove any stale script with the same id first
       document.getElementById(id)?.remove();
       const script = document.createElement('script');
       script.type = 'application/ld+json';
@@ -278,33 +299,67 @@ export function useSEO({
     setMeta('name', 'twitter:title', title);
     setMeta('name', 'twitter:description', description);
 
-    // --- Auto JSON-LD schema injection ---
+    // --- Parse Custom Head for JSON-LD Schemas ---
+    const customSchemas: Record<string, any[]> = {};
+    const container = document.createElement('div');
+    
+    if (customHead) {
+      container.innerHTML = customHead;
+      
+      // Extract and remove any JSON-LD scripts from customHead
+      const scriptNodes = Array.from(container.querySelectorAll('script[type="application/ld+json"]'));
+      scriptNodes.forEach(node => {
+        try {
+          const parsed = JSON.parse(node.textContent || '{}');
+          const schemaType = parsed['@type'];
+          if (schemaType) {
+            if (!customSchemas[schemaType]) customSchemas[schemaType] = [];
+            customSchemas[schemaType].push(parsed);
+          } else {
+            // Unrecognized type, just store it as generic to inject later
+            if (!customSchemas['Unknown']) customSchemas['Unknown'] = [];
+            customSchemas['Unknown'].push(parsed);
+          }
+          // Remove from container so it doesn't get injected twice
+          node.remove();
+        } catch (e) {
+          console.error("Failed to parse custom JSON-LD schema", e);
+        }
+      });
+    }
+
+    // --- Auto JSON-LD schema injection with Merging ---
     if (type === 'article') {
-      // 1. Always inject BlogPosting schema for articles (includes image array)
-      injectJsonLd(
-        buildArticleSchema({ title, description, image, url: currentUrl, author, authorUrl, publishedTime, modifiedTime, category, content }),
-        'schema-article'
-      );
+      // 1. Always inject BlogPosting schema for articles
+      const autoArticleSchema = buildArticleSchema({ title, description, image, url: currentUrl, author, authorUrl, publishedTime, modifiedTime, category, content });
+      const customArticleSchema = customSchemas['BlogPosting']?.shift() || {};
+      injectJsonLd(deepMerge(autoArticleSchema, customArticleSchema), 'schema-article');
 
       // 2. Auto-inject FAQPage schema if <faq> blocks exist in content
       if (content) {
-        const faqSchema = buildFAQSchema(content);
-        if (faqSchema) {
-          injectJsonLd(faqSchema, 'schema-faq');
+        const autoFaqSchema = buildFAQSchema(content);
+        if (autoFaqSchema) {
+          const customFaqSchema = customSchemas['FAQPage']?.shift() || {};
+          injectJsonLd(deepMerge(autoFaqSchema, customFaqSchema), 'schema-faq');
         }
 
         // 3. Auto-inject one VideoObject schema per <youtube> embed found
-        const videoSchemas = buildVideoSchemas(content, { title, description, publishedTime });
-        videoSchemas.forEach((videoSchema, i) => {
-          injectJsonLd(videoSchema, `schema-video-${i}`);
+        const autoVideoSchemas = buildVideoSchemas(content, { title, description, publishedTime });
+        autoVideoSchemas.forEach((autoVideoSchema, i) => {
+          const customVideoSchema = customSchemas['VideoObject']?.shift() || {};
+          injectJsonLd(deepMerge(autoVideoSchema, customVideoSchema), `schema-video-${i}`);
         });
       }
     }
 
-    // --- Custom head content from Decap CMS field (still supported) ---
+    // Inject any remaining custom JSON-LD schemas that didn't merge
+    let leftoverId = 0;
+    Object.values(customSchemas).flat().forEach(schema => {
+      injectJsonLd(schema, `schema-custom-leftover-${leftoverId++}`);
+    });
+
+    // --- Inject remaining Custom Head content ---
     if (customHead) {
-      const container = document.createElement('div');
-      container.innerHTML = customHead;
       Array.from(container.childNodes).forEach(node => {
         if (node.nodeName.toLowerCase() === 'script') {
           const script = document.createElement('script');
