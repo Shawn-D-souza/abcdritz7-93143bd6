@@ -73,6 +73,9 @@ export const AboutUs = () => {
                   <img
                     src="/ritz7-banner.jpg"
                     alt="Ritz7 Channel Banner"
+                    loading="lazy"
+                    width="300"
+                    height="72"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
@@ -92,6 +95,9 @@ export const AboutUs = () => {
                       <img
                         src="/ritz7-profile.jpg"
                         alt="Ritz7 Channel Logo"
+                        loading="lazy"
+                        width="56"
+                        height="56"
                         className="w-full h-full object-cover"
                       />
                     </div>

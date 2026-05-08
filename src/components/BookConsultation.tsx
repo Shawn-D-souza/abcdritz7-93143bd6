@@ -55,6 +55,9 @@ export const BookConsultation = () => {
                     <img 
                       src="/ritesh_hegde.avif" 
                       alt="Ritesh Hegde, CEO of Ritz7ai" 
+                      loading="lazy"
+                      width="144"
+                      height="144"
                       className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent mix-blend-overlay" />

@@ -411,6 +411,8 @@ export const HeroShowcase = () => {
                   <img
                     src="/favicon.png"
                     alt="Ritz7"
+                    width="44"
+                    height="44"
                     className="w-11 h-11 object-contain"
                   />
                 </div>

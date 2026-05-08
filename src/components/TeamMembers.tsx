@@ -104,6 +104,7 @@ const HexCard = ({ member, index, activeIndex, onActivate }: {
           <motion.img
             src={member.image}
             alt={member.name}
+            loading="lazy"
             className="w-full h-full object-cover object-top"
             animate={isActive ? { scale: 1.1 } : { scale: 1 }}
             transition={{ duration: 0.5 }}

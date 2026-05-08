@@ -126,6 +126,9 @@ export const WallOfLove = () => {
                           <img 
                             src={review.avatar} 
                             alt={review.author} 
+                            loading="lazy"
+                            width="40"
+                            height="40"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                         ) : (

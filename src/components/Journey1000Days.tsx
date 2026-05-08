@@ -164,6 +164,9 @@ export const Journey1000Days = () => {
         <img
           src="/journey-thumbnail.jpg"
           alt="Playlist Preview"
+          loading="lazy"
+          width="400"
+          height="225"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         {/* Play Button Overlay */}

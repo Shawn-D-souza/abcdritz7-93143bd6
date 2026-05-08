@@ -20,15 +20,24 @@ export default defineConfig({
     },
   },
   build: {
-    target: "es2019",
+    target: "es2020",
+    cssMinify: 'lightningcss',
     rollupOptions: {
       output: {
         manualChunks: {
-          // Splits large libraries into a separate cached chunk
+          // Core React — cached long-term
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@tanstack/react-query', 'lucide-react']
+          // UI libraries — separate chunk
+          ui: ['@tanstack/react-query', 'lucide-react'],
+          // Framer Motion — large animation library, lazy-loaded sections will pull this
+          motion: ['framer-motion'],
+          // Three.js ecosystem — very large, deferred via Background3D
+          three: ['three', '@react-three/fiber'],
+          // Carousel libraries
+          carousel: ['embla-carousel-react', 'embla-carousel-auto-scroll', 'swiper'],
         }
       }
     }
   },
 });
+

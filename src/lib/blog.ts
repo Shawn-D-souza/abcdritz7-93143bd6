@@ -16,7 +16,7 @@ export interface BlogPost {
   authorUrl?: string;
 }
 
-// Vite feature: import all markdown files as raw strings
+// Vite feature: import all markdown files lazily (loaded on first access, not bundled in initial chunk)
 const markdownFiles = import.meta.glob('/src/content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
 function calculateReadingTime(text: string): string {

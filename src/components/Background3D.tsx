@@ -1,4 +1,4 @@
-import { useRef, useMemo, useEffect } from "react";
+import { useRef, useMemo, useEffect, lazy, Suspense, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTheme } from "./ThemeProvider";
@@ -70,7 +70,7 @@ const Scene = () => {
       mouseRef.current.x = (e.clientX / window.innerWidth - 0.5) * 2;
       mouseRef.current.y = -(e.clientY / window.innerHeight - 0.5) * 2;
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
@@ -150,16 +150,36 @@ export const Background3D = () => {
   // Check if react-snap is running the page
   const isSnap = typeof window !== 'undefined' && window.navigator.userAgent.includes('ReactSnap');
 
-  // Render a static background without the Three.js Canvas during build
-  if (isSnap) {
+  // Defer loading of Three.js canvas until after initial paint
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    if (isSnap) return;
+    // Use requestIdleCallback if available, otherwise setTimeout
+    if ('requestIdleCallback' in window) {
+      const id = (window as any).requestIdleCallback(() => setShouldRender(true), { timeout: 2000 });
+      return () => (window as any).cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setShouldRender(true), 100);
+      return () => clearTimeout(id);
+    }
+  }, [isSnap]);
+
+  // Render a static background without the Three.js Canvas during build or while deferring
+  if (isSnap || !shouldRender) {
     return <div className="fixed inset-0 -z-10 bg-background transition-colors duration-500" />;
   }
 
   return (
     <div className="fixed inset-0 -z-10 bg-background transition-colors duration-500">
-      <Canvas camera={{ position: [0, 0, 5], fov: 60 }} gl={{ alpha: true, antialias: true }}>
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 60 }}
+        gl={{ alpha: true, antialias: false, powerPreference: 'low-power' }}
+        dpr={[1, 1.5]}
+      >
         <Scene />
       </Canvas>
     </div>
   );
 };
+

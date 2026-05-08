@@ -1,20 +1,56 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense, useRef, useState, ComponentType } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
-import { WallOfLove } from "@/components/WallOfLove";
-import { Programs } from "@/components/Programs";
-import { AboutUs } from "@/components/AboutUs";
-import { Journey1000Days } from "@/components/Journey1000Days";
-import { BookConsultation } from "@/components/BookConsultation";
-import { TeamMembers } from "@/components/TeamMembers";
-import { Blogs } from "@/components/Blogs";
-import { FAQ } from "@/components/FAQ";
-import { ContactAndNewsletter } from "@/components/ContactAndNewsletter";
-import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+
+// Lazy-load below-the-fold sections to reduce initial bundle
+const WallOfLove = lazy(() => import("@/components/WallOfLove").then(m => ({ default: m.WallOfLove })));
+const Programs = lazy(() => import("@/components/Programs").then(m => ({ default: m.Programs })));
+const AboutUs = lazy(() => import("@/components/AboutUs").then(m => ({ default: m.AboutUs })));
+const Journey1000Days = lazy(() => import("@/components/Journey1000Days").then(m => ({ default: m.Journey1000Days })));
+const BookConsultation = lazy(() => import("@/components/BookConsultation").then(m => ({ default: m.BookConsultation })));
+const TeamMembers = lazy(() => import("@/components/TeamMembers").then(m => ({ default: m.TeamMembers })));
+const Blogs = lazy(() => import("@/components/Blogs").then(m => ({ default: m.Blogs })));
+const FAQ = lazy(() => import("@/components/FAQ").then(m => ({ default: m.FAQ })));
+const ContactAndNewsletter = lazy(() => import("@/components/ContactAndNewsletter").then(m => ({ default: m.ContactAndNewsletter })));
+const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
+
+// Intersection Observer-based lazy section that only renders when near viewport
+const LazySection = ({ children, fallback, rootMargin = "200px" }: { children: React.ReactNode; fallback?: React.ReactNode; rootMargin?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [rootMargin]);
+
+  return (
+    <div ref={ref} style={{ minHeight: isVisible ? undefined : '100px' }}>
+      {isVisible ? (
+        <Suspense fallback={fallback || <div className="py-10" />}>
+          {children}
+        </Suspense>
+      ) : null}
+    </div>
+  );
+};
 
 const Index = () => {
   const location = useLocation();
@@ -57,19 +93,40 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Programs />
-        <AboutUs />
-        <Journey1000Days />
-        <WallOfLove />
-        <BookConsultation />
-        <TeamMembers />
-        <Blogs />
-        <FAQ />
-        <ContactAndNewsletter />
+        <LazySection>
+          <Programs />
+        </LazySection>
+        <LazySection>
+          <AboutUs />
+        </LazySection>
+        <LazySection>
+          <Journey1000Days />
+        </LazySection>
+        <LazySection>
+          <WallOfLove />
+        </LazySection>
+        <LazySection>
+          <BookConsultation />
+        </LazySection>
+        <LazySection>
+          <TeamMembers />
+        </LazySection>
+        <LazySection>
+          <Blogs />
+        </LazySection>
+        <LazySection>
+          <FAQ />
+        </LazySection>
+        <LazySection>
+          <ContactAndNewsletter />
+        </LazySection>
       </main>
-      <Footer />
+      <LazySection rootMargin="400px">
+        <Footer />
+      </LazySection>
     </div>
   );
 };
 
 export default Index;
+

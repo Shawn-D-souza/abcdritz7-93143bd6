@@ -19,8 +19,11 @@ export const Footer = () => {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <img
-              src={isDark ? "/assets/Ritz7_logo_dark.png" : "/assets/Ritz7_logo_light.png"}
+              src={isDark ? "/assets/Ritz7_logo_dark.webp" : "/assets/Ritz7_logo_light.webp"}
               alt="Ritz7 Logo"
+              loading="lazy"
+              width="120"
+              height="40"
               className="h-10 w-fit object-contain"
             />
             <p className="text-sm text-muted-foreground">

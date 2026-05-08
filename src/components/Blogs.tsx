@@ -38,6 +38,9 @@ export const Blogs = () => {
                   <img 
                     src={blog.thumbnail} 
                     alt={blog.thumbnail_alt} 
+                    loading="lazy"
+                    width="400"
+                    height="225"
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
