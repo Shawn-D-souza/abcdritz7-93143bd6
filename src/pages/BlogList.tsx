@@ -1,3 +1,4 @@
+import { useState, useMemo } from "react";
 import { BlogHeader } from "@/components/BlogHeader";
 import { Footer } from "@/components/Footer";
 import { getAllBlogs } from "@/lib/blog";
@@ -5,10 +6,32 @@ import { Link, useLocation } from "react-router-dom";
 import { CalendarIcon, User, Clock } from "lucide-react";
 import { format } from "date-fns";
 import { useSEO } from "@/hooks/useSEO"; // Import the hook
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function BlogList() {
   const blogs = getAllBlogs();
   const location = useLocation();
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = useMemo(() => {
+    const allCategories = blogs.map((blog) => blog.category).filter(Boolean);
+    return ["All", ...new Set(allCategories)];
+  }, [blogs]);
+
+  const filteredBlogs = useMemo(() => {
+    return blogs.filter((blog) => {
+      const matchesSearch = 
+        blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        blog.description?.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesCategory = selectedCategory === "All" || blog.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [blogs, searchQuery, selectedCategory]);
 
   useSEO({
     title: "Our Blogs | Ritz7",
@@ -29,13 +52,40 @@ export default function BlogList() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-4">
             Our <span className="text-primary">Blogs</span>
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Discover the latest thoughts, news, and perspectives from our team on technology, design, and the future.
           </p>
+
+          <div className="flex flex-col gap-8 items-center w-full max-w-3xl mx-auto mb-16">
+            <div className="relative w-full group">
+              <Input
+                placeholder="Search articles by title or keyword..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="px-6 py-7 w-full rounded-full border-border/60 bg-card/50 shadow-sm transition-all duration-300 hover:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary text-base md:text-lg"
+              />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 w-full">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`whitespace-nowrap rounded-full px-6 py-2.5 text-sm md:text-base font-medium transition-all duration-300 border backdrop-blur-sm ${
+                    selectedCategory === category
+                      ? "bg-primary text-primary-foreground border-primary shadow-md scale-105"
+                      : "bg-card/40 text-muted-foreground border-border/60 hover:bg-card/80 hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 shadow-sm"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
+          {filteredBlogs.map((blog) => (
             <Link 
               to={`/blog/${blog.id}`} 
               state={{ from: location.pathname }}
@@ -92,9 +142,9 @@ export default function BlogList() {
           ))}
         </div>
 
-        {blogs.length === 0 && (
+        {filteredBlogs.length === 0 && (
           <div className="text-center py-20 text-muted-foreground text-lg">
-            No articles found. Check back later!
+            No articles found matching your criteria. Check back later!
           </div>
         )}
       </div>
