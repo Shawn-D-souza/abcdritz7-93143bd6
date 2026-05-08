@@ -4,7 +4,7 @@ summary: Step-by-step guide to build a WhatsApp AI agent with n8n for text,
   API.
 title: "How to Build a WhatsApp AI Agent with n8n | Ritz7 "
 slug: how-to-build-a-whatsapp-ai-agent-with-n8n
-category: Technology
+category: n8n Guide
 author: Sangya Keswani
 date: 2026-01-06T00:00:00.000Z
 updated_date: 2026-01-06T00:00:00.000Z
