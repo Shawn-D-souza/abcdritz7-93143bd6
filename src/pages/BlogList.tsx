@@ -1,9 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { BlogHeader } from "@/components/BlogHeader";
 import { Footer } from "@/components/Footer";
 import { getAllBlogs } from "@/lib/blog";
 import { Link, useLocation } from "react-router-dom";
-import { CalendarIcon, User, Clock } from "lucide-react";
+import { CalendarIcon, User, Clock, ChevronRight, ChevronLeft } from "lucide-react";
 import { format } from "date-fns";
 import { useSEO } from "@/hooks/useSEO"; // Import the hook
 import { Input } from "@/components/ui/input";
@@ -15,6 +15,40 @@ export default function BlogList() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const scrollByAmount = (amount: number) => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+  };
 
   const categories = useMemo(() => {
     const allCategories = blogs.map((blog) => blog.category).filter(Boolean);
@@ -66,20 +100,49 @@ export default function BlogList() {
               />
             </div>
             
-            <div className="flex flex-wrap justify-center gap-3 w-full">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`whitespace-nowrap rounded-full px-6 py-2.5 text-sm md:text-base font-medium transition-all duration-300 border backdrop-blur-sm ${
-                    selectedCategory === category
-                      ? "bg-primary text-primary-foreground border-primary shadow-md scale-105"
-                      : "bg-card/40 text-muted-foreground border-border/60 hover:bg-card/80 hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 shadow-sm"
-                  }`}
+            <div className="relative w-full group/scroll flex items-center">
+              <div className="absolute left-0 top-0 bottom-4 w-16 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none flex items-center justify-start pl-2 opacity-0 group-hover/scroll:opacity-100 transition-opacity duration-300 hidden md:flex z-10">
+                <button 
+                  onClick={() => scrollByAmount(-200)}
+                  className="bg-background/90 hover:bg-background backdrop-blur-sm rounded-full p-2 shadow-md border border-border/50 text-foreground pointer-events-auto transition-transform hover:scale-110"
+                  aria-label="Scroll left"
                 >
-                  {category}
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
-              ))}
+              </div>
+
+              <div 
+                ref={scrollContainerRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                className={`flex overflow-x-auto pb-4 pt-2 px-4 md:px-10 gap-3 w-full snap-x snap-mandatory category-scrollbar ${isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'}`}
+              >
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`whitespace-nowrap shrink-0 snap-center rounded-full px-6 py-2.5 text-sm md:text-base font-medium transition-all duration-300 border backdrop-blur-sm ${
+                      selectedCategory === category
+                        ? "bg-primary text-primary-foreground border-primary shadow-md scale-105"
+                        : "bg-card/40 text-muted-foreground border-border/60 hover:bg-card/80 hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 shadow-sm"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+
+              <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none flex items-center justify-end pr-2 opacity-0 group-hover/scroll:opacity-100 transition-opacity duration-300 hidden md:flex z-10">
+                <button 
+                  onClick={() => scrollByAmount(200)}
+                  className="bg-background/90 hover:bg-background backdrop-blur-sm rounded-full p-2 shadow-md border border-border/50 text-foreground pointer-events-auto transition-transform hover:scale-110"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
         </header>

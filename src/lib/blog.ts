@@ -43,7 +43,11 @@ function parseFrontmatter(fileContent: string) {
   return { data, content };
 }
 
+let cachedBlogs: BlogPost[] | null = null;
+
 export function getAllBlogs(): BlogPost[] {
+  if (cachedBlogs) return cachedBlogs;
+
   const blogs: BlogPost[] = Object.entries(markdownFiles).map(([path, fileContent]) => {
     const { data, content } = parseFrontmatter(fileContent as string);
 
@@ -79,11 +83,13 @@ export function getAllBlogs(): BlogPost[] {
   });
 
   // Sort by updated_date (if it exists) or date descending
-  return blogs.sort((a, b) => {
+  cachedBlogs = blogs.sort((a, b) => {
     const dateA = new Date(a.updated_date || a.date).getTime();
     const dateB = new Date(b.updated_date || b.date).getTime();
     return dateB - dateA;
   });
+
+  return cachedBlogs;
 }
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {
