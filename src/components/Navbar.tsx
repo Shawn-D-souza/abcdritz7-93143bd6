@@ -54,18 +54,25 @@ export const Navbar = () => {
       return;
     }
 
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const navbarHeight = 64; // h-16 = 4rem = 64px
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+    // Poll for the element to appear (lazy chunks need time to load & render)
+    const scrollToElement = (attempts = 0) => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const navbarHeight = 64; // h-16 = 4rem = 64px
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      } else if (attempts < 20) {
+        // Retry up to 20 times (2 seconds total) while chunks download
+        setTimeout(() => scrollToElement(attempts + 1), 100);
+      }
+    };
+
+    scrollToElement();
   };
 
   return (
