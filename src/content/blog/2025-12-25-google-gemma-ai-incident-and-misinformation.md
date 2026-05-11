@@ -1,13 +1,18 @@
 ---
-summary: "Google Gemma AI incident: False accusations against Sen. Blackburn expose risks of AI hallucinations, defamation, and open-source model accountability."
-title: "Google Gemma AI Incident and Misinformation"
+summary: "Google Gemma AI incident: False accusations against Sen. Blackburn
+  expose risks of AI hallucinations, defamation, and open-source model
+  accountability."
+title: Google Gemma AI Incident and Misinformation
 slug: google-gemma-ai-incident-and-misinformation
-category: Technology
+category: AI Controversy
 author: Sangya Keswani
-date: "2025-12-25T00:00:00.000Z"
-updated_date: "2025-12-24T00:00:00.000Z"
+date: 2025-12-25T00:00:00.000Z
+updated_date: 2025-12-24T00:00:00.000Z
 thumbnail: /assets/uploads/Ji9ggMuSa9BhwRh4aP58SBpKf9U.png
-thumbnail_alt: "description: \"Google Gemma AI incident: False accusations against Sen. Blackburn expose risks of AI hallucinations, defamation, and open-source model accountability.\""
+thumbnail_alt: ""
+description: "Google Gemma AI incident: False accusations against Sen. Blackburn
+  expose risks of AI hallucinations, defamation, and open-source model
+  accountability."
 ---
 
 **Key Pointers:**
