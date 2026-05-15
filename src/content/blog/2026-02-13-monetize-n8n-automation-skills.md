@@ -20,8 +20,6 @@ description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
 > * **Most Scalable (Build a Micro-SaaS):** Wrap your n8n workflows in a simple UI (using Bubble or Softr) to create subscription tools like "AI Resume Screeners" or "SEO Content Repurposers."
 > * **Recurring Revenue (The Retainer Model):** Offer "Automation-as-a-Service." Charge monthly fees to maintain, update, and optimise AI agents for businesses that lack in-house technical teams.
 
-
-
 Did you know that the automations you’ve already built could be earning you money? Across industries, companies waste thousands of hours on manual work that could easily be replaced by smart automation. Every n8n workflow automation you design saves time, reduces mistakes, and boosts productivity — exactly what modern business owners need. *businesses*
 
 Your n8n AI automation skills can evolve into multiple income streams. From selling ready-made workflows to providing automation services for clients, there are proven ways to profit from the work you’ve already done. Whether you’re creating AI chatbots, lead generation flows, or improving customer communications, this guide explains five real methods to earn from your automations — and how to grow alongside other experts in the [Ritz7 Automations Community](https://abcd.ritz7.com/).
@@ -39,7 +37,7 @@ Before diving into the details, use this breakdown to identify which n8n income 
 **n8n Consulting** | High | $5,000 – $15,000 | Experts (High-Ticket)
 </customtable>
 
-n8n Passive Income: Which Strategies Actually Run Themselves?
+## n8n Passive Income: Which Strategies Actually Run Themselves?
 
 Not all five strategies below are equally passive. If your goal is to earn money with n8n without trading hours for dollars, here's the honest breakdown: **Template Sales and Automation Arbitrage** are genuinely passive — build once, earn repeatedly. The retainer model is semi-passive once systems are set up. Custom **client work and consulting** require active time. This guide covers all five, but if n8n passive income is your primary goal, start with Strategy 1 and Strategy 3.
 
