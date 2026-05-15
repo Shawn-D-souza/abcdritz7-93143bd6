@@ -249,6 +249,12 @@ Q: How to make money with n8n using proven automation income ideas?
 A: The most stable way is the "Retainer Model." Instead of a one-time setup fee, you charge a monthly subscription to keep a company’s automations running. This includes updating their AI agents, fixing broken links, and adding new features as the business grows.
 Q: How to make money with n8n even as a beginner?
 A: The smartest way to start is by solving one small, specific problem. For example, build a simple workflow that helps a local shop automatically reply to Google Reviews. Once you build this "starter" workflow once, you can sell that exact same solution to dozens of other local businesses.
+Q: What is n8n passive income?
+A: n8n passive income means building workflows or digital products once and earning from them repeatedly without ongoing work. The two best models are selling pre-built workflow templates on marketplaces like Gumroad, and Automation Arbitrage — where you sell the data outputs (like lead lists or reports) that your n8n workflows generate automatically on a schedule.
+Q: How to make money with n8n automation specifically?
+A: The most direct path is building automation workflows for a specific business problem — such as syncing Shopify orders to a CRM or auto-sending follow-up emails — and charging a flat project fee. Once delivered, offer a monthly retainer ($200–$500/month) to maintain it. This turns one automation project into recurring income.
+Q: Is n8n good for making money as a complete beginner?
+A: Yes. You don't need coding skills to start. The fastest beginner path is: pick one industry (real estate, e-commerce, or local services), build one workflow that solves a specific problem in that industry, record a short demo video, and list it on Gumroad for $27–$97. Sell the same template to multiple buyers. Your first sale is achievable within 2–4 weeks.
 </faq>
 
 ## Final Thoughts: Growing Your Career with n8n AI Automation
