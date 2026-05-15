@@ -41,5 +41,20 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
 
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "workshop"
+        label: "Global Workshop Promotion"
+        file: "src/content/settings/workshop.json"
+        fields:
+          - { label: "Is Active", name: "isActive", widget: "boolean", default: false }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image Alt Text", name: "imageAlt", widget: "string" }
+          - { label: "Link URL", name: "url", widget: "string" }
+          - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn More" }
+
 editor:
   preview: false

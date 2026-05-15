@@ -1,0 +1,9 @@
+{
+  "isActive": true,
+  "title": "Upcoming n8n Workshop",
+  "description": "Join our upcoming live workshop to learn advanced workflow automation with n8n.",
+  "image": "/n8n-workshop.png",
+  "imageAlt": "n8n Workshop",
+  "url": "https://ritz7.ai/",
+  "buttonText": "Register Now"
+}

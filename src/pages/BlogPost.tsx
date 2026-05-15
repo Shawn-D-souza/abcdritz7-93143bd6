@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { getBlogBySlug } from "@/lib/blog";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { MarkdownComponents } from "@/components/blog/MarkdownComponents";
+import { WorkshopPromo } from "@/components/blog/WorkshopPromo";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -158,6 +159,10 @@ export default function BlogPost() {
           
           <article className="lg:col-span-8 lg:col-start-1">
             
+            <div className="block lg:hidden mb-8">
+              <WorkshopPromo />
+            </div>
+
             <div className="block lg:hidden mb-10 bg-muted/20 p-6 rounded-2xl border">
               <TableOfContents content={post.content} />
             </div>
@@ -171,9 +176,13 @@ export default function BlogPost() {
                 {post.content}
               </ReactMarkdown>
             </div>
+
           </article>
 
-          <aside className="lg:col-span-4 hidden lg:block sticky top-28 pt-2 px-2 max-h-[85vh] overflow-y-auto w-full">
+          <aside className="lg:col-span-4 hidden lg:block sticky top-28 pt-2 px-2 max-h-[85vh] overflow-y-auto w-full pb-10 custom-scrollbar">
+            <div className="mb-8">
+              <WorkshopPromo />
+            </div>
             <TableOfContents content={post.content} />
           </aside>
         </div>
