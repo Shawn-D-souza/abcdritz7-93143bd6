@@ -20,9 +20,9 @@ description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
 > * **Most Scalable (Build a Micro-SaaS):** Wrap your n8n workflows in a simple UI (using Bubble or Softr) to create subscription tools like "AI Resume Screeners" or "SEO Content Repurposers."
 > * **Recurring Revenue (The Retainer Model):** Offer "Automation-as-a-Service." Charge monthly fees to maintain, update, and optimise AI agents for businesses that lack in-house technical teams.
 
-Did you know that the automations you’ve already built could be earning you money? Across industries, companies waste thousands of hours on manual work that could easily be replaced by smart automation. Every n8n workflow automation you design saves time, reduces mistakes, and boosts productivity — exactly what modern business owners need. *businesses*
+A single n8n workflow template listed on Gumroad can sell to dozens of buyers with zero extra work after upload. A Zapier-to-n8n migration project can bill at $5,000–$15,000 for two weeks of work. A retainer client paying $500/month is $6,000/year from one relationship. Your n8n skills are worth real money — this guide breaks down exactly how to earn from them, whether you want passive income from templates or high-ticket consulting projects. 
 
-Your n8n AI automation skills can evolve into multiple income streams. From selling ready-made workflows to providing automation services for clients, there are proven ways to profit from the work you’ve already done. Whether you’re creating AI chatbots, lead generation flows, or improving customer communications, this guide explains five real methods to earn from your automations — and how to grow alongside other experts in the [Ritz7 Automations Community](https://abcd.ritz7.com/).
+The [Ritz7 Automations Community](https://api.whatsapp.com/message/RVQXUI35RJO4J1?autoload=1&app_absent=0) is where builders at every stage share workflows, ask questions, and find their first clients.
 
 ## n8n Monetisation Comparison: Effort vs. Profit Potential
 
