@@ -105,7 +105,8 @@
   },
   "reactSnap": {
     "source": "dist",
-    "concurrency": 2,
+    "concurrency": 1,
+    "skipThirdPartyRequests": true,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox",
