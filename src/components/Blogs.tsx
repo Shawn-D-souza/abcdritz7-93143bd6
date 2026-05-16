@@ -70,8 +70,10 @@ export const Blogs = () => {
                   {blog.title}
                 </h3>
                 
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {blog.description}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {blog.description && blog.description.length > 160 
+                    ? `${blog.description.substring(0, 160)}...` 
+                    : blog.description}
                 </p>
               </div>
             </Link>
