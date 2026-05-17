@@ -329,7 +329,7 @@ const WorkshopLanding = () => {
                 <AccordionItem value="item-2" className="border-b border-border/50">
                   <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What exactly is n8n?</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    Think of n8n as digital digital glue. It's a platform that allows you to connect different apps and services together (like Gmail, Google Sheets, ChatGPT, etc.) using a visual drag-and-drop interface, automating repetitive tasks without writing code.
+                    n8n is a visual automation tool. Instead of writing code, you build workflows by connecting blocks — "When a new email arrives → save the attachment to Google Drive → notify me on WhatsApp." It works 24/7 in the background so you don't have to lift a finger.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-b border-border/50">
