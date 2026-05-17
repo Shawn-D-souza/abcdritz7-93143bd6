@@ -16,6 +16,7 @@ const BlogList = lazy(() => import("./pages/BlogList"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const HallOfFame = lazy(() => import("./pages/HallOfFame"));
 const ApiTestPrograms = lazy(() => import("./pages/ApiTestPrograms"));
+const WorkshopLanding = lazy(() => import("./pages/WorkshopLanding"));
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/test-programs" element={<Programs />} />
               <Route path="/api-test-programs" element={<ApiTestPrograms />} />
+              <Route path="/workshop" element={<WorkshopLanding />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
