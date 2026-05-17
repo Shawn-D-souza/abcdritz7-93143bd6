@@ -6,7 +6,7 @@ slug: monetize-n8n-automation-skills
 category: n8n Guide
 author: Sangya Keswani
 date: 2026-02-13T00:00:00.000Z
-updated_date: 2026-02-13T00:00:00.000Z
+updated_date: 2026-05-17T12:24:00.000+05:30
 thumbnail: /assets/uploads/fjVXP97sHpmtGbbDXEh7iHkd9m0.png
 thumbnail_alt: Ritz7 automations - earn money with n8n
 description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
