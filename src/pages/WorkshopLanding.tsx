@@ -343,7 +343,7 @@ const WorkshopLanding = () => {
                   </div>
                   <div className="space-y-6 pt-6 mt-6 border-t border-border md:pt-0 md:mt-0 md:border-t-0 md:border-l md:pl-12">
                     <h2 className="text-2xl font-bold text-foreground">
-                      What if you could just click a button and let the internet do it for you?
+                      What if you could just click a button and let the automation handle the rest?
                     </h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                       You <strong className="text-foreground">don't</strong> need a computer science degree to make this magic happen. You just need <strong className="text-primary font-extrabold text-xl whitespace-nowrap">3 hours</strong> and the willingness to learn how to build your first automation.
