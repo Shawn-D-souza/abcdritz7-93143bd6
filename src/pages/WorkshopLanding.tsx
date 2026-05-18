@@ -150,7 +150,7 @@ const WorkshopLanding = () => {
       handler: function (response: any) {
         // 1. Immediately show success so the user doesn't wait!
         setIsProcessing(false);
-        toast.success("Payment successful! Our team will reach out to you via WhatsApp and email.");
+        toast.success("Payment successful! Our team will reach out to you via email.");
 
         // 2. Process the webhook securely in the background (fire-and-forget)
         supabase.functions.invoke('payment-webhook', {
@@ -533,7 +533,7 @@ const WorkshopLanding = () => {
                 <AccordionItem value="item-4" className="border-none">
                   <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What happens after I register?</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    Once you complete your payment of ₹99, our team will reach out to you via WhatsApp and Email with all the details, links, and preparations you need for May 30th.
+                    Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for May 30th.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
