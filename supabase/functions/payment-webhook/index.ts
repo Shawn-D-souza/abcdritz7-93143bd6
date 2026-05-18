@@ -15,15 +15,37 @@ serve(async (req) => {
     const body = await req.json();
     const { payment_id, name, email, whatsapp, amount, workshop_name, date } = body;
 
-    // Retrieve the secure n8n webhook URL from environment variables
+    // Retrieve secrets
     const webhookUrl = Deno.env.get('N8N_WEBHOOK_URL');
+    const rzpKeyId = Deno.env.get('RAZORPAY_KEY_ID');
+    const rzpKeySecret = Deno.env.get('RAZORPAY_KEY_SECRET');
     
     if (!webhookUrl) {
-      console.error("N8N_WEBHOOK_URL is not set in Edge Function secrets.");
-      throw new Error("Webhook configuration error");
+      throw new Error("N8N_WEBHOOK_URL is not set in Edge Function secrets.");
     }
 
     console.log(`Processing payment ${payment_id} for ${name}`);
+
+    let paymentMethod = "Unknown";
+    
+    // Fetch payment details from Razorpay to get the payment method (UPI, Card, etc.)
+    if (rzpKeyId && rzpKeySecret && payment_id) {
+      try {
+        const rzpResponse = await fetch(`https://api.razorpay.com/v1/payments/${payment_id}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Basic ' + btoa(`${rzpKeyId}:${rzpKeySecret}`)
+          }
+        });
+        
+        if (rzpResponse.ok) {
+          const rzpData = await rzpResponse.json();
+          paymentMethod = rzpData.method || "Unknown"; // e.g., 'upi', 'card', 'netbanking'
+        }
+      } catch (err) {
+        console.error("Failed to fetch Razorpay payment details:", err);
+      }
+    }
 
     // Call the N8N webhook securely from the server
     const response = await fetch(webhookUrl, {
@@ -38,7 +60,8 @@ serve(async (req) => {
         whatsapp,
         amount,
         workshop_name,
-        date
+        date,
+        payment_method: paymentMethod
       }),
     });
 
