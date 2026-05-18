@@ -434,7 +434,7 @@ const WorkshopLanding = () => {
                   {/* Avatar & Info */}
                   <div className="flex flex-col items-center shrink-0 md:w-56 mt-2">
                     <div className="w-32 h-32 md:w-56 md:h-56 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg relative mb-4">
-                      <img src="/ritesh_hegde.avif" alt="Ritesh Hegde" className="w-full h-full object-cover object-[center_15%]" />
+                      <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" className="w-full h-full object-cover object-top" />
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1.5 text-foreground text-center">
                       Ritesh Hegde
