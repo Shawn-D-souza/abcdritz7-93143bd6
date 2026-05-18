@@ -49,13 +49,19 @@ function formatDate(dateStr) {
  * Builds the XML content for the sitemap.
  */
 function buildSitemap(blogs) {
-  const now = new Date().toISOString();
+  // Use the last modified time of App.tsx as a stable fallback for static pages
+  // so it doesn't update spuriously on every rebuild (like when changing .env)
+  const appPath = path.resolve('src/App.tsx');
+  let fallbackLastMod = new Date().toISOString();
+  if (fs.existsSync(appPath)) {
+    fallbackLastMod = fs.statSync(appPath).mtime.toISOString();
+  }
 
   const staticUrls = STATIC_PAGES.map(
-    ({ loc, priority }) => `
+    ({ loc, priority, lastmod }) => `
 <url>
   <loc>${BASE_URL}${loc}</loc>
-  <lastmod>${now}</lastmod>
+  <lastmod>${lastmod || fallbackLastMod}</lastmod>
   <priority>${priority}</priority>
 </url>`
   ).join('');
