@@ -70,7 +70,7 @@ export const Hero = () => {
           </a>
 
           <a
-            href="https://ritz7.ai/programs"
+            href="/programs"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const size = Math.max(rect.width, rect.height);
