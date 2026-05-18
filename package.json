@@ -114,7 +114,8 @@
     ],
     "include": [
       "/",
-      "/blogs"
+      "/blogs",
+      "/workshop"
     ]
   }
 }
