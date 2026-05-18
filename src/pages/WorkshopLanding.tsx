@@ -13,7 +13,8 @@ import {
   FileJson, 
   Users, 
   Briefcase,
-  GraduationCap
+  GraduationCap,
+  Star
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -429,15 +430,31 @@ const WorkshopLanding = () => {
                   </div>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-card border border-border p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 md:gap-10 items-center text-center md:text-left">
-                  <div className="w-32 h-32 md:w-56 md:h-56 shrink-0 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg relative">
-                    <img src="/ritesh_hegde.avif" alt="Ritesh Hegde" className="w-full h-full object-cover object-[center_15%]" />
-                  </div>
-                  <div className="space-y-5">
-                    <h3 className="text-3xl font-bold">Meet Ritesh</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
-                      "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-foreground">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects for clients globally. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+                <div className="max-w-4xl mx-auto bg-card border border-border p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start text-center md:text-left">
+                  {/* Avatar & Info */}
+                  <div className="flex flex-col items-center shrink-0 md:w-56 mt-2">
+                    <div className="w-32 h-32 md:w-56 md:h-56 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg relative mb-4">
+                      <img src="/ritesh_hegde.avif" alt="Ritesh Hegde" className="w-full h-full object-cover object-[center_15%]" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1.5 text-foreground text-center">
+                      Ritesh Hegde
+                    </h3>
+                    <p className="text-primary font-medium tracking-wide text-xs md:text-sm flex items-center justify-center gap-1.5 text-center">
+                      <Star className="w-3.5 h-3.5 fill-primary text-primary shrink-0" />
+                      CEO & AI Expert, Ritz7ai
                     </p>
+                  </div>
+                  
+                  {/* Quote Section */}
+                  <div className="space-y-6 flex-1 md:mt-2">
+                    <p className="text-muted-foreground text-sm md:text-base font-bold uppercase tracking-wider">
+                      Listen to what our educator has to say:
+                    </p>
+                    <div className="relative pl-5 md:pl-6 border-l-[4px] border-primary/60">
+                      <p className="text-foreground text-xl md:text-2xl italic leading-relaxed">
+                        "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-primary">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects for clients globally. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
