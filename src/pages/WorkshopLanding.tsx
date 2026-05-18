@@ -88,7 +88,7 @@ const WorkshopLanding = () => {
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
-    description: "Join our beginner-friendly n8n workshop. Build your first automation without any coding experience. May 30th.",
+    description: "Join our beginner-friendly n8n workshop. Build your first automation without any coding experience. June 5th or 6th.",
     type: "website",
   });
 
@@ -316,7 +316,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-1 text-muted-foreground text-sm font-medium">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-primary" />
-                  May 30th • 3 Hours
+                  2 Batches Available (June 5th or 6th) • 3 Hours
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary" />
@@ -530,10 +530,19 @@ const WorkshopLanding = () => {
                     No! We will show you how to get started using free tools. You just need a computer, an internet connection, and 3 hours of focus.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-4" className="border-none">
+                <AccordionItem value="item-4" className="border-b border-border/50">
+                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Is it a 2-day workshop?</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+                    No, it is a single 3-hour workshop! We are conducting the exact same workshop twice to accommodate different schedules:<br /><br />
+                    • <strong>Batch 1:</strong> 5th June, Friday - 7:30 PM to 10:30 PM IST<br />
+                    • <strong>Batch 2:</strong> 6th June, Saturday - 10:00 AM to 1:00 PM IST<br /><br />
+                    You can choose to attend whichever batch works best for you.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5" className="border-none">
                   <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What happens after I register?</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for May 30th.
+                    Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for your chosen batch.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
