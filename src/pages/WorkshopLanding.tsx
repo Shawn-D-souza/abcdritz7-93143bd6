@@ -20,12 +20,24 @@ import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
+import { supabase } from "@/lib/supabase";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
+import { format } from "date-fns";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -40,8 +52,6 @@ const stagger = {
     }
   }
 };
-
-const RAZORPAY_LINK = "https://pages.razorpay.com/pl_SmMKcMQ6xHYC4w/view";
 
 // Custom hook for number animation
 const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, duration?: number, suffix?: string }) => {
@@ -71,6 +81,9 @@ const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, 
 
 const WorkshopLanding = () => {
   const [showRest, setShowRest] = useState(false);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "", countryCode: "+91" });
+  const [isProcessing, setIsProcessing] = useState(false);
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
@@ -92,13 +105,175 @@ const WorkshopLanding = () => {
   }, []);
 
   const handleRegister = () => {
-    window.open(RAZORPAY_LINK, "_blank");
+    setIsPaymentModalOpen(true);
+  };
+
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  const handlePaymentSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Frontend Validation
+    if (!formData.countryCode.startsWith('+') || formData.countryCode.length < 2) {
+      toast.error("Country code must start with '+' and contain numbers (e.g., +91)");
+      return;
+    }
+    if (formData.whatsapp.length < 7 || formData.whatsapp.length > 15) {
+      toast.error("Please enter a valid WhatsApp number (between 7 and 15 digits).");
+      return;
+    }
+
+    setIsProcessing(true);
+    
+    const res = await loadRazorpayScript();
+    if (!res) {
+      alert("Payment gateway failed to load. Please check your connection.");
+      setIsProcessing(false);
+      return;
+    }
+
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
+      amount: "9900", // ₹99 in paise
+      currency: "INR",
+      name: "n8n Workshop",
+      description: "Beginner Friendly Automation Workshop",
+      handler: function (response: any) {
+        // 1. Immediately show success so the user doesn't wait!
+        setIsProcessing(false);
+        toast.success("Payment successful! Our team will reach out to you via WhatsApp and email.");
+
+        // 2. Process the webhook securely in the background (fire-and-forget)
+        supabase.functions.invoke('payment-webhook', {
+          body: {
+            payment_id: response.razorpay_payment_id,
+            name: formData.name,
+            email: formData.email,
+            whatsapp: formData.countryCode + formData.whatsapp,
+            amount: 99,
+            workshop_name: "Basics of Automation using n8n",
+            date: format(new Date(), "dd MMM, yyyy")
+          }
+        }).catch((error) => {
+          console.error("Webhook trigger error in background:", error);
+        });
+      },
+      prefill: {
+        name: formData.name,
+        email: formData.email,
+        contact: formData.countryCode + formData.whatsapp,
+      },
+      theme: {
+        color: "#6d28d9", // Purple matching the theme
+      },
+      modal: {
+        ondismiss: function () {
+          setIsProcessing(false);
+        }
+      }
+    };
+
+    const paymentObject = new (window as any).Razorpay(options);
+    paymentObject.on("payment.failed", function (response: any) {
+      toast.error("Payment failed: " + response.error.description);
+      setIsProcessing(false);
+    });
+    
+    // Close the custom Radix UI Dialog so it releases the focus trap and body pointer-events
+    setIsPaymentModalOpen(false);
+    
+    // Slight delay ensures Radix clears its overlay styles before Razorpay injects its iframe
+    setTimeout(() => {
+      paymentObject.open();
+    }, 150);
   };
 
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background">
       <CustomCursor />
       <Navbar />
+
+      <Dialog open={isPaymentModalOpen} onOpenChange={setIsPaymentModalOpen}>
+        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Secure Your Spot</DialogTitle>
+            <DialogDescription className="text-base text-muted-foreground pt-1">
+              Enter your details below to register for the workshop.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handlePaymentSubmit} className="space-y-5 pt-2">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-sm font-semibold">Full Name</Label>
+              <Input 
+                id="name" 
+                required 
+                placeholder="John Doe" 
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                className="bg-background/50 h-11"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-semibold">Email Address</Label>
+              <Input 
+                id="email" 
+                type="email" 
+                required 
+                placeholder="john@example.com" 
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                className="bg-background/50 h-11"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="whatsapp" className="text-sm font-semibold">WhatsApp Number</Label>
+              <div className="flex gap-2">
+                <Input 
+                  value={formData.countryCode} 
+                  onChange={(e) => setFormData({...formData, countryCode: e.target.value.replace(/[^\+0-9]/g, '')})}
+                  className="w-[80px] bg-background/50 h-11 shrink-0 font-medium text-center px-1"
+                  placeholder="+91"
+                  minLength={2}
+                  maxLength={5}
+                  required
+                />
+                <Input 
+                  id="whatsapp" 
+                  type="tel" 
+                  required 
+                  placeholder="9876543210" 
+                  value={formData.whatsapp}
+                  onChange={(e) => setFormData({...formData, whatsapp: e.target.value.replace(/[^0-9]/g, '')})}
+                  className="bg-background/50 h-11 flex-1"
+                  minLength={7}
+                  maxLength={15}
+                />
+              </div>
+            </div>
+            <div className="pt-2">
+              <Button 
+                type="submit" 
+                className="w-full h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
+                disabled={isProcessing}
+              >
+                {isProcessing ? "Processing..." : "Pay ₹99 & Register"}
+              </Button>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-500" />
+              100% Secure Checkout by Razorpay
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       {/* Subtle Background Elements instead of heavy 3D Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
