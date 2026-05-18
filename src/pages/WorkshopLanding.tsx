@@ -40,6 +40,13 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { format } from "date-fns";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    fbq?: (...args: any[]) => void;
+  }
+}
+
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -151,6 +158,14 @@ const WorkshopLanding = () => {
         // 1. Immediately show success so the user doesn't wait!
         setIsProcessing(false);
         toast.success("Payment successful! Our team will reach out to you via email.");
+
+        // Fire Analytics Events
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
+        }
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
+        }
 
         // 2. Process the webhook securely in the background (fire-and-forget)
         supabase.functions.invoke('payment-webhook', {
