@@ -203,7 +203,7 @@ const WorkshopLanding = () => {
       <Navbar />
 
       <Dialog open={isPaymentModalOpen} onOpenChange={setIsPaymentModalOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl">
+        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl w-[95vw] top-[5%] translate-y-[0] sm:top-[50%] sm:translate-y-[-50%] max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Secure Your Spot</DialogTitle>
             <DialogDescription className="text-base text-muted-foreground pt-1">
