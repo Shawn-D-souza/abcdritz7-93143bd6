@@ -8,7 +8,6 @@ import { useSEO } from "@/hooks/useSEO";
 
 // Lazy-load below-the-fold sections to reduce initial bundle
 const WallOfLove = lazy(() => import("@/components/WallOfLove").then(m => ({ default: m.WallOfLove })));
-const Programs = lazy(() => import("@/components/Programs").then(m => ({ default: m.Programs })));
 const AboutUs = lazy(() => import("@/components/AboutUs").then(m => ({ default: m.AboutUs })));
 const Journey1000Days = lazy(() => import("@/components/Journey1000Days").then(m => ({ default: m.Journey1000Days })));
 const BookConsultation = lazy(() => import("@/components/BookConsultation").then(m => ({ default: m.BookConsultation })));
@@ -79,7 +78,6 @@ const Index = () => {
         <Hero />
         {showRest && (
           <Suspense fallback={<div className="py-10" />}>
-            <Programs />
             <AboutUs />
             <Journey1000Days />
             <WallOfLove />

@@ -70,9 +70,7 @@ export const Hero = () => {
           </a>
 
           <a
-            href="https://ritz7.edrona.ai/programs"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/programs"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const size = Math.max(rect.width, rect.height);
