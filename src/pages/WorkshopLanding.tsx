@@ -305,6 +305,7 @@ const WorkshopLanding = () => {
             </motion.p>
 
             <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+              {/* CTA Button */}
               <Button 
                 onClick={handleRegister}
                 size="lg" 
@@ -313,14 +314,16 @@ const WorkshopLanding = () => {
                 Secure Your Spot for ₹99
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
-              <div className="flex flex-col items-start gap-1 text-muted-foreground text-sm font-medium">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" />
-                  2 Batches Available (June 5th or 6th) • 3 Hours
+
+              {/* Minimal Text Info (Side-by-side on PC) */}
+              <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
+                <div className="flex items-start sm:items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
+                  <span><strong>June 5th</strong> (7:30pm - 10:30pm) <span className="opacity-50 mx-1">OR</span> <strong>June 6th</strong> (10am - 1pm)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Bot className="w-4 h-4 text-primary" />
-                  Perfect for Beginners
+                  <Bot className="w-4 h-4 text-primary shrink-0" />
+                  3-Hour Session • Perfect for Beginners
                 </div>
               </div>
             </motion.div>
