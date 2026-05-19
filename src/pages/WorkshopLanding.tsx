@@ -113,6 +113,9 @@ const WorkshopLanding = () => {
   }, []);
 
   const handleRegister = () => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'workshop_button_click');
+    }
     setIsPaymentModalOpen(true);
   };
 
