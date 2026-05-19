@@ -44,6 +44,7 @@ declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
     fbq?: (...args: any[]) => void;
+    clarity?: (...args: any[]) => void;
   }
 }
 
@@ -116,6 +117,9 @@ const WorkshopLanding = () => {
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'workshop_button_click');
     }
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'button_click');
+    }
     setIsPaymentModalOpen(true);
   };
 
@@ -168,6 +172,9 @@ const WorkshopLanding = () => {
         }
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
+        }
+        if (typeof window.clarity === 'function') {
+          window.clarity('event', 'payment_success');
         }
 
         // 2. Process the webhook securely in the background (fire-and-forget)
