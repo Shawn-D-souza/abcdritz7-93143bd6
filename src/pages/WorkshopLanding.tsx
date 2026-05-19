@@ -91,6 +91,7 @@ const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, 
 const WorkshopLanding = () => {
   const [showRest, setShowRest] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "", countryCode: "+91" });
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -164,7 +165,7 @@ const WorkshopLanding = () => {
       handler: function (response: any) {
         // 1. Immediately show success so the user doesn't wait!
         setIsProcessing(false);
-        toast.success("Payment successful! Our team will reach out to you via email.");
+        setIsSuccessModalOpen(true);
 
         // Fire Analytics Events
         if (typeof window.gtag === 'function') {
@@ -298,6 +299,35 @@ const WorkshopLanding = () => {
               100% Secure Checkout by Razorpay
             </div>
           </form>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={isSuccessModalOpen} onOpenChange={setIsSuccessModalOpen}>
+        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl text-center">
+          <DialogHeader className="flex flex-col items-center">
+            <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-4">
+              <CheckCircle2 className="w-8 h-8 text-green-500" />
+            </div>
+            <DialogTitle className="text-2xl font-bold">Payment Successful!</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 pt-4 text-muted-foreground">
+            <p className="text-base">
+              Your spot is secured! We will email your confirmation and receipt shortly. The actual workshop links and details will be sent to you about a week before the event.
+            </p>
+            <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 text-left">
+              <p className="font-semibold text-foreground flex items-center gap-2">
+                <span className="text-xl">⚠️</span> Important Note:
+              </p>
+              <p className="text-sm mt-2 leading-relaxed">
+                Please check your <strong>Spam or Promotions</strong> folder just in case. If you find our email there, please mark it as <strong>"Not Spam"</strong> so you don't miss the workshop links!
+              </p>
+            </div>
+          </div>
+          <div className="pt-4">
+            <Button onClick={() => setIsSuccessModalOpen(false)} className="w-full h-12 text-lg font-bold">
+              Got it, Thanks!
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
 
