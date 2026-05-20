@@ -154,6 +154,9 @@ const WorkshopLanding = () => {
       return;
     }
 
+    // Track: user filled the form and clicked Pay (Razorpay is about to open)
+    posthog.capture('workshop_form_submitted');
+
     const options = {
       key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
       amount: "9900", // ₹99 in paise
