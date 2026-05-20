@@ -10,6 +10,13 @@ import React from 'react';
 import { hydrateRoot, createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import posthog from 'posthog-js';
+
+// Initialize PostHog analytics
+posthog.init('phc_Cwzp2wTjZu6DMBP7aCT9WecdZ7YZmr2cuQ5u7PS5Mz3Y', {
+  api_host: 'https://us.i.posthog.com',
+  person_profiles: 'identified_only',
+});
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
