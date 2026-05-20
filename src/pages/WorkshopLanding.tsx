@@ -45,6 +45,7 @@ declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
     fbq?: (...args: any[]) => void;
+    dataLayer?: any[];
   }
 }
 
@@ -118,6 +119,13 @@ const WorkshopLanding = () => {
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'workshop_button_click');
     }
+    // Direct push to GTM dataLayer to bypass any auto-tracking scripts
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'workshop_button_click',
+        gtag_override: true // signals to GTM to bypass auto-macros
+      });
+    }
     posthog.capture('workshop_button_click');
     setIsPaymentModalOpen(true);
   };
@@ -159,6 +167,12 @@ const WorkshopLanding = () => {
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'workshop_form_submitted');
     }
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'workshop_form_submitted',
+        gtag_override: true
+      });
+    }
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'InitiateCheckout');
     }
@@ -177,6 +191,14 @@ const WorkshopLanding = () => {
         // Fire Analytics Events
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
+        }
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'workshop_purchase',
+            value: 99,
+            currency: 'INR',
+            gtag_override: true
+          });
         }
         if (typeof window.fbq === 'function') {
           window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
