@@ -156,6 +156,12 @@ const WorkshopLanding = () => {
 
     // Track: user filled the form and clicked Pay (Razorpay is about to open)
     posthog.capture('workshop_form_submitted');
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'workshop_form_submitted');
+    }
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'InitiateCheckout');
+    }
 
     const options = {
       key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
