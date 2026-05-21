@@ -177,77 +177,99 @@ const WorkshopLanding = () => {
       window.fbq('track', 'InitiateCheckout');
     }
 
-    const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
-      amount: "9900", // ₹99 in paise
-      currency: "INR",
-      name: "n8n Workshop",
-      description: "Beginner Friendly Automation Workshop",
-      handler: function (response: any) {
-        // 1. Immediately show success so the user doesn't wait!
-        setIsProcessing(false);
-        setIsSuccessModalOpen(true);
+    try {
+      // 1. Create order on the server
+      const { data: orderData, error: orderError } = await supabase.functions.invoke('create-razorpay-order', {
+        body: {
+          amount: 99,
+          currency: "INR",
+          receipt: `rcpt_${new Date().getTime()}`
+        }
+      });
 
-        // Fire Analytics Events
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
-        }
-        if (window.dataLayer) {
-          window.dataLayer.push({
-            event: 'workshop_purchase',
-            value: 99,
-            currency: 'INR',
-            gtag_override: true
-          });
-        }
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
-        }
-        posthog.capture('workshop_purchase', { value: 99, currency: 'INR' });
-
-        // 2. Process the webhook securely in the background (fire-and-forget)
-        supabase.functions.invoke('payment-webhook', {
-          body: {
-            payment_id: response.razorpay_payment_id,
-            name: formData.name,
-            email: formData.email,
-            whatsapp: formData.countryCode + formData.whatsapp,
-            amount: 99,
-            workshop_name: "Basics of Automation using n8n",
-            date: format(new Date(), "dd MMM, yyyy")
-          }
-        }).catch((error) => {
-          console.error("Webhook trigger error in background:", error);
-        });
-      },
-      prefill: {
-        name: formData.name,
-        email: formData.email,
-        contact: formData.countryCode + formData.whatsapp,
-      },
-      theme: {
-        color: "#6d28d9", // Purple matching the theme
-      },
-      modal: {
-        ondismiss: function () {
-          setIsProcessing(false);
-        }
+      if (orderError || !orderData?.orderId) {
+        throw new Error(orderError?.message || "Failed to create order");
       }
-    };
 
-    const paymentObject = new (window as any).Razorpay(options);
-    paymentObject.on("payment.failed", function (response: any) {
-      toast.error("Payment failed: " + response.error.description);
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
+        amount: orderData.amount, // from server
+        currency: orderData.currency,
+        name: "n8n Workshop",
+        description: "Beginner Friendly Automation Workshop",
+        order_id: orderData.orderId, // Link payment to the server order
+        handler: function (response: any) {
+          // 1. Immediately show success so the user doesn't wait!
+          setIsProcessing(false);
+          setIsSuccessModalOpen(true);
+
+          // Fire Analytics Events
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
+          }
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'workshop_purchase',
+              value: 99,
+              currency: 'INR',
+              gtag_override: true
+            });
+          }
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
+          }
+          posthog.capture('workshop_purchase', { value: 99, currency: 'INR' });
+
+          // 2. Process the webhook securely in the background (fire-and-forget)
+          supabase.functions.invoke('payment-webhook', {
+            body: {
+              payment_id: response.razorpay_payment_id,
+              order_id: response.razorpay_order_id,
+              signature: response.razorpay_signature,
+              name: formData.name,
+              email: formData.email,
+              whatsapp: formData.countryCode + formData.whatsapp,
+              amount: 99,
+              workshop_name: "Basics of Automation using n8n",
+              date: format(new Date(), "dd MMM, yyyy")
+            }
+          }).catch((error) => {
+            console.error("Webhook trigger error in background:", error);
+          });
+        },
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          contact: formData.countryCode + formData.whatsapp,
+        },
+        theme: {
+          color: "#6d28d9", // Purple matching the theme
+        },
+        modal: {
+          ondismiss: function () {
+            setIsProcessing(false);
+          }
+        }
+      };
+
+      const paymentObject = new (window as any).Razorpay(options);
+      paymentObject.on("payment.failed", function (response: any) {
+        toast.error("Payment failed: " + response.error.description);
+        setIsProcessing(false);
+      });
+      
+      // Close the custom Radix UI Dialog so it releases the focus trap and body pointer-events
+      setIsPaymentModalOpen(false);
+      
+      // Slight delay ensures Radix clears its overlay styles before Razorpay injects its iframe
+      setTimeout(() => {
+        paymentObject.open();
+      }, 150);
+    } catch (err: any) {
+      toast.error("Could not initialize payment. Please try again.");
+      console.error(err);
       setIsProcessing(false);
-    });
-    
-    // Close the custom Radix UI Dialog so it releases the focus trap and body pointer-events
-    setIsPaymentModalOpen(false);
-    
-    // Slight delay ensures Radix clears its overlay styles before Razorpay injects its iframe
-    setTimeout(() => {
-      paymentObject.open();
-    }, 150);
+    }
   };
 
   return (
