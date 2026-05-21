@@ -14,10 +14,10 @@ description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
 ---
 > **Key Takeaways:**
 >
-> * Fastest: Sell niche n8n templates for instant passive income.
-> * Highest Pay: Charge $5k–$15k for Zapier-to-n8n migrations.
-> * Best Passive: Sell automated results (leads/reports) via subscription.
-> * Most Scalable: Wrap workflows in a UI to build a Micro-SaaS.
+> * **Fastest:** Sell niche n8n templates for instant passive income.
+> * **Highest Pay:** Charge $5k–$15k for Zapier-to-n8n migrations.
+> * **Best Passive:** Sell automated results (leads/reports) via subscription.
+> * **Most Scalable:** Wrap workflows in a UI to build a Micro-SaaS.
 
 A single n8n workflow template listed on Gumroad can sell to dozens of buyers with zero extra work after upload. A Zapier-to-n8n migration project can bill at $5,000–$15,000 for two weeks of work. 
 
