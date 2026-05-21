@@ -14,11 +14,10 @@ description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
 ---
 > **Key Takeaways:**
 >
-> * **Fastest Start (Sell Workflow Templates):** Package your logic as digital products on Gumroad or the n8n Creator Hub. Focus on niches like "E-commerce Order Sync" or "Social Media Schedulers" to create immediate passive income.
-> * **Highest Pay (High-Ticket Consulting):** Target businesses looking to migrate from Zapier to n8n. You can charge $5,000–$15,000 for one-time migrations by saving companies thousands in "per-task" automation taxes.
-> * **Best Passive Income (Automation Arbitrage):** Don’t sell the workflow; sell the result. Use n8n to aggregate, clean, and deliver high-value lead lists or market research reports to clients on a daily subscription.
-> * **Most Scalable (Build a Micro-SaaS):** Wrap your n8n workflows in a simple UI (using Bubble or Softr) to create subscription tools like "AI Resume Screeners" or "SEO Content Repurposers."
-> * **Recurring Revenue (The Retainer Model):** Offer "Automation-as-a-Service." Charge monthly fees to maintain, update, and optimise AI agents for businesses that lack in-house technical teams.
+> * **Fastest:** Sell niche n8n templates for instant passive income.
+> * **Highest Pay:** Charge $5k–$15k for Zapier-to-n8n migrations.
+> * **Best Passive:** Sell automated results (leads/reports) via subscription.
+> * **Most Scalable:** Wrap workflows in a UI to build a Micro-SaaS.
 
 A single n8n workflow template listed on Gumroad can sell to dozens of buyers with zero extra work after upload. A Zapier-to-n8n migration project can bill at $5,000–$15,000 for two weeks of work. 
 
