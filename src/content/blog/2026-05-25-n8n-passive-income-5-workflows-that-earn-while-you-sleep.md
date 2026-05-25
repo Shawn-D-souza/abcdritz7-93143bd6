@@ -55,7 +55,14 @@ The fastest first step: build one template, write a strong description, record a
 Here is a quick reality check on which n8n income models are actually passive versus which require ongoing time from you.
 
 <customtable>
-
+**Strategy** | **Passive?** | **Setup Time** | **Monthly Earning Potential**
+Workflow Template Sales | ✅ Fully Passive | 4–8 hours | $500 – $2,000
+Automated Lead List Delivery | ✅ Fully Passive | 6–10 hours | $1,000 – $3,000
+Micro SaaS Tool | ✅ Fully Passive | 20–40 hours | $2,000 – $8,000
+AI Content Generation Service | 🔄 Semi-Passive | 5–8 hours | $800 – $2,500
+Data Monitoring Alerts | ✅ Fully Passive | 4–6 hours | $500 – $1,500
+Custom Client Work | ❌ Active | Per project | $2,000 – $5,000
+Consulting | ❌ Active | Per project | $5,000 – $15,000
 </customtable>
 
 The five strategies below are from the passive column. Custom client work and consulting are not covered here — they are covered in the main monetisation guide linked above.
