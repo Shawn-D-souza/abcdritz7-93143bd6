@@ -217,7 +217,7 @@ The best part: your 100th paying user costs you just as much to serve as your 1s
 
 1. **Build the workflow in n8n -** start with a webhook, which is just a way for n8n to receive a signal and start working. For a real example of n8n and AI working together, see the following: [How to Build a YouTube Video Summarizer in n8n ](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
 2. **Create the front-end screen** using Bubble, Softr, or Glide, no coding needed, just drag and drop
-3. **Link the screen to n8n,** when a user submits the form, n8n runs and sends the result back to the screen
+3. **Link the screen to n8n.** When a user submits the form, n8n runs and sends the result back to the screen
 4. **Add any extra connections link** to OpenAI, Google Sheets, Stripe, or other tools using n8n's built-in connectors
 5. **Set up payments using** Stripe or Lemon Squeezy, and create "Basic and Pro subscription" options
 6. **Share it** in online communities: Reddit, LinkedIn, Product Hunt, and the Ritz7 Automations Community
@@ -235,9 +235,9 @@ Even 20 Basic subscribers at $29/month is $580/month from one tool.
 
 ### Semi-Passive but High Value
 
-An AI content service built on n8n can work like a fully automatic monthly business — with almost nothing for you to do after the initial setup.
+An AI content service built on n8n can work like a fully automatic monthly business, with almost nothing for you to do after the initial setup.
 
-We do this at Ritz7. Our team uses n8n to automatically generate first drafts of blog posts and YouTube titles and descriptions. A human then reads through, refines the tone, and publishes. What used to take hours of writing from scratch now takes minutes of editing. The workflow handles the heavy lifting — we handle the final polish.
+We do this at Ritz7. Our team uses n8n to automatically generate first drafts of blog posts, YouTube titles, and descriptions. A human then reads through, refines the tone, and publishes. What used to take hours of writing from scratch now takes minutes of editing. The workflow handles the heavy lifting — we handle the final polish.
 
 ![AI content generation service](/assets/uploads/n8n-passive-income-ai-content-generation-service.png)
 
