@@ -29,7 +29,7 @@ description: Earn passive income with n8n. Discover 5 fully automated workflows
 
 Most people think making money with n8n means finding clients, building things for them, and doing it all over again. That works — but you are always swapping your time for money. Real passive income is different. It means the workflow keeps running at 2 am while you sleep, and the money still comes in. For many builders, this is how a side business starts — one small workflow doing the work quietly in the background.
 
-At Ritz7, we use n8n automation ourselves – to generate YouTube titles and descriptions, auto-draft blog posts that our team then refines, and handle content tasks that would otherwise eat hours every week. The workflows in this guide are not just theory. They are based on the kind of systems we actually run.
+At Ritz7, we use n8n automation ourselves – to generate YouTube titles and descriptions; auto-draft blog posts that our team then refines; and handle content tasks that would otherwise eat hours every week. The workflows in this guide are not just theory. They are based on the kind of systems we actually run.
 
 This article covers 5 n8n workflows that are truly passive once you set them up. Not "mostly passive with a few hours of maintenance", but systems where you do the hard work once, and then income keeps coming without you. For each workflow, we explain what it does, who will pay for it, how much to charge, and how to get started.
 
@@ -112,7 +112,7 @@ Your description matters more than the workflow itself. Talk about the result it
 >
 > ✅ *"Turn one Google Sheet row into a week of social posts — automatically rewritten for LinkedIn, Instagram, and X. Set up in under 10 minutes. No coding needed."*
 
-Think of each template as a small helper that works silently for whoever buys it – lead with that idea and your description will be much stronger.
+Think of each template as a small helper that works silently for whoever buys it – lead with that idea, and your description will be much stronger.
 
 One example from our own work: we built a workflow at Ritz7 that automatically generates YouTube video titles and descriptions using AI. That same workflow, packaged cleanly with a setup guide, could be sold as a template to any content creator or YouTube channel manager who does not want to write metadata by hand for every video.
 
@@ -165,7 +165,7 @@ Only collect information that is already publicly available online. Follow data 
 
 A micro SaaS is a small online tool that people pay a monthly fee to use. You build the automation inside n8n and then put a simple, easy-to-use screen in front of it. Users just fill in a form or click a button – they never know n8n is running everything behind the scenes. This model is very popular with small software businesses and no-code builders who want to launch an AI tool fast, without hiring developers.
 
-According to [Indie Hackers](https://www.indiehackers.com/), small solo-built software tools regularly start earning $1,000–$10,000 per month within 6–12 months when they solve one specific, real problem. A micro SaaS built on n8n usually takes 20–40 hours to set up, but can earn $2,000–$8,000/month with very little work after that.
+According to [Indie Hackers](https://www.indiehackers.com/), small solo-built software tools regularly start earning $1,000–$10,000 per month within 6–12 months when they solve one specific, real problem. A micro SaaS built on n8n usually takes 20–40 hours to set up but can earn $2,000–$8,000/month with very little work after that.
 
 The best part: your 100th paying user costs you just as much to serve as your 1st. That is why this model has the highest earning ceiling of all five.
 
@@ -179,8 +179,8 @@ The best part: your 100th paying user costs you just as much to serve as your 1s
 
 ### How to Build It (No Developer Required)
 
-1. **Build the workflow in n8n -** start with a webhook, which is just a way for n8n to receive a signal and start working. For a real example of n8n and AI working together, see the following: [How to Build a YouTube Video Summarizer in n8n ](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
-2. **Create the front-end screen** using Bubble, Softr, or Glide, no coding needed, just drag and drop
+1. **Build the workflow in n8n – start** with a webhook, which is just a way for n8n to receive a signal and start working. For a real example of n8n and AI working together, see the following: [How to Build a YouTube Video Summarizer in n8n ](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
+2. **Create the front-end screen** using Bubble, Softr, or Glide; no coding needed, just drag and drop
 3. **Link the screen to n8n.** When a user submits the form, n8n runs and sends the result back to the screen
 4. **Add any extra connections link** to OpenAI, Google Sheets, Stripe, or other tools using n8n's built-in connectors
 5. **Set up payments using** Stripe or Lemon Squeezy, and create "Basic and Pro subscription" options
@@ -258,7 +258,7 @@ Tools like [Brand24](https://www.g2.com/products/brand24/pricing) and Mention ch
 * **Brand Mention Monitor** — Track mentions of a company name across Reddit, news sites, and forums. PR agencies and founders love this.
 * **Job Posting Tracker** — Alert a recruiter every time a target company posts a new role. Saves hours of manual checking.
 * **Keyword Trend Alert** — Monitor Google Trends or social platforms for a keyword set and alert when volume spikes. Useful for content teams and investors.
-* **Regulatory Change Monitor**  — Track government or industry websites for policy updates. Law firms and compliance teams pay a premium for this.
+* **Regulatory Change Monitor —** Track government or industry websites for policy updates. Law firms and compliance teams pay a premium for this.
 
 ### What to Charge
 
