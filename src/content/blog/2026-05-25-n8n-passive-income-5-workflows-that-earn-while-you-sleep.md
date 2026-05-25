@@ -314,6 +314,8 @@ This is the most overlooked passive income model in the n8n world – and the on
 
 You build the alert workflow once. It checks the right websites or feeds on a regular schedule and sends a notification the moment something changes.
 
+![Building a passive income stream](/assets/uploads/building-a-passive-income-stream.png)
+
 Tools like [Brand24](https://www.g2.com/products/brand24/pricing) and Mention charge $199–$599/month just to monitor one channel. You can build something that monitors multiple channels for much less — and charge your client a fair price while still making a good profit.
 
 **The reason clients almost never cancel:** over time, the alerts stop feeling like an extra service. They become part of how the client runs their business every day.
