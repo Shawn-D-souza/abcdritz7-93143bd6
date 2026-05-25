@@ -6,7 +6,7 @@ author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-05-25T07:43:00.000Z
 updated_date: 2026-05-25T07:43:00.000Z
 description: Earn passive income with n8n. Discover 5 fully automated workflows
-  from selling Gumroad templates to Micro SaaS that generate monthly revenue
+  from selling Gumroad templates to micro SaaS that generate monthly revenue
   while you sleep.
 ---
 > ## Key Takeaways
