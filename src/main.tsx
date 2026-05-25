@@ -20,8 +20,10 @@ posthog.init('phc_Cwzp2wTjZu6DMBP7aCT9WecdZ7YZmr2cuQ5u7PS5Mz3Y', {
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
-// Check if the HTML is already pre-rendered by react-snap
-if (rootElement.hasChildNodes()) {
+// Only use hydrateRoot in production when react-snap has pre-rendered the HTML.
+// During local dev (import.meta.env.DEV), always use createRoot to avoid
+// hydration mismatch errors when state changes (e.g. opening dialogs).
+if (import.meta.env.PROD && rootElement.hasChildNodes()) {
   hydrateRoot(
     rootElement,
     <React.StrictMode>
@@ -29,7 +31,6 @@ if (rootElement.hasChildNodes()) {
     </React.StrictMode>
   );
 } else {
-  // Fallback for normal SPA behavior during local development
   const root = createRoot(rootElement);
   root.render(
     <React.StrictMode>
