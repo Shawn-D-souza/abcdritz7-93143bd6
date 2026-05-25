@@ -316,7 +316,7 @@ You build the alert workflow once. It checks the right websites or feeds on a re
 
 Tools like [Brand24](https://www.g2.com/products/brand24/pricing) and Mention charge $199–$599/month just to monitor one channel. You can build something that monitors multiple channels for much less — and charge your client a fair price while still making a good profit.
 
-The reason clients almost never cancel: over time, the alerts stop feeling like an extra service. They become part of how the client runs their business every day.
+**The reason clients almost never cancel:** over time, the alerts stop feeling like an extra service. They become part of how the client runs their business every day.
 
 ### Examples of Monitoring Workflows to Sell
 
