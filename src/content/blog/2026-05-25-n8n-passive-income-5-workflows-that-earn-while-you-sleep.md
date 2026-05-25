@@ -67,7 +67,7 @@ The five strategies below are from the passive column. Custom client work and co
 
 A workflow template is like a ready-made recipe. You build it once, upload it to a marketplace, and anyone can buy and use it. After you upload it, every new sale costs you nothing — no calls, no extra work, no emails back and forth.
 
-
+![n8n passive income strategy - knowledge graph](/assets/uploads/n8n-passive-income-strategy-knowledge-graph.png)
 
 The demand is real. Thousands of business owners want to automate their work but do not know how to build it themselves. They are happy to pay for something ready to use. Automation and productivity templates consistently rank among the top-selling categories on [Gumroad](https://gumroad.com/), with successful sellers earning $500–$2,000/month from a single template pack.
 
@@ -146,9 +146,7 @@ Tools like [Apollo](https://www.apollo.io/pricing) and ZoomInfo charge businesse
 
 The client just gets a spreadsheet of 50 fresh contacts every Monday morning, automatically — like clockwork.
 
-
-
-
+![automated lead delivery pros and cons](/assets/uploads/n8n-passive-income-automated-lead-delivery.png)
 
 ### Who Pays for This
 
