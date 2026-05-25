@@ -73,56 +73,32 @@ Focus on workflows that solve one clear, annoying problem that businesses deal w
 
 **Workflow templates that sell well:**
 
-* **Social Media Schedulers**
-
-   — Pull posts from Google Sheets and automatically share them on LinkedIn, Instagram, and X
-* **E-Commerce Order Processors**
-
-   — When a Shopify order comes in, update the CRM, tell the fulfilment team, and email the customer – all automatically
-* **Lead Nurture Sequences**
-
-   — When someone fills a form, send them personalised follow-up emails over 5 days without anyone lifting a finger
-* **Invoice and Payment Reminders**
-
-   — Connect to accounting software and send payment reminders automatically on due dates
-* **CRM Lead Automation**
-
-   — Grab new leads from anywhere, sort and score them, and push them straight into your sales pipeline
-* **AI Review Responder**
-
-   — Pull new Google Reviews, write a personalised reply using AI, and post it automatically
+* **Social Media Schedulers** — Pull posts from Google Sheets and automatically share them on LinkedIn, Instagram, and X
+* **E-Commerce Order Processors** — When a Shopify order comes in, update the CRM, tell the fulfilment team, and email the customer – all automatically
+* **Lead Nurture Sequences** — When someone fills a form, send them personalised follow-up emails over 5 days without anyone lifting a finger
+* **Invoice and Payment Reminders** — Connect to accounting software and send payment reminders automatically on due dates
+* **CRM Lead Automation** — Grab new leads from anywhere, sort and score them, and push them straight into your sales pipeline
+* **AI Review Responder** — Pull new Google Reviews, write a personalised reply using AI, and post it automatically
 
 ### What to Charge
 
-* Single workflow: 
-
-  **$27 – $97**
-* Bundled kit (3–5 related workflows): 
-
-  **$97 – $197**
-* Industry-specific pack (e.g. "Real Estate Automation Kit"): 
-
-  **$147 – $297**
+* Single workflow: **$27 – $97**
+* Bundled kit (3–5 related workflows): **$97 – $197**
+* Industry-specific pack (e.g. "Real Estate Automation Kit"): **$147 – $297**
 
 ### Where to Sell
 
-* **Gumroad**
-
-   — easiest setup, instant delivery, handles payments globally
-* **Lemon Squeezy**
-
-   — better for bundles and discount codes
-* **n8n Creator Hub**
-
-   — direct audience of n8n users already looking for templates
+* **Gumroad** — easiest setup, instant delivery, handles payments globally
+* **Lemon Squeezy** — better for bundles and discount codes
+* **n8n Creator Hub** — direct audience of n8n users already looking for templates
 
 ### How to Make It Sell
 
 Your description matters more than the workflow itself. Talk about the result it delivers — not the technical parts inside it.
 
-❌ *"This workflow uses a Sheets node connected to an OpenAI node and a LinkedIn node."*
-
-✅ *"Turn one Google Sheet row into a week of social posts — automatically rewritten for LinkedIn, Instagram, and X. Set up in under 10 minutes. No coding needed."*
+> ❌ *"This workflow uses a Sheets node connected to an OpenAI node and a LinkedIn node."*
+>
+> ✅ *"Turn one Google Sheet row into a week of social posts — automatically rewritten for LinkedIn, Instagram, and X. Set up in under 10 minutes. No coding needed."*
 
 Think of each template as a small helper that works silently for whoever buys it – lead with that idea and your description will be much stronger.
 
@@ -144,7 +120,7 @@ The client just gets a spreadsheet of 50 fresh contacts every Monday morning, au
 
 ### Who Pays for This
 
-Sales teams, recruiters, real estate agents, and marketing agencies all need a steady stream of new contacts to reach out to. Most of them are already paying a lot for this — through tools like Apollo or ZoomInfo, or by hiring agencies to find leads for them. You can offer the same results for less money. The same goes for market research — many companies pay monthly just to get a report on what competitors are doing, which your workflow can generate automatically.
+Sales teams, recruiters, real estate agents, and marketing agencies all need a steady stream of new contacts to reach out to. Most of them are already paying a lot for this, through tools like Apollo or ZoomInfo, or by hiring agencies to find leads for them. You can offer the same results for less money. The same goes for market research — many companies pay monthly just to get a report on what competitors are doing, which your workflow can generate automatically.
 
 ### Example Workflows to Build
 
