@@ -35,8 +35,6 @@ This article covers 5 n8n workflows that are truly passive once you set them up.
 
 If you are new to making money with n8n and want to see the full picture first, read our guide: [How to Make Money with n8n: 5 Proven Strategies to Earn $5k+/month](https://ritz7.ai/blog/monetize-n8n-automation-skills)
 
-
-
 ## Which Passive Income Model Should You Start With?
 
 Not sure where to begin? Pick based on where you are right now:
@@ -44,8 +42,6 @@ Not sure where to begin? Pick based on where you are right now:
 <customtable>
 
 </customtable>
-
-
 
 The fastest first step: build one template, write a strong description, record a 2-minute Loom demo, and list it on Gumroad. Everything else can follow.
 
@@ -56,8 +52,6 @@ Here is a quick reality check on which n8n income models are actually passive ve
 <customtable>
 
 </customtable>
-
-
 
 The five strategies below are from the passive column. Custom client work and consulting are not covered here — they are covered in the main monetisation guide linked above.
 
@@ -221,39 +215,19 @@ The best part: your 100th paying user costs you just as much to serve as your 1s
 
 ### How to Build It (No Developer Required)
 
-1. **Build the workflow in n8n**
-
-    — start with a webhook, which is just a way for n8n to receive a signal and start working. For a real example of n8n and AI working together, see the following: 
-
-   [How to Build a YouTube Video Summarizer in n8n →](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
-
-
-2. **Create the front-end screen**
-
-    using Bubble, Softr, or Glide — no coding needed, just drag and drop
-3. **Link the screen to n8n**
-
-    — when a user submits the form, n8n runs and sends the result back to the screen
-4. **Add any extra connections**
-
-    — link to OpenAI, Google Sheets, Stripe, or other tools using n8n's built-in connectors
-5. **Set up payments**
-
-    using Stripe or Lemon Squeezy — create Basic and Pro subscription options
-6. **Share it**
-
-    in online communities: Reddit, LinkedIn, Product Hunt, and the Ritz7 Automations Community
+1. **Build the workflow in n8n -** start with a webhook, which is just a way for n8n to receive a signal and start working. For a real example of n8n and AI working together, see the following: [How to Build a YouTube Video Summarizer in n8n ](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
+2. **Create the front-end screen** using Bubble, Softr, or Glide, no coding needed, just drag and drop
+3. **Link the screen to n8n,** when a user submits the form, n8n runs and sends the result back to the screen
+4. **Add any extra connections link** to OpenAI, Google Sheets, Stripe, or other tools using n8n's built-in connectors
+5. **Set up payments using** Stripe or Lemon Squeezy, and create "Basic and Pro subscription" options
+6. **Share it** in online communities: Reddit, LinkedIn, Product Hunt, and the Ritz7 Automations Community
 
 ### What to Charge
 
 Structure two tiers minimum:
 
-* **Basic:**
-
-   Limited runs per month — $19–$49/month
-* **Pro:**
-
-   Unlimited runs + priority support — $79–$199/month
+* **Basic:** Limited runs per month — $19–$49/month
+* **Pro:** Unlimited runs + priority support — $79–$199/month
 
 Even 20 Basic subscribers at $29/month is $580/month from one tool.
 
@@ -370,7 +344,7 @@ A: Yes. Most experienced n8n builders run two or more at once. A popular combina
 Q: How much can I realistically earn from n8n passive income as a beginner? 
 A: A good first goal is $500–$1,500/month within your first 3–6 months, mostly from template sales and one lead-delivery client. Getting past $3,000/month usually means either having a micro SaaS with several subscribers or running a few content retainer clients at the same time.
 Q: Which n8n passive income model has the highest earning potential? 
-A: Micro SaaS has the highest ceiling — $2,000–$8,000/month — because every new subscriber adds income without adding work. Data monitoring retainers are the most stable, since clients rarely leave once the alerts become part of their routine. For beginners, templates are the fastest way to earn your first money. 
+A: Micro SaaS has the highest ceiling — $2,000–$8,000/month — because every new subscriber adds income without adding work. Data monitoring retainers are the most stable, since clients rarely leave once the alerts become part of their routine. For beginners, templates are the fastest way to earn your first money.
 </faq>
 
 ## Final Thoughts
