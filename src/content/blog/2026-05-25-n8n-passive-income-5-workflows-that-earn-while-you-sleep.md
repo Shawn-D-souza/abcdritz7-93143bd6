@@ -40,7 +40,12 @@ If you are new to making money with n8n and want to see the full picture first, 
 Not sure where to begin? Pick based on where you are right now:
 
 <customtable>
-
+**If you...** | **Start with...**
+Are completely new to n8n | Workflow Template Sales
+Have built workflows but never sold them | Automated Lead List Delivery
+Want the highest long-term income | Micro SaaS Tool
+Already have contacts at agencies or businesses | AI Content Generation Service
+Like building data pipelines | Data Monitoring Alerts
 </customtable>
 
 The fastest first step: build one template, write a strong description, record a 2-minute Loom demo, and list it on Gumroad. Everything else can follow.
