@@ -37,7 +37,7 @@ description: Earn passive income with n8n. Discover 5 fully automated
 
 ## Introduction
 
-Most people think making money with n8n means finding clients, building things for them, and doing it all over again. That works — but you are always swapping your time for money. Real passive income is different. It means the workflow keeps running at 2am while you sleep, and the money still comes in. For many builders, this is how a side business starts — one small workflow doing the work quietly in the background.
+Most people think making money with n8n means finding clients, building things for them, and doing it all over again. That works — but you are always swapping your time for money. Real passive income is different. It means the workflow keeps running at 2 am while you sleep, and the money still comes in. For many builders, this is how a side business starts — one small workflow doing the work quietly in the background.
 
 At Ritz7, we use n8n automation ourselves – to generate YouTube titles and descriptions, auto-draft blog posts that our team then refines, and handle content tasks that would otherwise eat hours every week. The workflows in this guide are not just theory. They are based on the kind of systems we actually run.
 
