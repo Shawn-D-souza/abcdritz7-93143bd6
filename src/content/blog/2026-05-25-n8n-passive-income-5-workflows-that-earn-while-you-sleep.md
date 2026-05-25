@@ -193,9 +193,7 @@ Only collect information that is already publicly available online. Follow data 
 
 ### The Highest-Ceiling Passive Income Model
 
-
-
-
+![n8n passive income pyramid](/assets/uploads/passive-income-pyramid.png)
 
 A micro SaaS is a small online tool that people pay a monthly fee to use. You build the automation inside n8n and then put a simple, easy-to-use screen in front of it. Users just fill in a form or click a button — they never know n8n is running everything behind the scenes. This model is very popular with small software businesses and no-code builders who want to launch an AI tool fast, without hiring developers.
 
