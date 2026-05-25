@@ -265,9 +265,7 @@ An AI content service built on n8n can work like a fully automatic monthly busin
 
 We do this at Ritz7. Our team uses n8n to automatically generate first drafts of blog posts and YouTube titles and descriptions. A human then reads through, refines the tone, and publishes. What used to take hours of writing from scratch now takes minutes of editing. The workflow handles the heavy lifting — we handle the final polish.
 
-
-
-
+![AI content generation service](/assets/uploads/n8n-passive-income-ai-content-generation-service.png)
 
 That is exactly the model you can sell to other businesses. You build the workflow that generates the content. The client reviews and publishes. You charge a monthly fee for the system running in the background.
 
