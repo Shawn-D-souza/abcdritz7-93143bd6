@@ -270,8 +270,6 @@ Tools like [Brand24](https://www.g2.com/products/brand24/pricing) and Mention ch
 
 Start with one niche. Pick an industry where monitoring matters — retail, recruiting, finance, or PR — and offer a free 2-week trial. Once the client sees the alerts arriving automatically, converting to paid is straightforward.
 
-## Frequently Asked Questions
-
 <faq>
 Q: What is n8n passive income, and how does it work? 
 A: n8n passive income is money you earn from workflows you build on n8n that keep running on their own – without you doing anything each day. You can earn through selling ready-made templates, delivering data to clients on a schedule, charging monthly for a small software tool, or sending automatic alerts. The workflow does the work. You collect the money.
