@@ -9,23 +9,13 @@ description: Earn passive income with n8n. Discover 5 fully automated
   workflows—from selling Gumroad templates to Micro SaaS—that generate monthly
   revenue while you sleep.
 ---
-## Key Takeaways
-
-* **Most Beginner-Friendly:**
-
-   Sell workflow templates on Gumroad — build once, earn repeatedly.
-* **Highest Volume:**
-
-   Deliver automated lead lists on subscription — clients pay monthly, workflow runs daily.
-* **Most Scalable:**
-
-   Build a Micro SaaS — one tool, unlimited subscribers, and no extra work per user.
-* **Lowest Effort to Start:**
-
-   AI content generation on retainer — connect n8n to OpenAI and sell the output.
-* **Most Recurring:**
-
-   Data monitoring alerts — clients rarely cancel once alerts become part of their routine.
+> ## Key Takeaways
+>
+> * **Most Beginner-Friendly:**  Sell workflow templates on Gumroad — build once, earn repeatedly.
+> * **Highest Volume:**  Deliver automated lead lists on subscription — clients pay monthly, workflow runs daily.
+> * **Most Scalable:**  Build a Micro SaaS — one tool, unlimited subscribers, and no extra work per user.
+> * **Lowest Effort to Start:**  AI content generation on retainer — connect n8n to OpenAI and sell the output.
+> * **Most Recurring:**  Data monitoring alerts — clients rarely cancel once alerts become part of their routine.
 
 ## What Is n8n Passive Income?
 
@@ -44,3 +34,35 @@ At Ritz7, we use n8n automation ourselves – to generate YouTube titles and des
 This article covers 5 n8n workflows that are truly passive once you set them up. Not "mostly passive with a few hours of maintenance", but systems where you do the hard work once, and then income keeps coming without you. For each workflow, we explain what it does, who will pay for it, how much to charge, and how to get started.
 
 If you are new to making money with n8n and want to see the full picture first, read our guide: [How to Make Money with n8n: 5 Proven Strategies to Earn $5k+/month](https://ritz7.ai/blog/monetize-n8n-automation-skills)
+
+
+
+## Which Passive Income Model Should You Start With?
+
+Not sure where to begin? Pick based on where you are right now:
+
+<customtable>
+
+</customtable>
+
+
+
+The fastest first step: build one template, write a strong description, record a 2-minute Loom demo, and list it on Gumroad. Everything else can follow.
+
+## Passive Income vs. Active Income: Where Each n8n Strategy Sits
+
+Here is a quick reality check on which n8n income models are actually passive versus which require ongoing time from you.
+
+<customtable>
+
+</customtable>
+
+
+
+The five strategies below are from the passive column. Custom client work and consulting are not covered here — they are covered in the main monetisation guide linked above.
+
+## 1. Sell Pre-Built n8n Workflow Templates
+
+### Why This Is the Best Starting Point for Passive Income
+
+A workflow template is like a ready-made recipe. You build it once, upload it to a marketplace, and anyone can buy and use it. After you upload it, every new sale costs you nothing — no calls, no extra work, no emails back and forth.
