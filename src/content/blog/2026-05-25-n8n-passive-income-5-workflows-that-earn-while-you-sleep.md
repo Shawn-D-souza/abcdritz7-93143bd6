@@ -148,18 +148,10 @@ Sales teams, recruiters, real estate agents, and marketing agencies all need a s
 
 ### Example Workflows to Build
 
-* **Local Business Lead Scraper**
-
-   — Pull business listings from Google Maps for a specific city and type of business (e.g., "dental clinics in Austin"), add their contact details, and send as a simple file
-* **LinkedIn Job Monitor**
-
-   — Track new job postings in a specific field, collect company details, and send a weekly report to a recruiter
-* **E-Commerce Store Tracker**
-
-   — Watch for new online stores launching in a category and send contact details to a sales team
-* **Competitor Price Monitor**
-
-   — Check competitor product prices every day and email a short report to a retail client each morning
+* **Local Business Lead Scraper** — Pull business listings from Google Maps for a specific city and type of business (e.g., "dental clinics in Austin"), add their contact details, and send as a simple file
+* **LinkedIn Job Monitor** — Track new job postings in a specific field, collect company details, and send a weekly report to a recruiter
+* **E-Commerce Store Tracker** — Watch for new online stores launching in a category and send contact details to a sales team
+* **Competitor Price Monitor** — Check competitor product prices every day and email a short report to a retail client each morning
 
 Once your lead list is ready, automate the outreach too — see [Automate Email Replies from Form Submission in n8n →](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n)
 
@@ -167,15 +159,9 @@ Once your lead list is ready, automate the outreach too — see [Automate Email 
 
 Price this as a subscription, not a one-time fee. Clients pay for the ongoing delivery, not just the data.
 
-* **Weekly lead list (50 contacts):**
-
-   $200 – $500/month
-* **Daily monitoring report:**
-
-   $300 – $800/month
-* **Custom niche research:**
-
-   $500 – $1,500/month
+* **Weekly lead list (50 contacts):** $200 – $500/month
+* **Daily monitoring report:** $300 – $800/month
+* **Custom niche research:** $500 – $1,500/month
 
 One client on a $300/month subscription is $3,600/year from a workflow you built in an afternoon.
 
@@ -189,29 +175,19 @@ Only collect information that is already publicly available online. Follow data 
 
 ![n8n passive income pyramid](/assets/uploads/passive-income-pyramid.png)
 
-A micro SaaS is a small online tool that people pay a monthly fee to use. You build the automation inside n8n and then put a simple, easy-to-use screen in front of it. Users just fill in a form or click a button — they never know n8n is running everything behind the scenes. This model is very popular with small software businesses and no-code builders who want to launch an AI tool fast, without hiring developers.
+A micro SaaS is a small online tool that people pay a monthly fee to use. You build the automation inside n8n and then put a simple, easy-to-use screen in front of it. Users just fill in a form or click a button – they never know n8n is running everything behind the scenes. This model is very popular with small software businesses and no-code builders who want to launch an AI tool fast, without hiring developers.
 
-According to [Indie Hackers](https://www.indiehackers.com/), small solo-built software tools regularly start earning $1,000–$10,000 per month within 6–12 months when they solve one specific, real problem. A micro SaaS built on n8n usually takes 20–40 hours to set up but can earn $2,000–$8,000/month with very little work after that.
+According to [Indie Hackers](https://www.indiehackers.com/), small solo-built software tools regularly start earning $1,000–$10,000 per month within 6–12 months when they solve one specific, real problem. A micro SaaS built on n8n usually takes 20–40 hours to set up, but can earn $2,000–$8,000/month with very little work after that.
 
 The best part: your 100th paying user costs you just as much to serve as your 1st. That is why this model has the highest earning ceiling of all five.
 
 ### Real Micro SaaS Ideas You Can Build with n8n
 
-* **AI Resume Screener**
-
-   — HR teams upload CVs; the tool scores and ranks them using OpenAI and delivers a report. Charge per seat or per batch.
-* **Social Caption Generator**
-
-   — Users paste a blog URL and get 10 platform-specific captions back in 30 seconds. Charge $19–$49/month.
-* **Content Repurposing Tool**
-
-   — Paste a URL, get the content rewritten for LinkedIn, Twitter, and a newsletter. Agencies pay $99–$199/month for this.
-* **Automated Proposal Generator**
-
-   — Freelancers input project details and get a professional proposal back in their brand voice. $29/month.
-* **Customer Service Bot**
-
-   — Connect a Google Business account or help desk and auto-generate and route replies to common queries. Local businesses pay $49–$99/month.
+* **AI Resume Screener** — HR teams upload CVs; the tool scores and ranks them using OpenAI and delivers a report. Charge per seat or per batch.
+* **Social Caption Generator** — Users paste a blog URL and get 10 platform-specific captions back in 30 seconds. Charge $19–$49/month.
+* **Content Repurposing Tool** — Paste a URL, get the content rewritten for LinkedIn, Twitter, and a newsletter. Agencies pay $99–$199/month for this.
+* **Automated Proposal Generator** — Freelancers input project details and get a professional proposal back in their brand voice. $29/month.
+* **Customer Service Bot** — Connect a Google Business account or help desk and auto-generate and route replies to common queries. Local businesses pay $49–$99/month.
 
 ### How to Build It (No Developer Required)
 
@@ -266,15 +242,9 @@ Want to take it further? See how voice automation can handle client scheduling a
 
 ### What to Charge
 
-* **Basic content package**
-
-   (social posts only): $300 – $600/month
-* **Full content service**
-
-   (social + email + blog outline): $800 – $1,500/month
-* **Agency white-label**
-
-   (you power their content service): $500 – $2,000/month per client they serve
+* **Basic content package** (social posts only): $300 – $600/month
+* **Full content service** (social + email + blog outline): $800 – $1,500/month
+* **Agency white-label** (you power their content service): $500 – $2,000/month per client they serve
 
 ### How to Make It More Passive
 
@@ -296,33 +266,17 @@ Tools like [Brand24](https://www.g2.com/products/brand24/pricing) and Mention ch
 
 ### Examples of Monitoring Workflows to Sell
 
-* **Competitor Price Tracker**
-
-   — Monitor 10 competitor product pages and alert the client when prices change. Retail and e-commerce brands pay well for this.
-* **Brand Mention Monitor**
-
-   — Track mentions of a company name across Reddit, news sites, and forums. PR agencies and founders love this.
-* **Job Posting Tracker**
-
-   — Alert a recruiter every time a target company posts a new role. Saves hours of manual checking.
-* **Keyword Trend Alert**
-
-   — Monitor Google Trends or social platforms for a keyword set and alert when volume spikes. Useful for content teams and investors.
-* **Regulatory Change Monitor**
-
-   — Track government or industry websites for policy updates. Law firms and compliance teams pay a premium for this.
+* **Competitor Price Tracker** — Monitor 10 competitor product pages and alert the client when prices change. Retail and e-commerce brands pay well for this.
+* **Brand Mention Monitor** — Track mentions of a company name across Reddit, news sites, and forums. PR agencies and founders love this.
+* **Job Posting Tracker** — Alert a recruiter every time a target company posts a new role. Saves hours of manual checking.
+* **Keyword Trend Alert** — Monitor Google Trends or social platforms for a keyword set and alert when volume spikes. Useful for content teams and investors.
+* **Regulatory Change Monitor**  — Track government or industry websites for policy updates. Law firms and compliance teams pay a premium for this.
 
 ### What to Charge
 
-* **Single monitor (1 source, 1 alert type):**
-
-   $99 – $199/month
-* **Multi-source monitoring dashboard:**
-
-   $299 – $599/month
-* **Industry-specific monitoring package:**
-
-   $500 – $1,200/month
+* **Single monitor (1 source, 1 alert type):** $99 – $199/month
+* **Multi-source monitoring dashboard:** $299 – $599/month
+* **Industry-specific monitoring package:** $500 – $1,200/month
 
 ### How to Find Your First Client
 
