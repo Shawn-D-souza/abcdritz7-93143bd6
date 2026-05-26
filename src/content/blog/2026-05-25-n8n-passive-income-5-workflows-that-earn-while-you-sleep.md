@@ -5,6 +5,8 @@ category: n8n Guide
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-05-25T07:43:00.000Z
 updated_date: 2026-05-25T07:43:00.000Z
+thumbnail: /assets/uploads/turn-automation-into-wealth.png
+thumbnail_alt: turn automation into wealth
 description: Earn passive income with n8n. Discover 5 fully automated workflows
   from selling Gumroad templates to micro SaaS that generate monthly revenue
   while you sleep.
