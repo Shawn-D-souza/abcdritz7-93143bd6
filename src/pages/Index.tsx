@@ -27,6 +27,7 @@ const Index = () => {
     title: "Ritz7 | Learn AI & No-Code Automation: n8n, Bubble, Emergent & More",
     description: "Ritz7 is a student community that makes AI and no-code accessible — learn to build real projects without writing complex code.",
     type: "website",
+    image: "https://ritz7.ai/assets/preview_logo.jpg",
   });
 
   // Load the rest of the page after initial paint

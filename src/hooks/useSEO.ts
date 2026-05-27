@@ -288,16 +288,9 @@ export function useSEO({
         : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
 
       setMeta('property', 'og:image', absoluteImageUrl);
-      setMeta('property', 'og:image:width', '1280');
-      setMeta('property', 'og:image:height', '720');
-      // Derive mime type from extension so WhatsApp knows the format upfront
-      const ext = absoluteImageUrl.split('.').pop()?.toLowerCase();
-      const mimeType = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg'
-        : ext === 'webp' ? 'image/webp'
-        : 'image/png';
-      setMeta('property', 'og:image:type', mimeType);
       setMeta('name', 'twitter:image', absoluteImageUrl);
     }
+
 
     if (category) setMeta('property', 'article:section', category);
     if (publishedTime) setMeta('property', 'article:published_time', publishedTime);
