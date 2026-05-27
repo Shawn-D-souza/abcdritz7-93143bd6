@@ -8,7 +8,7 @@ category: AI
 author: Sangya Keswani
 date: 2026-03-10T00:00:00.000Z
 updated_date: 2026-03-10T00:00:00.000Z
-thumbnail: /assets/uploads/zCh1s3gJccyB4QabdS1lFS2WVqo.png
+thumbnail: /assets/uploads/zCh1s3gJccyB4QabdS1lFS2WVqo.jpg
 thumbnail_alt: google gemini gems
 description: See how Google Gems handle boring chores automatically. Build your
   own AI assistants, use custom Gems to write content, and get much more done in

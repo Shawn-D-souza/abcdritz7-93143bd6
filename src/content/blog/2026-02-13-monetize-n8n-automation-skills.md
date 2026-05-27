@@ -7,7 +7,7 @@ category: n8n Guide
 author: Sangya Keswani
 date: 2026-02-13T00:00:00.000Z
 updated_date: 2026-05-17T06:54:00.000Z
-thumbnail: /assets/uploads/fjVXP97sHpmtGbbDXEh7iHkd9m0.png
+thumbnail: /assets/uploads/fjVXP97sHpmtGbbDXEh7iHkd9m0.jpg
 thumbnail_alt: Ritz7 automations - earn money with n8n
 description: Stop building for free. Learn how to turn n8n skills into a $5k/mo
   revenue stream. From selling AI agents to retainer-based automation services.
