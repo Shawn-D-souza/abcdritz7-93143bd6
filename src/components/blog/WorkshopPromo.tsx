@@ -23,7 +23,7 @@ export function WorkshopPromo() {
         <h3 className="text-base sm:text-xl font-bold mb-1 sm:mb-2 leading-tight line-clamp-2">
           {workshopData.title}
         </h3>
-        <p className="text-muted-foreground text-xs sm:text-sm mb-2 sm:mb-4 flex-grow line-clamp-2 sm:line-clamp-3">
+        <p className="text-muted-foreground text-xs sm:text-sm mb-2 sm:mb-4 flex-grow">
           {workshopData.description}
         </p>
         {workshopData.url && (
