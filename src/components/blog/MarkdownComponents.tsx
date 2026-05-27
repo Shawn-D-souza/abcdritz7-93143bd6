@@ -68,8 +68,8 @@ export const MarkdownComponents: import("react-markdown").Components | any = {
     );
   },
   blockquote: ({ node, ...props }) => (
-    <div className="relative my-8 overflow-hidden rounded-xl border-l-[6px] border-primary bg-muted/40 px-6 py-5 shadow-sm transition-all hover:shadow-md hover:bg-muted/60">
-      <blockquote className="text-xl font-medium italic leading-relaxed text-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0" {...props} />
+    <div className="relative my-8 overflow-hidden rounded-xl border-l-[6px] border-primary bg-muted/40 px-6 py-5 shadow-sm transition-all hover:shadow-md hover:bg-muted/60 [&_p]:text-sm [&_ul]:text-sm [&_ol]:text-sm [&_li]:text-sm [&_strong]:text-sm">
+      <blockquote className="text-sm font-medium italic leading-relaxed text-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0" {...props} />
     </div>
   ),
   a: ({ node, ...props }) => (
