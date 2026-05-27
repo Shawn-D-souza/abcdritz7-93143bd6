@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "postbuild": "sh -c 'if [ \"$SKIP_SNAP\" != \"true\" ]; then react-snap; fi'",
+    "postbuild": "sh -c 'if [ \"$SKIP_SNAP\" != \"true\" ]; then node scripts/react-snap-with-blogs.js; fi'",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
@@ -105,18 +105,6 @@
     "vitest": "^3.2.4"
   },
   "reactSnap": {
-    "source": "dist",
-    "concurrency": 1,
-    "skipThirdPartyRequests": true,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage"
-    ],
-    "include": [
-      "/",
-      "/blogs",
-      "/workshop"
-    ]
+    "source": "dist"
   }
 }

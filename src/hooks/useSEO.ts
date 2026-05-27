@@ -278,12 +278,8 @@ export function useSEO({
     setMeta('property', 'og:type', type);
 
     const currentUrl = url || window.location.href;
-    const finalUrl = currentUrl.startsWith('http://localhost') && !currentUrl.includes(':5173') 
-      ? currentUrl.replace(/http:\/\/localhost:\d+/, SITE_URL) 
-      : currentUrl;
-
-    setMeta('property', 'og:url', finalUrl);
-    setLink('canonical', finalUrl);
+    setMeta('property', 'og:url', currentUrl);
+    setLink('canonical', currentUrl);
 
     if (image) {
       const siteUrl = SITE_URL;
