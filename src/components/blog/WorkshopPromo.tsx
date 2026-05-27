@@ -6,9 +6,9 @@ export function WorkshopPromo() {
   if (!workshopData.isActive) return null;
 
   return (
-    <div className="bg-card text-card-foreground border border-border/50 rounded-2xl overflow-hidden shadow-md flex flex-row lg:flex-col mb-8 group transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+    <div className="bg-card text-card-foreground border border-border/50 rounded-2xl overflow-hidden shadow-md flex flex-col sm:flex-row lg:flex-col mb-8 group transition-all duration-300 hover:shadow-lg hover:border-primary/30">
       {workshopData.image && (
-        <div className="relative w-1/3 sm:w-2/5 lg:w-full shrink-0 overflow-hidden lg:aspect-video">
+        <div className="relative w-full sm:w-2/5 lg:w-full shrink-0 overflow-hidden aspect-video sm:aspect-auto lg:aspect-video">
           <img
             src={workshopData.image}
             alt={workshopData.imageAlt || "Workshop Promotion"}
