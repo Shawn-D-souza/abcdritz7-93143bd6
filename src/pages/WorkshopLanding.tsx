@@ -1,12 +1,10 @@
-import { useEffect, useState, useRef, Suspense } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { 
   ArrowRight, 
   Bot, 
   Zap, 
   Clock, 
   ShieldCheck, 
-  CheckCircle2, 
   Rocket, 
   BrainCircuit, 
   HeartHandshake, 
@@ -17,29 +15,16 @@ import {
   Star
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
-import { supabase } from "@/lib/supabase";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
-import { format } from "date-fns";
-import posthog from 'posthog-js';
+
+// ── Lazy-loaded components (not needed for first paint) ──────────────────
+// Payment modal: pulls in Supabase (177 KB), date-fns (20 KB), Dialog, Input, Label, sonner
+const WorkshopPaymentModal = lazy(() => import("@/components/WorkshopPaymentModal"));
+// Footer: below fold, deferred via showRest
+const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
+// CustomCursor: desktop-only decorative element, skip entirely on touch devices
+const CustomCursor = lazy(() => import("@/components/CustomCursor").then(m => ({ default: m.CustomCursor })));
 
 declare global {
   interface Window {
@@ -49,52 +34,113 @@ declare global {
   }
 }
 
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
+// ── CSS-based hero animations (replaces 128 KB framer-motion) ────────────
+// Simple stagger delay classes for hero children
+const heroChildStyle = (index: number): React.CSSProperties => ({
+  opacity: 0,
+  animation: `workshopFadeInUp 0.6s ease-out forwards`,
+  animationDelay: `${index * 100}ms`,
+});
 
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-// Custom hook for number animation
+// Custom hook for number animation (no framer-motion dependency)
 const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, duration?: number, suffix?: string }) => {
   const [count, setCount] = useState(0);
-  const nodeRef = useRef(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (inView) {
-      let startTimestamp: number | null = null;
-      const step = (timestamp: number) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-        // Easing out function
-        const easeOutQuad = (t: number) => t * (2 - t);
-        setCount(Math.floor(easeOutQuad(progress) * value));
-        if (progress < 1) {
+    const el = nodeRef.current;
+    if (!el || hasAnimated.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          observer.disconnect();
+          let startTimestamp: number | null = null;
+          const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+            const easeOutQuad = (t: number) => t * (2 - t);
+            setCount(Math.floor(easeOutQuad(progress) * value));
+            if (progress < 1) {
+              window.requestAnimationFrame(step);
+            }
+          };
           window.requestAnimationFrame(step);
         }
-      };
-      window.requestAnimationFrame(step);
-    }
-  }, [inView, value, duration]);
+      },
+      { rootMargin: "-100px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [value, duration]);
 
   return <span ref={nodeRef}>{count.toLocaleString()}{suffix}</span>;
 };
 
+// ── Lazy Accordion wrapper ───────────────────────────────────────────────
+const LazyFAQSection = () => {
+  const [AccordionComponents, setAccordionComponents] = useState<any>(null);
+
+  useEffect(() => {
+    import("@/components/ui/accordion").then((mod) => {
+      setAccordionComponents(mod);
+    });
+  }, []);
+
+  if (!AccordionComponents) {
+    return <div className="w-full bg-card rounded-2xl border border-border p-4 shadow-sm h-64 animate-pulse" />;
+  }
+
+  const { Accordion, AccordionItem, AccordionTrigger, AccordionContent } = AccordionComponents;
+
+  return (
+    <Accordion type="single" collapsible className="w-full bg-card rounded-2xl border border-border p-4 shadow-sm">
+      <AccordionItem value="item-1" className="border-b border-border/50">
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">I have absolutely zero coding background. Can I really do this?</AccordionTrigger>
+        <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+          <strong>Of course you can!</strong> Ritesh, who will be guiding you, started with no coding background whatsoever. Today, he has built over 450 automation projects. n8n is a visual tool designed to be accessible. This workshop is crafted specifically for complete beginners to give you that "Aha!" moment.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2" className="border-b border-border/50">
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What exactly is n8n?</AccordionTrigger>
+        <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+          n8n is a visual automation tool. Instead of writing code, you build workflows by connecting blocks — "When a new email arrives → save the attachment to Google Drive → notify me on WhatsApp." It works 24/7 in the background so you don't have to lift a finger.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-3" className="border-b border-border/50">
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Do I need to buy any software for this?</AccordionTrigger>
+        <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+          No! We will show you how to get started using free tools. You just need a computer, an internet connection, and 3 hours of focus.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-4" className="border-b border-border/50">
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Is it a 2-day workshop?</AccordionTrigger>
+        <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+          No, it is a single 3-hour workshop! We are conducting the exact same workshop twice to accommodate different schedules:<br /><br />
+          • <strong>Batch 1:</strong> 5th June, Friday - 7:30 PM to 10:30 PM IST<br />
+          • <strong>Batch 2:</strong> 6th June, Saturday - 10:00 AM to 1:00 PM IST<br /><br />
+          You can choose to attend whichever batch works best for you.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-5" className="border-none">
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What happens after I register?</AccordionTrigger>
+        <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
+          Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for your chosen batch.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+
+// ── Detect touch device once ─────────────────────────────────────────────
+const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
+
 const WorkshopLanding = () => {
   const [showRest, setShowRest] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "", countryCode: "+91" });
-  const [isProcessing, setIsProcessing] = useState(false);
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
@@ -126,259 +172,32 @@ const WorkshopLanding = () => {
         gtag_override: true // signals to GTM to bypass auto-macros
       });
     }
-    posthog.capture('workshop_button_click');
-    setIsPaymentModalOpen(true);
-  };
-
-  const loadRazorpayScript = () => {
-    return new Promise((resolve) => {
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      script.onload = () => resolve(true);
-      script.onerror = () => resolve(false);
-      document.body.appendChild(script);
+    // Lazy-load posthog for tracking click — avoid importing at module level
+    import('posthog-js').then(({ default: posthog }) => {
+      posthog.capture('workshop_button_click');
     });
-  };
-
-  const handlePaymentSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Frontend Validation
-    if (!formData.countryCode.startsWith('+') || formData.countryCode.length < 2) {
-      toast.error("Country code must start with '+' and contain numbers (e.g., +91)");
-      return;
-    }
-    if (formData.whatsapp.length < 7 || formData.whatsapp.length > 15) {
-      toast.error("Please enter a valid WhatsApp number (between 7 and 15 digits).");
-      return;
-    }
-
-    setIsProcessing(true);
-    
-    const res = await loadRazorpayScript();
-    if (!res) {
-      alert("Payment gateway failed to load. Please check your connection.");
-      setIsProcessing(false);
-      return;
-    }
-
-    // Track: user filled the form and clicked Pay (Razorpay is about to open)
-    posthog.capture('workshop_form_submitted');
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'workshop_form_submitted');
-    }
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'workshop_form_submitted',
-        gtag_override: true
-      });
-    }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'InitiateCheckout');
-    }
-
-    try {
-      // 1. Create order on the server
-      const { data: orderData, error: orderError } = await supabase.functions.invoke('create-razorpay-order', {
-        body: {
-          amount: 99,
-          currency: "INR",
-          receipt: `rcpt_${new Date().getTime()}`
-        }
-      });
-
-      if (orderError || !orderData?.orderId) {
-        throw new Error(orderError?.message || "Failed to create order");
-      }
-
-      const options = {
-        key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
-        amount: orderData.amount, // from server
-        currency: orderData.currency,
-        name: "n8n Workshop",
-        description: "Beginner Friendly Automation Workshop",
-        order_id: orderData.orderId, // Link payment to the server order
-        handler: function (response: any) {
-          // 1. Immediately show success so the user doesn't wait!
-          setIsProcessing(false);
-          setIsSuccessModalOpen(true);
-
-          // Fire Analytics Events
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
-          }
-          if (window.dataLayer) {
-            window.dataLayer.push({
-              event: 'workshop_purchase',
-              value: 99,
-              currency: 'INR',
-              gtag_override: true
-            });
-          }
-          if (typeof window.fbq === 'function') {
-            window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
-          }
-          posthog.capture('workshop_purchase', { value: 99, currency: 'INR' });
-
-          // 2. Process the webhook securely in the background (fire-and-forget)
-          supabase.functions.invoke('payment-webhook', {
-            body: {
-              payment_id: response.razorpay_payment_id,
-              order_id: response.razorpay_order_id,
-              signature: response.razorpay_signature,
-              name: formData.name,
-              email: formData.email,
-              whatsapp: formData.countryCode + formData.whatsapp,
-              amount: 99,
-              workshop_name: "n8n for beginners",
-              date: format(new Date(), "dd MMM, yyyy")
-            }
-          }).catch((error) => {
-            console.error("Webhook trigger error in background:", error);
-          });
-        },
-        prefill: {
-          name: formData.name,
-          email: formData.email,
-          contact: formData.countryCode + formData.whatsapp,
-        },
-        theme: {
-          color: "#6d28d9", // Purple matching the theme
-        },
-        modal: {
-          ondismiss: function () {
-            setIsProcessing(false);
-          }
-        }
-      };
-
-      const paymentObject = new (window as any).Razorpay(options);
-      paymentObject.on("payment.failed", function (response: any) {
-        toast.error("Payment failed: " + response.error.description);
-        setIsProcessing(false);
-      });
-      
-      // Close the custom Radix UI Dialog so it releases the focus trap and body pointer-events
-      setIsPaymentModalOpen(false);
-      
-      // Slight delay ensures Radix clears its overlay styles before Razorpay injects its iframe
-      setTimeout(() => {
-        paymentObject.open();
-      }, 150);
-    } catch (err: any) {
-      toast.error("Could not initialize payment. Please try again.");
-      console.error(err);
-      setIsProcessing(false);
-    }
+    setIsPaymentModalOpen(true);
   };
 
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background">
-      <CustomCursor />
+      {/* Custom cursor: only on desktop, lazy-loaded */}
+      {!isTouchDevice && (
+        <Suspense fallback={null}>
+          <CustomCursor />
+        </Suspense>
+      )}
       <Navbar />
 
-      <Dialog open={isPaymentModalOpen} onOpenChange={setIsPaymentModalOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl w-[95vw] top-[5%] translate-y-[0] sm:top-[50%] sm:translate-y-[-50%] max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Secure Your Spot</DialogTitle>
-            <DialogDescription className="text-base text-muted-foreground pt-1">
-              Enter your details below to register for the workshop.
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handlePaymentSubmit} className="space-y-5 pt-2">
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-sm font-semibold">Full Name</Label>
-              <Input 
-                id="name" 
-                required 
-                placeholder="John Doe" 
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="bg-background/50 h-11"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm font-semibold">Email Address</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                required 
-                placeholder="john@example.com" 
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="bg-background/50 h-11"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="whatsapp" className="text-sm font-semibold">WhatsApp Number</Label>
-              <div className="flex gap-2">
-                <Input 
-                  value={formData.countryCode} 
-                  onChange={(e) => setFormData({...formData, countryCode: e.target.value.replace(/[^\+0-9]/g, '')})}
-                  className="w-[80px] bg-background/50 h-11 shrink-0 font-medium text-center px-1"
-                  placeholder="+91"
-                  minLength={2}
-                  maxLength={5}
-                  required
-                />
-                <Input 
-                  id="whatsapp" 
-                  type="tel" 
-                  required 
-                  placeholder="9876543210" 
-                  value={formData.whatsapp}
-                  onChange={(e) => setFormData({...formData, whatsapp: e.target.value.replace(/[^0-9]/g, '')})}
-                  className="bg-background/50 h-11 flex-1"
-                  minLength={7}
-                  maxLength={15}
-                />
-              </div>
-            </div>
-            <div className="pt-2">
-              <Button 
-                type="submit" 
-                className="w-full h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
-                disabled={isProcessing}
-              >
-                {isProcessing ? "Processing..." : "Pay ₹99 & Register"}
-              </Button>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              100% Secure Checkout by Razorpay
-            </div>
-          </form>
-        </DialogContent>
-      </Dialog>
-
-      <Dialog open={isSuccessModalOpen} onOpenChange={setIsSuccessModalOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl text-center">
-          <DialogHeader className="flex flex-col items-center">
-            <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle2 className="w-8 h-8 text-green-500" />
-            </div>
-            <DialogTitle className="text-2xl font-bold">Payment Successful!</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-4 pt-4 text-muted-foreground">
-            <p className="text-base">
-              Your spot is secured! We will email your confirmation and receipt shortly. The actual workshop links and details will be sent to you about a week before the event.
-            </p>
-            <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 text-left">
-              <p className="font-semibold text-foreground flex items-center gap-2">
-                <span className="text-xl">⚠️</span> Important Note:
-              </p>
-              <p className="text-sm mt-2 leading-relaxed">
-                Please check your <strong>Spam or Promotions</strong> folder just in case. If you find our email there, please mark it as <strong>"Not Spam"</strong> so you don't miss the workshop links!
-              </p>
-            </div>
-          </div>
-          <div className="pt-4">
-            <Button onClick={() => setIsSuccessModalOpen(false)} className="w-full h-12 text-lg font-bold">
-              Got it, Thanks!
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+      {/* Payment modal: lazy-loaded, only mounts when user clicks Register */}
+      {isPaymentModalOpen && (
+        <Suspense fallback={null}>
+          <WorkshopPaymentModal
+            isOpen={isPaymentModalOpen}
+            onOpenChange={setIsPaymentModalOpen}
+          />
+        </Suspense>
+      )}
 
       {/* Subtle Background Elements instead of heavy 3D Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -387,28 +206,23 @@ const WorkshopLanding = () => {
       </div>
 
       <main className="relative z-10 pt-24 pb-0 lg:pt-32">
-        {/* Hero Section */}
+        {/* Hero Section — CSS animations instead of framer-motion */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={stagger}
-            className="space-y-6"
-          >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+          <div className="space-y-6">
+            <div style={heroChildStyle(0)} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
               <GraduationCap className="w-4 h-4" />
               <span className="text-sm font-semibold tracking-wide uppercase">Beginner Friendly Workshop</span>
-            </motion.div>
+            </div>
 
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight">
-              Build Your First <span className="text-primary">Automation</span><br/> Without Writing Code
-            </motion.h1>
+            <h1 style={heroChildStyle(1)} className="text-5xl md:text-7xl font-extrabold tracking-tight">
+              Build Your First <span className="text-primary">Automation</span><br/>Without Writing Code
+            </h1>
 
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p style={heroChildStyle(2)} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Step into the world of AI & n8n. Let computers do the boring repetitive work so you can focus on what truly matters.
-            </motion.p>
+            </p>
 
-            <motion.div variants={fadeIn} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div style={heroChildStyle(3)} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
               {/* CTA Button */}
               <Button 
                 onClick={handleRegister}
@@ -430,8 +244,8 @@ const WorkshopLanding = () => {
                   3-Hour Session • Perfect for Beginners
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
         {showRest && (
@@ -460,12 +274,7 @@ const WorkshopLanding = () => {
               </div>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between"
-                >
+                <div className="workshop-scroll-reveal p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between">
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Gain Confidence</h3>
                     <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
@@ -475,15 +284,9 @@ const WorkshopLanding = () => {
                   <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <HeartHandshake className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                   </div>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between"
-                >
+                <div className="workshop-scroll-reveal p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between" style={{ animationDelay: '200ms' }}>
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Unlock Your Potential</h3>
                     <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
@@ -493,7 +296,7 @@ const WorkshopLanding = () => {
                   <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl bg-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <BrainCircuit className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
                   </div>
-                </motion.div>
+                </div>
               </div>
             </section>
 
@@ -541,7 +344,7 @@ const WorkshopLanding = () => {
                   {/* Avatar & Info */}
                   <div className="flex flex-col items-center shrink-0 md:w-56 mt-2">
                     <div className="w-32 h-32 md:w-56 md:h-56 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg relative mb-4">
-                      <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" className="w-full h-full object-cover object-top" />
+                      <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" loading="lazy" className="w-full h-full object-cover object-top" />
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1.5 text-foreground text-center">
                       Ritesh Hegde
@@ -618,47 +421,17 @@ const WorkshopLanding = () => {
             {/* FAQ Section */}
             <section className="container px-4 mx-auto pt-8 pb-12 max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-              <Accordion type="single" collapsible className="w-full bg-card rounded-2xl border border-border p-4 shadow-sm">
-                <AccordionItem value="item-1" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">I have absolutely zero coding background. Can I really do this?</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    <strong>Of course you can!</strong> Ritesh, who will be guiding you, started with no coding background whatsoever. Today, he has built over 450 automation projects. n8n is a visual tool designed to be accessible. This workshop is crafted specifically for complete beginners to give you that "Aha!" moment.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What exactly is n8n?</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    n8n is a visual automation tool. Instead of writing code, you build workflows by connecting blocks — "When a new email arrives → save the attachment to Google Drive → notify me on WhatsApp." It works 24/7 in the background so you don't have to lift a finger.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Do I need to buy any software for this?</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    No! We will show you how to get started using free tools. You just need a computer, an internet connection, and 3 hours of focus.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4" className="border-b border-border/50">
-                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Is it a 2-day workshop?</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    No, it is a single 3-hour workshop! We are conducting the exact same workshop twice to accommodate different schedules:<br /><br />
-                    • <strong>Batch 1:</strong> 5th June, Friday - 7:30 PM to 10:30 PM IST<br />
-                    • <strong>Batch 2:</strong> 6th June, Saturday - 10:00 AM to 1:00 PM IST<br /><br />
-                    You can choose to attend whichever batch works best for you.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5" className="border-none">
-                  <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What happens after I register?</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-                    Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for your chosen batch.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <LazyFAQSection />
             </section>
           </div>
         )}
       </main>
 
-      {showRest && <Footer />}
+      {showRest && (
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      )}
     </div>
   );
 };
