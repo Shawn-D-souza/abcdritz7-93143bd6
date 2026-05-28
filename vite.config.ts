@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   build: {
-    target: "esnext",
+    target: "es2019",
     rollupOptions: {
       output: {
         manualChunks: {
