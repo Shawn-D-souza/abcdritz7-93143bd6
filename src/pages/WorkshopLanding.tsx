@@ -135,6 +135,7 @@ const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(point
 
 const WorkshopLanding = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [hasOpenedModal, setHasOpenedModal] = useState(false);
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
@@ -161,6 +162,7 @@ const WorkshopLanding = () => {
     import('posthog-js').then(({ default: posthog }) => {
       posthog.capture('workshop_button_click');
     });
+    setHasOpenedModal(true);
     setIsPaymentModalOpen(true);
   };
 
@@ -174,8 +176,8 @@ const WorkshopLanding = () => {
       )}
       <Navbar />
 
-      {/* Payment modal: lazy-loaded, only mounts when user clicks Register */}
-      {isPaymentModalOpen && (
+      {/* Payment modal: lazy-loaded, stays mounted after first open to preserve success modal state */}
+      {hasOpenedModal && (
         <Suspense fallback={null}>
           <WorkshopPaymentModal
             isOpen={isPaymentModalOpen}

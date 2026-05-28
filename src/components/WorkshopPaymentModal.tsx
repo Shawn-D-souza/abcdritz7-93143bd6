@@ -87,13 +87,20 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
         body: {
           amount: 99,
           currency: "INR",
-          receipt: `rcpt_${new Date().getTime()}`
+          receipt: `rcpt_${new Date().getTime()}`,
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.countryCode + formData.whatsapp,
+          workshop_name: "n8n for beginners"
         }
       });
 
       if (orderError || !orderData?.orderId) {
         throw new Error(orderError?.message || "Failed to create order");
       }
+
+      let isPaymentSuccessful = false;
+      let lastPaymentError = "";
 
       const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY, // Uses the key from .env
@@ -103,6 +110,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
         description: "Beginner Friendly Automation Workshop",
         order_id: orderData.orderId, // Link payment to the server order
         handler: function (response: any) {
+          isPaymentSuccessful = true;
           // 1. Immediately show success so the user doesn't wait!
           setIsProcessing(false);
           setIsSuccessModalOpen(true);
@@ -152,14 +160,24 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
         modal: {
           ondismiss: function () {
             setIsProcessing(false);
+            if (!isPaymentSuccessful && lastPaymentError) {
+              toast.error("Payment failed: " + lastPaymentError);
+            }
           }
         }
       };
 
       const paymentObject = new (window as any).Razorpay(options);
       paymentObject.on("payment.failed", function (response: any) {
-        toast.error("Payment failed: " + response.error.description);
-        setIsProcessing(false);
+        lastPaymentError = response.error.description;
+        
+        // Log failure securely without blocking
+        supabase.functions.invoke('payment-failed', {
+          body: {
+            order_id: response.error.metadata?.order_id || orderData.orderId,
+            error_details: response.error
+          }
+        }).catch(err => console.error("Failed to log payment failure:", err));
       });
       
       // Close the custom Radix UI Dialog so it releases the focus trap and body pointer-events

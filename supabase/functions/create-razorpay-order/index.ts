@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -12,7 +13,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { amount, currency = "INR", receipt } = body;
+    const { amount, currency = "INR", receipt, name, email, whatsapp, workshop_name } = body;
 
     const rzpKeyId = Deno.env.get('RAZORPAY_KEY_ID');
     const rzpKeySecret = Deno.env.get('RAZORPAY_KEY_SECRET');
@@ -39,6 +40,31 @@ serve(async (req) => {
 
     if (!rzpResponse.ok) {
       throw new Error(rzpData.error?.description || "Failed to create Razorpay order");
+    }
+
+    // Insert into Supabase in a non-blocking manner (fire-and-forget) to keep performance fast
+    if (name && email && whatsapp && workshop_name) {
+      // Using setTimeout or just not awaiting the promise to avoid delaying the response
+      const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? '';
+      const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
+      
+      if (supabaseUrl && supabaseKey) {
+        const supabase = createClient(supabaseUrl, supabaseKey);
+        // We don't await this so the frontend gets the response immediately
+        supabase.from('workshop_registrations').insert({
+          name,
+          email,
+          whatsapp,
+          workshop_name,
+          amount,
+          status: 'initiated',
+          order_id: rzpData.id
+        }).then(({ error }) => {
+          if (error) console.error("Error inserting registration:", error);
+        });
+      } else {
+        console.warn("Supabase URL or Key missing, skipping registration insert.");
+      }
     }
 
     return new Response(
