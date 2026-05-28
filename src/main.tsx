@@ -23,11 +23,9 @@ const initPostHog = () => {
   });
 };
 
-if ('requestIdleCallback' in window) {
-  (window as any).requestIdleCallback(initPostHog, { timeout: 3000 });
-} else {
-  setTimeout(initPostHog, 2000);
-}
+window.addEventListener('load', () => {
+  setTimeout(initPostHog, 3000);
+});
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
