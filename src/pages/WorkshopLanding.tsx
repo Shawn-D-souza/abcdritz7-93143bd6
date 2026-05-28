@@ -139,7 +139,6 @@ const LazyFAQSection = () => {
 const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
 const WorkshopLanding = () => {
-  const [showRest, setShowRest] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   useSEO({
@@ -150,15 +149,6 @@ const WorkshopLanding = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    // Load below-the-fold content after initial paint
-    if ('requestIdleCallback' in window) {
-      const id = (window as any).requestIdleCallback(() => setShowRest(true), { timeout: 1500 });
-      return () => (window as any).cancelIdleCallback(id);
-    } else {
-      const id = setTimeout(() => setShowRest(true), 500);
-      return () => clearTimeout(id);
-    }
   }, []);
 
   const handleRegister = () => {
@@ -248,9 +238,8 @@ const WorkshopLanding = () => {
           </div>
         </section>
 
-        {showRest && (
-          <div className="animate-in fade-in duration-1000">
-            {/* The "Hope" / Emotional Section */}
+        <div className="animate-in fade-in duration-1000">
+          {/* The "Hope" / Emotional Section */}
             <section className="container px-4 mx-auto py-12 mt-6 md:py-20 md:mt-10">
               <div className="max-w-5xl mx-auto bg-card border border-border shadow-2xl rounded-[2rem] p-6 md:p-16 relative overflow-hidden mb-16">
                 <div className="relative z-10 grid md:grid-cols-2 gap-0 md:gap-12 items-center">
@@ -423,15 +412,12 @@ const WorkshopLanding = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
               <LazyFAQSection />
             </section>
-          </div>
-        )}
+        </div>
       </main>
 
-      {showRest && (
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-      )}
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
