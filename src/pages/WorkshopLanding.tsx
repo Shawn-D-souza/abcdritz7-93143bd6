@@ -230,7 +230,7 @@ const WorkshopLanding = () => {
               email: formData.email,
               whatsapp: formData.countryCode + formData.whatsapp,
               amount: 99,
-              workshop_name: "Basics of Automation using n8n",
+              workshop_name: "n8n for beginners",
               date: format(new Date(), "dd MMM, yyyy")
             }
           }).catch((error) => {
