@@ -259,7 +259,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
                 className="w-full h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
                 disabled={isProcessing}
               >
-                {isProcessing ? "Processing..." : "Pay ₹99 & Register"}
+                {isProcessing ? "Processing..." : "Pay & Register"}
               </Button>
             </div>
             <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">

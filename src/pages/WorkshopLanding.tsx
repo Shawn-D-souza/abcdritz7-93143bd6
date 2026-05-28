@@ -216,7 +216,7 @@ const WorkshopLanding = () => {
                 size="lg" 
                 className="h-16 px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105"
               >
-                Secure Your Spot for ₹99
+                Secure Your Spot
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
 
