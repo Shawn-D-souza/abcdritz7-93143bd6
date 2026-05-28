@@ -35,12 +35,7 @@ declare global {
 }
 
 // ── CSS-based hero animations (replaces 128 KB framer-motion) ────────────
-// Simple stagger delay classes for hero children
-const heroChildStyle = (index: number): React.CSSProperties => ({
-  opacity: 0,
-  animation: `workshopFadeInUp 0.6s ease-out forwards`,
-  animationDelay: `${index * 100}ms`,
-});
+// (Hero animations removed for max LCP speed)
 
 // Custom hook for number animation (no framer-motion dependency)
 const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, duration?: number, suffix?: string }) => {
@@ -199,20 +194,20 @@ const WorkshopLanding = () => {
         {/* Hero Section — CSS animations instead of framer-motion */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
           <div className="space-y-6">
-            <div style={heroChildStyle(0)} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
               <GraduationCap className="w-4 h-4" />
               <span className="text-sm font-semibold tracking-wide uppercase">Beginner Friendly Workshop</span>
             </div>
 
-            <h1 style={heroChildStyle(1)} className="text-5xl md:text-7xl font-extrabold tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
               Build Your First <span className="text-primary">Automation</span><br/>Without Writing Code
             </h1>
 
-            <p style={heroChildStyle(2)} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Step into the world of AI & n8n. Let computers do the boring repetitive work so you can focus on what truly matters.
             </p>
 
-            <div style={heroChildStyle(3)} className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
               {/* CTA Button */}
               <Button 
                 onClick={handleRegister}
@@ -238,7 +233,7 @@ const WorkshopLanding = () => {
           </div>
         </section>
 
-        <div className="animate-in fade-in duration-1000">
+        <div>
           {/* The "Hope" / Emotional Section */}
             <section className="container px-4 mx-auto py-12 mt-6 md:py-20 md:mt-10">
               <div className="max-w-5xl mx-auto bg-card border border-border shadow-2xl rounded-[2rem] p-6 md:p-16 relative overflow-hidden mb-16">
