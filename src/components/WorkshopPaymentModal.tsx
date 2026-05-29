@@ -25,6 +25,7 @@ declare global {
 interface WorkshopPaymentModalProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
+  variant?: 'free' | '9' | '99' | '99_lead';
 }
 
 const loadRazorpayScript = () => {
@@ -37,10 +38,12 @@ const loadRazorpayScript = () => {
   });
 };
 
-export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentModalProps) => {
+export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: WorkshopPaymentModalProps) => {
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "", countryCode: "+91" });
   const [isProcessing, setIsProcessing] = useState(false);
+  
+  const amountToCharge = variant === '9' ? 9 : variant === 'free' ? 0 : 99;
   const [step, setStep] = useState<1 | 2>(1);
   const [orderData, setOrderData] = useState<any>(null);
 
@@ -71,7 +74,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
       // 1. Create order on the server and capture the lead!
       const { data: newOrderData, error: orderError } = await supabase.functions.invoke('create-razorpay-order', {
         body: {
-          amount: 99,
+          amount: amountToCharge,
           currency: "INR",
           receipt: `rcpt_${new Date().getTime()}`,
           name: formData.name,
@@ -121,6 +124,19 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
     setIsProcessing(true);
 
     try {
+      if (orderData.amount === 0) {
+        setIsProcessing(false);
+        setIsSuccessModalOpen(true);
+        onOpenChange(false);
+        
+        // Fire Analytics Events
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'workshop_register_free');
+        }
+        posthog.capture('workshop_register_free');
+        return;
+      }
+
       let isPaymentSuccessful = false;
       let lastPaymentError = "";
 
@@ -139,20 +155,20 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
 
           // Fire Analytics Events
           if (typeof window.gtag === 'function') {
-            window.gtag('event', 'workshop_purchase', { value: 99, currency: 'INR' });
+            window.gtag('event', 'workshop_purchase', { value: amountToCharge, currency: 'INR' });
           }
           if (window.dataLayer) {
             window.dataLayer.push({
               event: 'workshop_purchase',
-              value: 99,
+              value: amountToCharge,
               currency: 'INR',
               gtag_override: true
             });
           }
           if (typeof window.fbq === 'function') {
-            window.fbq('track', 'Purchase', { value: 99, currency: 'INR' });
+            window.fbq('track', 'Purchase', { value: amountToCharge, currency: 'INR' });
           }
-          posthog.capture('workshop_purchase', { value: 99, currency: 'INR' });
+          posthog.capture('workshop_purchase', { value: amountToCharge, currency: 'INR' });
 
           // 2. Process the webhook securely in the background (fire-and-forget)
           supabase.functions.invoke('payment-webhook', {
@@ -163,7 +179,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
               name: formData.name,
               email: formData.email,
               whatsapp: formData.countryCode + formData.whatsapp,
-              amount: 99,
+              amount: amountToCharge,
               workshop_name: "n8n for beginners",
               date: format(new Date(), "dd MMM, yyyy")
             }
@@ -331,13 +347,15 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
                     className="flex-1 h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
                     disabled={isProcessing}
                   >
-                    {isProcessing ? "Processing..." : "Pay to confirm"}
+                    {isProcessing ? "Processing..." : amountToCharge === 0 ? "Confirm Registration" : `Pay ₹${amountToCharge} to confirm`}
                   </Button>
                 </div>
-                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
-                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                  100% Secure Checkout by Razorpay
-                </div>
+                {amountToCharge > 0 && (
+                  <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
+                    <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                    100% Secure Checkout by Razorpay
+                  </div>
+                )}
               </div>
             </>
           )}

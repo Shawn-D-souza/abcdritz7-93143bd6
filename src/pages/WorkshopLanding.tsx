@@ -16,7 +16,10 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useSEO } from "@/hooks/useSEO";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 // ── Lazy-loaded components (not needed for first paint) ──────────────────
 // Payment modal: pulls in Supabase (177 KB), date-fns (20 KB), Dialog, Input, Label, sonner
@@ -133,9 +136,14 @@ const LazyFAQSection = () => {
 // ── Detect touch device once ─────────────────────────────────────────────
 const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
+type Variant = 'free' | '9' | '99' | '99_lead';
+
 const WorkshopLanding = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [hasOpenedModal, setHasOpenedModal] = useState(false);
+  const [variant, setVariant] = useState<Variant>('99');
+  const [leadEmail, setLeadEmail] = useState("");
+  const [isSubmittingLead, setIsSubmittingLead] = useState(false);
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
@@ -145,6 +153,17 @@ const WorkshopLanding = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Assign A/B test variant
+    const savedVariant = localStorage.getItem('ab_test_variant') as Variant | null;
+    if (savedVariant && ['free', '9', '99', '99_lead'].includes(savedVariant)) {
+      setVariant(savedVariant);
+    } else {
+      const variants: Variant[] = ['free', '9', '99', '99_lead'];
+      const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+      localStorage.setItem('ab_test_variant', randomVariant);
+      setVariant(randomVariant);
+    }
   }, []);
 
   const handleRegister = () => {
@@ -166,6 +185,24 @@ const WorkshopLanding = () => {
     setIsPaymentModalOpen(true);
   };
 
+  const handleLeadMagnetSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadEmail) return;
+    
+    setIsSubmittingLead(true);
+    try {
+      const { error } = await supabase.from('lead_magnet_signups').insert([{ email: leadEmail }]);
+      if (error) throw error;
+      toast.success("Templates sent! Check your email shortly.");
+      setLeadEmail("");
+    } catch (err: any) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmittingLead(false);
+    }
+  };
+
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background">
       {/* Custom cursor: only on desktop, lazy-loaded */}
@@ -182,6 +219,7 @@ const WorkshopLanding = () => {
           <WorkshopPaymentModal
             isOpen={isPaymentModalOpen}
             onOpenChange={setIsPaymentModalOpen}
+            variant={variant}
           />
         </Suspense>
       )}
@@ -389,15 +427,40 @@ const WorkshopLanding = () => {
                   <div className="relative p-8 md:p-10 rounded-[2rem] bg-card border border-border shadow-2xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-[2rem] pointer-events-none" />
                     <div className="text-center space-y-6 relative z-10">
-                      <div className="text-6xl md:text-7xl font-black text-foreground tracking-tight">₹99</div>
+                      <div className="text-6xl md:text-7xl font-black text-foreground tracking-tight">
+                        {variant === 'free' ? 'Free' : variant === '9' ? '₹9' : '₹99'}
+                      </div>
                       <p className="text-muted-foreground text-lg font-medium">A small investment for a big leap.</p>
                       <Button onClick={handleRegister} className="w-full h-16 text-xl mt-4 shine-effect rounded-xl font-bold" size="lg">
                         Join The Workshop
                       </Button>
-                      <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-4 font-medium">
-                        <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                        Secure Checkout via Razorpay
-                      </div>
+                      
+                      {variant !== 'free' && (
+                        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-4 font-medium">
+                          <ShieldCheck className="w-5 h-5 text-emerald-500" />
+                          Secure Checkout via Razorpay
+                        </div>
+                      )}
+                      
+                      {variant === '99_lead' && (
+                        <div className="mt-8 pt-8 border-t border-border/50 text-left">
+                          <h4 className="text-xl font-bold text-foreground mb-2">Not ready for the workshop?</h4>
+                          <p className="text-muted-foreground text-sm mb-4">Enter your email and we'll send you some Free Automation Templates directly to your inbox!</p>
+                          <form onSubmit={handleLeadMagnetSubmit} className="flex gap-2">
+                            <Input 
+                              type="email" 
+                              placeholder="Your email address" 
+                              required 
+                              className="bg-background h-12"
+                              value={leadEmail}
+                              onChange={(e) => setLeadEmail(e.target.value)}
+                            />
+                            <Button type="submit" className="h-12 px-6" disabled={isSubmittingLead}>
+                              {isSubmittingLead ? "Sending..." : "Get Templates"}
+                            </Button>
+                          </form>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

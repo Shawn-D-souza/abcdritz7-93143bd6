@@ -15,31 +15,42 @@ serve(async (req) => {
     const body = await req.json();
     const { amount, currency = "INR", receipt, name, email, whatsapp, workshop_name } = body;
 
-    const rzpKeyId = Deno.env.get('RAZORPAY_KEY_ID');
-    const rzpKeySecret = Deno.env.get('RAZORPAY_KEY_SECRET');
+    let orderId = `free_${new Date().getTime()}`;
+    let responseAmount = 0;
+    let responseCurrency = currency;
+    let finalStatus = amount === 0 ? 'success' : 'initiated';
 
-    if (!rzpKeyId || !rzpKeySecret) {
-      throw new Error("Razorpay credentials are not set.");
-    }
+    if (amount > 0) {
+      const rzpKeyId = Deno.env.get('RAZORPAY_KEY_ID');
+      const rzpKeySecret = Deno.env.get('RAZORPAY_KEY_SECRET');
 
-    // Call Razorpay API to create an order
-    const rzpResponse = await fetch('https://api.razorpay.com/v1/orders', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(`${rzpKeyId}:${rzpKeySecret}`)
-      },
-      body: JSON.stringify({
-        amount: amount * 100, // Razorpay expects amount in paise
-        currency,
-        receipt,
-      })
-    });
+      if (!rzpKeyId || !rzpKeySecret) {
+        throw new Error("Razorpay credentials are not set.");
+      }
 
-    const rzpData = await rzpResponse.json();
+      // Call Razorpay API to create an order
+      const rzpResponse = await fetch('https://api.razorpay.com/v1/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa(`${rzpKeyId}:${rzpKeySecret}`)
+        },
+        body: JSON.stringify({
+          amount: amount * 100, // Razorpay expects amount in paise
+          currency,
+          receipt,
+        })
+      });
 
-    if (!rzpResponse.ok) {
-      throw new Error(rzpData.error?.description || "Failed to create Razorpay order");
+      const rzpData = await rzpResponse.json();
+
+      if (!rzpResponse.ok) {
+        throw new Error(rzpData.error?.description || "Failed to create Razorpay order");
+      }
+      
+      orderId = rzpData.id;
+      responseAmount = rzpData.amount; // in paise
+      responseCurrency = rzpData.currency;
     }
 
     // Insert into Supabase in a non-blocking manner (fire-and-forget) to keep performance fast
@@ -57,8 +68,8 @@ serve(async (req) => {
           whatsapp,
           workshop_name,
           amount,
-          status: 'initiated',
-          order_id: rzpData.id
+          status: finalStatus,
+          order_id: orderId
         }).then(({ error }) => {
           if (error) console.error("Error inserting registration:", error);
         });
@@ -68,7 +79,7 @@ serve(async (req) => {
     }
 
     return new Response(
-      JSON.stringify({ orderId: rzpData.id, amount: rzpData.amount, currency: rzpData.currency }),
+      JSON.stringify({ orderId: orderId, amount: responseAmount ? responseAmount / 100 : amount, currency: responseCurrency }),
       { 
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 200,
