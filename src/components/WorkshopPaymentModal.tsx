@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -41,10 +41,17 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "", countryCode: "+91" });
   const [isProcessing, setIsProcessing] = useState(false);
+  const [step, setStep] = useState<1 | 2>(1);
+  const [orderData, setOrderData] = useState<any>(null);
 
-  const handlePaymentSubmit = async (e: React.FormEvent) => {
+  useEffect(() => {
+    if (!isOpen) {
+      setTimeout(() => setStep(1), 300);
+    }
+  }, [isOpen]);
+
+  const handleContinue = async (e: React.FormEvent) => {
     e.preventDefault();
-
     // Frontend Validation
     if (!formData.countryCode.startsWith('+') || formData.countryCode.length < 2) {
       toast.error("Country code must start with '+' and contain numbers (e.g., +91)");
@@ -56,13 +63,44 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
     }
 
     setIsProcessing(true);
-    
-    const res = await loadRazorpayScript();
-    if (!res) {
-      alert("Payment gateway failed to load. Please check your connection.");
+
+    try {
+      // Pre-load razorpay script concurrently
+      const loadScriptPromise = loadRazorpayScript();
+      
+      // 1. Create order on the server and capture the lead!
+      const { data: newOrderData, error: orderError } = await supabase.functions.invoke('create-razorpay-order', {
+        body: {
+          amount: 99,
+          currency: "INR",
+          receipt: `rcpt_${new Date().getTime()}`,
+          name: formData.name,
+          email: formData.email,
+          whatsapp: formData.countryCode + formData.whatsapp,
+          workshop_name: "n8n for beginners"
+        }
+      });
+
+      if (orderError || !newOrderData?.orderId) {
+        throw new Error(orderError?.message || "Failed to create order");
+      }
+
+      await loadScriptPromise; // Ensure script is loaded
+      
+      setOrderData(newOrderData);
+      setStep(2);
+    } catch (err: any) {
+      toast.error("Could not secure your spot. Please try again.");
+      console.error(err);
+    } finally {
       setIsProcessing(false);
-      return;
     }
+  };
+
+  const handlePaymentSubmit = async () => {
+    if (!orderData) return;
+    
+    setIsProcessing(true);
 
     // Track: user filled the form and clicked Pay (Razorpay is about to open)
     // Lazy-load posthog for tracking — it may already be loaded by main.tsx
@@ -82,23 +120,6 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
     }
 
     try {
-      // 1. Create order on the server
-      const { data: orderData, error: orderError } = await supabase.functions.invoke('create-razorpay-order', {
-        body: {
-          amount: 99,
-          currency: "INR",
-          receipt: `rcpt_${new Date().getTime()}`,
-          name: formData.name,
-          email: formData.email,
-          whatsapp: formData.countryCode + formData.whatsapp,
-          workshop_name: "n8n for beginners"
-        }
-      });
-
-      if (orderError || !orderData?.orderId) {
-        throw new Error(orderError?.message || "Failed to create order");
-      }
-
       let isPaymentSuccessful = false;
       let lastPaymentError = "";
 
@@ -198,75 +219,127 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
     <>
       <Dialog open={isOpen} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[425px] bg-card border-border shadow-2xl rounded-2xl w-[95vw] top-[5%] translate-y-[0] sm:top-[50%] sm:translate-y-[-50%] max-h-[85vh] sm:max-h-none overflow-y-auto sm:overflow-visible">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Secure Your Spot</DialogTitle>
-            <DialogDescription className="text-base text-muted-foreground pt-1">
-              Enter your details below to register for the workshop.
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handlePaymentSubmit} className="space-y-5 pt-2">
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-sm font-semibold">Full Name</Label>
-              <Input 
-                id="name" 
-                required 
-                placeholder="John Doe" 
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="bg-background/50 h-11"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm font-semibold">Email Address</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                required 
-                placeholder="john@example.com" 
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="bg-background/50 h-11"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="whatsapp" className="text-sm font-semibold">WhatsApp Number</Label>
-              <div className="flex gap-2">
-                <Input 
-                  value={formData.countryCode} 
-                  onChange={(e) => setFormData({...formData, countryCode: e.target.value.replace(/[^\+0-9]/g, '')})}
-                  className="w-[80px] bg-background/50 h-11 shrink-0 font-medium text-center px-1"
-                  placeholder="+91"
-                  minLength={2}
-                  maxLength={5}
-                  required
-                />
-                <Input 
-                  id="whatsapp" 
-                  type="tel" 
-                  required 
-                  placeholder="9876543210" 
-                  value={formData.whatsapp}
-                  onChange={(e) => setFormData({...formData, whatsapp: e.target.value.replace(/[^0-9]/g, '')})}
-                  className="bg-background/50 h-11 flex-1"
-                  minLength={7}
-                  maxLength={15}
-                />
+          {step === 1 ? (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold">Secure Your Spot</DialogTitle>
+                <DialogDescription className="text-base text-muted-foreground pt-1">
+                  Enter your details below to register for the workshop.
+                </DialogDescription>
+              </DialogHeader>
+              <form onSubmit={handleContinue} className="space-y-5 pt-2">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-sm font-semibold">Full Name</Label>
+                  <Input 
+                    id="name" 
+                    required 
+                    placeholder="John Doe" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    className="bg-background/50 h-11"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-sm font-semibold">Email Address</Label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    required 
+                    placeholder="john@example.com" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="bg-background/50 h-11"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="whatsapp" className="text-sm font-semibold">WhatsApp Number</Label>
+                  <div className="flex gap-2">
+                    <Input 
+                      value={formData.countryCode} 
+                      onChange={(e) => setFormData({...formData, countryCode: e.target.value.replace(/[^\+0-9]/g, '')})}
+                      className="w-[80px] bg-background/50 h-11 shrink-0 font-medium text-center px-1"
+                      placeholder="+91"
+                      minLength={2}
+                      maxLength={5}
+                      required
+                    />
+                    <Input 
+                      id="whatsapp" 
+                      type="tel" 
+                      required 
+                      placeholder="9876543210" 
+                      value={formData.whatsapp}
+                      onChange={(e) => setFormData({...formData, whatsapp: e.target.value.replace(/[^0-9]/g, '')})}
+                      className="bg-background/50 h-11 flex-1"
+                      minLength={7}
+                      maxLength={15}
+                    />
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
+                    disabled={isProcessing}
+                  >
+                    {isProcessing ? "Processing..." : "Continue"}
+                  </Button>
+                </div>
+              </form>
+            </>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold">Order Summary</DialogTitle>
+                <DialogDescription className="text-base text-muted-foreground pt-1">
+                  Please review your details before payment.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-5 pt-4">
+                <div className="bg-muted/30 border border-border rounded-xl p-4 space-y-3">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">Workshop:</span>
+                    <span className="font-semibold text-foreground text-right">n8n Beginner Workshop</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">Billed to:</span>
+                    <span className="font-semibold text-foreground text-right">{formData.name}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">Email:</span>
+                    <span className="font-semibold text-foreground text-right">{formData.email}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">WhatsApp:</span>
+                    <span className="font-semibold text-foreground text-right">{formData.countryCode} {formData.whatsapp}</span>
+                  </div>
+                </div>
+                <div className="pt-2 flex gap-3">
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    className="w-1/3 h-12 font-bold hover:bg-muted" 
+                    onClick={() => setStep(1)} 
+                    disabled={isProcessing}
+                  >
+                    Back
+                  </Button>
+                  <Button 
+                    type="button" 
+                    onClick={handlePaymentSubmit} 
+                    className="flex-1 h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
+                    disabled={isProcessing}
+                  >
+                    {isProcessing ? "Processing..." : "Pay to confirm"}
+                  </Button>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
+                  <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                  100% Secure Checkout by Razorpay
+                </div>
               </div>
-            </div>
-            <div className="pt-2">
-              <Button 
-                type="submit" 
-                className="w-full h-12 text-lg font-bold shine-effect transition-transform hover:scale-[1.02]" 
-                disabled={isProcessing}
-              >
-                {isProcessing ? "Processing..." : "Pay & Register"}
-              </Button>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground font-medium pt-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
-              100% Secure Checkout by Razorpay
-            </div>
-          </form>
+            </>
+          )}
         </DialogContent>
       </Dialog>
 
