@@ -79,7 +79,7 @@ serve(async (req) => {
     }
 
     return new Response(
-      JSON.stringify({ orderId: orderId, amount: responseAmount ? responseAmount / 100 : amount, currency: responseCurrency }),
+      JSON.stringify({ orderId: orderId, amount: responseAmount, currency: responseCurrency }),
       { 
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 200,
