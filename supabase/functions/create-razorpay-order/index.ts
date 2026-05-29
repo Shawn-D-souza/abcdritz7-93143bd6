@@ -61,8 +61,8 @@ serve(async (req) => {
       
       if (supabaseUrl && supabaseKey) {
         const supabase = createClient(supabaseUrl, supabaseKey);
-        // We don't await this so the frontend gets the response immediately
-        supabase.from('workshop_registrations').insert({
+        // We must await this because Serverless Edge Functions shut down immediately after returning the response!
+        await supabase.from('workshop_registrations').insert({
           name,
           email,
           whatsapp,
@@ -70,9 +70,31 @@ serve(async (req) => {
           amount,
           status: finalStatus,
           order_id: orderId
-        }).then(({ error }) => {
-          if (error) console.error("Error inserting registration:", error);
         });
+
+        // Trigger N8N webhook securely from the backend if it's a free registration
+        if (amount === 0) {
+          const webhookUrl = Deno.env.get('N8N_WEBHOOK_URL');
+          if (webhookUrl) {
+            const d = new Date();
+            const dateStr = d.getDate().toString().padStart(2, '0') + ' ' + d.toLocaleString('en-US', { month: 'short' }) + ', ' + d.getFullYear();
+            
+            await fetch(webhookUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                payment_id: "free_registration",
+                name,
+                email,
+                whatsapp,
+                amount: 0,
+                workshop_name,
+                date: dateStr,
+                payment_method: "Free"
+              }),
+            });
+          }
+        }
       } else {
         console.warn("Supabase URL or Key missing, skipping registration insert.");
       }

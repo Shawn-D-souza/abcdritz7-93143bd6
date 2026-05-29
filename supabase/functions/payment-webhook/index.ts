@@ -124,13 +124,11 @@ serve(async (req) => {
       const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
       if (supabaseUrl && supabaseKey) {
         const supabase = createClient(supabaseUrl, supabaseKey);
-        supabase.from('workshop_registrations').update({
+        await supabase.from('workshop_registrations').update({
           status: 'success',
           payment_id,
           payment_method: paymentMethod
-        }).eq('order_id', order_id).then(({ error }) => {
-          if (error) console.error("Error updating registration to success:", error);
-        });
+        }).eq('order_id', order_id);
       }
     }
 
