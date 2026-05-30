@@ -123,23 +123,33 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
     
     setIsProcessing(true);
 
+    // Fire analytics — wrapped in try-catch so a failure here NEVER blocks the payment
     try {
-      // Track pay button click with variant
+      const posthog = await import('posthog-js').then(m => m.default);
       posthog.capture('workshop_pay_button_clicked', { variant, amount: amountToCharge });
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'workshop_pay_button_clicked', { variant, value: amountToCharge });
       }
+    } catch (e) {
+      console.warn('Analytics error (non-critical):', e);
+    }
 
+    try {
       if (orderData.amount === 0) {
         setIsProcessing(false);
         setIsSuccessModalOpen(true);
         onOpenChange(false);
         
-        // Fire Analytics Events
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'workshop_register_free', { variant });
+        // Fire Analytics Events — also non-blocking
+        try {
+          const posthog = await import('posthog-js').then(m => m.default);
+          posthog.capture('workshop_register_free', { variant });
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'workshop_register_free', { variant });
+          }
+        } catch (e) {
+          console.warn('Analytics error (non-critical):', e);
         }
-        posthog.capture('workshop_register_free', { variant });
         return;
       }
 
@@ -159,22 +169,23 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
           setIsProcessing(false);
           setIsSuccessModalOpen(true);
 
-          // Fire Analytics Events
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'workshop_purchase', { value: amountToCharge, currency: 'INR' });
-          }
-          if (window.dataLayer) {
-            window.dataLayer.push({
-              event: 'workshop_purchase',
-              value: amountToCharge,
-              currency: 'INR',
-              gtag_override: true
+          // Fire Analytics Events — non-blocking, never crashes the handler
+          try {
+            import('posthog-js').then(m => {
+              m.default.capture('workshop_purchase', { variant, value: amountToCharge, currency: 'INR' });
             });
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'workshop_purchase', { value: amountToCharge, currency: 'INR' });
+            }
+            if (window.dataLayer) {
+              window.dataLayer.push({ event: 'workshop_purchase', value: amountToCharge, currency: 'INR', gtag_override: true });
+            }
+            if (typeof window.fbq === 'function') {
+              window.fbq('track', 'Purchase', { value: amountToCharge, currency: 'INR' });
+            }
+          } catch (e) {
+            console.warn('Analytics error (non-critical):', e);
           }
-          if (typeof window.fbq === 'function') {
-            window.fbq('track', 'Purchase', { value: amountToCharge, currency: 'INR' });
-          }
-          posthog.capture('workshop_purchase', { value: amountToCharge, currency: 'INR' });
 
           // 2. Process the webhook securely in the background (fire-and-forget)
           supabase.functions.invoke('payment-webhook', {
