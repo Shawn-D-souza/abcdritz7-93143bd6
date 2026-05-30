@@ -90,17 +90,17 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
 
       await loadScriptPromise; // Ensure script is loaded
       
-      // Track form submission in PostHog
+      // Track form submission (Continue button) in PostHog with variant
       const posthog = await import('posthog-js').then(m => m.default);
-      posthog.capture('workshop_form_submitted');
+      posthog.capture('workshop_form_submitted', { variant });
       
-      // Also fire other analytics tracking here if needed, like gtag/fbq
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'workshop_form_submitted');
+        window.gtag('event', 'workshop_form_submitted', { variant });
       }
       if (window.dataLayer) {
         window.dataLayer.push({
           event: 'workshop_form_submitted',
+          variant,
           gtag_override: true
         });
       }
@@ -124,6 +124,12 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
     setIsProcessing(true);
 
     try {
+      // Track pay button click with variant
+      posthog.capture('workshop_pay_button_clicked', { variant, amount: amountToCharge });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'workshop_pay_button_clicked', { variant, value: amountToCharge });
+      }
+
       if (orderData.amount === 0) {
         setIsProcessing(false);
         setIsSuccessModalOpen(true);
@@ -131,9 +137,9 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
         
         // Fire Analytics Events
         if (typeof window.gtag === 'function') {
-          window.gtag('event', 'workshop_register_free');
+          window.gtag('event', 'workshop_register_free', { variant });
         }
-        posthog.capture('workshop_register_free');
+        posthog.capture('workshop_register_free', { variant });
         return;
       }
 
