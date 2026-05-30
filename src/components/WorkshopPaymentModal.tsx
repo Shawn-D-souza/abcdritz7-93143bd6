@@ -87,6 +87,24 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
 
       await loadScriptPromise; // Ensure script is loaded
       
+      // Track form submission in PostHog
+      const posthog = await import('posthog-js').then(m => m.default);
+      posthog.capture('workshop_form_submitted');
+      
+      // Also fire other analytics tracking here if needed, like gtag/fbq
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'workshop_form_submitted');
+      }
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'workshop_form_submitted',
+          gtag_override: true
+        });
+      }
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout');
+      }
+
       setOrderData(newOrderData);
       setStep(2);
     } catch (err: any) {
@@ -101,23 +119,6 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange }: WorkshopPaymentMo
     if (!orderData) return;
     
     setIsProcessing(true);
-
-    // Track: user filled the form and clicked Pay (Razorpay is about to open)
-    // Lazy-load posthog for tracking — it may already be loaded by main.tsx
-    const posthog = await import('posthog-js').then(m => m.default);
-    posthog.capture('workshop_form_submitted');
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'workshop_form_submitted');
-    }
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'workshop_form_submitted',
-        gtag_override: true
-      });
-    }
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'InitiateCheckout');
-    }
 
     try {
       let isPaymentSuccessful = false;
