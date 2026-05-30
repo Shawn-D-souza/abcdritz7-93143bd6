@@ -155,22 +155,14 @@ const WorkshopLanding = () => {
     window.scrollTo(0, 0);
     
     // Assign A/B test variant
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlVariant = urlParams.get('variant') as Variant | null;
-    
-    if (urlVariant && ['free', '9', '99', '99_lead'].includes(urlVariant)) {
-      setVariant(urlVariant);
-      localStorage.setItem('ab_test_variant', urlVariant);
+    const savedVariant = localStorage.getItem('ab_test_variant') as Variant | null;
+    if (savedVariant && ['free', '9', '99'].includes(savedVariant)) {
+      setVariant(savedVariant);
     } else {
-      const savedVariant = localStorage.getItem('ab_test_variant') as Variant | null;
-      if (savedVariant && ['free', '9', '99', '99_lead'].includes(savedVariant)) {
-        setVariant(savedVariant);
-      } else {
-        const variants: Variant[] = ['free', '9', '99'];
-        const randomVariant = variants[Math.floor(Math.random() * variants.length)];
-        localStorage.setItem('ab_test_variant', randomVariant);
-        setVariant(randomVariant);
-      }
+      const variants: Variant[] = ['free', '9', '99'];
+      const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+      localStorage.setItem('ab_test_variant', randomVariant);
+      setVariant(randomVariant);
     }
   }, []);
 
