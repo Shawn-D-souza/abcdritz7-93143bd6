@@ -166,7 +166,7 @@ const WorkshopLanding = () => {
       if (savedVariant && ['free', '9', '99', '99_lead'].includes(savedVariant)) {
         setVariant(savedVariant);
       } else {
-        const variants: Variant[] = ['free', '9', '99', '99_lead'];
+        const variants: Variant[] = ['free', '9', '99'];
         const randomVariant = variants[Math.floor(Math.random() * variants.length)];
         localStorage.setItem('ab_test_variant', randomVariant);
         setVariant(randomVariant);
@@ -450,7 +450,7 @@ const WorkshopLanding = () => {
                         </div>
                       )}
                       
-                      {variant === '99_lead' && (
+                      {/* variant === '99_lead' && (
                         <div className="mt-8 pt-8 border-t border-border/50 text-left">
                           <h4 className="text-xl font-bold text-foreground mb-2">Not ready for the workshop?</h4>
                           <p className="text-muted-foreground text-sm mb-4">Enter your email and we'll send you some Free Automation Templates directly to your inbox!</p>
@@ -468,7 +468,7 @@ const WorkshopLanding = () => {
                             </Button>
                           </form>
                         </div>
-                      )}
+                      ) */}
                     </div>
                   </div>
                 </div>
