@@ -176,18 +176,19 @@ const WorkshopLanding = () => {
 
   const handleRegister = () => {
     if (typeof window.gtag === 'function') {
-      window.gtag('event', 'workshop_button_click');
+      window.gtag('event', 'workshop_button_click', { variant });
     }
     // Direct push to GTM dataLayer to bypass any auto-tracking scripts
     if (window.dataLayer) {
       window.dataLayer.push({
         event: 'workshop_button_click',
+        variant: variant,
         gtag_override: true // signals to GTM to bypass auto-macros
       });
     }
     // Lazy-load posthog for tracking click — avoid importing at module level
     import('posthog-js').then(({ default: posthog }) => {
-      posthog.capture('workshop_button_click');
+      posthog.capture('workshop_button_click', { variant });
     });
     setHasOpenedModal(true);
     setIsPaymentModalOpen(true);
