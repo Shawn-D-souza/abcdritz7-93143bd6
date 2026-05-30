@@ -109,7 +109,25 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
       }
 
       setOrderData(newOrderData);
-      setStep(2);
+      
+      if (amountToCharge === 0) {
+        // Option 1 implemented: skip step 2 for Free users
+        setIsSuccessModalOpen(true);
+        onOpenChange(false);
+        
+        // Fire Analytics Events for successful free registration
+        try {
+          const posthog = await import('posthog-js').then(m => m.default);
+          posthog.capture('workshop_register_free', { variant });
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'workshop_register_free', { variant });
+          }
+        } catch (e) {
+          console.warn('Analytics error (non-critical):', e);
+        }
+      } else {
+        setStep(2);
+      }
     } catch (err: any) {
       toast.error("Could not secure your spot. Please try again.");
       console.error(err);
@@ -135,23 +153,6 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
     }
 
     try {
-      if (orderData.amount === 0) {
-        setIsProcessing(false);
-        setIsSuccessModalOpen(true);
-        onOpenChange(false);
-        
-        // Fire Analytics Events — also non-blocking
-        try {
-          const posthog = await import('posthog-js').then(m => m.default);
-          posthog.capture('workshop_register_free', { variant });
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'workshop_register_free', { variant });
-          }
-        } catch (e) {
-          console.warn('Analytics error (non-critical):', e);
-        }
-        return;
-      }
 
       let isPaymentSuccessful = false;
       let lastPaymentError = "";
