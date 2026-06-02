@@ -90,7 +90,7 @@ That is a 10x difference for the exact same work. The more complex your automati
 
 ## How Does n8n Actually Work?
 
-n8n works by using a simple three-part system: a Trigger detects an event, a series of Steps process the information, and a Result finishes the task.
+n8n works by using a simple three-part system: a trigger detects an event, a series of steps processes the information, and a result finishes the task.
 
 Every workflow has three parts:
 
@@ -100,10 +100,10 @@ Something happens, and n8n wakes up. For example:
 
 * Someone fills your contact form
 * A new email arrives in Gmail
-* Every Monday at 9am (a timer)
+* Every Monday at 9 am (a timer)
 * A payment comes through
 
-### 2. The Steps — "What does n8n do next?"
+### 2. The Steps (nodes) — "What does n8n do next?"
 
 After the trigger fires, n8n runs through a series of actions. Each one does a single job:
 
