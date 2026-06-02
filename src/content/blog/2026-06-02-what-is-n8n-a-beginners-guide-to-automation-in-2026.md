@@ -169,7 +169,7 @@ n8n is designed for business owners, freelancers, creators, and developers who w
 
 **Small business owners –** stop spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/things-small-businesses-can-automate).
 
-**Freelancers and consultants – automate555555555** client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
+**Freelancers and consultants** automate client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
 
 **Content creators and marketers –** schedule posts, repurpose content, and auto-generate drafts without staring at a blank screen.
 
