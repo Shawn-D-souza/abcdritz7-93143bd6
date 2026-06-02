@@ -178,7 +178,18 @@ n8n is designed for business owners, freelancers, creators, and developers who w
 Before launching your first workflow, keep in mind that n8n handles data in transit rather than storing it and has a slight technical learning curve.
 
 <faq>
-
+Q: Is n8n completely free?
+A: The self-hosted software is free, but running it requires a server which costs money. The cloud version removed its free tier in late 2025 and starts at $20/month.
+Q: What is the main structural difference between n8n and Zapier?
+A: Zapier bills you per individual step executed inside a workflow, whereas n8n bills you only per full workflow run.
+Q: Do I need to understand coding to create workflows in n8n?
+A: No, n8n provides a visual drag-and-drop builder to connect blocks together, making code unnecessary for most basic workflows.
+Q: Can n8n integrate with artificial intelligence models like ChatGPT?
+A: Yes, n8n features built-in connections for tools like OpenAI and Google Gemini to summarize documents, write emails, or make decisions.
+Q: How can a beginner get started with using n8n?
+A: You can sign up for a 14-day free cloud trial at n8n.io to automate a single repetitive task, or join beginner workshops like Ritz7.
+Q: How much income can you generate by mastering n8n automation skills?
+A: Builders charge $500 to $5,000+ per project, and can earn money by selling workflow templates, running data services, or creating tools.
 </faq>
 
 ## Next Steps After Creating Workflows
