@@ -50,7 +50,11 @@ n8n Cloud used to have a free plan, but it was removed in late 2024. As [InstaPo
 Here are the current plans, directly from [n8n.io/pricing](https://n8n.io/pricing/):
 
 <customtable>
-
+**Plan** | **Monthly Price (Pay Annually)** | **Monthly Price (Pay Monthly)** | **Workflow Runs/Month**
+**Starter** | $20/month | $24/month | 2,500
+**Pro** | $50/month | $60/month | 10,000
+**Business** | $667/month | ~$800/month | 40,000
+**Community Edition** | Free software (you pay for server) | Free software | Unlimited
 </customtable>
 
 *Source: [n8n.io/pricing](https://n8n.io/pricing/) — verified June 2026*
@@ -83,7 +87,13 @@ Here is a simple example. Say you have a workflow with 10 steps, and it runs 100
 That is a 10x difference for the exact same work. The more complex your automations, the bigger the saving.
 
 <customtable>
-
+**n8n** | **Zapier** | **Make**
+**Free software you can self-host** | ✅ Yes | ❌ No | ❌ No
+**Permanent free cloud plan** | ❌ Removed 2025 | ✅ Limited | ✅ Limited
+**Starting cloud price** | $20/month | $19.99/month | $9/month
+**How they charge you** | Per full workflow run | Per step inside the workflow | Per step inside the workflow
+**Number of apps you can connect** | 500+ | 6,000+ | 1,000+
+**AI tools built in** | ✅ Yes | Partial | Partial
 </customtable>
 
 *Sources: [n8n.io/pricing](https://n8n.io/pricing/), [Zapier pricing](https://zapier.com/pricing)*
@@ -138,36 +148,16 @@ See how it works: [How to Build a YouTube Video Summarizer in n8n](https://ritz7
 
 You can use n8n to automate operations across customer service, marketing, sales, and AI assistant management without writing any code.
 
-1.   [Auto-reply to enquiry form submissions using n8n and Outlook](https://ritz7.ai/blog/auto-reply-form-submission-n8n)
-
-
-2.   [Send bulk WhatsApp messages to a contact list automatically](https://ritz7.ai/blog/automate-whatsapp-bulk-messages)
-
-
-3.   [Build a WhatsApp AI agent that replies to voice messages, text, and images](https://ritz7.ai/blog/whatsapp-ai-agent-super-bot)
-
-
-4.   [Automate Gmail — label emails, save attachments, and pull data into Sheets](https://ritz7.ai/blog/automate-gmail-emails)
-
-
-5.   [Screen and score job applications automatically with an AI resume bot](https://ritz7.ai/blog/automate-resume-scoring)
-
-
-6.   [Create and run an OpenAI assistant directly inside n8n](https://ritz7.ai/blog/n8n-tutorial-create-openai-assistant)
-
-
-7.   [Build a Telegram bot that manages your Google Calendar with voice or text](https://ritz7.ai/blog/telegram-bot-with-google-calendar)
-
-
-8.   [Automate appointment booking using ElevenLabs voice and n8n](https://ritz7.ai/blog/ai-voice-agent-eleven-labs)
-
-
-9.   [Connect MCP servers to build powerful AI agent workflows in n8n](https://ritz7.ai/blog/mcp-servers)
-
-
-10.   [Turn your n8n skills into passive income with templates and ](https://ritz7.ai/blog/n8n-passive-income)
-
-    microSaaS
+1. [Auto-reply to enquiry form submissions using n8n and Outlook](https://ritz7.ai/blog/auto-reply-form-submission-n8n)
+2. [Send bulk WhatsApp messages to a contact list automatically](https://ritz7.ai/blog/automate-whatsapp-bulk-messages)
+3. [Build a WhatsApp AI agent that replies to voice messages, text, and images](https://ritz7.ai/blog/whatsapp-ai-agent-super-bot)
+4. [Automate Gmail — label emails, save attachments, and pull data into Sheets](https://ritz7.ai/blog/automate-gmail-emails)
+5. [Screen and score job applications automatically with an AI resume bot](https://ritz7.ai/blog/automate-resume-scoring)
+6. [Create and run an OpenAI assistant directly inside n8n](https://ritz7.ai/blog/n8n-tutorial-create-openai-assistant)
+7. [Build a Telegram bot that manages your Google Calendar with voice or text](https://ritz7.ai/blog/telegram-bot-with-google-calendar)
+8. [Automate appointment booking using ElevenLabs voice and n8n](https://ritz7.ai/blog/ai-voice-agent-eleven-labs)
+9. [Connect MCP servers to build powerful AI agent workflows in n8n](https://ritz7.ai/blog/mcp-servers)
+10. [Turn your n8n skills into passive income with templates and ](https://ritz7.ai/blog/n8n-passive-income)
 
 ## Who Is n8n For?
 
