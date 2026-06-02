@@ -69,16 +69,12 @@ Most automation tools charge you for every single step your workflow takes. n8n 
 
 Here is a simple example. Say you have a workflow with 10 steps, and it runs 100 times a month.
 
-* **On Zapier:**
-
-   each step counts as a separate charge. 10 steps × 100 runs = 1,000 charges. (
+* **On Zapier:** each step counts as a separate charge. 10 steps × 100 runs = 1,000 charges. (
 
   [Zapier's own help page confirms this](https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier)
 
    — each action step that runs successfully counts as one task.)
-* **On n8n:**
-
-   the whole workflow counts as one run. 100 runs = 100 charges. (
+* **On n8n:** the whole workflow counts as one run. 100 runs = 100 charges. (
 
   [n8n's official documentation](https://docs.n8n.io/workflows/executions/)
 
@@ -113,16 +109,24 @@ Something happens, and n8n wakes up. For example:
 * Every Monday at 9 am (a timer)
 * A payment comes through
 
-### 2. The Steps (nodes) — "What does n8n do next?"
+### 2. The Steps (Nodes) - "What does n8n do next?"
 
-After the trigger fires, n8n runs through a series of actions. Each one does a single job:
+These are the steps n8n runs after the trigger. Each node does one specific thing:
 
-* Read a row in Google Sheets
-* Ask ChatGPT to write a reply
-* Send an email via Gmail
-* Post a message in Slack
+* **Google Sheets node**
 
-### 3. The Result — "What comes out at the end?"
+   — read, write, or search rows
+* **OpenAI node**
+
+   — send a prompt and get a response back
+* **Gmail node**
+
+   — send or read emails
+* **HTTP Request node**
+
+   — call any API in the world, even without a native connector
+
+### 3. The Result – "What comes out at the end?"
 
 A message gets sent. A spreadsheet gets updated. A notification lands on your phone. All done without you touching anything.
 
@@ -163,11 +167,11 @@ You can use n8n to automate operations across customer service, marketing, sales
 
 n8n is designed for business owners, freelancers, creators, and developers who want to eliminate manual administrative work or build AI-driven products.
 
-**Small business owners – stop** spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/things-small-businesses-can-automate).
+**Small business owners –** stop spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/things-small-businesses-can-automate).
 
-**Freelancers and consultants** — automate client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
+**Freelancers and consultants – automate555555555** client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
 
-**Content creators and marketers – schedule** posts, repurpose content, and auto-generate drafts without staring at a blank screen.
+**Content creators and marketers –** schedule posts, repurpose content, and auto-generate drafts without staring at a blank screen.
 
 **People who want to earn from automation**—once you know n8n, you can sell templates, offer automation services, or build a small software tool. Read the [full guide to making money with n8n](https://ritz7.ai/blog/how-to-make-money-with-n8n).
 
