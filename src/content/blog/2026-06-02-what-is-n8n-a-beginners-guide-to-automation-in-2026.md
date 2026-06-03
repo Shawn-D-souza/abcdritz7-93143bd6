@@ -130,13 +130,13 @@ A real example:
 
 You set this up once. It runs every time, forever.
 
-## A Real Before and After
+## A Real "Before and After" with Automation
 
 Using n8n replaces hours of manual data entry and messaging with instant, automated background actions that require zero minutes of your time.
 
-**Before n8n, you** get 10 new enquiries a week. For each one, you open the email, copy their name and details into a spreadsheet, write a reply, send it, and add a follow-up reminder to your calendar. That is about 15 minutes per enquiry — 2.5 hours a week on the same repetitive task.
+🔴 Before **n8n, you** get 10 new enquiries a week. For each one, you open the email, copy their name and details into a spreadsheet, write a reply, send it, and add a follow-up reminder to your calendar. That is about 15 minutes per enquiry — 2.5 hours a week on the same repetitive task.
 
-**After n8n:** The moment someone submits the form, n8n handles all of it automatically. You spend 0 minutes on it. That is 2.5 hours back in your week, every week.
+🟢 **After n8n:** The moment someone submits the form, n8n handles all of it automatically. You spend 0 minutes on it. That is 2.5 hours back in your week, every week.
 
 At Ritz7, we use n8n to automatically generate YouTube titles and descriptions, draft blog outlines, and handle content tasks that used to eat hours every week. The workflows run quietly in the background. We handle the creative decisions – n8n does the rest.
 
