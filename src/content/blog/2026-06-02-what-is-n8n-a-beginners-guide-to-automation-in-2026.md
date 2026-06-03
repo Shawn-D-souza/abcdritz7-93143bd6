@@ -5,7 +5,7 @@ category: n8n Guide
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-06-03T04:45:00.000Z
 updated_date: 2026-06-03T04:45:00.000Z
-thumbnail: /assets/uploads/what-is-n8n.png
+thumbnail: /assets/uploads/what-is-n8n-1-.png
 thumbnail_alt: What is n8n. Beginner's guide to automation.
 description: New to n8n? Everything you need to know about n8n as a beginner.
   Discover how it works, 10 real workflow ideas, and a full cost breakdown.
