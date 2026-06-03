@@ -37,6 +37,8 @@ It works by connecting your apps — like Gmail, Google Sheets, WhatsApp, and 50
 
 The n8n software itself is completely free to download, but you must either pay for a server to host it yourself or subscribe to n8n Cloud starting at $20/month.
 
+![choosing your n8n hosting](/assets/uploads/choosing-your-n8n-hosting.png)
+
 This is where a lot of people get confused, so let's keep it very simple.
 
 **Option 1 — Download and run it yourself (Community Edition):** The n8n software is 100% free to download from [GitHub](https://github.com/n8n-io/n8n). No fees, no limits on how many workflows you run.
@@ -71,16 +73,8 @@ Most automation tools charge you for every single step your workflow takes. n8n 
 
 Here is a simple example. Say you have a workflow with 10 steps, and it runs 100 times a month.
 
-* **On Zapier:** each step counts as a separate charge. 10 steps × 100 runs = 1,000 charges. (
-
-  [Zapier's own help page confirms this](https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier)
-
-   — each action step that runs successfully counts as one task.)
-* **On n8n:** the whole workflow counts as one run. 100 runs = 100 charges. (
-
-  [n8n's official documentation](https://docs.n8n.io/workflows/executions/)
-
-   confirms an execution is one full run of a workflow, no matter how many steps are inside.)
+* **On Zapier:** each step counts as a separate charge. 10 steps × 100 runs = 1,000 charges. ([Zapier's own help page confirms this](https://help.zapier.com/hc/en-us/articles/8496196837261-How-is-task-usage-measured-in-Zapier) — each action step that runs successfully counts as one task.)
+* **On n8n:** the whole workflow counts as one run. 100 runs = 100 charges. ([n8n's official documentation](https://docs.n8n.io/workflows/executions/) confirms an execution is one full run of a workflow, no matter how many steps are inside.)
 
 That is a 10x difference for the exact same work. The more complex your automations, the bigger the saving.
 
