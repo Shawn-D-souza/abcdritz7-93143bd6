@@ -200,7 +200,7 @@ Once you have a few workflows running, three paths open up:
 
 **Make money from it** — sell the workflows you build as templates, offer automation services to businesses, or launch a small tool. The [n8n passive income guide](https://ritz7.ai/blog/n8n-passive-income) covers five specific ways to do this.
 
-And if you want to learn the fundamentals properly – not just n8n, but the automation thinking that applies to every AI tool out there – join the [Ritz7 Workshop](https://ritz7.ai/workshop). It is made for complete beginners who want to go from zero to building real things.
+And if you want to learn the fundamentals properly – not just n8n, but the automation thinking that applies to every AI tool out there – join the [Ritz7 workshop.](https://ritz7.ai/workshop) It is made for complete beginners who want to go from zero to building real things.
 
 ## Final Thoughts
 
@@ -208,4 +208,4 @@ n8n is one of those tools that change how you think about your time. Once you re
 
 Start small. Automate one thing. Then another. Before long, the repetitive parts of your day just disappear.
 
-The **Ritz7 Automations Community** is where n8n builders at every level – complete beginners to advanced – share what they are building, ask questions, and find their first clients. Come build something that runs while you sleep.
+The [Ritz7 Automations Community](https://wa.me/message/RVQXUI35RJO4J1) is where n8n builders at every level – from complete beginners to advanced – share what they are building, ask questions, and find their first clients. Come build something that runs while you sleep.
