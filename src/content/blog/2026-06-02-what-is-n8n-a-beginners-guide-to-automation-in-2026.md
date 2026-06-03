@@ -171,9 +171,15 @@ n8n is designed for business owners, freelancers, creators, and developers who w
 
 **Developers and no-code builders** use n8n as the backbone of prototypes, internal tools, and AI products. Compare the [best no-code prototyping tools in 2026](https://ritz7.ai/blog/5-no-code-tools-for-rapid-prototyping).
 
-## Things to Know Before You Start
+## Things to Know Before You Start n8n
 
 Before launching your first workflow, keep in mind that n8n handles data in transit rather than storing it and has a slight technical learning curve.
+
+* **n8n does not store your data.** It moves data between apps — it does not hold it for you. Use Google Sheets, Notion, or Airtable for that.
+* **Cloud plans have a monthly run limit.** If your workflows hit the limit, they stop until the next billing cycle — no automatic overages, per n8n.io/pricing.
+* **Self-hosting is not plug-and-play.** Setting up your own server takes a few hours and some basic technical comfort. If that sounds like too much right now, start with the cloud trial.
+* **n8n connects 500+ apps** — which covers most popular tools well. Zapier connects 6,000+, so if you need something niche, check the n8n integrations list first.
+* **The learning curve is real but short.** The first workflow takes the longest. By the third one, it feels natural.
 
 <faq>
 Q: Is n8n completely free?
