@@ -94,6 +94,8 @@ That is a 10x difference for the exact same work. The more complex your automati
 
 n8n works by using a simple three-part system: a trigger detects an event, a series of steps processes the information, and a result finishes the task.
 
+![how n8n workflow works](/assets/uploads/how-n8n-workflow-works.png)
+
 Every workflow has three parts:
 
 ### 1. The Trigger — "What starts it?"
@@ -155,6 +157,8 @@ You can use n8n to automate operations across customer service, marketing, sales
 
 n8n is designed for business owners, freelancers, creators, and developers who want to eliminate manual administrative work or build AI-driven products.
 
+![who is n8n for](/assets/uploads/who-is-n8n-for.png)
+
 **Small business owners –** stop spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/things-small-businesses-can-automate).
 
 **Freelancers and consultants** automate client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
@@ -168,6 +172,8 @@ n8n is designed for business owners, freelancers, creators, and developers who w
 ## Things to Know Before You Start n8n
 
 Before launching your first workflow, keep in mind that n8n handles data in transit rather than storing it and has a slight technical learning curve.
+
+![key consideration before starting with n8n](/assets/uploads/key-consideration-before-starting-with-n8n.png)
 
 * **n8n does not store your data.** It moves data between apps — it does not hold it for you. Use Google Sheets, Notion, or Airtable for that.
 * **Cloud plans have a monthly run limit.** If your workflows hit the limit, they stop until the next billing cycle — no automatic overages, per n8n.io/pricing.
