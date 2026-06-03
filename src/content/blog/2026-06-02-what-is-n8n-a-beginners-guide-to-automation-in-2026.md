@@ -130,7 +130,7 @@ A real example:
 
 You set this up once. It runs every time, forever.
 
-## A Real "Before and After" with Automation
+## "Before and After" with n8n Automation
 
 Using n8n replaces hours of manual data entry and messaging with instant, automated background actions that require zero minutes of your time.
 
