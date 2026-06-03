@@ -3,8 +3,8 @@ title: What is n8n? A Beginner's Guide to Automation in 2026
 slug: what-is-n8n-beginners-guide-automation
 category: n8n Guide
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
-date: 2026-06-02T07:07:00.000Z
-updated_date: 2026-06-02T07:07:00.000Z
+date: 2026-06-03T04:45:00.000Z
+updated_date: 2026-06-03T04:45:00.000Z
 thumbnail: /assets/uploads/what-is-n8n.png
 thumbnail_alt: What is n8n. Beginner's guide to automation.
 description: New to n8n? Learn how this tool automates repetitive tasks across
