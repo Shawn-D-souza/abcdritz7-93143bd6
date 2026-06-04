@@ -162,22 +162,14 @@ The people who learn n8n now are not just saving hours each week. They are build
 
 If you recognised yourself anywhere in this article, here are four simple steps to get going:
 
-1. **Sign up**
-
-    — use the n8n cloud free trial (no credit card needed) or self-host for $5–$15/month
-2. **Pick one task**
-
-    — something you do every week that follows the same steps every time
-3. **Build it**
-
-    — using n8n's visual editor, no code needed
-4. **Run it**
-
-    — watch it work, then build the next one
+1. **Sign up**—use the n8n cloud free trial (no credit card needed) or self-host for $5–$15/month
+2. **Pick one task**— something you do every week that follows the same steps every time
+3. **Build it**—using n8n's visual editor, no code needed
+4. **Run it**—watch it work, then build the next one
 
 Brand new to n8n? Start here first: [What is n8n? A Beginner's Guide to Automation in 2026](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
 
-Want to see how people are already earning from these skills? n8n[ Passive Income: 5 Workflows That Earn While You Sleep](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+Want to see how people are already earning from these skills? n8n [Passive Income: 5 Workflows That Earn While You Sleep](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
 
 Two years of writing about automation have shown me one thing clearly — the people who win are not always the most technical. They are the ones who stopped waiting and just started building.
 
