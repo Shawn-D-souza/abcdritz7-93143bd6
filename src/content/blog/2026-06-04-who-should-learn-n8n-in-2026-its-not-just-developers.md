@@ -9,17 +9,13 @@ description: Automation isn't just for coders anymore. Learn how non-tech
   professionals are using n8n in 2026 to automate repetitive tasks and land a
   56% wage premium.
 ---
-**Key Takeaways**
-
-* Most people who need n8n most have never considered it is for them.
-* One group on this list is losing hours every week to a problem n8n solves in minutes — and it is probably not the one you expect.
-* Automation skills now carry a 
-
-  [56% wage premium](https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html)
-
-  . The gap between those who learn and those who don't is already open.
-* Your first workflow takes less than 90 minutes. No code, no server, no developer.
-* There is one group in this list that surprises almost everyone. Scroll to find out.
+> **Key Takeaways**
+>
+> * Most people who need n8n most likely have never considered it is for them.
+> * One group on this list is losing hours every week to a problem n8n solves in minutes — and it is probably not the one you expect.
+> * Automation skills now carry a [56% wage premium](https://www.pwc.com/gx/en/news-room/press-releases/2025/ai-linked-to-a-fourfold-increase-in-productivity-growth.html). The gap between those who learn and those who don't is already open.
+> * Your first workflow takes less than 90 minutes. No code, no server, no developer.
+> * There is one group in this list that surprises almost everyone. Scroll to find out.
 
 ## The Mistake Most People Make About n8n
 
@@ -155,9 +151,9 @@ Because the job market is already paying more for it. Automation skills are movi
 
 The people who learn n8n now are not just saving hours each week. They are building a skill the job market is actively rewarding — and the gap between the people who know this and the people who don't is already opening up.
 
-❌ "I'll learn it when I actually need it."
-
-✅ "I'll learn it now, while getting ahead of it still means something."
+> ❌ "I'll learn it when I actually need it."
+>
+> ✅ "I'll learn it now, while getting ahead of it still means something."
 
 ## Where to Start
 
