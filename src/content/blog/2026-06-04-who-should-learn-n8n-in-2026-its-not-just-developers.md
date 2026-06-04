@@ -134,7 +134,10 @@ n8n also has a code block where you can drop in JavaScript for custom logic when
 Not everyone needs to jump in right now — and I'd rather be honest about that than oversell it.
 
 <customtable>
-
+**If you...** | **My honest take**
+Have zero interest in technology at all | Start with something simpler like Zapier first
+Need strict company security sign-offs before using new tools | Check whether self-hosting fits your IT setup
+Want results with zero learning time | Hire an n8n freelancer to set it up for you
 </customtable>
 
 The learning curve is real but short. [n8n's official beginner courses](https://docs.n8n.io/learning-path/) put the first working workflow at about 60–90 minutes. Most people feel confident after two or three tries. It is nothing like learning a programming language — I promise.
@@ -181,5 +184,10 @@ Two years of writing about automation have shown me one thing clearly — the pe
 *Join the [Ritz7 Automations ](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)community — where n8n builders at every level share what they are working on and help each other grow.*
 
 <faq>
-
+Q: Is n8n only for people who can code?
+A: No. Every action in n8n is a pre-built block with fields you fill in. No code required. There is an optional code block for people who want it, but most workflows never use it. If you can use Google Sheets, you can use n8n.
+Q: How long does it take to learn n8n from scratch?
+A: Your first working workflow takes about 60–90 minutes, according to n8n's official learning path. Feeling confident enough to build and fix things on your own usually takes two or three workflows. Not days. Not weeks.
+Q: I work in a non-technical job. Can n8n still help me?
+A: Yes — and this is honestly what most people get wrong. Marketers, HR managers, ops professionals, and small business owners often get more out of n8n than developers do because their work is packed with the manual, same-steps-every-time tasks that automation was literally designed for.
 </faq>
