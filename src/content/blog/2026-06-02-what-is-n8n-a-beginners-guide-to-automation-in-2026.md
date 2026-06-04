@@ -135,22 +135,21 @@ Using n8n replaces hours of manual data entry and messaging with instant, automa
 
 At Ritz7, we use n8n to automatically generate YouTube titles and descriptions, draft blog outlines, and handle content tasks that used to eat hours every week. The workflows run quietly in the background. We handle the creative decisions – n8n does the rest.
 
-See how it works: [How to Build a YouTube Video Summarizer in n8n](https://ritz7.ai/blog/instant-yt-summaries-using-ai)
+See how it works: [How to Build a YouTube Video Summarizer in n8n](https://ritz7.ai/blog/build-a-youtube-video-summarizer)
 
 ## 10 Real Things You Can Automate With n8n
 
 You can use n8n to automate operations across customer service, marketing, sales, and AI assistant management without writing any code.
 
-1. [Auto-reply to enquiry form submissions using n8n and Outlook](https://ritz7.ai/blog/auto-reply-form-submission-n8n)
-2. [Send bulk WhatsApp messages to a contact list automatically](https://ritz7.ai/blog/automate-whatsapp-bulk-messages)
-3. [Build a WhatsApp AI agent that replies to voice messages, text, and images](https://ritz7.ai/blog/whatsapp-ai-agent-super-bot)
-4. [Automate Gmail — label emails, save attachments, and pull data into Sheets](https://ritz7.ai/blog/automate-gmail-emails)
-5. [Screen and score job applications automatically with an AI resume bot](https://ritz7.ai/blog/automate-resume-scoring)
-6. [Create and run an OpenAI assistant directly inside n8n](https://ritz7.ai/blog/n8n-tutorial-create-openai-assistant)
-7. [Build a Telegram bot that manages your Google Calendar with voice or text](https://ritz7.ai/blog/telegram-bot-with-google-calendar)
-8. [Automate appointment booking using ElevenLabs voice and n8n](https://ritz7.ai/blog/ai-voice-agent-eleven-labs)
-9. [Connect MCP servers to build powerful AI agent workflows in n8n](https://ritz7.ai/blog/mcp-servers)
-10. [Turn your n8n skills into passive income with templates and ](https://ritz7.ai/blog/n8n-passive-income)
+1. [Auto-reply to enquiry form submissions using n8n and Outlook](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n)
+2. [Send bulk WhatsApp messages to a contact list automatically](https://ritz7.ai/blog/send-bulk-whatsapp-messages-in-n8n)
+3. [Build a WhatsApp AI agent that replies to voice messages, text, and images](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n)
+4. [Automate Gmail — label emails, save attachments, and pull data into Sheets](https://ritz7.ai/blog/automate-gmail-google-workspace-studio-gemini-ai)
+5. [Screen and score job applications automatically with an AI resume bot](https://ritz7.ai/blog/ai-resume-analysis-bot)
+6. [Build a Telegram bot that manages your Google Calendar with voice or text](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n)
+7. [Automate appointment booking using ElevenLabs voice and n8n](https://ritz7.ai/blog/automate-scheduling-with-elevenlabs-n8n)
+8. [Connect MCP servers to build powerful AI agent workflows in n8n](https://ritz7.ai/blog/mastering-mcp-on-openai-agent-builder)
+9. [Turn your n8n skills into passive income with templates](https://ritz7.ai/blog/n8n-passive-income)
 
 ## Who Is n8n For?
 
@@ -158,15 +157,15 @@ n8n is designed for business owners, freelancers, creators, and developers who w
 
 ![who is n8n for](/assets/uploads/who-is-n8n-for.png)
 
-**Small business owners –** stop spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/things-small-businesses-can-automate).
+**Small business owners –** stop spending your evenings on tasks software can handle for you. Here are [10 things every small business should automate in 2026](https://ritz7.ai/blog/small-business-can-automate).
 
-**Freelancers and consultants** automate client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/consulting-firm-automation).
+**Freelancers and consultants** automate client follow-ups, invoice reminders, and reports. See how [consulting firms use automation to cut wasted hours](https://ritz7.ai/blog/automation-for-consulting-benchmark-report).
 
 **Content creators and marketers –** schedule posts, repurpose content, and auto-generate drafts without staring at a blank screen.
 
-**People who want to earn from automation**—once you know n8n, you can sell templates, offer automation services, or build a small software tool. Read the [full guide to making money with n8n](https://ritz7.ai/blog/how-to-make-money-with-n8n).
+**People who want to earn from automation**—once you know n8n, you can sell templates, offer automation services, or build a small software tool. Read the [full guide to making money with n8n](https://ritz7.ai/blog/monetize-n8n-automation-skills).
 
-**Developers and no-code builders** use n8n as the backbone of prototypes, internal tools, and AI products. Compare the [best no-code prototyping tools in 2026](https://ritz7.ai/blog/5-no-code-tools-for-rapid-prototyping).
+**Developers and no-code builders** use n8n as the backbone of prototypes, internal tools, and AI products. Compare the [best no-code prototyping tools in 2026](https://ritz7.ai/blog/no-code-tools-for-rapid-prototyping).
 
 ## Things to Know Before You Start n8n
 
@@ -201,11 +200,11 @@ Once you have a few workflows running, three paths open up:
 
 **Go deeper** — learn how to handle errors, set up more advanced triggers, and use JavaScript for complex logic. This is where n8n gets really powerful.
 
-**Add AI** — connect OpenAI or Gemini to your workflows and build things that can read, think, and respond on their own. Start with [building a WhatsApp AI agent in n8n](https://ritz7.ai/blog/whatsapp-ai-agent-super-bot).
+**Add AI** — connect OpenAI or Gemini to your workflows and build things that can read, think, and respond on their own. Start with [building a WhatsApp AI agent in n8n](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n).
 
-**Make money from it** — sell the workflows you build as templates, offer automation services to businesses, or launch a small tool. The [n8n passive income guide](https://ritz7.ai/blog/n8n-passive-income) covers five specific ways to do this.
+**Make money from it** — sell the workflows you build as templates, offer automation services to businesses, or launch a small tool. The [n8n passive income guide](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n) covers five specific ways to do this.
 
-And if you want to learn the fundamentals properly – not just n8n, but the automation thinking that applies to every AI tool out there – join the [Ritz7 workshop.](https://ritz7.ai/workshop) It is made for complete beginners who want to go from zero to building real things.
+And if you want to learn the fundamentals properly – not just n8n, but the automation thinking that applies to every AI tool out there – join the [Ritz7 workshop.](https://ritz7.ai/workshop?utm_source=blog&utm_medium=text_link&utm_content=inline_article) It is made for complete beginners who want to go from zero to building real things.
 
 ## Final Thoughts
 
