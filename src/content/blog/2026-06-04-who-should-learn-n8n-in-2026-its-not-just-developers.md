@@ -140,3 +140,50 @@ Not everyone needs to jump in right now — and I'd rather be honest about that 
 <customtable>
 
 </customtable>
+
+The learning curve is real but short. [n8n's official beginner courses](https://docs.n8n.io/learning-path/) put the first working workflow at about 60–90 minutes. Most people feel confident after two or three tries. It is nothing like learning a programming language — I promise.
+
+## The Skill Gap That Is Growing Right Now
+
+The [World Economic Forum's Future of Jobs Report 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025/) surveyed over 1,000 companies covering 14 million workers. It found that 39% of the core skills needed for today's jobs will change by 2030. Tech literacy is growing faster than any other skill category. [LinkedIn's Skills on the Rise 2026 report](https://www.talentprise.com/in-demand-skills/), based on data from one billion profiles, put AI literacy at the very top of the list.
+
+This is not a tech industry trend. It is happening in marketing, HR, finance, and operations. Everywhere.
+
+### Why Does Learning n8n Matter Beyond Just Saving Time?
+
+Because the job market is already paying more for it. Automation skills are moving from a nice bonus to a basic expectation — the same shift that happened when knowing Excel went from impressive to just normal. The people who learned Excel early had years of advantage. That same window is open right now for workflow automation, and it won't stay open forever.
+
+The people who learn n8n now are not just saving hours each week. They are building a skill the job market is actively rewarding — and the gap between the people who know this and the people who don't is already opening up.
+
+❌ "I'll learn it when I actually need it."
+
+✅ "I'll learn it now, while getting ahead of it still means something."
+
+## Where to Start
+
+If you recognised yourself anywhere in this article, here are four simple steps to get going:
+
+1. **Sign up**
+
+    — use the n8n cloud free trial (no credit card needed) or self-host for $5–$15/month
+2. **Pick one task**
+
+    — something you do every week that follows the same steps every time
+3. **Build it**
+
+    — using n8n's visual editor, no code needed
+4. **Run it**
+
+    — watch it work, then build the next one
+
+Brand new to n8n? Start here first: [What is n8n? A Beginner's Guide to Automation in 2026](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+
+Want to see how people are already earning from these skills? n8n[ Passive Income: 5 Workflows That Earn While You Sleep](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+
+Two years of writing about automation have shown me one thing clearly — the people who win are not always the most technical. They are the ones who stopped waiting and just started building.
+
+*Join the [Ritz7 Automations ](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)community — where n8n builders at every level share what they are working on and help each other grow.*
+
+<faq>
+
+</faq>
