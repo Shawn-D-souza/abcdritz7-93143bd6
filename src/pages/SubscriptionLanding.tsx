@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, Info, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Background3D } from "@/components/Background3D";
@@ -61,14 +62,14 @@ const SubscriptionLanding = () => {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-foreground shadow-sm">
                 Most Popular
               </div>
-              <div>
+              <div className="flex flex-col flex-1">
                 <h3 className="text-2xl font-semibold">Silver Membership</h3>
                 <p className="mt-2 text-muted-foreground">Perfect for learners who want consistent growth.</p>
                 <div className="mt-6 flex items-baseline gap-x-2">
                   <span className="text-4xl font-bold tracking-tight">₹999</span>
                   <span className="text-sm font-semibold leading-6 text-muted-foreground">/ month</span>
                 </div>
-                <ul className="mt-8 space-y-4 text-sm leading-6">
+                <ul className="mt-8 mb-8 space-y-4 text-sm leading-6 flex-1">
                   {["LMS access", "Weekly calls", "Monthly workshops"].map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
@@ -76,6 +77,29 @@ const SubscriptionLanding = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="mt-auto">
+                <Dialog modal={false}>
+                  <DialogTrigger asChild>
+                    <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                      Choose Silver
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent 
+                    onInteractOutside={(e) => e.preventDefault()}
+                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
+                  >
+                    <DialogTitle className="text-center text-xl font-bold">Secure Checkout</DialogTitle>
+                    <p className="text-center text-sm text-muted-foreground mb-4">Select your plan securely via Razorpay.</p>
+                    <div className="w-full flex justify-center">
+                       <RazorpayButton buttonId="pl_SxdobEf86E6Ky9" />
+                    </div>
+                    <div className="mt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                      <ShieldCheck className="h-4 w-4" />
+                      <span>Cancel anytime. No hidden fees.</span>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </motion.div>
 
@@ -86,7 +110,7 @@ const SubscriptionLanding = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="relative flex flex-col justify-between rounded-3xl border border-border bg-white/40 p-8 shadow-sm backdrop-blur-xl dark:bg-black/40"
             >
-              <div>
+              <div className="flex flex-col flex-1">
                 <h3 className="text-2xl font-semibold flex items-center gap-2">
                   Gold Membership <Zap className="h-5 w-5 text-yellow-500 fill-yellow-500" />
                 </h3>
@@ -95,7 +119,7 @@ const SubscriptionLanding = () => {
                   <span className="text-4xl font-bold tracking-tight">₹4,999</span>
                   <span className="text-sm font-semibold leading-6 text-muted-foreground">/ month</span>
                 </div>
-                <ul className="mt-8 space-y-4 text-sm leading-6">
+                <ul className="mt-8 mb-8 space-y-4 text-sm leading-6 flex-1">
                   {["LMS access", "Weekly calls", "Monthly workshops", "2 x 1-on-1 call per month"].map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
@@ -104,27 +128,34 @@ const SubscriptionLanding = () => {
                   ))}
                 </ul>
               </div>
+              <div className="mt-auto">
+                <Dialog modal={false}>
+                  <DialogTrigger asChild>
+                    <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                      Choose Gold
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent 
+                    onInteractOutside={(e) => e.preventDefault()}
+                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
+                  >
+                    <DialogTitle className="text-center text-xl font-bold">Secure Checkout</DialogTitle>
+                    <p className="text-center text-sm text-muted-foreground mb-4">Select your plan securely via Razorpay.</p>
+                    <div className="w-full flex justify-center">
+                       <RazorpayButton buttonId="pl_SxdobEf86E6Ky9" />
+                    </div>
+                    <div className="mt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                      <ShieldCheck className="h-4 w-4" />
+                      <span>Cancel anytime. No hidden fees.</span>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
             </motion.div>
           </div>
 
-          {/* Payment Button Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 flex flex-col items-center rounded-3xl border border-primary/20 bg-primary/5 px-4 py-8 sm:p-8 text-center backdrop-blur-md max-w-3xl mx-auto dark:bg-primary/10"
-          >
-            <h3 className="text-xl font-semibold mb-2">Ready to take the next step?</h3>
-            <p className="text-muted-foreground mb-6">Select your preferred membership securely via Razorpay.</p>
-            <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-none sm:shadow-lg border-0 sm:border border-black/10 dark:border-white/10 bg-transparent sm:bg-white/50 dark:sm:bg-black/50 p-0 sm:p-2">
-               <RazorpayButton buttonId="pl_SxdobEf86E6Ky9" />
-            </div>
-            
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <ShieldCheck className="h-4 w-4" />
-              <span>Cancel anytime. No hidden fees.</span>
-            </div>
-          </motion.div>
+
+
         </section>
 
         {/* FAQ / Info Section */}
