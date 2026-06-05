@@ -158,7 +158,7 @@ export const AboutUs = () => {
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                We kept seeing brilliant, creative students sitting on the sidelines because they believed building software wasn't for them. That realization sparked our true mission and the start of the{" "}
+                We kept seeing brilliant, creative individuals sitting on the sidelines because they believed building software wasn't for them. That realization sparked our true mission and the start of the{" "}
                 <span className="font-semibold text-foreground">'1000 Days Challenge'</span> — a 
                 public commitment to show that anyone, from anywhere, can build real products. Today, Ritz7 is a{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 font-semibold">

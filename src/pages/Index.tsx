@@ -25,7 +25,7 @@ const Index = () => {
   
   useSEO({
     title: "Ritz7 | Learn AI & No-Code Automation: n8n, Bubble, Emergent & More",
-    description: "Ritz7 is a student community that makes AI and no-code accessible — learn to build real projects without writing complex code.",
+    description: "Join Ritz7, the ultimate community for mastering AI and no-code automation. Learn to build real-world projects and powerful workflows without writing complex code.",
     type: "website",
     image: "https://ritz7.ai/assets/preview_logo.jpg",
   });
