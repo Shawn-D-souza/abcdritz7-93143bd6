@@ -56,7 +56,7 @@ const SubscriptionLanding = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative flex flex-col justify-between rounded-3xl border border-border bg-white/40 p-8 shadow-sm backdrop-blur-xl dark:bg-black/40"
+              className="relative flex flex-col justify-between rounded-3xl border-2 border-primary bg-white/60 p-8 shadow-lg backdrop-blur-xl dark:bg-black/60"
             >
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-foreground shadow-sm">
                 Most Popular
@@ -96,7 +96,7 @@ const SubscriptionLanding = () => {
                   <span className="text-sm font-semibold leading-6 text-muted-foreground">/ month</span>
                 </div>
                 <ul className="mt-8 space-y-4 text-sm leading-6">
-                  {["Silver membership access", "LMS access", "Weekly calls", "Monthly workshops", "2 x 1-on-1 call per month"].map((feature) => (
+                  {["LMS access", "Weekly calls", "Monthly workshops", "2 x 1-on-1 call per month"].map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-primary" aria-hidden="true" />
                       {feature}
