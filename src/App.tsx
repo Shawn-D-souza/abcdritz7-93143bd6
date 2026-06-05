@@ -14,6 +14,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const BlogList = lazy(() => import("./pages/BlogList"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const HallOfFame = lazy(() => import("./pages/HallOfFame"));
+const SubscriptionLanding = lazy(() => import("./pages/SubscriptionLanding"));
 import WorkshopLanding from "./pages/WorkshopLanding";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/community-guidelines" element={<CommunityGuidelines />} />
               <Route path="/hall-of-fame" element={<HallOfFame />} />
+              <Route path="/subscriptions" element={<SubscriptionLanding />} />
               <Route path="/blogs" element={<BlogList />} />
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/workshop" element={<WorkshopLanding />} />
