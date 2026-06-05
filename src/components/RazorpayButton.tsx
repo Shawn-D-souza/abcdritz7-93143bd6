@@ -9,8 +9,15 @@ const RazorpayButton = ({ buttonId, theme = 'brand-color' }: RazorpayButtonProps
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    // Check if the script is already added to avoid duplicates in React strict mode
-    if (formRef.current && formRef.current.children.length === 0) {
+    // Skip injecting the script during react-snap pre-rendering
+    if (typeof window !== 'undefined' && window.navigator.userAgent === 'ReactSnap') {
+      return;
+    }
+
+    if (formRef.current) {
+      // Clear any pre-rendered HTML to ensure a fresh client-side initialization
+      formRef.current.innerHTML = '';
+
       const script = document.createElement('script');
       script.src = 'https://cdn.razorpay.com/static/widget/subscription-button.js';
       script.setAttribute('data-subscription_button_id', buttonId);
