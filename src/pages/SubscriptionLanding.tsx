@@ -79,7 +79,7 @@ const SubscriptionLanding = () => {
                 </ul>
               </div>
               <div className="mt-auto">
-                <Dialog modal={false}>
+                <Dialog>
                   <DialogTrigger asChild>
                     <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
                       Choose Silver
@@ -87,14 +87,14 @@ const SubscriptionLanding = () => {
                   </DialogTrigger>
                   <DialogContent 
                     onInteractOutside={(e) => e.preventDefault()}
-                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
+                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md max-h-[90vh] overflow-y-auto bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
                   >
                     <DialogTitle className="text-center text-xl font-bold">Secure Checkout</DialogTitle>
-                    <p className="text-center text-sm text-muted-foreground mb-4">Select your plan securely via Razorpay.</p>
+                    <p className="text-center text-sm text-muted-foreground mb-2">Select your plan securely via Razorpay.</p>
                     <div className="w-full flex justify-center">
                        <RazorpayButton buttonId="pl_SxdobEf86E6Ky9" />
                     </div>
-                    <div className="mt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="mt-1 flex items-center justify-center gap-2 text-sm text-muted-foreground">
                       <ShieldCheck className="h-4 w-4" />
                       <span>Cancel anytime. No hidden fees.</span>
                     </div>
@@ -129,7 +129,7 @@ const SubscriptionLanding = () => {
                 </ul>
               </div>
               <div className="mt-auto">
-                <Dialog modal={false}>
+                <Dialog>
                   <DialogTrigger asChild>
                     <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
                       Choose Gold
@@ -137,14 +137,14 @@ const SubscriptionLanding = () => {
                   </DialogTrigger>
                   <DialogContent 
                     onInteractOutside={(e) => e.preventDefault()}
-                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
+                    className="w-[calc(100vw-2rem)] rounded-2xl p-2 sm:p-6 sm:max-w-md max-h-[90vh] overflow-y-auto bg-white/95 dark:bg-black/95 backdrop-blur-xl border-border"
                   >
                     <DialogTitle className="text-center text-xl font-bold">Secure Checkout</DialogTitle>
-                    <p className="text-center text-sm text-muted-foreground mb-4">Select your plan securely via Razorpay.</p>
+                    <p className="text-center text-sm text-muted-foreground mb-2">Select your plan securely via Razorpay.</p>
                     <div className="w-full flex justify-center">
                        <RazorpayButton buttonId="pl_SxdobEf86E6Ky9" />
                     </div>
-                    <div className="mt-2 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="mt-1 flex items-center justify-center gap-2 text-sm text-muted-foreground">
                       <ShieldCheck className="h-4 w-4" />
                       <span>Cancel anytime. No hidden fees.</span>
                     </div>

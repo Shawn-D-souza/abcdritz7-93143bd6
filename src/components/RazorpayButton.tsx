@@ -40,7 +40,7 @@ const RazorpayButton = ({ buttonId, theme = 'brand-color' }: RazorpayButtonProps
   }, [buttonId, theme]);
 
   return (
-    <div className="flex flex-col items-center justify-center my-6 min-h-[50px] relative w-full overflow-visible">
+    <div className="flex flex-col items-center justify-center my-2 min-h-[50px] relative w-full overflow-visible">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
