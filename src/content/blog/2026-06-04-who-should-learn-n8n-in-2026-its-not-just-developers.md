@@ -3,8 +3,8 @@ title: Who Should Learn n8n in 2026? (It's Not Just Developers)
 slug: who-should-learn-n8n-automation
 category: n8n Guide
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
-date: 2026-06-05T07:05:00.000Z
-updated_date: 2026-06-05T00:05:00.000Z
+date: 2026-06-05T13:08:00.000Z
+updated_date: 2026-06-05T13:08:00.000Z
 thumbnail: /assets/uploads/who-should-learn-n8n.png
 thumbnail_alt: Who should learn n8n
 description: Automation isn't just for coders anymore. Learn how non-tech
