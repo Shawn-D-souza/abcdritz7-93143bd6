@@ -79,7 +79,7 @@ const SubscriptionLanding = () => {
                 </ul>
               </div>
               <div className="mt-auto">
-                <Dialog>
+                <Dialog modal={false}>
                   <DialogTrigger asChild>
                     <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
                       Choose Silver
@@ -129,7 +129,7 @@ const SubscriptionLanding = () => {
                 </ul>
               </div>
               <div className="mt-auto">
-                <Dialog>
+                <Dialog modal={false}>
                   <DialogTrigger asChild>
                     <button className="w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
                       Choose Gold
