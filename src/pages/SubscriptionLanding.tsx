@@ -6,8 +6,15 @@ import { Footer } from "@/components/Footer";
 import { Background3D } from "@/components/Background3D";
 import { CustomCursor } from "@/components/CustomCursor";
 import RazorpayButton from "@/components/RazorpayButton";
+import { useSEO } from "@/hooks/useSEO";
 
 const SubscriptionLanding = () => {
+  useSEO({
+    title: "Premium Memberships | Ritz7",
+    description: "Elevate your AI journey with Ritz7 premium memberships. Get access to our LMS, weekly calls, and monthly workshops.",
+    url: "https://ritz7.ai/subscriptions",
+  });
+
   return (
     <div className="relative min-h-screen selection:bg-primary/30 text-foreground overflow-hidden">
       <CustomCursor />
