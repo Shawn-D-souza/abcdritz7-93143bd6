@@ -50,7 +50,7 @@ That's not a complicated tech project. That's one afternoon of setup — and the
 * Collecting leads from contact forms or social media
 * Sending weekly client updates without writing them every time
 
-Want to actually earn money from building these workflows? Read: [How to Make Money with n8n: 5 Proven Strategies to Earn $5k+/month](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+Want to actually earn money from building these workflows? Read: [How to Make Money with n8n: 5 Proven Strategies to Earn $5k+/month](https://ritz7.ai/blog/monetize-n8n-automation-skills)
 
 ## 2. Marketers and Content Creators
 
@@ -70,7 +70,7 @@ Marketers who know n8n walk into interviews with something most candidates simpl
 * Getting weekly analytics reports without building them manually
 * Running prompt engineering workflows that write copy in your brand voice
 
-See it in action: [Automate Email Replies from Form Submission in n8n](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+See it in action: [Automate Email Replies from Form Submission in n8n](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n)
 
 ## 3. Small Business Owners
 
@@ -94,7 +94,7 @@ More than you'd think. If your business uses email, WhatsApp, a calendar, or a s
 * New Shopify order → update stock in Google Sheets → notify fulfilment team
 * New Google Review → AI writes a reply → it gets posted
 
-Step-by-step guide: [How to Build a WhatsApp AI Agent with n8n](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+Step-by-step guide: [How to Build a WhatsApp AI Agent with n8n](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n)
 
 ## 4. HR and Operations Professionals
 
@@ -104,7 +104,7 @@ Nobody thinks of HR or ops when they hear "automation". But think about what tho
 
 Here's a real example. An HR manager can set up a workflow in n8n that picks up every new CV from email, runs it through an AI model, checks it against the job description, scores it, and drops a ranked shortlist into a shared Google Sheet — automatically, every morning. No manual screening required.
 
-Our team built exactly this: [Build an AI resume analysis bot in n8n](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#). It takes less than a day to set up and replaces hours of manual CV work every week. When I first saw it running, I genuinely couldn't believe how much time it saved.
+Our team built exactly this: [Build an AI resume analysis bot in n8n](https://ritz7.ai/blog/ai-resume-analysis-bot). It takes less than a day to set up and replaces hours of manual CV work every week. When I first saw it running, I genuinely couldn't believe how much time it saved.
 
 ### Does n8n work for people who are not tech-savvy?
 
@@ -144,7 +144,7 @@ Need strict company security sign-offs before using new tools | Check whether se
 Want results with zero learning time | Hire an n8n freelancer to set it up for you
 </customtable>
 
-The learning curve is real but short. [n8n's official beginner courses](https://docs.n8n.io/learning-path/) put the first working workflow at about 60–90 minutes. Most people feel confident after two or three tries. It is nothing like learning a programming language — I promise.
+The learning curve is real but incredibly short. With our [n8n Beginner Course](https://ritz7.ai/programs/n8n-beginner-course?utm_source=article&utm_medium=blog&utm_campaign=n8n_beginner), you will build your very first working workflow in about 60–90 minutes. Most people feel completely confident after just two or three tries. It is nothing like learning a programming language — I promise.
 
 ## The Skill Gap That Is Growing Right Now
 
@@ -169,17 +169,17 @@ The people who learn n8n now are not just saving hours each week. They are build
 If you recognised yourself anywhere in this article, here are four simple steps to get going:
 
 1. **Sign up**—use the n8n cloud free trial (no credit card needed) or self-host for $5–$15/month
-2. **Pick one task**— something you do every week that follows the same steps every time
+2. **Pick one task**—something you do every week that follows the same steps every time
 3. **Build it**—using n8n's visual editor, no code needed
 4. **Run it**—watch it work, then build the next one
 
-Brand new to n8n? Start here first: [What is n8n? A Beginner's Guide to Automation in 2026](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+Brand new to n8n? Start here first: [What is n8n? A Beginner's Guide to Automation in 2026](https://ritz7.ai/blog/what-is-n8n-beginners-guide-automation)
 
-Want to see how people are already earning from these skills? n8n [Passive Income: 5 Workflows That Earn While You Sleep](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)
+Want to see how people are already earning from these skills? [n8n Passive Income: 5 Workflows That Earn While You Sleep](https://ritz7.ai/blog/n8n-passive-income)
 
 Two years of writing about automation have shown me one thing clearly — the people who win are not always the most technical. They are the ones who stopped waiting and just started building.
 
-*Join the [Ritz7 Automations ](https://claude.ai/chat/0a787be0-0a78-410a-9c7a-f85ebd23e7f2#)community — where n8n builders at every level share what they are working on and help each other grow.*
+*Join the [Ritz7 Automations community](https://wa.me/message/RVQXUI35RJO4J1) — where n8n builders at every level share what they are working on and help each other grow.*
 
 <faq>
 Q: Is n8n only for people who can code?
