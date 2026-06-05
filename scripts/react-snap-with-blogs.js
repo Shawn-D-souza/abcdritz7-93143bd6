@@ -51,10 +51,14 @@ const include = [
   '/',
   '/blogs',
   '/workshop',
+  '/privacy-policy',
+  '/community-guidelines',
+  '/hall-of-fame',
+  '/subscriptions',
   ...blogSlugs.map((slug) => `/blog/${slug}`),
 ];
 
-console.log(`[react-snap] Pre-rendering ${blogSlugs.length} blog post(s) + 3 static pages…`);
+console.log(`[react-snap] Pre-rendering ${blogSlugs.length} blog post(s) + 7 static pages…`);
 
 // Run react-snap programmatically with the dynamic include list
 run({
