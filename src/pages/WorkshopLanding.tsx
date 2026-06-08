@@ -118,8 +118,8 @@ const LazyFAQSection = () => {
         <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Is it a 2-day workshop?</AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
           No, it is a single 3-hour workshop! We are conducting the exact same workshop twice to accommodate different schedules:<br /><br />
-          • <strong>Batch 1:</strong> 5th June, Friday - 7:30 PM to 10:30 PM IST<br />
-          • <strong>Batch 2:</strong> 6th June, Saturday - 10:00 AM to 1:00 PM IST<br /><br />
+          • <strong>Batch 1:</strong> Friday - 7:30 PM to 10:30 PM IST<br />
+          • <strong>Batch 2:</strong> Saturday - 10:00 AM to 1:00 PM IST<br /><br />
           You can choose to attend whichever batch works best for you.
         </AccordionContent>
       </AccordionItem>
@@ -147,7 +147,7 @@ const WorkshopLanding = () => {
 
   useSEO({
     title: "Start Your Automation Journey | n8n Beginner Workshop",
-    description: "Join our beginner-friendly n8n workshop. Build your first automation without any coding experience. June 5th or 6th.",
+    description: "Join our beginner-friendly n8n workshop. Build your first automation without any coding experience.",
     type: "website",
   });
 
@@ -263,7 +263,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
                 <div className="flex items-start sm:items-center gap-2">
                   <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>June 5th</strong> (7:30pm - 10:30pm) <span className="opacity-50 mx-1">OR</span> <strong>June 6th</strong> (10am - 1pm)</span>
+                  <span><strong>Friday</strong> (7:30pm - 10:30pm) <span className="opacity-50 mx-1">OR</span> <strong>Saturday</strong> (10am - 1pm)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary shrink-0" />
