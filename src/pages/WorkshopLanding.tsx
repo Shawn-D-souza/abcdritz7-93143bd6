@@ -115,10 +115,10 @@ const LazyFAQSection = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-4" className="border-b border-border/50">
-        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">Is it a 2-day workshop?</AccordionTrigger>
+        <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">When is the next workshop?</AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-          No, it is a single 3-hour workshop! We conduct our workshops on the weekends.<br /><br />
-          You can choose to attend a weekend slot that works best for you.
+          The workshop is a single 3-hour power session! We are taking a short break to prep for our next major batch, which will be conducted <strong>next weekend</strong> (not this immediate week).<br /><br />
+          Once you secure your spot, our team will coordinate with you to choose a weekend slot that fits your schedule perfectly.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-5" className="border-none">
@@ -261,7 +261,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
                 <div className="flex items-start sm:items-center gap-2">
                   <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>Conducted on Weekends</strong></span>
+                  <span><strong>Next Cohort: Commencing Next Weekend</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary shrink-0" />
