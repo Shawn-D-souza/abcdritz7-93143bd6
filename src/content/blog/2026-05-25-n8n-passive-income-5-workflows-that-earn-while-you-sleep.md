@@ -63,7 +63,7 @@ If you are new to making money with n8n and want to see the full picture first, 
 Not sure where to begin? Pick based on where you are right now:
 
 <customtable>
-**If you...    ➡ (slide to read)** | **Start with...**
+**If you...    ➡** | **Start with...**
 Are completely new to n8n | Workflow Template Sales
 Have built workflows but never sold them | Automated Lead List Delivery
 Want the highest long-term income | Micro SaaS Tool
