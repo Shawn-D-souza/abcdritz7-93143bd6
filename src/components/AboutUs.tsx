@@ -115,7 +115,7 @@ export const AboutUs = () => {
                   <div className="flex items-center justify-center gap-3 mb-4">
                     <div className="flex items-center gap-1.5 text-muted-foreground">
                       <Users className="w-3.5 h-3.5" />
-                      <span className="text-xs font-semibold">6K+</span>
+                      <span className="text-xs font-semibold">7.5k+</span>
                       <span className="text-[10px]">subscribers</span>
                     </div>
                     <div className="w-px h-3 bg-border/50" />
