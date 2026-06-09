@@ -91,7 +91,7 @@ AI literacy — knowing not just what AI can do but how to put it to work inside
 
 It is worth being clear about what you do **not** need.
 
-**You do not need to code.** [No-code automation platforms](https://ritz7.ai/blog/no-code-automation-platforms/) like n8n, Make, and Zapier let you build complex automation visually – drag, drop, connect. No terminal, no Python, no debugging at 2 am. There are also excellent [no-code tools for rapid prototyping](https://ritz7.ai/blog/no-code-tools-for-rapid-prototyping/) if you want to test an idea before committing to a full build.
+**You do not need to code.** [No-code automation platforms](https://ritz7.ai/blog/no-code-automation-platforms/) like n8n, Make, and Zapier let you build complex automation visually – drag, drop, and connect. No terminal, no Python, no debugging at 2 am. There are also excellent [no-code tools for rapid prototyping](https://ritz7.ai/blog/no-code-tools-for-rapid-prototyping/) if you want to test an idea before committing to a full build.
 
 **You do not need a background in machine learning, deep learning, or neural networks.** You do not need to understand how a large language model is trained, how natural language processing works under the hood, or what a transformer architecture looks like. Those are skills for AI engineers and ML engineers building the models — not for people using them inside business workflows. You just need to know what to send the model and what to do with the response.
 
@@ -103,48 +103,16 @@ What you do need is a willingness to look at your own work — or your team's wo
 
 The best way to understand this skill is to see it applied to real tasks. Here are some examples of what it produces — each one started with someone asking: *Can I automate this?*
 
-* **Email handling:**
+* **Email handling:** Instead of reading every form submission and replying manually, you build a flow that [automates email replies from form submissions](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n/) — categorised, personalised, and sent without you touching it.
+* **Content creation:** Instead of writing YouTube metadata by hand for every video, you build a 
 
-   Instead of reading every form submission and replying manually, you build a flow that 
-
-  [automates email replies from form submissions](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n/)
-
-   — categorised, personalised, and sent without you touching it.
-* **Content creation:**
-
-   Instead of writing YouTube metadata by hand for every video, you build a 
-
-  [YouTube video summariser in n8n](https://ritz7.ai/blog/build-a-youtube-video-summarizer/)
-
-   that generates titles, descriptions, and chapters automatically.
-* **Client scheduling:**
-
-   Instead of going back and forth over calendar slots, you 
-
-  [automate scheduling with ElevenLabs and n8n](https://ritz7.ai/blog/automate-scheduling-with-elevenlabs-n8n/)
-
-   so the whole booking process runs itself.
-* **WhatsApp communication:**
-
-   Instead of manually messaging leads or customers, you 
-
-  [build a WhatsApp AI agent with n8n](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n/)
-
-   that handles common questions and routes complex ones to a human.
-* **Meeting follow-ups:**
-
-   Tools like 
-
-  [Grain AI can automate meetings, sales notes, and learning](https://ritz7.ai/blog/grain-ai-automate-your-meetings-sales-and-learning/)
+  [YouTube video summariser in n8n](https://ritz7.ai/blog/build-a-youtube-video-summarizer/) that generates titles, descriptions, and chapters automatically.
+* **Client scheduling:** Instead of going back and forth over calendar slots, you [automate scheduling with ElevenLabs and n8n](https://ritz7.ai/blog/automate-scheduling-with-elevenlabs-n8n/) so the whole booking process runs itself.
+* **WhatsApp communication:** Instead of manually messaging leads or customers, you [build a WhatsApp AI agent with n8n](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n/) that handles common questions and routes complex ones to a human.
+* **Meeting follow-ups:** Tools like [Grain AI can automate meetings, sales notes, and learning](https://ritz7.ai/blog/grain-ai-automate-your-meetings-sales-and-learning/)
 
    — so nothing falls through the cracks after a call.
-* **Newsletter production:**
-
-   Instead of assembling each issue by hand, you 
-
-  [build an automated AI newsletter](https://ritz7.ai/blog/automated-ai-newsletter/)
-
-   that curates, drafts, and delivers content on a schedule.
+* **Newsletter production:** Instead of assembling each issue by hand, you [build an automated AI newsletter](https://ritz7.ai/blog/automated-ai-newsletter/) that curates, drafts, and delivers content on a schedule.
 
 None of these required a developer. Each one started with someone mapping the steps, then building the connections.
 
@@ -179,9 +147,6 @@ There is no shortcut to building intuition — you have to build something real.
 **Step 5: Add one more step.** Once the simple version works, extend it. Add an AI step. Make it smarter. *Example: add an OpenAI node between Slack and Sheets — instead of raw messages, the workflow now writes a clean 3-line summary for each update. Your manager loves it. You built it in 20 minutes.* You might also explore [mastering MCP on OpenAI Agent Builder](https://ritz7.ai/blog/mastering-mcp-on-openai-agent-builder/) or [building a Telegram calendar bot](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n/) as your next step.
 
 Three to four hours is all it takes to go from zero to a working automation that saves you real time. We keep it simple by focusing on the core basics—triggers and actions. **If you want to see it in practice, [join our live workshop.](https://ritz7.ai/workshop?utm_source=blog&utm_medium=article&utm_content=inline_text)**
-
-
-
 
 ## The Honest Picture: This Is Not Magic
 
