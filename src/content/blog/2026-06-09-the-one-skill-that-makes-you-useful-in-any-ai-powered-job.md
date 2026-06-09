@@ -82,7 +82,12 @@ New to the idea of automation entirely? Start with [What is n8n: A Beginner's Gu
 Here is a quick look at how this plays out across different job roles:
 
 <customtable>
-
+**Role** | **What changes with AI** | **What the workflow thinker does**
+**Marketing** | Generative AI writes copy, generates images | Builds the pipeline that briefs AI, reviews output, and publishes it.
+**Sales** | AI qualifies leads and drafts emails | Automates lead scoring, email sequences, and CRM updates
+**HR** | AI screens resumes | Builds the system that ingests CVs, runs scoring, and flags top candidates
+**Finance** | AI flags anomalies in data | Connects the monitoring workflow to send alerts before humans notice
+**Customer service** | AI assistants handle FAQs | Designs the routing logic so complex queries reach humans faster
 </customtable>
 
 In every case, the AI does not replace the person. It replaces the repetitive part of the person's job. The person who understands how to build and manage that handoff becomes more valuable, not less.
