@@ -50,7 +50,7 @@ Here is the honest reality: most businesses are not looking for someone who can 
 
 That person is immediately valuable. In any company. In any role. In any industry. And in a labour market being reshaped by generative AI, that person is also increasingly hard to find — which is exactly why the talent shortage for people who can actually implement AI at work is growing every year.
 
-If you are not sure whether this applies to you, read: [Who Should Learn n8n Automation?](https://ritz7.ai/blog/who-should-learn-n8n-automation/) — it answers that question directly.
+If you are not sure whether this applies to you, read [Who Should Learn n8n Automation?](https://ritz7.ai/blog/who-should-learn-n8n-automation/) — it answers that question directly.
 
 ## Workflow Thinking: The Skill Behind Every Useful AI Job
 
@@ -83,7 +83,7 @@ Here is a quick look at how this plays out across different job roles:
 
 In every case, the AI does not replace the person. It replaces the repetitive part of the person's job. The person who understands how to build and manage that handoff becomes more valuable, not less.
 
-This is the real meaning of AI at work — not replacing human judgement, but augmenting it. The human-machine partnership works best when someone has designed the handoff deliberately. That is exactly why [learning no-code is now essential for entrepreneurs](https://ritz7.ai/blog/learning-no-code-is-essential-for-entrepreneurs/) — and increasingly for employees at every level too. The [AI automation trends shaping 2025](https://ritz7.ai/blog/ai-automation-trends-in-2025/) point in one direction: the people who can connect tools together are the ones companies are fighting to hire.
+This is the real meaning of AI at work — not replacing human judgement, but augmenting it. The human-machine partnership works best when someone has designed the handoff deliberately. That is exactly why [learning no-code is now essential for entrepreneurs](https://ritz7.ai/blog/learning-no-code-is-essential-for-entrepreneurs/) — and increasingly for employees at every level too. The [AI automation trends shaping 2026](https://ritz7.ai/blog/ai-automation-trends-in-2025/) point in one direction: the people who can connect tools together are the ones companies are fighting to hire.
 
 AI literacy — knowing not just what AI can do but how to put it to work inside a real process — is fast becoming the baseline expectation across career paths in business, operations, and technology.
 
