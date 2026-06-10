@@ -30,7 +30,15 @@ const initPostHog = () => {
 };
 
 window.addEventListener('load', () => {
-  setTimeout(initPostHog, 3000);
+  // requestIdleCallback fires as soon as the browser is genuinely idle,
+  // which is often much sooner than a fixed 3-second delay on fast devices.
+  // The { timeout: 4000 } fallback guarantees it still runs on slow devices.
+  // Safari doesn't support requestIdleCallback, so we fall back to setTimeout.
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initPostHog, { timeout: 4000 });
+  } else {
+    setTimeout(initPostHog, 3000);
+  }
 });
 
 const rootElement = document.getElementById('root') as HTMLElement;
