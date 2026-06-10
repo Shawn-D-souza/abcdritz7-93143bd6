@@ -210,6 +210,11 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
           email: formData.email,
           contact: formData.countryCode + formData.whatsapp,
         },
+        readonly: {
+          name: true,
+          email: true,
+          contact: true,
+        },
         theme: {
           color: "#6d28d9", // Purple matching the theme
         },
