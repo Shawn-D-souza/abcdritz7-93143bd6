@@ -10,6 +10,7 @@ import React from 'react';
 import { hydrateRoot, createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import { flushAnalyticsQueue } from './lib/analytics';
 
 // Defer PostHog analytics to avoid blocking hydration & first paint.
 // On the /workshop ad landing page this saves ~50 KB from the critical path
@@ -20,6 +21,11 @@ const initPostHog = () => {
       api_host: 'https://us.i.posthog.com',
       person_profiles: 'identified_only',
     });
+    // Mark analytics as ready and flush any events queued before init.
+    flushAnalyticsQueue();
+  }).catch(() => {
+    // PostHog failed to load (e.g. ad-blocker). Flush is skipped; queue is
+    // silently discarded by the analytics module — app is unaffected.
   });
 };
 

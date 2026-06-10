@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input";
 import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
+import { capture } from "@/lib/analytics";
 
 // ── Lazy-loaded components (not needed for first paint) ──────────────────
 // Payment modal: pulls in Supabase (177 KB), date-fns (20 KB), Dialog, Input, Label, sonner
@@ -176,10 +177,8 @@ const WorkshopLanding = () => {
         gtag_override: true // signals to GTM to bypass auto-macros
       });
     }
-    // Lazy-load posthog for tracking click — avoid importing at module level
-    import('posthog-js').then(({ default: posthog }) => {
-      posthog.capture('workshop_button_click', { variant });
-    });
+    // Track click — safe capture handles queueing if PostHog isn't ready yet
+    capture('workshop_button_click', { variant });
     setHasOpenedModal(true);
     setIsPaymentModalOpen(true);
   };

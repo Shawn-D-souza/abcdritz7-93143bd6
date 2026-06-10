@@ -13,6 +13,7 @@ import { ShieldCheck, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabase";
 import { format } from "date-fns";
+import { capture } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -90,9 +91,8 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
 
       await loadScriptPromise; // Ensure script is loaded
       
-      // Track form submission (Continue button) in PostHog with variant
-      const posthog = await import('posthog-js').then(m => m.default);
-      posthog.capture('workshop_form_submitted', { variant });
+      // Track form submission with variant — queued if PostHog isn't ready yet
+      capture('workshop_form_submitted', { variant });
       
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'workshop_form_submitted', { variant });
@@ -115,15 +115,14 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
         setIsSuccessModalOpen(true);
         onOpenChange(false);
         
-        // Fire Analytics Events for successful free registration
+        // Fire analytics for successful free registration
         try {
-          const posthog = await import('posthog-js').then(m => m.default);
-          posthog.capture('workshop_register_free', { variant });
+          capture('workshop_register_free', { variant });
           if (typeof window.gtag === 'function') {
             window.gtag('event', 'workshop_register_free', { variant });
           }
-        } catch (e) {
-          console.warn('Analytics error (non-critical):', e);
+        } catch (_e) {
+          console.warn('Analytics error (non-critical):', _e);
         }
       } else {
         setStep(2);
@@ -143,13 +142,12 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
 
     // Fire analytics — wrapped in try-catch so a failure here NEVER blocks the payment
     try {
-      const posthog = await import('posthog-js').then(m => m.default);
-      posthog.capture('workshop_pay_button_clicked', { variant, amount: amountToCharge });
+      capture('workshop_pay_button_clicked', { variant, amount: amountToCharge });
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'workshop_pay_button_clicked', { variant, value: amountToCharge });
       }
-    } catch (e) {
-      console.warn('Analytics error (non-critical):', e);
+    } catch (_e) {
+      console.warn('Analytics error (non-critical):', _e);
     }
 
     try {
@@ -170,11 +168,9 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
           setIsProcessing(false);
           setIsSuccessModalOpen(true);
 
-          // Fire Analytics Events — non-blocking, never crashes the handler
+          // Fire analytics events — non-blocking, never crashes the handler
           try {
-            import('posthog-js').then(m => {
-              m.default.capture('workshop_purchase', { variant, value: amountToCharge, currency: 'INR' });
-            });
+            capture('workshop_purchase', { variant, value: amountToCharge, currency: 'INR' });
             if (typeof window.gtag === 'function') {
               window.gtag('event', 'workshop_purchase', { value: amountToCharge, currency: 'INR' });
             }
@@ -184,8 +180,8 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
             if (typeof window.fbq === 'function') {
               window.fbq('track', 'Purchase', { value: amountToCharge, currency: 'INR' });
             }
-          } catch (e) {
-            console.warn('Analytics error (non-critical):', e);
+          } catch (_e) {
+            console.warn('Analytics error (non-critical):', _e);
           }
 
           // 2. Process the webhook securely in the background (fire-and-forget)
