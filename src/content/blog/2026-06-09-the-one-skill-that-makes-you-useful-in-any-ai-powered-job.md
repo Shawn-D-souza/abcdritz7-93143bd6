@@ -5,7 +5,7 @@ category: AI
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-06-09T09:32:00.000Z
 updated_date: 2026-06-10T08:36:00.000Z
-thumbnail: /assets/uploads/skill-for-ai-powered-job...png
+thumbnail: /assets/uploads/skill-for-ai-powered-job..-2-.png
 thumbnail_alt: Skill for AI powered job
 description: AI won't replace you, but someone using automation will. Learn how
   "workflow thinking" bridges the gap between AI tools and real business value.
