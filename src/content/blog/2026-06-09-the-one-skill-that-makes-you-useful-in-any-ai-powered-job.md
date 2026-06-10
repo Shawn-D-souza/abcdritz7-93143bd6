@@ -108,7 +108,7 @@ What you do need is a willingness to look at your own work — or your team's wo
 
 When we talk about shifting from basic tool usage to systemic design, a few critical questions always come up. Let's clear up exactly where the line is drawn.
 
-![Workflow Thinking Beyond Basic AI Tool Usage](/assets/uploads/workflow-automation-compounding-impact...png)
+![Workflow Thinking Beyond Basic AI Tool Usage](/assets/uploads/workflow-thinking-beyond-basic-ai-tool-usage...png)
 
 ### Is this skill just about n8n, or does it apply to other tools?
 
@@ -145,7 +145,7 @@ These are the kinds of workflows generative AI tools make possible today — not
 
 The reason this skill is worth learning right now — not next year, not after the "AI hype" settles down — is that it compounds.
 
-![Workflow Automation Compounding Impact](/assets/uploads/workflow-thinking-beyond-basic-ai-tool-usage...png)
+![Workflow Automation Compounding Impact](/assets/uploads/workflow-automation-compounding-impact...png)
 
 The first workflow you build might save you 2 hours a week. The second one, because you now understand the patterns, takes half the time to build. The third one connects to the second. By month six, you have a system of interconnected automations that handles a meaningful chunk of your workload — and you spend your time on the work only you can do.
 
