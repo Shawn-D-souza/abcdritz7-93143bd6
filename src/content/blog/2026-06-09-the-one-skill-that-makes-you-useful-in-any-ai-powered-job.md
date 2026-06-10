@@ -1,7 +1,7 @@
 ---
 title: The One Skill That Makes You Useful in Any AI-Powered Job
 slug: workflow-thinking-essential-ai-job-skill
-category: AI
+category: Skill Development
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-06-09T09:32:00.000Z
 updated_date: 2026-06-10T08:36:00.000Z
