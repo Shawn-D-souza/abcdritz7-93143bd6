@@ -80,7 +80,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
           name: formData.name,
           email: formData.email,
           whatsapp: formData.countryCode + formData.whatsapp,
-          workshop_name: "n8n for beginners"
+          workshop_name: "Beginner's guide on n8n"
         }
       });
 
@@ -198,7 +198,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
               email: formData.email,
               whatsapp: formData.countryCode + formData.whatsapp,
               amount: amountToCharge,
-              workshop_name: "n8n for beginners",
+              workshop_name: "Beginner's guide on n8n",
               date: format(new Date(), "dd MMM, yyyy")
             }
           }).catch((error) => {
