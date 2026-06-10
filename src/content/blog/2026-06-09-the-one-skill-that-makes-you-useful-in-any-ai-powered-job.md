@@ -163,23 +163,25 @@ There is no shortcut to building intuition — you have to build something real.
 
 **Step 1: Pick one task you repeat every week.** Not a big project. A small, boring, repetitive task. Something you could explain to someone in 60 seconds. 
 
-**Example:** Every Friday you copy your team's status updates from Slack into a Google Sheet to track progress. That is a perfect first automation.*
+> **Example:** Every Friday you copy your team's status updates from Slack into a Google Sheet to track progress. That is a perfect first automation.
 
 **Step 2: Write out every step.** Literally write it down. Input → action → output for each step. Do not skip this. Once you can see how work flows, automating recurring steps becomes obvious — but you cannot see it until you have drawn it out. A simple list or whiteboard sketch is enough. No special tools, no jargon. 
 
-**Example:** (1) open Slack, (2) find the #updates channel, (3) copy each message, (4) paste it into the sheet, and (5) add the date. Steps 3 and 4 are the ones to automate.* 
+> **Example:** (1) open Slack, (2) find the updates channel, (3) copy each message, (4) paste it into the sheet, and (5) add the date. Steps 3 and 4 are the ones to automate.
 
 **Step 3: Build it with a no-code tool.** n8n is the best starting point — it's free to self-host, connects to almost everything, and the visual interface makes the logic clear as you build. Start with the [n8n tutorial: create an OpenAI assistant](https://ritz7.ai/blog/n8n-tutorial-create-an-openai-assistant/) to see exactly how AI plugs into a live workflow. 
 
-**Example:** a Slack node reads the channel, and a Google Sheets node writes each message as a new row – built in under an hour.* 
+> **Example:** a Slack node reads the channel, and a Google Sheets node writes each message as a new row – built in under an hour.
 
 **Step 4: Run it. Break it. Fix it.** The first run will almost never be perfect. That is fine. The debugging is where you learn the most. If you are building agentic AI workflows or autonomous AI agents specifically, read [Stop Deploying Broken Agents: The Production Guide](https://ritz7.ai/blog/stop-deploying-broken-agents-the-production-guide/) before you go live. 
 
-**Example:** The workflow pulls too many messages — add a filter for the last 7 days. One fix, done.* 
+> **Example:** The workflow pulls too many messages — add a filter for the last 7 days. One fix, done.
 
 **Step 5: Add one more step.** Once the simple version works, extend it. Add an AI step. Make it smarter. 
 
-**Example:** Add an OpenAI node between Slack and Sheets — instead of raw messages, the workflow now writes a clean 3-line summary for each update. Your manager loves it. You built it in 20 minutes.* You might also explore [mastering MCP on OpenAI Agent Builder](https://ritz7.ai/blog/mastering-mcp-on-openai-agent-builder/) or [building a Telegram calendar bot](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n/) as your next step.
+> **Example:** Add an OpenAI node between Slack and Sheets — instead of raw messages, the workflow now writes a clean 3-line summary for each update. Your manager loves it. You built it in 20 minutes. 
+
+You might also explore [mastering MCP on OpenAI Agent Builder](https://ritz7.ai/blog/mastering-mcp-on-openai-agent-builder/) or [building a Telegram calendar bot](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n/) as your next step.
 
 Three to four hours is all it takes to go from zero to a working automation that saves you real time. We keep it simple by focusing on the core basics—triggers and actions. **If you want to see it in practice, [join our live workshop.](https://ritz7.ai/workshop?utm_source=blog&utm_medium=article&utm_content=inline_text)**
 
