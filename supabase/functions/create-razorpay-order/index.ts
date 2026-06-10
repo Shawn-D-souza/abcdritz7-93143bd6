@@ -18,7 +18,7 @@ serve(async (req) => {
     let orderId = `free_${new Date().getTime()}`;
     let responseAmount = 0;
     let responseCurrency = currency;
-    let finalStatus = amount === 0 ? 'success' : 'initiated';
+    let finalStatus = 'initiated';
 
     if (amount > 0) {
       const rzpKeyId = Deno.env.get('RAZORPAY_KEY_ID');
@@ -72,29 +72,7 @@ serve(async (req) => {
           order_id: orderId
         });
 
-        // Trigger N8N webhook securely from the backend if it's a free registration
-        if (amount === 0) {
-          const webhookUrl = Deno.env.get('N8N_WEBHOOK_URL');
-          if (webhookUrl) {
-            const d = new Date();
-            const dateStr = d.getDate().toString().padStart(2, '0') + ' ' + d.toLocaleString('en-US', { month: 'short' }) + ', ' + d.getFullYear();
-            
-            await fetch(webhookUrl, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                payment_id: "free_registration",
-                name,
-                email,
-                whatsapp,
-                amount: 0,
-                workshop_name,
-                date: dateStr,
-                payment_method: "Free"
-              }),
-            });
-          }
-        }
+
       } else {
         console.warn("Supabase URL or Key missing, skipping registration insert.");
       }

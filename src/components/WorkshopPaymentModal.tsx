@@ -109,24 +109,7 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
       }
 
       setOrderData(newOrderData);
-      
-      if (amountToCharge === 0) {
-        // Option 1 implemented: skip step 2 for Free users
-        setIsSuccessModalOpen(true);
-        onOpenChange(false);
-        
-        // Fire analytics for successful free registration
-        try {
-          capture('workshop_register_free', { variant });
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'workshop_register_free', { variant });
-          }
-        } catch (_e) {
-          console.warn('Analytics error (non-critical):', _e);
-        }
-      } else {
-        setStep(2);
-      }
+      setStep(2);
     } catch (err: any) {
       toast.error("Could not secure your spot. Please try again.");
       console.error(err);
@@ -151,7 +134,41 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
     }
 
     try {
+      if (orderData.amount === 0) {
+        const { error: confirmError } = await supabase.functions.invoke('confirm-free-registration', {
+          body: {
+            order_id: orderData.orderId,
+            name: formData.name,
+            email: formData.email,
+            whatsapp: formData.countryCode + formData.whatsapp,
+            workshop_name: "Beginner's guide on n8n"
+          }
+        });
 
+        if (confirmError) {
+          throw new Error(confirmError.message || "Failed to confirm registration");
+        }
+
+        setIsProcessing(false);
+        setIsSuccessModalOpen(true);
+        
+        // Fire Analytics Events — also non-blocking
+        try {
+          capture('workshop_purchase', { variant, value: 0, currency: 'INR' });
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'workshop_purchase', { value: 0, currency: 'INR' });
+          }
+          if (window.dataLayer) {
+            window.dataLayer.push({ event: 'workshop_purchase', value: 0, currency: 'INR', gtag_override: true });
+          }
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Purchase', { value: 0, currency: 'INR' });
+          }
+        } catch (_e) {
+          console.warn('Analytics error (non-critical):', _e);
+        }
+        return;
+      }
       let isPaymentSuccessful = false;
       let lastPaymentError = "";
 
@@ -387,11 +404,13 @@ export const WorkshopPaymentModal = ({ isOpen, onOpenChange, variant = '99' }: W
             <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-4">
               <CheckCircle2 className="w-8 h-8 text-green-500" />
             </div>
-            <DialogTitle className="text-2xl font-bold">Payment Successful!</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">
+              {variant === 'free' ? 'Registration Successful!' : 'Payment Successful!'}
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-4 pt-4 text-muted-foreground">
             <p className="text-base">
-              Your spot is secured! We will email your confirmation and receipt shortly. The actual workshop links and details will be sent to you about a week before the event.
+              Your spot is secured! We will email your confirmation {variant !== 'free' && 'and receipt '}shortly. The actual workshop links and details will be sent to you about a week before the event.
             </p>
             <div className="bg-primary/5 p-4 rounded-xl border border-primary/10 text-left">
               <p className="font-semibold text-foreground flex items-center gap-2">
