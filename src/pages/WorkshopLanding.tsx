@@ -261,7 +261,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
                 <div className="flex items-start sm:items-center gap-2">
                   <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>Next Cohort: Commencing Next Weekend</strong></span>
+                  <span><strong>Next Workshop: Commencing Next Weekend</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary shrink-0" />
