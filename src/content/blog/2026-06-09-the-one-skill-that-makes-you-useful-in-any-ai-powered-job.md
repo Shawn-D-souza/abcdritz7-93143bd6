@@ -33,7 +33,7 @@ custom_head: >-
 > * The skill is not "knowing AI tools" — it is knowing **what to hand to AI and what to keep for yourself**
 > * Every job title will change. The underlying skill that survives every change is **workflow thinking**
 > * You do not need to be a developer, data scientist, or prompt engineer
-> * This skill takes 3 hours to learn the basics — and compounds every week after that
+> * This skill takes few hours to learn the basics — and compounds every week after that
 > * Anyone who can break a task into steps and connect tools together will be indispensable in the next 5 years
 
 ## What Everyone Gets Wrong About AI Skills
