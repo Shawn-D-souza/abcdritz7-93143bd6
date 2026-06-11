@@ -120,7 +120,7 @@ const LazyFAQSection = ({ variant }: { variant: Variant }) => {
       <AccordionItem value="item-4" className="border-b border-border/50">
         <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">When is the next workshop?</AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-          The workshop is a single 3-hour power session! The next batch is scheduled for <strong>27/06/2026</strong> from <strong>6 PM to 9 PM</strong>.<br /><br />
+          The workshop is a single 3-hour power session! The next batch is scheduled for <strong>27/06/2026</strong> from <strong>6 PM to 9 PM (IST)</strong>.<br /><br />
           Once you secure your spot, you will receive an instant confirmation via email and WhatsApp. The meeting link and specific instructions will be sent to you about a week before the workshop.
         </AccordionContent>
       </AccordionItem>
@@ -260,7 +260,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
                 <div className="flex items-start sm:items-center gap-2">
                   <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>Next Workshop: 27/06/2026, 6 PM - 9 PM</strong></span>
+                  <span><strong>Next Workshop: 27/06/2026, 6 PM - 9 PM (IST)</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary shrink-0" />
