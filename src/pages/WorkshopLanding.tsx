@@ -79,8 +79,10 @@ const AnimatedCounter = ({ value, duration = 2, suffix = "" }: { value: number, 
   return <span ref={nodeRef}>{count.toLocaleString()}{suffix}</span>;
 };
 
+type Variant = 'free' | '9' | '99' | '99_lead';
+
 // ── Lazy Accordion wrapper ───────────────────────────────────────────────
-const LazyFAQSection = () => {
+const LazyFAQSection = ({ variant }: { variant: Variant }) => {
   const [AccordionComponents, setAccordionComponents] = useState<any>(null);
 
   useEffect(() => {
@@ -118,14 +120,14 @@ const LazyFAQSection = () => {
       <AccordionItem value="item-4" className="border-b border-border/50">
         <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">When is the next workshop?</AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-          The workshop is a single 3-hour power session! We are taking a short break to prep for our next major batch, which will be conducted <strong>next weekend</strong> (not this immediate week).<br /><br />
-          Once you secure your spot, our team will coordinate with you to choose a weekend slot that fits your schedule perfectly.
+          The workshop is a single 3-hour power session! The next batch is scheduled for <strong>27/06/2026</strong> from <strong>6 PM to 9 PM</strong>.<br /><br />
+          Once you secure your spot, you will receive an instant confirmation via email and WhatsApp. The meeting link and specific instructions will be sent to you about a week before the workshop.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-5" className="border-none">
         <AccordionTrigger className="text-left text-lg font-semibold hover:text-primary transition-colors">What happens after I register?</AccordionTrigger>
         <AccordionContent className="text-muted-foreground text-base leading-relaxed pt-2 pb-4">
-          Once you complete your payment of ₹99, our team will reach out to you via Email with all the details, links, and preparations you need for your chosen batch.
+          Once you complete your {variant === 'free' ? 'registration' : `payment of ₹${variant === '9' ? '9' : '99'}`}, you will instantly receive a confirmation via Email and WhatsApp. The meeting link and all necessary preparations will be shared about a week before the session.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
@@ -134,8 +136,6 @@ const LazyFAQSection = () => {
 
 // ── Detect touch device once ─────────────────────────────────────────────
 const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
-
-type Variant = 'free' | '9' | '99' | '99_lead';
 
 const WorkshopLanding = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
@@ -260,7 +260,7 @@ const WorkshopLanding = () => {
               <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
                 <div className="flex items-start sm:items-center gap-2">
                   <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>Next Workshop: Commencing Next Weekend</strong></span>
+                  <span><strong>Next Workshop: 27/06/2026, 6 PM - 9 PM</strong></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Bot className="w-4 h-4 text-primary shrink-0" />
@@ -468,7 +468,7 @@ const WorkshopLanding = () => {
             {/* FAQ Section */}
             <section className="container px-4 mx-auto pt-8 pb-12 max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-              <LazyFAQSection />
+              <LazyFAQSection variant={variant} />
             </section>
         </div>
       </main>
