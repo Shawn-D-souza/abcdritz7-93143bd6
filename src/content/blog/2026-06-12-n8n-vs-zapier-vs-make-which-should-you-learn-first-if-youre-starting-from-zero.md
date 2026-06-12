@@ -138,7 +138,7 @@ This is where the gap between the three tools becomes very real.
 
 ### Can You Earn With "Make" Skills?
 
-Better than Zapier. The more complex logic Make supports means the clients are less likely to maintain things themselves, which creates longer engagements. There is also less competition. The downside is that Make's AI capabilities are behind n8n's — and clients are increasingly asking for AI agents and AI-powered workflows, which puts Make at a disadvantage.
+Better than Zapier. The more complex logic Make supports means, the clients are less likely to maintain things themselves, which creates longer engagements. There is also less competition. The downside is that Make's AI capabilities are behind n8n's — and clients are increasingly asking for AI agents and AI-powered workflows, which puts Make at a disadvantage.
 
 ### Why Does n8n Win for Income?
 
