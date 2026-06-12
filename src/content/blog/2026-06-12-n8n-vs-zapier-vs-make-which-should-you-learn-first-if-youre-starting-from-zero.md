@@ -119,3 +119,19 @@ A little harder on day one, yes. The visual canvas looks more intimidating than 
 Make is genuinely better than Zapier for anyone who moves past the simplest use cases. It costs less, does more, and does not lock basic logic features behind a paywall.
 
 ### How hard is n8n, honestly?
+
+n8n has the highest setup friction of the three. You either self-host it (which takes some configuration) or pay for their cloud plan. The interface shows you more details — actual API responses, actual data structures — which can feel overwhelming at first.
+
+But here is the thing: that is exactly what makes n8n the better learning tool. It does not hide what is happening. You see exactly how data moves through every node in your workflow. You understand what API keys connect, when HTTP requests fire, and why a step succeeded or failed. Within a few weeks of building on n8n, you understand AI automation at a level that months on Zapier would never give you.
+
+One thing beginners appreciate about n8n's visual builder is that you can see your entire workflow on one screen and spot failure modes before they happen — something Zapier's step-by-step interface makes very difficult.
+
+The [YouTube Video Summariser guide](https://ritz7.ai/blog/build-a-youtube-video-summarizer/) is a good example of a real workflow that would be very hard to build on Zapier or Make but is straightforward in n8n.
+
+## Pricing: What Do You Actually Pay?
+
+This is where the gap between the three tools becomes very real.
+
+<customtable>
+
+</customtable>
