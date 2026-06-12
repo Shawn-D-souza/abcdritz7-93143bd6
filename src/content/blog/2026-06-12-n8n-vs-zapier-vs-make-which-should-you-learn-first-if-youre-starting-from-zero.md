@@ -260,5 +260,16 @@ Reading articles only gets you so far. The [Ritz7 Automations Community](https:/
 *Ritz7 Automations helps people at every level build real automation systems using n8n and AI. Browse the full [Ritz7 blog](https://ritz7.ai/blogs/) for step-by-step guides, join the [Ritz7 Automations Community](https://ritz7.ai/) to share what you are building and find your first clients, or explore the full [Ritz7 automation programmes](https://ritz7.ai/programs/?utm_source=blog&utm_medium=article&utm_content=inline_text) for a structured path from beginner to paid professional.*
 
 <faq>
-
+Q: Is n8n really free?
+A: Yes, if you self-host it. You pay only for server costs — typically $5–$20/month on a basic cloud server. n8n Cloud (their managed option) starts at around $20/month. The self-hosted version has no usage limits at all.
+Q: Do I need coding skills to use n8n?
+A: No. n8n's visual builder handles the vast majority of workflows without any code. Knowing a little JavaScript helps for advanced data transformations, but people with zero coding background build real, working automations every day. 
+Q: Is Zapier worth it for a small business?
+A: For very simple, low-volume automations — one form to one spreadsheet — Zapier's free tier is fine. The moment you need conditional logic, loops, or more than 100 tasks/month, the cost jumps fast. Most small businesses that start on Zapier end up looking for alternatives within 12–18 months.
+Q: What is the difference between Make and n8n?
+A: Make is hosted for you with no setup required, is cheaper than Zapier, and is more powerful. n8n is open-source, self-hostable, the cheapest at scale, and has the best AI capabilities of the three. Make is a solid middle ground. n8n has the highest ceiling.
+Q: What makes n8n better for building AI agents?
+A: n8n has native support for LangChain nodes, AI node connections, and multi-step agent workflows. It is a proper visual workflow designer for AI — not just a tool that can make an API call to ChatGPT. You can give your AI agents memory, tools, and real decision-making logic, all inside the same visual builder you use for everything else. The node ecosystem around AI in n8n is growing faster than any other automation platform right now.
+Q: Where do I find my first automation client?
+A: Start with people you already know. Offer to automate one small thing for a local business owner, a freelancer, or a startup. Once you have one real result to show, the step-by-step client guide covers the full path from first project to recurring retainer.
 </faq>
