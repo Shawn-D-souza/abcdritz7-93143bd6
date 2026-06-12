@@ -135,3 +135,30 @@ This is where the gap between the three tools becomes very real.
 <customtable>
 
 </customtable>
+
+### Can You Earn With "Make" Skills?
+
+Better than Zapier. The more complex logic Make supports means the clients are less likely to maintain things themselves, which creates longer engagements. There is also less competition. The downside is that Make's AI capabilities are behind n8n's — and clients are increasingly asking for AI agents and AI-powered workflows, which puts Make at a disadvantage.
+
+### Why Does n8n Win for Income?
+
+The [n8n income breakdown](https://ritz7.ai/blog/monetize-n8n-automation-skills/) lays out realistic numbers across four paths:
+
+* **Custom client work:**
+
+   $2,000–$5,000/month
+* **Migration consulting**
+
+   (moving clients from Zapier to n8n): $5,000–$15,000 per project
+* **Monthly retainers**
+
+   (maintaining a client's n8n instance): $300–$500/month each
+* **Template sales**
+
+   (passive): $500–$1,500/month
+
+The skills are rarer than Zapier skills, which means stronger rates. The retainer model works naturally because when you manage someone's self-hosted n8n instance, they need you ongoingly — for maintenance, updates, and new features. And n8n is the only tool of the three genuinely built for AI agents, which is where all new client demand is landing.
+
+For the full picture of what passive income from n8n looks like in practice, see [n8n Passive Income: Which Strategies Actually Work](https://ritz7.ai/blog/n8n-passive-income/).
+
+## Can These Tools Actually Work With AI? (This Is Where n8n Pulls Ahead)
