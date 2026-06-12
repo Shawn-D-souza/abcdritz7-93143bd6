@@ -10,7 +10,7 @@ description: n8n, Zapier, or Make – which automation tool should a beginner
   learn first? We break down cost, difficulty, and income potential in plain
   English so you can pick one and start today.
 ---
-> **Key Takeaways:**
+> Key Takeaways:
 >
 > * **Zapier is the easiest** to start, but gets expensive fast and has a low income ceiling
 > * **Make it more** powerful than Zapier and cheaper but slightly harder to learn
@@ -94,7 +94,7 @@ This is where the gap between the three tools becomes very real.
 **Feature** | **Zapier** | **Make** | **n8n**
 **Free tier** | 100 tasks/month | 1,000 ops/month | Self-host = free forever
 **Cheapest paid plan** | ~$30/month (750 tasks) | ~$11/month (10,000 ops) | ~$20/month (Cloud)
-**How they charge** | Per task — every step counts | Per operation | Flat hosting cost, no per-task fees
+**How they charge** | Per task - every step counts | Per operation | Flat hosting cost, no per-task fees
 **For client work** | Gets expensive fast | Manageable | Self-host once, run unlimited
 </customtable>
 
