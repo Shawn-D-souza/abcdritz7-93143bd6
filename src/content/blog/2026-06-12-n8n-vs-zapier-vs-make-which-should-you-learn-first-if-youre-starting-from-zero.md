@@ -91,7 +91,11 @@ The [YouTube Video Summariser guide](https://ritz7.ai/blog/build-a-youtube-video
 This is where the gap between the three tools becomes very real.
 
 <customtable>
-
+**Feature** | **Zapier** | **Make** | **n8n**
+**Free tier** | 100 tasks/month | 1,000 ops/month | Self-host = free forever
+**Cheapest paid plan** | ~$30/month (750 tasks) | ~$11/month (10,000 ops) | ~$20/month (Cloud)
+**How they charge** | Per task — every step counts | Per operation | Flat hosting cost, no per-task fees
+**For client work** | Gets expensive fast | Manageable | Self-host once, run unlimited
 </customtable>
 
 ### Can You Earn With "Make" Skills?
@@ -158,7 +162,7 @@ Here is what that looks like in real life – each of these is a working n8n bui
 
    that reads form submissions and responds automatically
 
-None of these were built by developers. The [AI automation trends](https://ritz7.ai/blog/ai-automation-trends-in-2025/) shaping 2026 are clear: businesses want AI that actually does things, not just AI that answers questions. That is what n8n is built for.
+None of these was built by developers. The [AI automation trends](https://ritz7.ai/blog/ai-automation-trends-in-2025/) shaping 2026 are clear: businesses want AI that actually does things, not just AI that answers questions. That is what n8n is built for.
 
 ## Which Tool Should You Pick Based on Your Situation?
 
@@ -194,7 +198,7 @@ If you spend three months learning Zapier and building workflows, then decide yo
 
 People who start on n8n from day one spend those same three months building skills they can actually monetise. The first workflow saves them two hours a week. The second takes half the time to build because the logic is familiar. By month four, they have a system of connected workflows handling a meaningful chunk of their work. That is the compounding effect of starting on the right tool.
 
-Companies that automate their processes see operational cost reductions of up to 30% according to [research on business process automation](https://ritz7.ai/blog/automated-business-processes-cut-operational-costs-by-30/). The people who build those systems are the ones who become indispensable. Learning n8n is how you become that person.
+Companies that automate their processes see operational cost reductions of up to 30%, according to [research on business process automation](https://ritz7.ai/blog/automated-business-processes-cut-operational-costs-by-30/). The people who build those systems are the ones who become indispensable. Learning n8n is how you become that person.
 
 ## How to Build Your First n8n Workflow Today (Step-by-Step)
 
@@ -202,25 +206,25 @@ Companies that automate their processes see operational cost reductions of up to
 
 Do not start with a big project. Pick something you could explain to a friend in 30 seconds.
 
-*Good examples:*
-
-* "Every time someone fills my contact form, I manually send a reply email."
-* "Every Friday I copy Slack updates into a Google Sheet."
-* "Every morning I check three websites for news in my industry."
+> ***Good examples:***
+>
+> * "Every time someone fills my contact form, I manually send a reply email."
+> * "Every Friday I copy Slack updates into a Google Sheet."
+> * "Every morning I check three websites for news in my industry."
 
 **Step 2: Write out every single step of that task.**
 
 Do it literally — like instructions for someone who has never done it before.
 
-*Example using the contact form task:*
-
-1. Open Gmail
-2. Find the new form submission email
-3. Copy the person's name and email address
-4. Open Google Sheets
-5. Paste their details into a new row
-6. Go back to Gmail and write a reply
-7. Send it
+> ***Example using the contact form task:***
+>
+> 1. Open Gmail
+> 2. Find the new form submission email
+> 3. Copy the person's name and email address
+> 4. Open Google Sheets
+> 5. Paste their details into a new row
+> 6. Go back to Gmail and write a reply
+> 7. Send it
 
 Steps 3 to 6 can be fully automated. Step 7 can be drafted by AI. Once you see the steps written out, it becomes obvious which ones a machine can handle.
 
@@ -243,7 +247,14 @@ Reading articles only gets you so far. The [Ritz7 Automations Community](https:/
 ## Quick Summary: n8n vs Zapier vs Make
 
 <customtable>
-
+**Comparison Criteria** | **Zapier** | **Make** | **n8n**
+**Ease to start** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐
+**Power & flexibility** | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐
+**Cost at scale** | ❌ Expensive | ✅ Moderate | ✅ Cheapest
+**AI capabilities** | Basic | Basic | Native & advanced
+**Income potential** | Low | Medium | High
+**Best for beginners who want to earn** | ❌ | Maybe | ✅ Yes
+**Community & tutorials** | Large | Medium | Large & growing
 </customtable>
 
 *Ritz7 Automations helps people at every level build real automation systems using n8n and AI. Browse the full [Ritz7 blog](https://ritz7.ai/blogs/) for step-by-step guides, join the [Ritz7 Automations Community](https://ritz7.ai/) to share what you are building and find your first clients, or explore the full [Ritz7 automation programmes](https://ritz7.ai/programs/?utm_source=blog&utm_medium=article&utm_content=inline_text) for a structured path from beginner to paid professional.*
