@@ -103,3 +103,19 @@ Make can handle branching logic, loops, and multi-step flows without charging yo
    Self-host for free, no usage limits
 
 What makes n8n stand apart is its node ecosystem. Every app, every action, and every piece of logic in n8n is a "node" — a small block you connect to others. You can use official nodes, community nodes built by other n8n users, or build your own. It has over 400 integrations, according to [n8n's ](https://docs.n8n.io/)documentation, and connects natively with AI tools like ChatGPT — something Zapier and Make were not built for. That flexibility is simply not available anywhere else. n8n is the hardest of the three to set up on day one, but once it is running, it is the easiest to grow with. [Who Should Learn n8n Automation?](https://ritz7.ai/blog/who-should-learn-n8n-automation/) to figure out if it matches where you are right now.
+
+## How Hard Is Each Tool to Learn?
+
+### Is Zapier Really That Easy?
+
+For your first automation, yes — it is the fastest way to get something working. You connect two apps, set a trigger, and set an action, and it is live. No setup, no configuration needed.
+
+The problem shows up fast. The moment you need anything beyond the simplest trigger-action setup — any kind of logic, looping, or data transformation — you hit a paywall. Most beginners hit this within their first week. So Zapier is a great way to understand what automation feels like, but it is not where you want to build your skills long-term.
+
+### Is Make Harder Than Zapier?
+
+A little harder on day one, yes. The visual canvas looks more intimidating than Zapier's stripped-down interface. But that extra complexity is real capability – not just visual noise. Once you spend a few hours on it, Make's canvas actually makes your workflows easier to understand and debug because you can see the whole picture at once.
+
+Make is genuinely better than Zapier for anyone who moves past the simplest use cases. It costs less, does more, and does not lock basic logic features behind a paywall.
+
+### How hard is n8n, honestly?
