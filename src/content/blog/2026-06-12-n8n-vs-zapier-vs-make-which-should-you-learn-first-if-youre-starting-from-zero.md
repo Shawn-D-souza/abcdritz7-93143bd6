@@ -27,7 +27,7 @@ custom_head: >-
 > * **"Zapier" is the easiest** to start, but gets expensive fast and has a low income ceiling
 > * **"Make" is more** powerful than Zapier and cheaper but slightly harder to learn
 > * **"n8n" is the most** powerful, cheapest at scale, and the best choice if you want to earn from automation
-> * You do **not**You need to learn all three — pick one and go deep
+> * You do **not** need to learn all three — pick one and go deep
 > * If you want to freelance, consult, or sell templates someday, start with **n8n from day one**
 
 Most beginner guides dump everything about all three tools on you at once. That is not helpful when you are starting from zero. You just need one answer: which tool do I open first, and why?
