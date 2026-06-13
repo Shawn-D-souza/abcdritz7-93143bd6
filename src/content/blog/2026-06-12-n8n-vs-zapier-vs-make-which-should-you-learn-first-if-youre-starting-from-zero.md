@@ -5,7 +5,7 @@ category: Skill Development
 author: "[Sangya Keswani](http://linkedin.com/in/sangya-seo/)"
 date: 2026-06-12T09:44:00.000Z
 updated_date: 2026-06-12T09:44:00.000Z
-thumbnail: /assets/uploads/make-vs-zapier-vs-n8n-which-should-you-learn-first-if-you-re-starting-from-zero-1-.png
+thumbnail: /assets/uploads/make-vs-zapier-vs-n8n-which-should-you-learn-first-if-you-re-starting-from-zero-2-.png
 thumbnail_alt: make vs zapier vs n8n which Should You Learn First  If You're
   Starting From Zero
 description: n8n, Zapier, or Make – which automation tool should a beginner
