@@ -24,9 +24,9 @@ custom_head: >-
 ---
 > Key Takeaways:
 >
-> * **Zapier is the easiest** to start, but gets expensive fast and has a low income ceiling
-> * **Make is more** powerful than Zapier and cheaper but slightly harder to learn
-> * **n8n is the most** powerful, cheapest at scale, and the best choice if you want to earn from automation
+> * **"Zapier" is the easiest** to start, but gets expensive fast and has a low income ceiling
+> * **"Make" is more** powerful than Zapier and cheaper but slightly harder to learn
+> * **"n8n" is the most** powerful, cheapest at scale, and the best choice if you want to earn from automation
 > * You do **not**You need to learn all three — pick one and go deep
 > * If you want to freelance, consult, or sell templates someday, start with **n8n from day one**
 
