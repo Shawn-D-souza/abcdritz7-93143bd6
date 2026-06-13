@@ -44,6 +44,8 @@ const NeuralParticle = ({ delay, path }: { delay: number; path: number }) => {
   return (
     <motion.circle
       r="2.5"
+      cx={p.cx[0]}
+      cy={p.cy[0]}
       fill="url(#particleGrad)"
       filter="url(#glow)"
       animate={{
@@ -247,7 +249,10 @@ export const HeroShowcase = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   return (
     <div

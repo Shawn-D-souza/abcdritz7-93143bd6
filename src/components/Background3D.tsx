@@ -2,6 +2,7 @@ import { useRef, useMemo, useEffect, lazy, Suspense, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useTheme } from "./ThemeProvider";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 const Scene = () => {
   const { theme } = useTheme();
@@ -172,13 +173,20 @@ export const Background3D = () => {
 
   return (
     <div className="fixed inset-0 -z-10 bg-background transition-colors duration-500">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 60 }}
-        gl={{ alpha: true, antialias: false, powerPreference: 'low-power' }}
-        dpr={[1, 1.5]}
-      >
-        <Scene />
-      </Canvas>
+      <ErrorBoundary fallback={null}>
+        <Canvas
+          camera={{ position: [0, 0, 5], fov: 60 }}
+          gl={{ alpha: true, antialias: false, powerPreference: 'low-power', failIfMajorPerformanceCaveat: true }}
+          dpr={[1, 1.5]}
+          onCreated={(state) => {
+            state.gl.onContextLost = () => {
+              console.error("WebGL context lost");
+            };
+          }}
+        >
+          <Scene />
+        </Canvas>
+      </ErrorBoundary>
     </div>
   );
 };
