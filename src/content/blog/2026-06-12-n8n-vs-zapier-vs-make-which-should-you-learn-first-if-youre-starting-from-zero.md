@@ -157,26 +157,10 @@ All of this without writing a single line of code.
 
 Here is what that looks like in real life – each of these is a working n8n build, not a concept:
 
-* A 
-
-  [Telegram bot that manages your calendar bookings](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n/)
-
-   automatically
-* An 
-
-  [AI agent that replies to WhatsApp messages](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n/)
-
-   from customers around the clock
-* A 
-
-  [newsletter that researches, writes, and sends itself](https://ritz7.ai/blog/automated-ai-newsletter/)
-
-   every week
-* An 
-
-  [email reply system](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n/)
-
-   that reads form submissions and responds automatically
+* A [Telegram bot that manages your calendar bookings](https://ritz7.ai/blog/telegram-calendar-bot-in-n8n/) automatically,
+* An [AI agent that replies to WhatsApp messages](https://ritz7.ai/blog/how-to-build-a-whatsapp-ai-agent-with-n8n/) from customers around the clock
+* A [newsletter that researches, writes, and sends itself](https://ritz7.ai/blog/automated-ai-newsletter/) every week
+* An [email reply system](https://ritz7.ai/blog/automate-email-replies-form-submission-in-n8n/) that reads form submissions and responds automatically
 
 None of these was built by developers. The [AI automation trends](https://ritz7.ai/blog/ai-automation-trends-in-2025/) shaping 2026 are clear: businesses want AI that actually does things, not just AI that answers questions. That is what n8n is built for.
 
