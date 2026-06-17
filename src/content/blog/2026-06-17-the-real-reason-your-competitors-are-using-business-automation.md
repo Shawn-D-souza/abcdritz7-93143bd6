@@ -141,5 +141,14 @@ Here is where to go next, depending on where you are starting from:
 If you want live guidance rather than reading alone, the [Ritz7 workshop](https://ritz7.ai/workshop?utm_source=blog&utm_medium=article&utm_content=inline_text) gets you to a working automation in three hours. For a full structured path from first workflow to first paying client, explore the [Ritz7 automation programmes](https://ritz7.ai/programs/?utm_source=blog&utm_medium=article&utm_content=inline_text). And join the [Ritz7 Automations Community](https://ritz7.ai/community-guidelines/) to see what businesses at exactly your stage are building first.
 
 <faq>
-
+Q: Do I Need Coding Skills To Start Business Automation?
+A: No. Tools like n8n use a fully visual, drag-and-drop interface. You click blocks, fill in fields, and connect them together. Most high-impact business automations — email replies, CRM updates, lead notifications, and weekly reports — require zero code. Building automated workflows for customer support, sales follow-ups, or internal reporting is no more technical than using a spreadsheet.
+Q: How Quickly Will Business Automation Save Me Time?
+A: Your first automation typically takes 60–90 minutes to build and saves time from the first run. For most businesses, the full payback on their setup cost happens within weeks. Forrester's research shows a 248% three-year ROI for businesses using workflow automation platforms. You will notice the impact immediately — it shows up as tasks that no longer appear on your to-do list.
+Q: What Happens If My Automation Breaks?
+A: A broken workflow simply stops running — it does not corrupt your data or send incorrect information. The error message inside n8n tells you exactly which node failed and why. Fixing it takes minutes once you know what to look for.
+Q: Is Business Automation Only For Large Companies?
+A: Not at all. Small businesses that automate often see a proportionally larger impact than large enterprises because every hour saved goes directly back into growth rather than overhead. n8n self-hosted runs on a $5–$20/month server with no per-task fees and no usage caps. The starting cost is lower than a single takeaway lunch.
+Q: Why Are My Competitors Automating Faster Than Me?
+A: They started. That is the only real difference. Business automation spreads through organisations not from the top down but from one person deciding that a specific task is too repetitive to keep doing by hand. They built one workflow. It worked. Someone else noticed and built another. The compounding effect does the rest. The question is not whether you should start — it is whether you want to be the business that started this week or the one that started six months from now.
 </faq>
