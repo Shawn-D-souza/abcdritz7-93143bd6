@@ -71,8 +71,6 @@ None of these required a developer. None took weeks to plan. Every single one st
 
 > **Pro-Tip:** Not sure what to automate? Read [Who Should Learn n8n Automation](https://ritz7.ai/blog/who-should-learn-n8n-automation/) — it shows exactly which roles get the fastest wins from their first workflow.
 
-## How Much Is Delaying Business Automation Actually Costing You?
-
 More than most businesses realise, and the cost compounds every week you wait. "We know we should automate it — we just have not had time yet." That one sentence costs more than most businesses realise.
 
 ![Should you prioritize immediate automation or wait for a perfect plan?](/assets/uploads/should-you-prioritize-immediate-automation-or-wait-for-a-perfect-plan.png)
@@ -83,11 +81,11 @@ It also works incredibly fast. [Research compiled by Kissflow](https://kissflow.
 
 Almost every business has work that can be automated. [According to Cflow's workflow statistics report](https://www.cflowapps.com/workflow-automation-statistics/), **94% of companies are stuck doing repetitive chores.** Right now, your best team members are likely wasting time on tasks that a simple automation tool could handle in seconds.
 
-> ✅ **Best Practice:** Build one automation this week, even a simple one. The ROI clock starts the moment it runs.
+> ✅ **Best Practice:** Build just **one simple automation this week**. The moment it starts running, it begins saving you time and money.
 >
-> ❌ **Bad Habit:** Waiting until you "have time to plan it properly." That time never arrives. The competitor who built an imperfect workflow six months ago is already six months ahead of your perfect plan.
+> ❌ **Bad Habit:** Waiting until you have **"time to plan it properly".** That perfect time never comes. A competitor who built an imperfect system months ago is already way ahead of your unbuilt plan.
 
-Every week you delay is another week your competitor's workflow runs quietly in the background, handling tasks their team no longer has to think about.
+Every week you delay is another week your competitors are running tools in the background, quietly handling tasks their teams no longer have to worry about.
 
 ## Are These Three Signs Showing Up In Your Business?
 
