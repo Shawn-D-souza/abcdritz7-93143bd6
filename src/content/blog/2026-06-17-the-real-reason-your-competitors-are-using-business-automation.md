@@ -15,9 +15,15 @@ Your rivals are saving hours every week. Here is exactly what they automated —
 
 > Key Takeaways:
 >
-> * **88% of organisations** are already using AI in at least one business function — your competitors are almost certainly in that group ([McKinsey, 2025](https://www.mckinsey.com/featured-insights/week-in-charts/ai-at-work-but-not-at-scale))
-> * **82% of companies** expect at least 10% of their jobs to be fully automated within three years — the window to catch up is closing ([Deloitte, 2026](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html))
-> * You need **one workflow built this week**, not a six-month transformation project — your rivals started with the most boring task on their desk
+> * * Rivals are already using AI: 88% of companies use it right now.
+>
+>   * Time is running out: AI will fully automate 10% of jobs in three years.
+>
+>   * It is incredibly cheap: Competitors are connecting tools you likely already own for just $20 a month.
+>
+>   * Waiting costs you money: Doing tasks by hand wastes cash and puts you behind every single week.
+>
+>   * Start today: Skip the massive six-month plan. Just automate one workflow this week.
 
 ## Competitors Aren't Smarter: They Just Use Business Automation
 
