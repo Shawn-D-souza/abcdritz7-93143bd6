@@ -53,15 +53,15 @@ If you are not automating yet, you are not standing still. You are actively fall
 
 ## What Did Your Competitors Actually Automate First?
 
-The businesses pulling ahead did not launch grand AI transformation programmes. They started with the most boring task on someone's desk — the one that followed the same steps every single time and required zero real thinking to complete.
+The successful businesses did not start with giant, complicated AI projects. Instead, they picked the most boring, repetitive tasks on their desks—the chores that follow the exact same steps every single time and require zero real thinking.
 
-They automated the thing, wasting three hours every Monday. The weekly report no one wanted to write. The follow-up email that kept getting forgotten. The new lead had been sitting uncontacted for 48 hours because everyone assumed someone else had replied.
+They focused on the annoying work that wastes three hours every Monday morning. Think of the weekly reports nobody wants to write, the follow-up emails that always get forgotten, or the new sales leads left sitting for days because everyone assumed someone else was handling it.
 
 Here is what that looks like across real business functions:
 
 | **Business Function** | ❌ Manual Task (Before)                                                          | ✅ Automated Workflow (After)                                                                                                                           |
 | --------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Marketing**         | Scheduling posts on five platforms every Monday                                 | Workflow pulls from Google Sheets, formats per platform, queues automatically                                                                          |
+| **Marketing**         | Scheduling posts on five platforms every Monday                                 | The workflow pulls from Google Sheets, formats per platform, queues automatically                                                                      |
 | **Sales**             | Leads sitting in inbox, uncontacted for hours                                   | Form submission triggers customer relationship management (CRM) entry + personalised reply + follow-up task — instantly                                |
 | **Operations**        | Pulling numbers from four tools to write a Friday report                        | Workflow collects, formats, and emails the report on a schedule — no manual input, no ERP system copy-paste                                            |
 | **HR**                | Reading every CV and sorting manually, chasing workflow approvals for sign-offs | [AI shortlisting workflow](https://ritz7.ai/blog/ai-resume-analysis-bot/) scores applications and drops a ranked list into a shared sheet each morning |
@@ -77,11 +77,11 @@ More than most businesses realise, and the cost compounds every week you wait. "
 
 ![Should you prioritize immediate automation or wait for a perfect plan?](/assets/uploads/should-you-prioritize-immediate-automation-or-wait-for-a-perfect-plan.png)
 
-[Forrester's 2024 Total Economic Impact study](https://www.forrester.com/report/the-total-economic-impact-of-workflow-automation-platforms/RES178848) documented a **248% three-year ROI** for businesses that deployed workflow automation platforms. The businesses still waiting for the right moment earned exactly 0% return on a tool that was already available to them.
+Investing in automation pays off massively. [Forrester's 2024 Total Economic Impact study](https://www.forrester.com/report/the-total-economic-impact-of-workflow-automation-platforms/RES178848) found that businesses using workflow automation platforms saw a **248% return on their money** over three years. The businesses that chose to wait got a 0% return.
 
-[Research compiled by Kissflow](https://kissflow.com/workflow/workflow-automation-statistics-trends/) shows that **60% of organisations see ROI within 12 months** of implementing business automation. A basic n8n self-hosted setup costs $5–$20 per month. The payback period is typically measured in weeks, not years.
+It also works incredibly fast. [Research compiled by Kissflow](https://kissflow.com/workflow/workflow-automation-statistics-trends/) shows that **60% of companies see their money back within a year.** A basic automation setup can cost as little as **$5 to $20 a month**, meaning the tools pay for themselves in weeks, not years.
 
-[According to Cflow's workflow statistics report](https://www.cflowapps.com/workflow-automation-statistics/), **94% of companies carry out repetitive tasks** that qualify for **process automation**. The people doing those tasks are usually your best team members — stuck on work that a connected **automation platform** could handle in seconds.
+Almost every business has work that can be automated. [According to Cflow's workflow statistics report](https://www.cflowapps.com/workflow-automation-statistics/), **94% of companies are stuck doing repetitive chores.** Right now, your best team members are likely wasting time on tasks that a simple automation tool could handle in seconds.
 
 > ✅ **Best Practice:** Build one automation this week, even a simple one. The ROI clock starts the moment it runs.
 >
