@@ -117,9 +117,9 @@ This is exactly why starting late costs more than it looks. If you want to under
 
 ## How AI Makes The Automation Gap Even Wider
 
-Standard business automation moves data from one place to another. **Robotic Process Automation (RPA)** handles rule-based tasks at speed. But AI-powered automation goes further — it reads, interprets, generates, summarises, and decides, then moves the result to the right place automatically. That is a different category of advantage entirely.
+Standard business automation moves data from one place to another. **Robotic Process Automation (RPA)** handles rule-based tasks at speed. But **AI-powered automation** goes further — it reads, interprets, generates, summarises, and decides, then moves the result to the right place automatically. That is a different category of advantage entirely.
 
-![AI-Powered Automation Evolution](/assets/uploads/ai-powered-automation-evolution.png)
+![AI-Powered Automation](/assets/uploads/ai-powered-automation-evolution.png)
 
 [The AI automation trends shaping 2026](https://ritz7.ai/blog/ai-automation-trends-in-2025/) are clear: businesses want AI that actually does things inside a process, not AI that sits in a chat window waiting to be asked.
 
