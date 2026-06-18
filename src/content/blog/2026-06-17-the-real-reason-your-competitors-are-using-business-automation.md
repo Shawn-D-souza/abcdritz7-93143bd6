@@ -15,15 +15,11 @@ Your rivals are saving hours every week. Here is exactly what they automated —
 
 > Key Takeaways:
 >
-> * * Rivals are already using AI: 88% of companies use it right now.
->
->   * Time is running out: AI will fully automate 10% of jobs in three years.
->
->   * It is incredibly cheap: Competitors are connecting tools you likely already own for just $20 a month.
->
->   * Waiting costs you money: Doing tasks by hand wastes cash and puts you behind every single week.
->
->   * Start today: Skip the massive six-month plan. Just automate one workflow this week.
+> * Rivals are already using AI: 88% of companies use it right now.
+> * Time is running out: AI will fully automate 10% of jobs in three years.
+> * It is incredibly cheap: Competitors are connecting tools you likely already own for just $20 a month.
+> * Waiting costs you money: Doing tasks by hand wastes cash and puts you behind every single week.
+> * Start today: Skip the massive six-month plan. Just automate one workflow this week.
 
 ## Competitors Aren't Smarter: They Just Use Business Automation
 
@@ -39,11 +35,11 @@ That stops today.
 
 ## The Number That Should Make You Uncomfortable
 
-[According to McKinsey's 2025 State of AI survey](https://www.mckinsey.com/featured-insights/week-in-charts/ai-at-work-but-not-at-scale), **88% of organisations now report using AI in at least one business function** — up from 72% the year before. That is not a gradual climb. It is a near-vertical shift happening right now.
+A massive shift is happening right now. [According to McKinsey's 2025 State of AI survey](https://www.mckinsey.com/featured-insights/week-in-charts/ai-at-work-but-not-at-scale), **88% of businesses are already using AI,** which is a huge jump from the year before.
 
-[Deloitte's State of AI in the Enterprise 2026 report](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html) — based on a survey of over 3,000 director-to-C-suite leaders — found that **82% of companies expect at least 10% of their jobs to be fully automated within three years**. And 85% are already planning to customise AI agents specifically for their business operations.
+It is moving fast. [Deloitte's State of AI in the Enterprise 2026 report](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html) found that most bosses **expect AI to completely take over 10% of their company's jobs** within three years, and they are already building custom AI tools to do it.
 
-[The Duke University and Richmond Fed CFO Survey](https://www.fuqua.duke.edu/duke-fuqua-insights/us-companies-ramp-automation-and-ai-inflation-persists) found that **84% of large companies** have already implemented software or technology to automate tasks previously completed by employees — and among those, over half have already deployed AI specifically.
+You cannot afford to wait. [The Duke University and Richmond Fed CFO Survey](https://www.fuqua.duke.edu/duke-fuqua-insights/us-companies-ramp-automation-and-ai-inflation-persists) confirms that nearly all large companies are using software to automate tasks people used to do by hand, and over half of them are using AI.
 
 If you are not automating yet, you are not standing still. You are actively falling behind — and the distance grows every quarter.
 
