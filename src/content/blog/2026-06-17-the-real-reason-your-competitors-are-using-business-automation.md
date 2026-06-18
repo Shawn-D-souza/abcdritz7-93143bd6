@@ -13,13 +13,13 @@ description: 88% of businesses use AI. See what tasks your rivals automated
 ---
 Your rivals are saving hours every week. Here is exactly what they automated — and how you can catch up today.
 
-> Key Takeaways:
+> **Key Takeaways:**
 >
-> * Rivals are already using AI: 88% of companies use it right now.
-> * Time is running out: AI will fully automate 10% of jobs in three years.
-> * It is incredibly cheap: Competitors are connecting tools you likely already own for just $20 a month.
-> * Waiting costs you money: Doing tasks by hand wastes cash and puts you behind every single week.
-> * Start today: Skip the massive six-month plan. Just automate one workflow this week.
+> * **Rivals are already using AI:** 88% of companies use it right now.
+> * **Time is running out:** AI will fully automate 10% of jobs in three years.
+> * **It is incredibly cheap:** Competitors are connecting tools you likely already own for just $20 a month.
+> * **Waiting costs you money:** Doing tasks by hand wastes cash and puts you behind every single week.
+> * **Start today:** Skip the massive six-month plan. Just automate one workflow this week.
 
 ## Competitors Aren't Smarter: They Just Use Business Automation
 
