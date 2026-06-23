@@ -12,7 +12,15 @@ import {
   Users, 
   Briefcase,
   GraduationCap,
-  Star
+  Star,
+  MonitorSmartphone,
+  TrendingUp,
+  CheckCircle2,
+  XCircle,
+  Gift,
+  Target,
+  Trophy,
+  Quote
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -228,8 +236,8 @@ const WorkshopLanding = () => {
         <div className="absolute top-[20%] right-[-10%] w-[60vw] max-w-[600px] aspect-square rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-24 pb-0 lg:pt-32">
-        {/* Hero Section — CSS animations instead of framer-motion */}
+      <main className="relative z-10 pt-16 pb-0 lg:pt-20">
+        {/* Hero Section */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
@@ -238,238 +246,541 @@ const WorkshopLanding = () => {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-              Build Your First <span className="text-primary">Automation</span><br/>Without Writing Code
+              Automate Your Future,<br/> <span className="text-primary">One Skill at a Time</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Step into the world of AI & n8n. Let computers do the boring repetitive work so you can focus on what truly matters.
+              Setting you on the path to partially automate your daily work—and fix <strong className="text-foreground">90% of your boring tasks</strong>.
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+              A beginner-friendly workshop that breaks down the core concepts behind modern automation systems using simple explanations and practical examples.
             </p>
 
-            <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
-              {/* CTA Button */}
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
               <Button 
                 onClick={handleRegister}
                 size="lg" 
                 className="h-16 px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105"
               >
-                Secure Your Spot
+                Reserve My Spot Now
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
-
-              {/* Minimal Text Info (Side-by-side on PC) */}
-              <div className="flex flex-col items-start gap-2 text-muted-foreground text-sm md:text-base font-medium text-left">
-                <div className="flex items-start sm:items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary mt-1 sm:mt-0 shrink-0" />
-                  <span><strong>Next Workshop: 27/06/2026, 6 PM - 9 PM (IST)</strong></span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Bot className="w-4 h-4 text-primary shrink-0" />
-                  3-Hour Session • Perfect for Beginners
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         <div>
-          {/* The "Hope" / Emotional Section */}
-            <section className="container px-4 mx-auto py-12 mt-6 md:py-20 md:mt-10">
-              <div className="max-w-5xl mx-auto bg-card border border-border shadow-2xl rounded-[2rem] p-6 md:p-16 relative overflow-hidden mb-16">
-                <div className="relative z-10 grid md:grid-cols-2 gap-0 md:gap-12 items-center">
-                  <div className="space-y-6 relative">
-                    <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                      Stop working like a <span className="text-destructive/80 dark:text-red-400/80">robot.</span>
-                    </h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      Staring at spreadsheets. Copy-pasting data from one app to another. We've all been there, wasting hours on repetitive tasks that drain our creative energy.
-                    </p>
-                  </div>
-                  <div className="space-y-6 pt-6 mt-6 border-t border-border md:pt-0 md:mt-0 md:border-t-0 md:border-l md:pl-12">
-                    <h2 className="text-2xl font-bold text-foreground">
-                      What if you could just click a button and let the automation handle the rest?
-                    </h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      You <strong className="text-foreground">don't</strong> need a computer science degree to make this magic happen. You just need <strong className="text-primary font-extrabold text-xl whitespace-nowrap">3 hours</strong> and the willingness to learn how to build your first automation.
-                    </p>
-                  </div>
-                </div>
+          {/* Avoid the Pain of Repetitive Tasks */}
+          <section className="container px-4 mx-auto py-16 md:py-24 mt-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20 mb-6">
+                <span className="text-sm font-medium">⚠️ If this feels familiar, you're not alone.</span>
               </div>
-              
-              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
-                <div className="workshop-scroll-reveal p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between">
-                  <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Gain Confidence</h3>
-                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                      Overcome the fear of "tech". We break down complex concepts into simple, bite-sized pieces that anyone can understand. By the end, you'll feel empowered to automate your daily tasks.
-                    </p>
-                  </div>
-                  <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <HeartHandshake className="w-7 h-7 md:w-8 md:h-8 text-primary" />
-                  </div>
-                </div>
-                
-                <div className="workshop-scroll-reveal p-6 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-primary/5 transition-all group flex items-start gap-6 justify-between" style={{ animationDelay: '200ms' }}>
-                  <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">Unlock Your Potential</h3>
-                    <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                      Automation isn't about replacing humans; it's about freeing up your brain for creative, high-value work. Take your first step into a more productive, fulfilling future.
-                    </p>
-                  </div>
-                  <div className="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-2xl bg-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <BrainCircuit className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
-                  </div>
-                </div>
-              </div>
-            </section>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Avoid the Pain of <span className="text-primary">Repetitive Tasks</span></h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                What unnecessary tasks are holding you back?
+              </p>
+            </div>
 
-            {/* The "Trust" / Logical Section */}
-            <section className="bg-muted/40 pt-12 pb-16 md:pt-16 md:pb-24 border-y border-border/50">
-              <div className="container px-4 mx-auto max-w-6xl">
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-4">Learn From <span className="text-primary">Experience</span></h2>
-                  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                    You are in safe hands. Here is why you should take this leap with us.
+            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+              {/* Time & Stress */}
+              <div className="bg-card border border-border shadow-lg rounded-3xl overflow-hidden flex flex-col hover:border-red-500/30 transition-colors">
+                <div className="bg-red-500/5 p-6 border-b border-border/50 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0">
+                    <Clock className="w-6 h-6 text-red-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">Time & Stress</h3>
+                    <p className="text-sm text-red-500/80 font-medium">Too busy. Too tired.</p>
+                  </div>
+                </div>
+                <div className="p-6 space-y-6 flex-1">
+                  <div className="flex gap-4">
+                    <Clock className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Wasting hours on boring, manual work every single day.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <Zap className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Feeling completely overwhelmed by a never-ending to-do list.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <Target className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Not knowing where to start or how to begin with automation.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Skills & Tech */}
+              <div className="bg-card border border-border shadow-lg rounded-3xl overflow-hidden flex flex-col hover:border-blue-500/30 transition-colors">
+                <div className="bg-blue-500/5 p-6 border-b border-border/50 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
+                    <MonitorSmartphone className="w-6 h-6 text-blue-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">Skills & Tech</h3>
+                    <p className="text-sm text-blue-500/80 font-medium">Hard to keep up.</p>
+                  </div>
+                </div>
+                <div className="p-6 space-y-6 flex-1">
+                  <div className="flex gap-4">
+                    <TrendingUp className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Struggling to keep pace with fast-moving technology.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <BrainCircuit className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Feeling stuck with outdated skills in a changing job market.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <ShieldCheck className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Fearing the future of work and being left behind.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Business Growth */}
+              <div className="bg-card border border-border shadow-lg rounded-3xl overflow-hidden flex flex-col hover:border-emerald-500/30 transition-colors">
+                <div className="bg-emerald-500/5 p-6 border-b border-border/50 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-6 h-6 text-emerald-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">Business Growth</h3>
+                    <p className="text-sm text-emerald-500/80 font-medium">Growth feels out of reach.</p>
+                  </div>
+                </div>
+                <div className="p-6 space-y-6 flex-1">
+                  <div className="flex gap-4">
+                    <Target className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Missing opportunities to grow and scale your business.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <Bot className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Feeling frustrated by slow, messy, and inefficient processes.</p>
+                  </div>
+                  <div className="flex gap-4">
+                    <Briefcase className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
+                    <p className="text-muted-foreground">Losing time (and money) to repetitive tasks that could be automated.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Master the Basics */}
+          <section className="bg-muted/30 py-16 md:py-24 border-y border-border/50">
+            <div className="container px-4 mx-auto max-w-5xl">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">Master the Basics. <span className="text-primary">Build the Foundation.</span></h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  Practical automation skills that save time, reduce effort, and open new possibilities.
+                </p>
+              </div>
+
+              <div className="bg-card border border-border rounded-[2rem] shadow-xl overflow-hidden">
+                <div className="grid md:grid-cols-2 bg-muted/50 p-6 border-b border-border">
+                  <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground mb-4 md:mb-0">
+                    <GraduationCap className="w-6 h-6 text-primary" />
+                    What we will teach you
+                  </div>
+                  <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground">
+                    <Target className="w-6 h-6 text-primary" />
+                    What you will be able to do
+                  </div>
+                </div>
+
+                <div className="p-6 md:p-8 space-y-4">
+                  {[
+                    { 
+                      teach: "What automation actually means in daily life.", 
+                      do: "Understand how smart systems handle tasks for you.",
+                      icon: Zap
+                    },
+                    { 
+                      teach: "Why modern businesses use automation to save time.", 
+                      do: "Know exactly how a tool starts, runs, and finishes a job.",
+                      icon: Clock
+                    },
+                    { 
+                      teach: "The basic building blocks used to create simple setups.", 
+                      do: "Understand how different steps connect together.",
+                      icon: BrainCircuit
+                    },
+                    { 
+                      teach: "How different apps and systems talk to each other.", 
+                      do: "Lose the fear of technology and explore new tools with ease.",
+                      icon: Target
+                    },
+                    { 
+                      teach: "Everyday automation examples you can copy.", 
+                      do: "Get a clear, strong starting point to keep growing your skills.",
+                      icon: Star
+                    }
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-0 p-4 rounded-2xl hover:bg-muted/50 transition-colors">
+                      <div className="flex-1 flex items-center gap-4 text-center md:text-left">
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 hidden md:flex">
+                          <item.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <p className="text-foreground font-medium">{item.teach}</p>
+                      </div>
+                      <div className="hidden md:flex shrink-0 w-16 items-center justify-center text-border">
+                        <ArrowRight className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1 flex items-center gap-4 text-center md:text-left">
+                        <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 hidden md:flex">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                        </div>
+                        <p className="text-muted-foreground">{item.do}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 3 Simple Steps */}
+          <section className="container px-4 mx-auto py-16 md:py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Three Simple Steps to <span className="text-primary">Start Learning</span></h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Learn how to automate your work starting today.
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto relative">
+              <div className="absolute top-12 left-[10%] right-[10%] h-[2px] bg-border border-dashed border-t-2 hidden md:block" />
+
+              <div className="grid md:grid-cols-3 gap-8 md:gap-6 relative z-10">
+                {/* Step 1 */}
+                <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 text-center relative group hover:shadow-primary/5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center absolute -top-4 -left-4 md:left-auto md:right-auto md:mx-auto shadow-lg z-20">1</div>
+                  <div className="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <MonitorSmartphone className="w-10 h-10 text-blue-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4">Join Our Workshop</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Learn the basics from an expert this weekend and see how AI tools work together.
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 text-center mb-20">
-                  <div className="bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                      <Users className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-5xl font-black text-foreground mb-3 font-mono">
-                      <AnimatedCounter value={20000} suffix="+" />
-                    </h3>
-                    <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Learners Taught</p>
+                {/* Step 2 */}
+                <div className="bg-card border-2 border-primary shadow-xl rounded-[2rem] p-8 text-center relative group transform md:-translate-y-4">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center absolute -top-4 -left-4 md:left-auto md:right-auto md:mx-auto shadow-lg z-20">2</div>
+                  <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Gift className="w-10 h-10 text-primary" />
                   </div>
-                  <div className="bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                      <Rocket className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-5xl font-black text-foreground mb-3 font-mono">
-                      <AnimatedCounter value={450} suffix="+" />
-                    </h3>
-                    <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Projects Built</p>
-                  </div>
-                  <div className="bg-card p-8 rounded-3xl border border-border shadow-sm flex flex-col items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                      <Briefcase className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-5xl font-black text-foreground mb-3 font-mono">
-                      <AnimatedCounter value={100} suffix="+" />
-                    </h3>
-                    <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Global Clients</p>
+                  <h3 className="text-xl font-bold text-foreground mb-4">Free Practice Toolkit</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+                    <strong>What to do:</strong> Share your honest feedback after class to help us improve.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+                    <strong>What you get:</strong> The full workshop recording + 1 bonus free template!
+                  </p>
+                  <div className="bg-primary/10 text-primary text-xs font-semibold px-3 py-2 rounded-lg inline-block">
+                    Feedback submission unlocks toolkit.
                   </div>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-card border border-border p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start text-center md:text-left">
-                  {/* Avatar & Info */}
-                  <div className="flex flex-col items-center shrink-0 md:w-56 mt-2">
-                    <div className="w-32 h-32 md:w-56 md:h-56 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg relative mb-4">
-                      <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" loading="lazy" className="w-full h-full object-cover object-top" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1.5 text-foreground text-center">
-                      Ritesh Hegde
-                    </h3>
-                    <p className="text-primary font-medium tracking-wide text-xs md:text-sm flex items-center justify-center gap-1.5 text-center">
-                      <Star className="w-3.5 h-3.5 fill-primary text-primary shrink-0" />
-                      CEO & AI Expert, Ritz7ai
-                    </p>
+                {/* Step 3 */}
+                <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 text-center relative group hover:shadow-primary/5 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center absolute -top-4 -left-4 md:left-auto md:right-auto md:mx-auto shadow-lg z-20">3</div>
+                  <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Rocket className="w-10 h-10 text-emerald-500" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4">Apply Your Knowledge</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Use what you learned to easily find and automate simple tasks in your daily work.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-12 text-center">
+                <Button onClick={handleRegister} size="lg" className="h-14 px-10 text-lg rounded-full shine-effect shadow-xl transition-transform hover:scale-105">
+                  Register Now <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Target Audience */}
+          <section className="bg-muted/40 py-16 md:py-24 border-y border-border/50">
+            <div className="container px-4 mx-auto max-w-6xl">
+              <div className="grid md:grid-cols-2 gap-12">
+                {/* Perfect For */}
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2">Who Is <span className="text-primary">This For?</span></h2>
+                    <p className="text-muted-foreground text-lg">Designed to build a strong foundation.</p>
                   </div>
                   
-                  {/* Quote Section */}
-                  <div className="space-y-6 flex-1 md:mt-2">
-                    <p className="text-muted-foreground text-sm md:text-base font-bold uppercase tracking-wider">
-                      Listen to what our educator has to say:
-                    </p>
-                    <div className="relative pl-5 md:pl-6 border-l-[4px] border-primary/60">
-                      <p className="text-foreground text-xl md:text-2xl italic leading-relaxed">
-                        "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-primary">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects for clients globally. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-emerald-500/50 transition-colors">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                      Perfect For
+                    </h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {[
+                        "Students",
+                        "Working Professionals",
+                        "Freelancers",
+                        "Business Owners",
+                        "Non-Technical Beginners",
+                        "Anyone Curious About AI & Automation"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span className="text-foreground font-medium">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Not Intended For */}
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2">Is This Right <span className="text-primary">For You?</span></h2>
+                    <p className="text-muted-foreground text-lg">Let's be clear about what this is not.</p>
+                  </div>
+                  
+                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-destructive/50 transition-colors">
+                    <h3 className="text-xl font-bold flex items-center gap-2 text-destructive">
+                      <XCircle className="w-6 h-6 text-destructive" />
+                      Not Intended For
+                    </h3>
+                    <ul className="space-y-4">
+                      {[
+                        "Experienced automation professionals",
+                        "Advanced workflow builders",
+                        "Those looking for deep technical implementation"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <XCircle className="w-5 h-5 text-destructive/70 shrink-0 mt-0.5" />
+                          <span className="text-foreground font-medium">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 pt-6 border-t border-border/50">
+                      <p className="text-sm text-muted-foreground">
+                        <strong>Note:</strong> This workshop is Beginner-friendly, Concept-focused, Practical and easy to understand.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
-            {/* What You Get */}
-            <section className="container px-4 mx-auto pt-16 pb-12 md:pt-24">
-              <div className="max-w-5xl mx-auto px-2 md:px-8 flex flex-col md:flex-row items-center gap-12">
-                <div className="flex-1 space-y-6">
-                  <h2 className="text-3xl md:text-4xl font-bold">Ready-to-Use <span className="text-primary">Workflows</span></h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    We believe in practical learning. You won't just watch theory; you'll get your hands dirty. 
-                  </p>
-                  <ul className="space-y-6 pt-6">
-                    <li className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-2 rounded-lg mt-1">
-                        <FileJson className="w-6 h-6 text-primary shrink-0" />
-                      </div>
-                      <div>
-                        <strong className="text-foreground text-xl block mb-1">Plug & Play JSON Files</strong>
-                        <span className="text-muted-foreground text-lg">We will give you the exact n8n JSON files used in the workshop. We'll show you step-by-step how to import them directly into your own workspace!</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-2 rounded-lg mt-1">
-                        <Zap className="w-6 h-6 text-primary shrink-0" />
-                      </div>
-                      <div>
-                        <strong className="text-foreground text-xl block mb-1">Your First Automation</strong>
-                        <span className="text-muted-foreground text-lg">Walk away with a functioning automation that you can immediately use or tweak.</span>
-                      </div>
-                    </li>
-                  </ul>
+          {/* Why Choose Our Workshop */}
+          <section className="container px-4 mx-auto py-16 md:py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose <span className="text-primary">Our Workshop?</span></h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Learn from a true master who worked in automation long before AI became a trend.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid md:grid-cols-3 gap-6 text-center mb-16 max-w-5xl mx-auto">
+              <div className="bg-card p-8 rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
-                <div className="flex-1 w-full">
-                  <div className="relative p-8 md:p-10 rounded-[2rem] bg-card border border-border shadow-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-[2rem] pointer-events-none" />
-                    <div className="text-center space-y-6 relative z-10">
-                      <div className="text-6xl md:text-7xl font-black text-foreground tracking-tight">
-                        {variant === 'free' ? 'Free' : variant === '9' ? '₹9' : '₹99'}
-                      </div>
-                      <p className="text-muted-foreground text-lg font-medium">A small investment for a big leap.</p>
-                      <Button onClick={handleRegister} className="w-full h-16 text-xl mt-4 shine-effect rounded-xl font-bold" size="lg">
-                        Join The Workshop
-                      </Button>
-                      
-                      {variant !== 'free' && (
-                        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-4 font-medium">
-                          <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                          Secure Checkout via Razorpay
-                        </div>
-                      )}
-                      
-                      {/* variant === '99_lead' && (
-                        <div className="mt-8 pt-8 border-t border-border/50 text-left">
-                          <h4 className="text-xl font-bold text-foreground mb-2">Not ready for the workshop?</h4>
-                          <p className="text-muted-foreground text-sm mb-4">Enter your email and we'll send you some Free Automation Templates directly to your inbox!</p>
-                          <form onSubmit={handleLeadMagnetSubmit} className="flex gap-2">
-                            <Input 
-                              type="email" 
-                              placeholder="Your email address" 
-                              required 
-                              className="bg-background h-12"
-                              value={leadEmail}
-                              onChange={(e) => setLeadEmail(e.target.value)}
-                            />
-                            <Button type="submit" className="h-12 px-6" disabled={isSubmittingLead}>
-                              {isSubmittingLead ? "Sending..." : "Get Templates"}
-                            </Button>
-                          </form>
-                        </div>
-                      ) */}
-                    </div>
+                <h3 className="text-4xl font-black text-foreground mb-2 font-mono">
+                  <AnimatedCounter value={20000} suffix="+" />
+                </h3>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Learners Taught</p>
+              </div>
+              <div className="bg-card p-8 rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Rocket className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-4xl font-black text-foreground mb-2 font-mono">
+                  <AnimatedCounter value={450} suffix="+" />
+                </h3>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Projects Built</p>
+              </div>
+              <div className="bg-card p-8 rounded-[2rem] border border-border shadow-sm flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Trophy className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-4xl font-black text-foreground mb-2 font-mono flex items-center justify-center">
+                  Award
+                </h3>
+                <p className="text-muted-foreground font-medium uppercase tracking-wider text-sm">Winning Leaders</p>
+              </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-20">
+              <div className="space-y-6">
+                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                  <h3 className="text-xl font-bold flex items-center gap-3 mb-4">
+                    <Clock className="text-primary w-6 h-6" /> 17+ Years of Experience
+                  </h3>
+                  <p className="text-muted-foreground">Learn from a true master who worked in automation long before AI became a trend.</p>
+                  <div className="mt-4 pt-4 border-t border-border/50">
+                    <h4 className="font-semibold text-foreground mb-2">No More Tech Anxiety</h4>
+                    <p className="text-sm text-muted-foreground">We break down scary tech into simple steps so you can build confidence fast.</p>
+                  </div>
+                </div>
+                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                  <h3 className="text-xl font-bold flex items-center gap-3 mb-4">
+                    <TrendingUp className="text-primary w-6 h-6" /> 247% Business Growth
+                  </h3>
+                  <p className="text-muted-foreground">We don't just teach growth—we achieved it. Get the exact blueprint we used.</p>
+                  <div className="mt-4 pt-4 border-t border-border/50">
+                    <h4 className="font-semibold text-foreground mb-2">Skip the Guesswork</h4>
+                    <p className="text-sm text-muted-foreground">Stop wasting hours on YouTube. Get a clear, guided path from a veteran mentor.</p>
                   </div>
                 </div>
               </div>
-            </section>
 
-            {/* FAQ Section */}
-            <section className="container px-4 mx-auto pt-8 pb-12 max-w-3xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-              <LazyFAQSection variant={variant} />
-            </section>
+              <div className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-xl flex flex-col items-center text-center">
+                <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg mb-6 relative">
+                  <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" loading="lazy" className="w-full h-full object-cover object-top" />
+                </div>
+                <h3 className="text-2xl font-bold tracking-tight mb-2 text-foreground">
+                  Ritesh Hegde
+                </h3>
+                <p className="text-primary font-medium tracking-wide text-sm flex items-center justify-center gap-1.5 mb-8">
+                  <Star className="w-4 h-4 fill-primary text-primary shrink-0" />
+                  CEO & AI Expert, Ritz7ai
+                </p>
+                
+                <div className="relative border-t border-border pt-8">
+                  <Quote className="w-8 h-8 text-primary/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2" />
+                  <p className="text-foreground text-lg italic leading-relaxed">
+                    "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-primary">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+                  </p>
+                </div>
+                <div className="mt-6 w-full">
+                  <h4 className="font-semibold text-foreground mb-2 text-center md:text-left">A Partner in Your Success</h4>
+                  <p className="text-sm text-muted-foreground text-center md:text-left">You are not doing this alone. We care about your personal growth as much as the tech.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Testimonials */}
+          <section className="bg-muted/40 py-16 md:py-24 border-y border-border/50">
+            <div className="container px-4 mx-auto max-w-6xl">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">What <span className="text-primary">People Are Saying</span></h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-6">
+                  <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    <span className="font-semibold">100% agreed teaching pace was "Just Right"</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full shadow-sm border border-border">
+                    <div className="flex">
+                      {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <span className="font-semibold">4.8 / 5 Average Score</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "Manoj Kumar",
+                    text: "Mr. Ritesh is one of the few AI enthusiasts with deep knowledge who believes in delivering content with the sole purpose of empowering the masses selflessly. I appreciate and admire his passion."
+                  },
+                  {
+                    name: "Sankeeth",
+                    text: "Highly informative and insightful, well aligned with current AI trends. I found the subject matter very engaging and am interested in exploring it further to support my professional growth and upskilling.",
+                    stars: 4
+                  },
+                  {
+                    name: "Vijay N M",
+                    text: "I loved the session as a whole—especially the live agent building and step-by-step teaching. It's a valuable session. I am interested in enrolling [in future classes]."
+                  },
+                  {
+                    name: "Mangala",
+                    text: "Easy to understand step-by-step instructions made us understand better."
+                  },
+                  {
+                    name: "Savitha B. & Goutham R.",
+                    text: "The workshop was useful, highly informative, and easy to follow."
+                  }
+                ].map((t, i) => (
+                  <div key={i} className="bg-card border border-border rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="font-bold text-lg">{t.name}</div>
+                      <div className="flex">
+                        {[...Array(t.stars || 5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                        {[...Array(5 - (t.stars || 5))].map((_, j) => <Star key={j} className="w-4 h-4 text-muted-foreground/30" />)}
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground italic flex-1">"{t.text}"</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <Button onClick={handleRegister} size="lg" className="h-14 px-10 text-lg rounded-full shine-effect shadow-xl transition-transform hover:scale-105">
+                  Secure My Seat <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Pricing / What You Get */}
+          <section className="container px-4 mx-auto py-16 md:py-24">
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+              <div className="flex-1 space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold">Your Investment</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We believe in practical learning. You won't just watch theory; you'll get your hands dirty.
+                </p>
+                <ul className="space-y-6 pt-4">
+                  <li className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-2 rounded-lg mt-1">
+                      <FileJson className="w-6 h-6 text-primary shrink-0" />
+                    </div>
+                    <div>
+                      <strong className="text-foreground text-xl block mb-1">Plug & Play JSON Files</strong>
+                      <span className="text-muted-foreground text-base">We will give you the exact n8n JSON files used in the workshop to import directly into your workspace.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-2 rounded-lg mt-1">
+                      <Zap className="w-6 h-6 text-primary shrink-0" />
+                    </div>
+                    <div>
+                      <strong className="text-foreground text-xl block mb-1">Your First Automation</strong>
+                      <span className="text-muted-foreground text-base">Walk away with a functioning automation that you can immediately use or tweak.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full md:w-[400px]">
+                <div className="relative p-8 md:p-10 rounded-[2rem] bg-card border border-border shadow-2xl text-center hover:shadow-primary/10 transition-shadow">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 rounded-[2rem] pointer-events-none" />
+                  <div className="text-6xl font-black text-foreground tracking-tight mb-4 relative z-10">
+                    {variant === 'free' ? 'Free' : variant === '9' ? '₹9' : '₹99'}
+                  </div>
+                  <p className="text-muted-foreground font-medium mb-8 relative z-10">A small investment for a big leap.</p>
+                  <Button onClick={handleRegister} className="w-full h-16 text-xl rounded-xl font-bold shine-effect relative z-10 transition-transform hover:scale-105" size="lg">
+                    Join The Workshop
+                  </Button>
+                  {variant !== 'free' && (
+                    <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-6 font-medium relative z-10">
+                      <ShieldCheck className="w-5 h-5 text-emerald-500" /> Secure Checkout via Razorpay
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="container px-4 mx-auto pt-8 pb-12 max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <LazyFAQSection variant={variant} />
+          </section>
         </div>
       </main>
 
