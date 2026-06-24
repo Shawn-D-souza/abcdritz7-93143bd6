@@ -487,18 +487,18 @@ const WorkshopLanding = () => {
               </div>
 
               <div className="bg-card border border-border rounded-[2rem] shadow-xl overflow-hidden">
-                <div className="grid md:grid-cols-2 bg-muted/50 p-6 border-b border-border">
-                  <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground mb-4 md:mb-0">
+                <div className="hidden md:grid grid-cols-2 bg-muted/50 p-6 border-b border-border">
+                  <div className="flex items-center gap-3 justify-start pl-8 font-bold text-lg text-foreground">
                     <GraduationCap className="w-6 h-6 text-primary" />
                     What You'll Learn
                   </div>
-                  <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground">
+                  <div className="flex items-center gap-3 justify-start pl-8 font-bold text-lg text-foreground">
                     <Target className="w-6 h-6 text-primary" />
                     What You'll Walk Away With
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8 space-y-4">
+                <div className="p-4 md:p-8 space-y-4">
                   {[
                     { 
                       teach: "What automation really is (in simple terms)", 
@@ -531,21 +531,35 @@ const WorkshopLanding = () => {
                       icon: Rocket
                     }
                   ].map((item, i) => (
-                    <div key={i} className="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-0 p-4 rounded-2xl hover:bg-muted/50 transition-colors">
-                      <div className="flex-1 flex items-center gap-4 text-center md:text-left">
+                    <div key={i} className="flex flex-col md:flex-row items-start md:items-stretch gap-4 md:gap-0 p-5 md:p-4 rounded-3xl md:rounded-2xl bg-muted/30 md:bg-transparent border md:border-none border-border/50 hover:bg-muted/50 transition-colors">
+                      <div className="flex-1 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 w-full">
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 hidden md:flex">
                           <item.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <p className="text-foreground font-medium">{item.teach}</p>
+                        <div className="md:hidden flex items-center gap-2 mb-1 text-primary">
+                          <GraduationCap className="w-4 h-4" />
+                          <span className="text-xs font-bold uppercase tracking-wider">You'll Learn</span>
+                        </div>
+                        <p className="text-foreground font-bold md:font-medium text-lg md:text-base leading-snug">{item.teach}</p>
                       </div>
+                      
                       <div className="hidden md:flex shrink-0 w-16 items-center justify-center text-primary">
                         <ArrowRight className="w-6 h-6" />
                       </div>
-                      <div className="flex-1 flex items-center gap-4 text-center md:text-left">
+                      
+                      <div className="md:hidden w-full flex justify-center py-1 text-muted-foreground/40">
+                        <ArrowRight className="w-5 h-5 rotate-90" />
+                      </div>
+
+                      <div className="flex-1 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 w-full">
                         <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 hidden md:flex">
                           <CheckCircle2 className="w-5 h-5 text-emerald-500" />
                         </div>
-                        <p className="text-muted-foreground">{item.do}</p>
+                        <div className="md:hidden flex items-center gap-2 mb-1 text-emerald-600 dark:text-emerald-400">
+                          <Target className="w-4 h-4" />
+                          <span className="text-xs font-bold uppercase tracking-wider">You'll Walk Away With</span>
+                        </div>
+                        <p className="text-muted-foreground font-medium md:font-normal">{item.do}</p>
                       </div>
                     </div>
                   ))}
