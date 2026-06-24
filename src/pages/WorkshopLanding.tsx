@@ -145,6 +145,80 @@ const LazyFAQSection = ({ variant }: { variant: Variant }) => {
 // ── Detect touch device once ─────────────────────────────────────────────
 const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    // Workshop date: June 27, 2026, 6:00 PM IST
+    const targetDate = new Date("2026-06-27T18:00:00+05:30").getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    updateTimer(); // initial call
+    const timer = setInterval(updateTimer, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="flex flex-col sm:flex-row items-center gap-4 bg-primary/5 border border-primary/20 rounded-2xl p-2 pl-4 pr-3 shadow-sm">
+      <div className="inline-flex items-center gap-2 text-primary font-bold">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+        </span>
+        Limited Seats Available!
+      </div>
+      
+      <div className="hidden sm:block w-px h-8 bg-primary/20"></div>
+
+      <div className="flex items-center gap-2 text-center">
+        {timeLeft.days > 0 && (
+          <>
+            <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+              <span className="text-lg font-bold font-mono text-foreground">{timeLeft.days.toString().padStart(2, '0')}</span>
+              <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Days</span>
+            </div>
+            <span className="text-lg font-bold text-muted-foreground/50">:</span>
+          </>
+        )}
+        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-foreground">{timeLeft.hours.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Hrs</span>
+        </div>
+        <span className="text-lg font-bold text-muted-foreground/50">:</span>
+        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-foreground">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Min</span>
+        </div>
+        <span className="text-lg font-bold text-muted-foreground/50">:</span>
+        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-primary animate-pulse">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Sec</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const WorkshopLanding = () => {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [hasOpenedModal, setHasOpenedModal] = useState(false);
@@ -236,36 +310,46 @@ const WorkshopLanding = () => {
         <div className="absolute top-[20%] right-[-10%] w-[60vw] max-w-[600px] aspect-square rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-16 pb-0 lg:pt-20">
+      <main className="relative z-10 pt-12 pb-0 lg:pt-16">
         {/* Hero Section */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
-              <GraduationCap className="w-4 h-4" />
-              <span className="text-sm font-semibold tracking-wide uppercase">Beginner Friendly Workshop</span>
+          <div className="space-y-4 md:space-y-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
+                <GraduationCap className="w-4 h-4" />
+                <span className="text-sm font-semibold tracking-wide uppercase">Beginner Friendly Workshop</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 border border-orange-500/20 backdrop-blur-md dark:text-orange-400">
+                <Clock className="w-4 h-4" />
+                <span className="text-sm font-semibold tracking-wide">27/06/2026 • 6 PM - 9 PM (IST)</span>
+              </div>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-              Automate Your Future,<br/> <span className="text-primary">One Skill at a Time</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
+              Automate Your Future, <span className="text-primary">One Skill at a Time</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Setting you on the path to partially automate your daily work—and fix <strong className="text-foreground">90% of your boring tasks</strong>.
             </p>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto hidden sm:block">
               A beginner-friendly workshop that breaks down the core concepts behind modern automation systems using simple explanations and practical examples.
             </p>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="pt-4 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-6">
               <Button 
                 onClick={handleRegister}
                 size="lg" 
-                className="h-16 px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105"
+                className="h-14 md:h-16 px-8 md:px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105 shrink-0"
               >
                 Reserve My Spot Now
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
+              
+              <div className="scale-95 sm:scale-100 origin-left">
+                <CountdownTimer />
+              </div>
             </div>
           </div>
         </section>
