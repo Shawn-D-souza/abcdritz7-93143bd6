@@ -20,7 +20,17 @@ import {
   Gift,
   Target,
   Trophy,
-  Quote
+  Quote,
+  Frown,
+  HelpCircle,
+  Laptop,
+  User,
+  ShieldAlert,
+  BarChart,
+  CircleDollarSign,
+  Lightbulb,
+  Atom,
+  AlarmClock
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
@@ -358,13 +368,14 @@ const WorkshopLanding = () => {
           {/* Avoid the Pain of Repetitive Tasks */}
           <section className="container px-4 mx-auto py-16 md:py-24 mt-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-500 border border-orange-500/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 mb-6">
                 <span className="text-sm font-medium">⚠️ If this feels familiar, you're not alone.</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Avoid the Pain of <span className="text-primary">Repetitive Tasks</span></h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                What unnecessary tasks are holding you back?
-              </p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4"><span className="text-primary">Avoid the Pain of</span> Repetitive Tasks</h2>
+              <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto space-y-3">
+                <p>These daily challenges drain your time, energy, and potential.</p>
+                <p className="font-bold text-foreground text-2xl">Which ones are <span className="text-primary">holding you back?</span></p>
+              </div>
             </div>
 
             <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
@@ -376,21 +387,21 @@ const WorkshopLanding = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground">Time & Stress</h3>
-                    <p className="text-sm text-red-500/80 font-medium">Too busy. Too tired.</p>
+                    <p className="text-sm text-red-600 dark:text-red-400 font-semibold">Too busy. Too tired.</p>
                   </div>
                 </div>
                 <div className="p-6 space-y-6 flex-1">
                   <div className="flex gap-4">
-                    <Clock className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Wasting hours on boring, manual work every single day.</p>
+                    <AlarmClock className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Wasting hours on boring, manual work every single day.</p>
                   </div>
                   <div className="flex gap-4">
-                    <Zap className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Feeling completely overwhelmed by a never-ending to-do list.</p>
+                    <Frown className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Feeling completely overwhelmed by a never-ending to-do list.</p>
                   </div>
                   <div className="flex gap-4">
-                    <Target className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Not knowing where to start or how to begin with automation.</p>
+                    <HelpCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Not knowing where to start or how to begin with automation.</p>
                   </div>
                 </div>
               </div>
@@ -399,25 +410,25 @@ const WorkshopLanding = () => {
               <div className="bg-card border border-border shadow-lg rounded-3xl overflow-hidden flex flex-col hover:border-blue-500/30 transition-colors">
                 <div className="bg-blue-500/5 p-6 border-b border-border/50 flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0">
-                    <MonitorSmartphone className="w-6 h-6 text-blue-500" />
+                    <Laptop className="w-6 h-6 text-blue-500" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground">Skills & Tech</h3>
-                    <p className="text-sm text-blue-500/80 font-medium">Hard to keep up.</p>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 font-semibold">Hard to keep up.</p>
                   </div>
                 </div>
                 <div className="p-6 space-y-6 flex-1">
                   <div className="flex gap-4">
-                    <TrendingUp className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Struggling to keep pace with fast-moving technology.</p>
+                    <TrendingUp className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Struggling to keep pace with fast-moving technology.</p>
                   </div>
                   <div className="flex gap-4">
-                    <BrainCircuit className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Feeling stuck with outdated skills in a changing job market.</p>
+                    <User className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Feeling stuck with outdated skills in a changing job market.</p>
                   </div>
                   <div className="flex gap-4">
-                    <ShieldCheck className="w-5 h-5 text-blue-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Fearing the future of work and being left behind.</p>
+                    <ShieldAlert className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Fearing the future of work and being left behind.</p>
                   </div>
                 </div>
               </div>
@@ -426,26 +437,39 @@ const WorkshopLanding = () => {
               <div className="bg-card border border-border shadow-lg rounded-3xl overflow-hidden flex flex-col hover:border-emerald-500/30 transition-colors">
                 <div className="bg-emerald-500/5 p-6 border-b border-border/50 flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
-                    <TrendingUp className="w-6 h-6 text-emerald-500" />
+                    <BarChart className="w-6 h-6 text-emerald-500" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground">Business Growth</h3>
-                    <p className="text-sm text-emerald-500/80 font-medium">Growth feels out of reach.</p>
+                    <p className="text-sm text-emerald-600 dark:text-emerald-400 font-semibold">Growth feels out of reach.</p>
                   </div>
                 </div>
                 <div className="p-6 space-y-6 flex-1">
                   <div className="flex gap-4">
-                    <Target className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Missing opportunities to grow and scale your business.</p>
+                    <Target className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Missing opportunities to grow and scale your business.</p>
                   </div>
                   <div className="flex gap-4">
-                    <Bot className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Feeling frustrated by slow, messy, and inefficient processes.</p>
+                    <Atom className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Feeling frustrated by slow, messy, and inefficient processes.</p>
                   </div>
                   <div className="flex gap-4">
-                    <Briefcase className="w-5 h-5 text-emerald-500/50 shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Losing time (and money) to repetitive tasks that could be automated.</p>
+                    <CircleDollarSign className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <p className="text-foreground/90 font-medium">Losing time (and money) to repetitive tasks that could be automated.</p>
                   </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="max-w-4xl mx-auto mt-10">
+              <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Lightbulb className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-center sm:text-left mt-1 sm:mt-0">
+                  <p className="text-lg text-foreground/90 leading-relaxed">
+                    <strong className="text-foreground">The good news?</strong> You can automate the repetitive, focus on what matters, and create <strong className="text-primary">more time</strong> for what truly <strong className="text-primary">moves you forward.</strong>
+                  </p>
                 </div>
               </div>
             </div>
