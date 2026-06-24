@@ -321,10 +321,10 @@ const WorkshopLanding = () => {
         <div className="absolute top-[20%] right-[-10%] w-[60vw] max-w-[600px] aspect-square rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-24 pb-0 lg:pt-32">
+      <main className="relative z-10 pt-24 pb-0 lg:pt-24">
         {/* Hero Section */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-4 md:space-y-5">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md text-center max-w-full">
                 <GraduationCap className="w-4 h-4 shrink-0" />
@@ -348,15 +348,21 @@ const WorkshopLanding = () => {
               A beginner-friendly workshop that breaks down the core concepts behind modern automation systems using simple explanations and practical examples.
             </p>
 
-            <div className="pt-8 md:pt-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 w-full px-4 sm:px-0">
-              <Button 
-                onClick={handleRegister}
-                size="lg" 
-                className="h-14 md:h-16 px-8 md:px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105 shrink-0"
-              >
-                Reserve My Spot Now
-                <ArrowRight className="ml-2 w-6 h-6" />
-              </Button>
+            <div className="pt-8 md:pt-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-8 w-full px-4 sm:px-0">
+              <div className="relative w-full sm:w-auto">
+                <Button 
+                  onClick={handleRegister}
+                  size="lg" 
+                  className="h-14 md:h-16 px-8 md:px-10 text-lg w-full sm:w-auto rounded-full shine-effect bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] transition-transform hover:scale-105 shrink-0"
+                >
+                  Reserve My Spot Now
+                  <ArrowRight className="ml-2 w-6 h-6" />
+                </Button>
+                <div className="absolute -bottom-7 left-0 right-0 flex items-center justify-center gap-1.5 text-[13px] sm:text-sm font-medium text-foreground/80 pointer-events-none whitespace-nowrap">
+                  <Gift className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <span>Bonus: Template + Recording included</span>
+                </div>
+              </div>
               
               <div className="w-full sm:w-auto flex justify-center scale-95 sm:scale-100 origin-center">
                 <CountdownTimer />
