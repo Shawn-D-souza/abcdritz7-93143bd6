@@ -637,12 +637,12 @@ const WorkshopLanding = () => {
                 <div className="space-y-8">
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-2">Who Is <span className="text-primary">This For?</span></h2>
-                    <p className="text-muted-foreground text-lg">Designed to build a strong foundation.</p>
+                    <p className="text-foreground/80 font-medium text-lg">Designed to build a strong foundation.</p>
                   </div>
                   
                   <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-emerald-500/50 transition-colors">
-                    <h3 className="text-xl font-bold flex items-center gap-2">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                    <h3 className="text-xl font-bold flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+                      <CheckCircle2 className="w-6 h-6" />
                       Perfect For
                     </h3>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -655,8 +655,8 @@ const WorkshopLanding = () => {
                         "Anyone Curious About AI & Automation"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                          <span className="text-foreground font-medium">{item}</span>
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-500 shrink-0 mt-0.5" />
+                          <span className="text-foreground/90 font-semibold">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -667,12 +667,12 @@ const WorkshopLanding = () => {
                 <div className="space-y-8">
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-2">Is This Right <span className="text-primary">For You?</span></h2>
-                    <p className="text-muted-foreground text-lg">Let's be clear about what this is not.</p>
+                    <p className="text-foreground/80 font-medium text-lg">Let's be clear about what this is not.</p>
                   </div>
                   
-                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-destructive/50 transition-colors">
-                    <h3 className="text-xl font-bold flex items-center gap-2 text-destructive">
-                      <XCircle className="w-6 h-6 text-destructive" />
+                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-red-500/50 transition-colors">
+                    <h3 className="text-xl font-bold flex items-center gap-2 text-red-600 dark:text-red-400">
+                      <XCircle className="w-6 h-6" />
                       Not Intended For
                     </h3>
                     <ul className="space-y-4">
@@ -682,14 +682,14 @@ const WorkshopLanding = () => {
                         "Those looking for deep technical implementation"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <XCircle className="w-5 h-5 text-destructive/70 shrink-0 mt-0.5" />
-                          <span className="text-foreground font-medium">{item}</span>
+                          <XCircle className="w-5 h-5 text-red-500 dark:text-red-400 shrink-0 mt-0.5" />
+                          <span className="text-foreground/90 font-semibold">{item}</span>
                         </li>
                       ))}
                     </ul>
                     <div className="mt-6 pt-6 border-t border-border/50">
-                      <p className="text-sm text-muted-foreground">
-                        <strong>Note:</strong> This workshop is Beginner-friendly, Concept-focused, Practical and easy to understand.
+                      <p className="text-sm text-foreground/80 font-medium">
+                        <strong className="text-foreground">Note:</strong> This workshop is Beginner-friendly, Concept-focused, Practical and easy to understand.
                       </p>
                     </div>
                   </div>
