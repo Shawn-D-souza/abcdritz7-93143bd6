@@ -16,6 +16,7 @@ import {
   MonitorSmartphone,
   TrendingUp,
   CheckCircle2,
+  Check,
   XCircle,
   Gift,
   Target,
@@ -479,9 +480,9 @@ const WorkshopLanding = () => {
           <section className="bg-muted/30 py-16 md:py-24 border-y border-border/50">
             <div className="container px-4 mx-auto max-w-5xl">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">Master the Basics. <span className="text-primary">Build the Foundation.</span></h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Practical automation skills that save time, reduce effort, and open new possibilities.
+                <h2 className="text-3xl md:text-5xl font-bold mb-4"><span className="text-primary">Master the Basics.</span> Build the Foundation.</h2>
+                <p className="text-xl text-muted-foreground max-w-4xl mx-auto flex items-center justify-center gap-2">
+                  <span className="text-2xl">✨</span> Practical automation skills that save time, reduce effort, and open new possibilities.
                 </p>
               </div>
 
@@ -489,40 +490,45 @@ const WorkshopLanding = () => {
                 <div className="grid md:grid-cols-2 bg-muted/50 p-6 border-b border-border">
                   <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground mb-4 md:mb-0">
                     <GraduationCap className="w-6 h-6 text-primary" />
-                    What we will teach you
+                    What You'll Learn
                   </div>
                   <div className="flex items-center gap-3 justify-center md:justify-start md:pl-8 font-bold text-lg text-foreground">
                     <Target className="w-6 h-6 text-primary" />
-                    What you will be able to do
+                    What You'll Walk Away With
                   </div>
                 </div>
 
                 <div className="p-6 md:p-8 space-y-4">
                   {[
                     { 
-                      teach: "What automation actually means in daily life.", 
-                      do: "Understand how smart systems handle tasks for you.",
-                      icon: Zap
+                      teach: "What automation really is (in simple terms)", 
+                      do: "A clear understanding of how automation can help in everyday work and life.",
+                      icon: Lightbulb
                     },
                     { 
-                      teach: "Why modern businesses use automation to save time.", 
-                      do: "Know exactly how a tool starts, runs, and finishes a job.",
+                      teach: "Why businesses and professionals use automation to save time", 
+                      do: "The ability to identify tasks that can be automated.",
                       icon: Clock
                     },
                     { 
-                      teach: "The basic building blocks used to create simple setups.", 
-                      do: "Understand how different steps connect together.",
+                      teach: "The building blocks behind simple automations", 
+                      do: "Confidence to understand how automation workflows work.",
                       icon: BrainCircuit
                     },
                     { 
-                      teach: "How different apps and systems talk to each other.", 
-                      do: "Lose the fear of technology and explore new tools with ease.",
-                      icon: Target
+                      teach: "How different apps and tools connect with each other", 
+                      do: "Knowledge of how information moves automatically between systems.",
+                      icon: Zap
                     },
                     { 
-                      teach: "Everyday automation examples you can copy.", 
-                      do: "Get a clear, strong starting point to keep growing your skills.",
+                      teach: "Real-world automation examples you can use", 
+                      do: "Ideas and examples you can immediately apply.",
                       icon: Star
+                    },
+                    { 
+                      teach: "How to get started without coding", 
+                      do: "A practical roadmap to start your automation journey.",
+                      icon: Rocket
                     }
                   ].map((item, i) => (
                     <div key={i} className="flex flex-col md:flex-row items-center md:items-stretch gap-4 md:gap-0 p-4 rounded-2xl hover:bg-muted/50 transition-colors">
@@ -532,7 +538,7 @@ const WorkshopLanding = () => {
                         </div>
                         <p className="text-foreground font-medium">{item.teach}</p>
                       </div>
-                      <div className="hidden md:flex shrink-0 w-16 items-center justify-center text-border">
+                      <div className="hidden md:flex shrink-0 w-16 items-center justify-center text-primary">
                         <ArrowRight className="w-6 h-6" />
                       </div>
                       <div className="flex-1 flex items-center gap-4 text-center md:text-left">
@@ -551,9 +557,9 @@ const WorkshopLanding = () => {
           {/* 3 Simple Steps */}
           <section className="container px-4 mx-auto py-16 md:py-24">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Three Simple Steps to <span className="text-primary">Start Learning</span></h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Your <span className="text-primary">Automation Journey</span> Starts Here</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Learn how to automate your work starting today.
+                From learning the basics to applying them in real life.
               </p>
             </div>
 
@@ -567,9 +573,9 @@ const WorkshopLanding = () => {
                   <div className="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <MonitorSmartphone className="w-10 h-10 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">Join Our Workshop</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Learn the basics from an expert this weekend and see how AI tools work together.
+                  <h3 className="text-xl font-bold text-foreground mb-4">Join the Workshop</h3>
+                  <p className="text-muted-foreground leading-relaxed text-left">
+                    Learn automation through simple explanations, real examples, and live demonstrations.
                   </p>
                 </div>
 
@@ -579,27 +585,38 @@ const WorkshopLanding = () => {
                   <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Gift className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">Free Practice Toolkit</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm mb-4">
-                    <strong>What to do:</strong> Share your honest feedback after class to help us improve.
+                  <h3 className="text-xl font-bold text-foreground mb-4">Unlock Your Bonus Resources</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm mb-4 text-left">
+                    Share your feedback after the workshop and receive:
                   </p>
-                  <p className="text-muted-foreground leading-relaxed text-sm mb-4">
-                    <strong>What you get:</strong> The full workshop recording + 1 bonus free template!
-                  </p>
+                  <div className="flex flex-col gap-3 mb-4 text-sm text-foreground items-start text-left font-medium">
+                    <div className="flex gap-2.5 items-center">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-white stroke-[3]" />
+                      </div>
+                      Workshop recording
+                    </div>
+                    <div className="flex gap-2.5 items-center">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-white stroke-[3]" />
+                      </div>
+                      Bonus template
+                    </div>
+                  </div>
                   <div className="bg-primary/10 text-primary text-xs font-semibold px-3 py-2 rounded-lg inline-block">
-                    Feedback submission unlocks toolkit.
+                    Feedback helps us improve future sessions.
                   </div>
                 </div>
 
                 {/* Step 3 */}
                 <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 text-center relative group hover:shadow-primary/5 transition-all">
                   <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold flex items-center justify-center absolute -top-4 -left-4 md:left-auto md:right-auto md:mx-auto shadow-lg z-20">3</div>
-                  <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Rocket className="w-10 h-10 text-emerald-500" />
+                  <div className="w-20 h-20 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Rocket className="w-10 h-10 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">Apply Your Knowledge</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Use what you learned to easily find and automate simple tasks in your daily work.
+                  <h3 className="text-xl font-bold text-foreground mb-4">Put It Into Action</h3>
+                  <p className="text-muted-foreground leading-relaxed text-left">
+                    Start spotting repetitive tasks, exploring automation opportunities, and applying what you've learned.
                   </p>
                 </div>
               </div>
