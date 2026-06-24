@@ -802,7 +802,7 @@ const WorkshopLanding = () => {
                       Skip the Guesswork
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Stop wasting hours on YouTube. Get a clear, guided path from a veteran mentor.
+                      Stop wasting hours on YouTube. Get a clear, guided path from an AI Expert.
                     </p>
                   </div>
                 </div>
