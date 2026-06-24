@@ -978,6 +978,9 @@ const WorkshopLanding = () => {
           <section className="container px-4 mx-auto pt-8 pb-12 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <LazyFAQSection variant={variant} />
+            <div className="mt-8 text-center text-muted-foreground">
+              Still have questions? Contact us at <a href="mailto:support@ritz7.ai" className="text-primary hover:underline">support@ritz7.ai</a>
+            </div>
           </section>
         </div>
       </main>
