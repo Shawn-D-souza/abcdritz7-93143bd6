@@ -321,34 +321,34 @@ const WorkshopLanding = () => {
         <div className="absolute top-[20%] right-[-10%] w-[60vw] max-w-[600px] aspect-square rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-12 pb-0 lg:pt-16">
+      <main className="relative z-10 pt-24 pb-0 lg:pt-32">
         {/* Hero Section */}
         <section className="container px-4 mx-auto text-center max-w-5xl">
           <div className="space-y-4 md:space-y-6">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md">
-                <GraduationCap className="w-4 h-4" />
-                <span className="text-sm font-semibold tracking-wide uppercase">Beginner Friendly Workshop</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 backdrop-blur-md text-center max-w-full">
+                <GraduationCap className="w-4 h-4 shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold tracking-wide uppercase truncate">Beginner Friendly Workshop</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 border border-orange-500/20 backdrop-blur-md dark:text-orange-400">
-                <Clock className="w-4 h-4" />
-                <span className="text-sm font-semibold tracking-wide">27/06/2026 • 6 PM - 9 PM (IST)</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 border border-orange-500/20 backdrop-blur-md dark:text-orange-400 text-center max-w-full">
+                <Clock className="w-4 h-4 shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold tracking-wide truncate">27/06/2026 • 6 PM - 9 PM (IST)</span>
               </div>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-              Automate Your Future, <span className="text-primary">One Skill at a Time</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight px-2 sm:px-0 leading-[1.15]">
+              Automate Your Future,<br className="sm:hidden" /> <span className="text-primary">One Skill at a Time</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Setting you on the path to partially automate your daily work—and fix <strong className="text-foreground">90% of your boring tasks</strong>.
             </p>
             
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto hidden sm:block">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto hidden sm:block">
               A beginner-friendly workshop that breaks down the core concepts behind modern automation systems using simple explanations and practical examples.
             </p>
 
-            <div className="pt-4 flex flex-col md:flex-row items-center justify-center gap-5 md:gap-6">
+            <div className="pt-8 md:pt-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 w-full px-4 sm:px-0">
               <Button 
                 onClick={handleRegister}
                 size="lg" 
@@ -358,7 +358,7 @@ const WorkshopLanding = () => {
                 <ArrowRight className="ml-2 w-6 h-6" />
               </Button>
               
-              <div className="scale-95 sm:scale-100 origin-left">
+              <div className="w-full sm:w-auto flex justify-center scale-95 sm:scale-100 origin-center">
                 <CountdownTimer />
               </div>
             </div>
@@ -367,7 +367,7 @@ const WorkshopLanding = () => {
 
         <div>
           {/* Avoid the Pain of Repetitive Tasks */}
-          <section className="container px-4 mx-auto py-16 md:py-24 mt-8">
+          <section className="container px-4 mx-auto pt-12 md:pt-24 pb-16 md:pb-24">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 mb-6">
                 <span className="text-sm font-medium">⚠️ If this feels familiar, you're not alone.</span>
