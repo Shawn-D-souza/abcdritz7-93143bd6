@@ -754,22 +754,14 @@ const WorkshopLanding = () => {
 
             <div className="max-w-5xl mx-auto flex flex-col gap-12">
               {/* Trust Table */}
-              <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-xl flex flex-col w-full">
-                {/* Headers */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-border bg-muted/30">
-                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border flex items-center gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-0 sm:bg-card sm:border sm:border-border sm:rounded-3xl sm:overflow-hidden sm:shadow-xl w-full">
+                {/* Column 1 */}
+                <div className="flex flex-col bg-card border border-border rounded-3xl sm:rounded-none sm:border-none sm:border-r sm:border-border overflow-hidden shadow-xl sm:shadow-none">
+                  <div className="p-6 md:p-8 border-b border-border bg-muted/30 flex items-center gap-3">
                     <span className="text-2xl">📋</span>
                     <h3 className="font-bold text-foreground text-lg md:text-xl">Why You Can Trust Us</h3>
                   </div>
-                  <div className="p-6 md:p-8 flex items-center gap-3">
-                    <span className="text-2xl">🤝</span>
-                    <h3 className="font-bold text-foreground text-lg md:text-xl">How We Support You</h3>
-                  </div>
-                </div>
-                
-                {/* Row 1 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-border">
-                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border hover:bg-muted/50 transition-colors">
+                  <div className="p-6 md:p-8 border-b border-border hover:bg-muted/50 transition-colors flex-1">
                     <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
                       <Clock className="text-primary w-6 h-6 shrink-0" />
                       17+ Years of Experience
@@ -778,20 +770,7 @@ const WorkshopLanding = () => {
                       Learn from a true master who worked in automation long before AI became a trend.
                     </p>
                   </div>
-                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors">
-                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
-                      <HeartHandshake className="text-primary w-6 h-6 shrink-0" />
-                      No More Tech Anxiety
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      We break down scary tech into simple steps so you can build confidence fast.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Row 2 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2">
-                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border hover:bg-muted/50 transition-colors">
+                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors flex-1">
                     <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
                       <TrendingUp className="text-primary w-6 h-6 shrink-0" />
                       247% Business Growth
@@ -800,7 +779,24 @@ const WorkshopLanding = () => {
                       We don't just teach growth—we achieved it. Get the exact blueprint we used.
                     </p>
                   </div>
-                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors">
+                </div>
+
+                {/* Column 2 */}
+                <div className="flex flex-col bg-card border border-border rounded-3xl sm:rounded-none sm:border-none overflow-hidden shadow-xl sm:shadow-none">
+                  <div className="p-6 md:p-8 border-b border-border bg-muted/30 flex items-center gap-3">
+                    <span className="text-2xl">🤝</span>
+                    <h3 className="font-bold text-foreground text-lg md:text-xl">How We Support You</h3>
+                  </div>
+                  <div className="p-6 md:p-8 border-b border-border hover:bg-muted/50 transition-colors flex-1">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
+                      <HeartHandshake className="text-primary w-6 h-6 shrink-0" />
+                      No More Tech Anxiety
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We break down scary tech into simple steps so you can build confidence fast.
+                    </p>
+                  </div>
+                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors flex-1">
                     <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
                       <Target className="text-primary w-6 h-6 shrink-0" />
                       Skip the Guesswork
