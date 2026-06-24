@@ -697,51 +697,91 @@ const WorkshopLanding = () => {
               </div>
             </div>
 
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-20">
-              <div className="space-y-6">
-                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
-                  <h3 className="text-xl font-bold flex items-center gap-3 mb-4">
-                    <Clock className="text-primary w-6 h-6" /> 17+ Years of Experience
-                  </h3>
-                  <p className="text-muted-foreground">Learn from a true master who worked in automation long before AI became a trend.</p>
-                  <div className="mt-4 pt-4 border-t border-border/50">
-                    <h4 className="font-semibold text-foreground mb-2">No More Tech Anxiety</h4>
-                    <p className="text-sm text-muted-foreground">We break down scary tech into simple steps so you can build confidence fast.</p>
+            <div className="max-w-5xl mx-auto flex flex-col gap-12">
+              {/* Trust Table */}
+              <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-xl flex flex-col w-full">
+                {/* Headers */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-border bg-muted/30">
+                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border flex items-center gap-3">
+                    <span className="text-2xl">📋</span>
+                    <h3 className="font-bold text-foreground text-lg md:text-xl">Why You Can Trust Us</h3>
+                  </div>
+                  <div className="p-6 md:p-8 flex items-center gap-3">
+                    <span className="text-2xl">🤝</span>
+                    <h3 className="font-bold text-foreground text-lg md:text-xl">How We Support You</h3>
                   </div>
                 </div>
-                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
-                  <h3 className="text-xl font-bold flex items-center gap-3 mb-4">
-                    <TrendingUp className="text-primary w-6 h-6" /> 247% Business Growth
-                  </h3>
-                  <p className="text-muted-foreground">We don't just teach growth—we achieved it. Get the exact blueprint we used.</p>
-                  <div className="mt-4 pt-4 border-t border-border/50">
-                    <h4 className="font-semibold text-foreground mb-2">Skip the Guesswork</h4>
-                    <p className="text-sm text-muted-foreground">Stop wasting hours on YouTube. Get a clear, guided path from a veteran mentor.</p>
+                
+                {/* Row 1 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 border-b border-border">
+                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border hover:bg-muted/50 transition-colors">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
+                      <Clock className="text-primary w-6 h-6 shrink-0" />
+                      17+ Years of Experience
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Learn from a true master who worked in automation long before AI became a trend.
+                    </p>
+                  </div>
+                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
+                      <HeartHandshake className="text-primary w-6 h-6 shrink-0" />
+                      No More Tech Anxiety
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We break down scary tech into simple steps so you can build confidence fast.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Row 2 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2">
+                  <div className="p-6 md:p-8 border-b sm:border-b-0 sm:border-r border-border hover:bg-muted/50 transition-colors">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
+                      <TrendingUp className="text-primary w-6 h-6 shrink-0" />
+                      247% Business Growth
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      We don't just teach growth—we achieved it. Get the exact blueprint we used.
+                    </p>
+                  </div>
+                  <div className="p-6 md:p-8 hover:bg-muted/50 transition-colors">
+                    <h4 className="font-bold text-foreground mb-3 flex items-center gap-2 md:text-lg">
+                      <Target className="text-primary w-6 h-6 shrink-0" />
+                      Skip the Guesswork
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Stop wasting hours on YouTube. Get a clear, guided path from a veteran mentor.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-xl flex flex-col items-center text-center">
-                <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg mb-6 relative">
-                  <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" loading="lazy" className="w-full h-full object-cover object-top" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-tight mb-2 text-foreground">
-                  Ritesh Hegde
-                </h3>
-                <p className="text-primary font-medium tracking-wide text-sm flex items-center justify-center gap-1.5 mb-8">
-                  <Star className="w-4 h-4 fill-primary text-primary shrink-0" />
-                  CEO & AI Expert, Ritz7ai
-                </p>
-                
-                <div className="relative border-t border-border pt-8">
-                  <Quote className="w-8 h-8 text-primary/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card px-2" />
-                  <p className="text-foreground text-lg italic leading-relaxed">
-                    "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-primary">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+              {/* Profile Card */}
+              <div className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div className="shrink-0 flex flex-col items-center">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-muted overflow-hidden border-4 border-background shadow-lg mb-6 relative">
+                    <img src="/ritesh_black_suit.webp" alt="Ritesh Hegde" loading="lazy" className="w-full h-full object-cover object-top" />
+                  </div>
+                  <h3 className="text-2xl font-bold tracking-tight mb-2 text-foreground text-center">
+                    Ritesh Hegde
+                  </h3>
+                  <p className="text-primary font-medium tracking-wide text-sm flex items-center justify-center gap-1.5">
+                    <Star className="w-4 h-4 fill-primary text-primary shrink-0" />
+                    CEO & AI Expert, Ritz7ai
                   </p>
                 </div>
-                <div className="mt-6 w-full">
-                  <h4 className="font-semibold text-foreground mb-2 text-center md:text-left">A Partner in Your Success</h4>
-                  <p className="text-sm text-muted-foreground text-center md:text-left">You are not doing this alone. We care about your personal growth as much as the tech.</p>
+                
+                <div className="flex-1 flex flex-col justify-center w-full">
+                  <div className="relative pt-2">
+                    <p className="text-foreground text-lg md:text-xl italic leading-relaxed relative z-10 text-center md:text-left">
+                      "I didn't start as a coder. In fact, I was an Electrical Engineer with <strong className="text-primary">zero coding background</strong>. But I realized the power of automation and visual building. Fast forward to today, my team and I have delivered over 450 automation projects. If I can learn this and build a business around it, <strong className="text-primary">so can you</strong>."
+                    </p>
+                  </div>
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <h4 className="font-semibold text-foreground mb-2 text-center md:text-left text-lg">A Partner in Your Success</h4>
+                    <p className="text-muted-foreground text-center md:text-left text-base">You are not doing this alone. We care about your personal growth as much as the tech.</p>
+                  </div>
                 </div>
               </div>
             </div>
