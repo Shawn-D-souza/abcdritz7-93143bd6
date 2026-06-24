@@ -476,8 +476,41 @@ const WorkshopLanding = () => {
             </div>
           </section>
 
+          {/* Who Is This For */}
+          <section className="bg-muted/40 py-16 md:py-24 border-t border-border/50">
+            <div className="container px-4 mx-auto max-w-2xl">
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-2">Who Is <span className="text-primary">This For?</span></h2>
+                </div>
+                
+                <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-emerald-500/50 transition-colors">
+                  <h3 className="text-xl font-bold flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 mb-6">
+                    <CheckCircle2 className="w-6 h-6" />
+                    Perfect For
+                  </h3>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    {[
+                      "Students",
+                      "Working Professionals",
+                      "Freelancers",
+                      "Business Owners",
+                      "Non-Technical Beginners",
+                      "Anyone Curious About AI & Automation"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-foreground/90 font-semibold">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Master the Basics */}
-          <section className="bg-muted/30 py-16 md:py-24 border-y border-border/50">
+          <section className="bg-muted/30 py-16 md:py-24 border-t border-border/50">
             <div className="container px-4 mx-auto max-w-5xl">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4"><span className="text-primary">Master the Basics.</span> Build the Foundation.</h2>
@@ -568,6 +601,57 @@ const WorkshopLanding = () => {
             </div>
           </section>
 
+          {/* Is This Right For You */}
+          <section className="bg-muted/40 py-16 md:py-24 border-y border-border/50">
+            <div className="container px-4 mx-auto max-w-6xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2">Is This Workshop <span className="text-primary">Right for You?</span></h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6 md:gap-12">
+                {/* This Workshop Is */}
+                <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-emerald-500/50 transition-colors">
+                  <h3 className="text-xl font-bold flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
+                    <CheckCircle2 className="w-6 h-6" />
+                    This Workshop Is
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      "Beginner-friendly",
+                      "Concept-focused",
+                      "Practical and easy to understand",
+                      "Designed to build a strong foundation"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-foreground/90 font-semibold">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Not Intended For */}
+                <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-red-500/50 transition-colors">
+                  <h3 className="text-xl font-bold flex items-center gap-2 text-red-600 dark:text-red-400">
+                    <XCircle className="w-6 h-6" />
+                    This Workshop Is Not Intended For
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      "Experienced automation professionals",
+                      "Advanced workflow builders",
+                      "Those looking for deep technical implementation"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <XCircle className="w-5 h-5 text-red-500 dark:text-red-400 shrink-0 mt-0.5" />
+                        <span className="text-foreground/90 font-semibold">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* 3 Simple Steps */}
           <section className="container px-4 mx-auto py-16 md:py-24">
             <div className="text-center mb-16">
@@ -643,74 +727,7 @@ const WorkshopLanding = () => {
             </div>
           </section>
 
-          {/* Target Audience */}
-          <section className="bg-muted/40 py-16 md:py-24 border-y border-border/50">
-            <div className="container px-4 mx-auto max-w-6xl">
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Perfect For */}
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">Who Is <span className="text-primary">This For?</span></h2>
-                    <p className="text-foreground/80 font-medium text-lg">Designed to build a strong foundation.</p>
-                  </div>
-                  
-                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-emerald-500/50 transition-colors">
-                    <h3 className="text-xl font-bold flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                      <CheckCircle2 className="w-6 h-6" />
-                      Perfect For
-                    </h3>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {[
-                        "Students",
-                        "Working Professionals",
-                        "Freelancers",
-                        "Business Owners",
-                        "Non-Technical Beginners",
-                        "Anyone Curious About AI & Automation"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-500 shrink-0 mt-0.5" />
-                          <span className="text-foreground/90 font-semibold">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
 
-                {/* Not Intended For */}
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">Is This Right <span className="text-primary">For You?</span></h2>
-                    <p className="text-foreground/80 font-medium text-lg">Let's be clear about what this is not.</p>
-                  </div>
-                  
-                  <div className="bg-card border border-border shadow-lg rounded-[2rem] p-8 space-y-6 hover:border-red-500/50 transition-colors">
-                    <h3 className="text-xl font-bold flex items-center gap-2 text-red-600 dark:text-red-400">
-                      <XCircle className="w-6 h-6" />
-                      Not Intended For
-                    </h3>
-                    <ul className="space-y-4">
-                      {[
-                        "Experienced automation professionals",
-                        "Advanced workflow builders",
-                        "Those looking for deep technical implementation"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <XCircle className="w-5 h-5 text-red-500 dark:text-red-400 shrink-0 mt-0.5" />
-                          <span className="text-foreground/90 font-semibold">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 pt-6 border-t border-border/50">
-                      <p className="text-sm text-foreground/80 font-medium">
-                        <strong className="text-foreground">Note:</strong> This workshop is Beginner-friendly, Concept-focused, Practical and easy to understand.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* Why Choose Our Workshop */}
           <section className="container px-4 mx-auto py-16 md:py-24">
