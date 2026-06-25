@@ -190,40 +190,40 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-4 bg-primary/5 border border-primary/20 rounded-2xl p-2 pl-4 pr-3 shadow-sm">
-      <div className="inline-flex items-center gap-2 text-primary font-bold">
+    <div className="flex flex-col sm:flex-row items-center gap-4 bg-orange-500/10 border border-orange-500/20 rounded-2xl p-2 pl-4 pr-3 shadow-sm">
+      <div className="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-bold">
         <span className="relative flex h-2.5 w-2.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
         </span>
         Limited Seats Available!
       </div>
       
-      <div className="hidden sm:block w-px h-8 bg-primary/20"></div>
+      <div className="hidden sm:block w-px h-8 bg-orange-500/20"></div>
 
       <div className="flex items-center gap-2 text-center">
         {timeLeft.days > 0 && (
           <>
-            <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
-              <span className="text-lg font-bold font-mono text-foreground">{timeLeft.days.toString().padStart(2, '0')}</span>
-              <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Days</span>
+            <div className="flex flex-col bg-background border border-orange-500/20 rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+              <span className="text-lg font-bold font-mono text-orange-600 dark:text-orange-400">{timeLeft.days.toString().padStart(2, '0')}</span>
+              <span className="text-[9px] tracking-wider text-orange-600/70 dark:text-orange-400/70 uppercase">Days</span>
             </div>
-            <span className="text-lg font-bold text-muted-foreground/50">:</span>
+            <span className="text-lg font-bold text-orange-500/50">:</span>
           </>
         )}
-        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
-          <span className="text-lg font-bold font-mono text-foreground">{timeLeft.hours.toString().padStart(2, '0')}</span>
-          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Hrs</span>
+        <div className="flex flex-col bg-background border border-orange-500/20 rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-orange-600 dark:text-orange-400">{timeLeft.hours.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-orange-600/70 dark:text-orange-400/70 uppercase">Hrs</span>
         </div>
-        <span className="text-lg font-bold text-muted-foreground/50">:</span>
-        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
-          <span className="text-lg font-bold font-mono text-foreground">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Min</span>
+        <span className="text-lg font-bold text-orange-500/50">:</span>
+        <div className="flex flex-col bg-background border border-orange-500/20 rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-orange-600 dark:text-orange-400">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-orange-600/70 dark:text-orange-400/70 uppercase">Min</span>
         </div>
-        <span className="text-lg font-bold text-muted-foreground/50">:</span>
-        <div className="flex flex-col bg-background rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
-          <span className="text-lg font-bold font-mono text-primary animate-pulse">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-          <span className="text-[9px] tracking-wider text-muted-foreground uppercase">Sec</span>
+        <span className="text-lg font-bold text-orange-500/50">:</span>
+        <div className="flex flex-col bg-background border border-orange-500/20 rounded-lg px-3 py-1 min-w-[50px] sm:min-w-[60px] shadow-sm">
+          <span className="text-lg font-bold font-mono text-orange-600 dark:text-orange-400 animate-pulse">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+          <span className="text-[9px] tracking-wider text-orange-600/70 dark:text-orange-400/70 uppercase">Sec</span>
         </div>
       </div>
     </div>
@@ -358,8 +358,8 @@ const WorkshopLanding = () => {
                   Reserve My Spot Now
                   <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
-                <div className="absolute -bottom-7 left-0 right-0 flex items-center justify-center gap-1.5 text-[13px] sm:text-sm font-medium text-foreground/80 pointer-events-none whitespace-nowrap">
-                  <Gift className="w-4 h-4 text-emerald-500 shrink-0" />
+                <div className="absolute -bottom-7 left-0 right-0 flex items-center justify-center gap-1.5 text-[13px] sm:text-sm font-bold text-orange-600 dark:text-orange-400 pointer-events-none whitespace-nowrap">
+                  <Gift className="w-4 h-4 text-orange-500 shrink-0" />
                   <span>Bonus: Template + Recording included</span>
                 </div>
               </div>
