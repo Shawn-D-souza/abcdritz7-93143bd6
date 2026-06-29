@@ -20,7 +20,14 @@ export default defineConfig({
     },
   },
   build: {
-    target: "es2019",
+    // esnext: no legacy transpilation — Math.trunc, Array.from, Object.hasOwn etc.
+    // are native in every browser since 2019/2020 and don't need polyfilling.
+    target: "esnext",
+    modulePreload: {
+      // Modern browsers support <link rel="modulepreload"> natively;
+      // skip the ~2 KB polyfill Vite injects by default.
+      polyfill: false,
+    },
     rollupOptions: {
       output: {
         manualChunks: {

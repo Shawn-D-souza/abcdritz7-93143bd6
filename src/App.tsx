@@ -15,7 +15,7 @@ const BlogList = lazy(() => import("./pages/BlogList"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const HallOfFame = lazy(() => import("./pages/HallOfFame"));
 const SubscriptionLanding = lazy(() => import("./pages/SubscriptionLanding"));
-import WorkshopLanding from "./pages/WorkshopLanding";
+const WorkshopLanding = lazy(() => import("./pages/WorkshopLanding"));
 
 const queryClient = new QueryClient();
 
