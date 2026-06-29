@@ -55,6 +55,30 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
+            <h2 className="mb-3 text-xl font-semibold text-foreground">No Return & Exchange Policy for Courses and Programs</h2>
+            <div className="mt-3 rounded-xl border border-primary/30 bg-primary/5 px-5 py-4">
+              <p className="font-semibold text-foreground">All sales of courses and programs are final.</p>
+              <p className="mt-2">
+                Ritz7 Automations Private Limited does not offer refunds, returns, or exchanges on any courses, training programs, digital content, or educational materials once access has been granted or a purchase has been completed. This includes, but is not limited to:
+              </p>
+              <ul className="mt-3 list-disc space-y-1.5 pl-5">
+                <li>Online and offline courses</li>
+                <li>Mentorship and coaching programs</li>
+                <li>Workshops and live sessions</li>
+                <li>Digital learning materials and resources</li>
+              </ul>
+              <p className="mt-3">
+                We encourage you to review all course and program details carefully before making a purchase. If you have questions about a specific offering prior to enrollment, please reach out to us at{" "}
+                <a href="mailto:support@ritz7.ai" className="text-primary hover:underline">support@ritz7.ai</a>{" "}
+                and we will be happy to assist you in making an informed decision.
+              </p>
+              <p className="mt-3">
+                In exceptional circumstances (e.g., duplicate payments or technical billing errors), please contact our support team within 48 hours of the transaction, and we will review the matter on a case-by-case basis. No guarantees of refund are implied.
+              </p>
+            </div>
+          </section>
+
+          <section>
             <h2 className="mb-3 text-xl font-semibold text-foreground">Contact Us</h2>
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at{" "}
               <a href="mailto:support@ritz7.ai" className="text-primary hover:underline">support@ritz7.ai</a>.

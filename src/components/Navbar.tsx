@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
   {
     name: "Resources",
     dropdown: [
+      { label: "Programs", href: "#programs" },
       { label: "Blogs", href: "#blogs" },
       { label: "FAQs", href: "#faqs" },
     ],
