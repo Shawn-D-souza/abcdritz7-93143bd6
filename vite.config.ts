@@ -20,9 +20,10 @@ export default defineConfig({
     },
   },
   build: {
-    // esnext: no legacy transpilation — Math.trunc, Array.from, Object.hasOwn etc.
-    // are native in every browser since 2019/2020 and don't need polyfilling.
-    target: "esnext",
+    // es2019 is required: react-snap's postbuild step uses a bundled Chromium ~v69
+    // which cannot parse esnext syntax (optional chaining, nullish coalescing, etc.).
+    // Bumping to esnext causes SyntaxError during pre-rendering and breaks the build.
+    target: "es2019",
     modulePreload: {
       // Modern browsers support <link rel="modulepreload"> natively;
       // skip the ~2 KB polyfill Vite injects by default.

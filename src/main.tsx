@@ -1,3 +1,13 @@
+// --- POLYFILL FOR REACT-SNAP (Older Chromium) ---
+// react-snap's bundled Chromium (~v69) does not have Object.hasOwn (ES2022).
+// This guard ensures pre-rendering doesn't crash. Real browsers all support it natively.
+if (!(Object as any).hasOwn) {
+  (Object as any).hasOwn = function (obj: any, prop: any) {
+    return Object.prototype.hasOwnProperty.call(obj, prop);
+  };
+}
+// ------------------------------------------------
+
 import React from 'react';
 import { hydrateRoot, createRoot } from 'react-dom/client';
 import App from './App.tsx';
